@@ -1,15 +1,6 @@
--- local status_ok, true-zen = pcall(require, "true-zen")
--- if not status_ok then
--- 	return
--- end
---
--- true-zen.setup ({
---
--- })
-require("true-zen").setup(
-	-- your config goes here
-	-- or just leave it empty :)
-	{
+return {
+  "Pocco81/true-zen.nvim",
+  opts = {
 		modes = { -- configurations per mode
 			ataraxis = {
 				shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
@@ -86,5 +77,5 @@ require("true-zen").setup(
 			twilight = false, -- enable twilight (ataraxis)
 			lualine = true, -- hide nvim-lualine (ataraxis)
 		},
-	}
-)
+  }
+}

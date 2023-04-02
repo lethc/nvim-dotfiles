@@ -13,12 +13,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
-require("lazy").setup({
+require("lazy").setup {
   spec = {
     {import = "plugins"},
-    --{import = "plugins.lsp"},
+    {import = "plugins.lsp"},
+    {import = "plugins.colorscheme"},
   },
-  opts
-})
+  ui = {
+    border = "rounded"
+  }
+}
 

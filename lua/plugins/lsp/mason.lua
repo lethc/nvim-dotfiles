@@ -4,6 +4,7 @@ return {
   dependencies = {
     "neovim/nvim-lspconfig",
     "williamboman/mason-lspconfig.nvim",
+    "RRethy/vim-illuminate",
   },
   config = function()
     require'lspconfig'.clangd.setup{}  --Install clangd in your system.
@@ -19,13 +20,13 @@ return {
       "bashls",
       "jsonls",
       -- "yamlls",
-      --"jdtls",
+      "jdtls",
       "intelephense",
       "gopls",
       "rust_analyzer",
       "clangd",
       "texlab",
-      --"ltex"
+      "ltex"
     }
 
     local settings = {
@@ -56,8 +57,8 @@ return {
 
     for _, server in pairs(servers) do
       opts = {
-        on_attach = require("plugins.lsp.handlers").on_attach,
-        capabilities = require("plugins.lsp.handlers").capabilities,
+        on_attach = require("plugins.lsp.settings.handlers").on_attach,
+        capabilities = require("plugins.lsp.settings.handlers").capabilities,
       }
 
       server = vim.split(server, "@")[1]

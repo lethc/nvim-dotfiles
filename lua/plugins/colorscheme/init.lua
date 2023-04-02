@@ -1,0 +1,31 @@
+return {
+  --Colorschemes
+  "aktersnurra/no-clown-fiesta.nvim",
+  "lunarvim/darkplus.nvim",
+  "getomni/neovim", --omni
+  "nyoom-engineering/oxocarbon.nvim",
+  "EdenEast/nightfox.nvim",
+  "aktersnurra/no-clown-fiesta.nvim",
+  'tiagovla/tokyodark.nvim',
+  -- use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+  -- use { "catppuccin/nvim" }
+  -- use {'decaycs/decay.nvim', as = 'decay'}
+  -- use { "rktjmp/lush.nvim" }
+  -- use {"projekt0n/github-nvim-theme"}
+  -- use {"rebelot/kanagawa.nvim"}
+  -- use { "nocksock/bloop.nvim" }
+  -- use {"marko-cerovac/material.nvim"}
+  -- use {"olimorris/onedarkpro.nvim"}
+  -- use {"mcchrish/zenbones.nvim"}
+  -- use {"Yagua/nebulous.nvim"}
+  -- use { "doki-theme/doki-theme-vim" }
+  -- use {"Alexis12119/dull.nvim"}
+  -- use "Alexis12119/nightly.nvim"  -- easy to customise
+  -- use {"pineapplegiant/spaceduck"}
+  -- use {"ray-x/aurora"}
+  -- use {'Yazeed1s/oh-lucy.nvim'}
+  -- use {'kvrohit/mellow.nvim'}
+  -- use { 'embark-theme/vim', as = 'embark' }
+
+
+}

@@ -1,14 +1,37 @@
 return {
   "nvim-lua/plenary.nvim",
-  "aktersnurra/no-clown-fiesta.nvim",
   "moll/vim-bbye",
   "elkowar/yuck.vim",
   "peterhoeg/vim-qml",
   "voldikss/vim-floaterm",
   "tpope/vim-surround",
-  "NvChad/nvim-colorizer.lua",  --Display colors
+  {"NvChad/nvim-colorizer.lua",  --Display colors
+    opts = {}
+  },
   "pedro757/emmet",
+  "lervag/vimtex",  --LaTeX
+  "iamcco/markdown-preview.nvim",
+  
 
+  -- LSP
+  'simrat39/rust-tools.nvim',
+
+  -- Debug Adapter Protocol
+  -- "mfussenegger/nvim-dap",
+  -- "rcarriga/nvim-dap-ui",
+  -- "theHamsta/nvim-dap-virtual-text",
+  -- "leoluz/nvim-dap-go",
+  -- "mfussenegger/nvim-dap-python",
+  -- "mfussenegger/nvim-jdtls",
+
+
+  -- Database connections
+  -- use { "kristijanhusak/vim-dadbod-ui" }
+  -- use { "kristijanhusak/vim-dadbod-completion" }
+  -- use { "tpope/vim-dadbod" }
+  -- use { "tpope/vim-dotenv" }
+
+  -- Others
   -- use {
   --     'glacambre/firenvim',
   --     run = function() vim.fn['firenvim#install'](0) end

@@ -6,9 +6,9 @@ return {
     "arjunmahishi/flow.nvim",
     "nvim-telescope/telescope-dap.nvim",
   },
-  keys = {
-    {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
-  },
+  -- keys = {
+  --   {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
+  -- },
   config = function()
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then
