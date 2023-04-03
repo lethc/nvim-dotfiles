@@ -1,5 +1,6 @@
 return {
-  "hrsh7th/nvim-cmp", 
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
   dependencies = { 
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
@@ -15,7 +16,6 @@ return {
     { "L3MON4D3/LuaSnip", version = "v1.*" },
     "rafamadriz/friendly-snippets", 
   },
-  event = "VeryLazy",
   config = function()
     local cmp_status_ok, cmp = pcall(require, "cmp")
     if not cmp_status_ok then

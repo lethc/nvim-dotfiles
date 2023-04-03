@@ -1,5 +1,6 @@
 return {
   "folke/which-key.nvim",
+  lazy = false,
   config = function ()
     local status_ok, which_key = pcall(require, "which-key")
     if not status_ok then
@@ -56,9 +57,9 @@ return {
         height = { min = 4, max = 25 }, -- min and max height of the columns
         width = { min = 20, max = 50 }, -- min and max width of the columns
         spacing = 3, -- spacing between columns
-        align = "left", -- align columns left, center or right
+        align = "center", -- align columns left, center or right
       },
-      ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+      ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
       hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
       show_help = true, -- show help message on the command line when the popup is visible
       triggers = "auto", -- automatically setup triggers
@@ -83,22 +84,22 @@ return {
 
     local mappings = {
       ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-      ["b"] = {
-        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-        "Buffers",
-      },
-      ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+      -- ["b"] = {
+      --   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      --   "Buffers",
+      -- },
+      -- ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
       ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-      ["f"] = {
-        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-        "Find files",
-      },
-      ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-      ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+      -- ["f"] = {
+      --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      --   "Find files",
+      -- },
+      -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+      -- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
       L = {
         name = "Lazy",
@@ -193,6 +194,7 @@ return {
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+        o = { "<cmd>ObsidianSearch<CR>", "Obsidian Search" },
       },
 
       t = {

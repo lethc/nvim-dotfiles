@@ -1,5 +1,6 @@
 return {
   'gelguy/wilder.nvim',
+  priority = 100,
   config = function()
     local wilder_status_ok, wilder = pcall(require, "wilder")
     if not wilder_status_ok then

@@ -1,14 +1,24 @@
 return {
 	-- Telescope 
 	"nvim-telescope/telescope.nvim",
+  priority = 500,
+  event = "insertenter",
   dependencies = {
     "nvim-telescope/telescope-file-browser.nvim",
     "arjunmahishi/flow.nvim",
     "nvim-telescope/telescope-dap.nvim",
   },
-  -- keys = {
-  --   {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
-  -- },
+  keys = {
+    -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
+    {"<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers"},
+    {"<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files"},
+    {"<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Find Text"},
+    {"<leader>P", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Projects"},
+    {"<leader>n", "<cmd>Telescope file_browser<cr>", desc = "Telescope"},
+    -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
+    -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
+
+  },
   config = function()
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then

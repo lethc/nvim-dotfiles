@@ -1,5 +1,7 @@
 return {
   'epwalsh/obsidian.nvim',
+  prioriy = 100,
+  -- event = "InsertEnter",
   dependencies = {
     'junegunn/fzf.vim'
   },

@@ -1,12 +1,11 @@
 return {
   --Colorschemes
-  "aktersnurra/no-clown-fiesta.nvim",
-  "lunarvim/darkplus.nvim",
+  {"lunarvim/darkplus.nvim"},
+  
   "getomni/neovim", --omni
   "nyoom-engineering/oxocarbon.nvim",
   "EdenEast/nightfox.nvim",
   "aktersnurra/no-clown-fiesta.nvim",
-  'tiagovla/tokyodark.nvim',
   -- use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   -- use { "catppuccin/nvim" }
   -- use {'decaycs/decay.nvim', as = 'decay'}
