@@ -15,6 +15,7 @@ return {
       vim.g.tokyodark_color_gamma = "1.0"
     end,
   },
+  "akinsho/horizon.nvim",
   -- use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   -- use { "catppuccin/nvim" }
   -- use {'decaycs/decay.nvim', as = 'decay'}

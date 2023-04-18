@@ -5,7 +5,7 @@ return {
 		require("themer").setup({
 			-- colorscheme = "radium",
       -- colorscheme = "radium", -- default colorscheme
-      transparent = true,
+      transparent = false,
       term_colors = true,
       dim_inactive = false,
       disable_telescope_themes = {},

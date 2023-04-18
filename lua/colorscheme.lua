@@ -1,6 +1,6 @@
 -- local colorscheme = "themer_radium"
-local colorscheme = "themer_gruvbox"
---local colorscheme = "no-clown-fiesta"
+-- local colorscheme = "horizon"
+local colorscheme = "horizon"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
