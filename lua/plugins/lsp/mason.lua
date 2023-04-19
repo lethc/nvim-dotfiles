@@ -21,7 +21,7 @@ return {
       "jsonls",
       -- "yamlls",
       "jdtls",
-      -- "intelephense",
+      "intelephense",
       "phpactor",
       "gopls",
       "rust_analyzer",

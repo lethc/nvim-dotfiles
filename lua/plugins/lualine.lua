@@ -88,12 +88,12 @@ return{
         end
 
         -- add formatter
-        local formatters = require "user.lsp.null-ls"
+        local formatters = require "plugins.lsp.null-ls"
         local supported_formatters = formatters.list_registered(buf_ft)
         vim.list_extend(buf_client_names, supported_formatters)
 
         -- add linter
-        local linters = require "user.lsp.null-ls"
+        local linters = require "plugins.lsp.null-ls"
         local supported_linters = linters.list_registered(buf_ft)
         vim.list_extend(buf_client_names, supported_linters)
 
