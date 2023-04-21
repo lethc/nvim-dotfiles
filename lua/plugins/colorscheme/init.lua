@@ -23,7 +23,6 @@ return {
   -- use {"projekt0n/github-nvim-theme"}
   -- use {"rebelot/kanagawa.nvim"}
   -- use { "nocksock/bloop.nvim" }
-  -- use {"marko-cerovac/material.nvim"}
   -- use {"olimorris/onedarkpro.nvim"}
   -- use {"mcchrish/zenbones.nvim"}
   -- use {"Yagua/nebulous.nvim"}
