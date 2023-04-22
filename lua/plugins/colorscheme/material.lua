@@ -1,5 +1,6 @@
 return {
   "marko-cerovac/material.nvim",
+  lazy = true,
   config = function()
     --Lua:
     vim.g.material_style = "deep ocean"
