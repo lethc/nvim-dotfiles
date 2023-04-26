@@ -64,8 +64,7 @@ return {
 
 		-- vim.keymap.set("n", "<leader>du", ":DBUIToggle<cr>")
 		--vim.g.dbs = {
-		--   'mysql://luis501:mysql@localhost:3306/DB_user'
-		--   'mysql://mysql:root@localhost:3306/DB_user'
+    -- adapter://[user[:password]@][host][:port]/[database]
 		--}
 	end,
 }

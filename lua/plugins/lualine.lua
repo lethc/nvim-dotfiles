@@ -223,9 +223,24 @@ return {
 						padding = 0.1,
 					},
 					location,
+					{
+						function()
+							-- return "%P%L"
+							return " 󰗚  %L "
+						end,
+						separator = { left = "", right = "" },
+						color = { bg = "#88AFA2", fg = "#000000" },
+						padding = 0.3,
+					},
 				},
 				lualine_y = {},
-				lualine_z = {},
+				lualine_z = {
+					-- {
+					-- 	"datetime",
+					-- 	-- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+					-- 	style = ("%H:%M"),
+					-- },
+				},
 			},
 		})
 	end,
