@@ -1,5 +1,7 @@
 return {
   "folke/tokyonight.nvim",
+  cmd = "Telescope colorscheme",
+  lazy = true,
   config = function ()
      require("tokyonight").setup({
       -- your configuration comes here

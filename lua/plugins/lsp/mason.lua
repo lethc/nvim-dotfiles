@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  -- cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
   build = ":MasonUpdate",
   dependencies = {
     "neovim/nvim-lspconfig",

@@ -76,20 +76,8 @@ keymap("n", "<C-n>", "<cmd>tabnew<CR>", opts)
 keymap("i", "<C-s>", "<cmd>w<CR>", opts)
 keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 
--- Quit nvim
-keymap("i", "<C-q>", "<cmd>q<CR>", opts)
-keymap("n", "<C-q>", "<cmd>q<CR>", opts)
-
--- Quit quick tab nvim (Save)
-keymap("i", "<C-sq>", "<cmd>wq!<CR>", opts)
-keymap("n", "<C-sq>", "<cmd>wq!<CR>", opts)
-
--- Quit quick all nvim (NO Save)
-keymap("i", "<C-aq>", "<cmd>qa!<CR>", opts)
-keymap("n", "<C-aq>", "<cmd>qa!<CR>", opts)
-
 -- Color
-keymap("n", "<C-x>", "<cmd>ColorHighlight<CR>", opts)
+keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 
 
 -- keymap("n", "<C-l>", "<cmd>:set spell! spelllang={'eng_gb', 'es'}<CR>", opts)
@@ -109,12 +97,12 @@ keymap("n", "<C-x>", "<cmd>ColorHighlight<CR>", opts)
 
 --Run files in Floaterm
 --FloatermNew --autoclose=0 gcc % -o %< && ./%<
-keymap("n", "<C-,>", "<cmd>FloatermNew --autoclose=0 python3 % -o %<CR>", opts)
+-- keymap("n", "<C-,>", "<cmd>FloatermNew --autoclose=0 python3 % -o %<CR>", opts)
 keymap("n", "<A-,>", "<cmd>FloatermNew --autoclose=0 java % -o %<CR>", opts)
-keymap("n", "<C-->", "<cmd>FloatermNew --autoclose=0 node % -o %<CR>", opts)
-
+-- keymap("n", "<C-->", "<cmd>FloatermNew --autoclose=0 node % -o %<CR>", opts)
+keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
 --Run Selection
-keymap("v", "<C-->", "<cmd>'<,'>!node<CR>", opts)
+-- keymap("v", "<C-->", "<cmd>'<,'>!node<CR>", opts)
 -- keymap("v", "<C-->", "<cmd>'<,'>!FloatermNew --autoclose=0 node<CR>", opts)
 
 -- Terminal --

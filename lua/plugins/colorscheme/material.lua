@@ -1,5 +1,6 @@
 return {
   "marko-cerovac/material.nvim",
+  cmd = "Telescope colorscheme",
   lazy = true,
   config = function()
     --Lua:

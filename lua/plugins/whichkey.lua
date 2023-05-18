@@ -99,6 +99,15 @@ return {
       -- },
       -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
       -- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+      p = {
+        name = "Preview",
+        d = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "definition"},
+        D = {"<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "Type definition"},
+        i = {"<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation"},
+        x = {"<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all"},
+        r = {"<cmd>lua require('goto-preview').goto_preview_references()<CR>", "References"},
+
+      },
 
       L = {
         name = "Lazy",

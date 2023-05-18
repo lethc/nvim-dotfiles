@@ -1,14 +1,11 @@
 return {
-  "jay-babu/mason-null-ls.nvim",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
-  },
+  -- "jay-babu/mason-null-ls.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
   config = function()
-    local mason_null_ls_status_ok, mason_null_ls = pcall(require, "mason-null-ls")
-    if not mason_null_ls_status_ok then
-      return
-    end
+    -- local mason_null_ls_status_ok, mason_null_ls = pcall(require, "mason-null-ls")
+    -- if not mason_null_ls_status_ok then
+    --   return
+    -- end
 
     local null_ls_status_ok, null_ls = pcall(require, "null-ls")
     if not null_ls_status_ok then
@@ -20,10 +17,10 @@ return {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     local diagnostics = null_ls.builtins.diagnostics
 
-    mason_null_ls.setup({
-      -- ensure_installed = { "stylua", "jq", "black", "google_java_format", "phpcsfixer", "prettier" },
-      automatic_setup = false,
-    })
+    -- mason_null_ls.setup({
+    --   -- ensure_installed = { "stylua", "jq", "black", "google_java_format", "phpcsfixer", "prettier" },
+    --   automatic_setup = true,
+    -- })
 
     null_ls.setup({
       debug = false,

@@ -1,6 +1,5 @@
 return {
   "ahmedkhalf/project.nvim",
-  -- lazy = true,
   config = function()
     local status_ok, project = pcall(require, "project_nvim")
     if not status_ok then

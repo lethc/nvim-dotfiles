@@ -1,5 +1,6 @@
 return {
 	"themercorp/themer.lua",
+  cmd = "Telescope colorscheme",
   lazy = false,
 	config = function()
 		require("themer").setup({
