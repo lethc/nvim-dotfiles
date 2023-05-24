@@ -7,7 +7,7 @@ return {
     'junegunn/fzf.vim'
   },
   opts = {
-    dir = "/home/lummyn/Sync/Obsidian-Vault/",
+    dir = "/home/lummyn/Sync/",
     completion = {
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },

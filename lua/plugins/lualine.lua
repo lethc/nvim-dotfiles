@@ -25,10 +25,10 @@ return {
 				"hint",
 			},
 			symbols = {
-				error = " ",
+				error = "󰅙 ",
 				warn = " ",
-				hint = " ",
-				info = " ",
+				hint = "󰌵 ",
+				info = "󰋼 ",
 			},
 			colored = true,
 			always_visible = false,
@@ -176,7 +176,7 @@ return {
 						icon_only = true,
 						colored = true,
 						padding = 1,
-						color = { bg = "#2a2c3f" },
+						color = { bg = "#2e383c" },
 						separator = { left = "", right = " " },
 					},
 					{
@@ -184,7 +184,7 @@ return {
 						file_status = false,
 						padding = 0.3,
 						separator = { left = "", right = " " },
-						color = { bg = "#2a2c3f" },
+						color = { bg = "#2e383c" },
 					},
 					branch,
 					diff,
@@ -199,7 +199,7 @@ return {
 							return " 󰣇 "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#8FBCBB", fg = "#000000" },
+						color = { bg = "#83c092", fg = "#000000" },
 						padding = 0.3,
 					},
 					{
@@ -210,7 +210,7 @@ return {
 							return "  "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#ECD3A0", fg = "#000000" },
+						color = { bg = "#dbbc7f", fg = "#000000" },
 						padding = 0.3,
 					},
 					"progress",
@@ -219,7 +219,7 @@ return {
 							return "  "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#86AAEC", fg = "#000000" },
+						color = { bg = "#7fbbb3", fg = "#000000" },
 						padding = 0.1,
 					},
 					location,
@@ -229,7 +229,7 @@ return {
 							return " 󰗚  %L "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#88AFA2", fg = "#000000" },
+						color = { bg = "#a7c080", fg = "#000000" },
 						padding = 0.3,
 					},
 				},

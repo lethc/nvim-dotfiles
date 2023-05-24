@@ -5,12 +5,12 @@ return {
     {"<C-c>", "<cmd>PickColor<cr>", desc = "ColorPicker"},
   },
   opts = {
-    -- ["icons"] = { "ﱢ", "" },
-    -- ["icons"] = { "ﮊ", "" },
-    -- ["icons"] = { "", "ﰕ" },
+    -- ["icons"] = { "󰝤", "" },
+    -- ["icons"] = { "󰚌", "󰋦" },
+    -- ["icons"] = { "", "󰜗" },
     -- ["icons"] = { "", "" },
     -- ["icons"] = { "", "" },
-    ["icons"] = { "ﱢ", "" },
+    ["icons"] = { "󰝤", "󰃉" },
     ["border"] = "rounded", -- none | single | double | rounded | solid | shadow
     ["keymap"] = { -- mapping example:
       ["U"] = "<Plug>ColorPickerSlider5Decrease",

@@ -22,8 +22,8 @@ return {
       "jsonls",
       -- "yamlls",
       "jdtls",
-      "intelephense",
-      "phpactor",
+      -- "intelephense",
+      -- "phpactor",
       "gopls",
       "rust_analyzer",
       -- "clangd",
@@ -32,7 +32,7 @@ return {
       -- "csharp_ls",
       -- "omnisharp",
       -- "omnisharp_mono",
-      "tailwindcss"
+      -- "tailwindcss"
     }
 
     local settings = {

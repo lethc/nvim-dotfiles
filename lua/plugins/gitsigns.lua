@@ -17,13 +17,13 @@ return {
         },
         delete = {
           hl = "GitSignsDelete",
-          text = "契",
+          text = "󰐊",
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },
         topdelete = {
           hl = "GitSignsDelete",
-          text = "契",
+          text = "󰐊",
           numhl = "GitSignsDeleteNr",
           linehl = "GitSignsDeleteLn",
         },

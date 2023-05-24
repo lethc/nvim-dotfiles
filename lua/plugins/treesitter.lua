@@ -17,7 +17,7 @@ return {
 
 		configs.setup({
 			-- ensure_installed = "all", -- one of "all" or a list of languages
-			ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "regex", "bash", "markdown", "markdown_inline" },
+			ensure_installed = { "c","lua", "query", "regex", "bash", "markdown", "markdown_inline" }, --vim, vim-doc
 			ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 			auto_install = true,
 			highlight = {
