@@ -91,6 +91,7 @@ return {
       -- ["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
+      ["Q"] = { "<cmd>qa!<CR>", "Quit" },
       ["i"] = { "<cmd>Telescope notify<CR>", "Notify" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
       -- ["f"] = {
