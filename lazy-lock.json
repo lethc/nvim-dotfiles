@@ -65,7 +65,6 @@
   "sniprun": { "branch": "master", "commit": "83791b87a8ede5275a2c060605bf1fec782205cc" },
   "telescope-dap.nvim": { "branch": "master", "commit": "313d2ea12ae59a1ca51b62bf01fc941a983d9c9c" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "6cf29d5139601993343c4e70ee2d1f67959d9cc5" },
-  "telescope-project.nvim": { "branch": "master", "commit": "7c64b181dd4e72deddcf6f319e3bf1e95b2a2f30" },
   "telescope.nvim": { "branch": "master", "commit": "5b7cedd7f2a0c5d2643b3049db6f09268636548f" },
   "themer.lua": { "branch": "main", "commit": "ec1e098eb81b8fe33befa40ddfd78b98fc6455d4" },
   "toggleterm.nvim": { "branch": "main", "commit": "a44313fb28ed9bc9837c2b99dec1c6eed3a4f47f" },

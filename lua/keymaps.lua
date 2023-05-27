@@ -72,10 +72,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Open a new tab
 keymap("n", "<C-n>", "<cmd>tabnew<CR>", opts)
 
--- Save files
-keymap("i", "<C-s>", "<cmd>w<CR>", opts)
-keymap("n", "<C-s>", "<cmd>w<CR>", opts)
-
 -- Color
 keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 
