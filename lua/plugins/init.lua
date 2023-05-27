@@ -54,6 +54,13 @@ return {
     "ekickx/clipboard-image.nvim",
     config = function() --Set a symbolic link between your Obsidian img folder and your user path
     end,
+    --Check this: https://github.com/ekickx/clipboard-image.nvim/issues/50
+    --modify the health.lua in clipboard-image plugins
+    -- local health = vim.health or require "health"
+    --
+    -- instead of
+    --
+    -- local health = require "health"
   },
   {
     "NvChad/nvim-colorizer.lua", --Display colors
