@@ -100,6 +100,15 @@ return {
       -- },
       -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
       -- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+      m = {
+        name = "Possession Manager",
+        s = { "<cmd>PossessionSave<cr>", "Save" },
+        l = { "<cmd>PossessionList<cr>", "List" },
+        L = { "<cmd>PossessionLoad<cr>", "Load" },
+        d = { "<cmd>PossessionDelete<cr>", "Delete" },
+        r = { "<cmd>PossessionRename<cr>", "Rename" },
+
+      },
       p = {
         name = "Preview",
         d = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "definition"},
