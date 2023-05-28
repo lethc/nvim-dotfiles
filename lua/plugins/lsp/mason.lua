@@ -26,7 +26,7 @@ return {
       -- "phpactor",
       "gopls",
       "rust_analyzer",
-      -- "clangd",
+      "clangd",
       "texlab",
       "ltex",
       -- "csharp_ls",
