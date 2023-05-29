@@ -210,6 +210,17 @@ return {
 				R = { "<cmd>Telescope registers<cr>", "Registers" },
 				k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 				C = { "<cmd>Telescope commands<cr>", "Commands" },
+        t = {
+          name = "Trouble.nvim",
+          t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+          w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Trouble" },
+          d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Trouble"  },
+          r = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+          a = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" },
+          l = { "<cmd>TroubleToggle lsp_references<cr>", "lsp_references" },
+          c = { "<cmd>TroubleClose<cr>", "Close Trouble" },
+          o = { "<cmd>TroubleRefresh<cr>", "Refresh Trouble" }
+        },
 			},
 
 			t = {

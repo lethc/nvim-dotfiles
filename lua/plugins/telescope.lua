@@ -24,6 +24,7 @@ return {
     end
 
     local actions = require "telescope.actions"
+    local trouble = require("trouble.providers.telescope")
 
     telescope.setup {
       defaults = {
@@ -48,7 +49,7 @@ return {
             ["<CR>"] = actions.select_default,
             ["<C-x>"] = actions.select_horizontal,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-t>"] = actions.select_tab,
+            -- ["<C-t>"] = actions.select_tab,
 
             ["<C-u>"] = actions.preview_scrolling_up,
             ["<C-d>"] = actions.preview_scrolling_down,
@@ -62,6 +63,7 @@ return {
             ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             ["<C-l>"] = actions.complete_tag,
             ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+            ["<C-o>"] = trouble.open_with_trouble
           },
 
           n = {
@@ -69,7 +71,7 @@ return {
             ["<CR>"] = actions.select_default,
             ["<C-x>"] = actions.select_horizontal,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-t>"] = actions.select_tab,
+            -- ["<C-t>"] = actions.select_tab,
 
             ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
             ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -94,6 +96,7 @@ return {
             ["<PageDown>"] = actions.results_scrolling_down,
 
             ["?"] = actions.which_key,
+            ["<C-o>"] = trouble.open_with_trouble
           },
         },
       },

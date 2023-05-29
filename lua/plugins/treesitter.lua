@@ -1,6 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	"nvim-treesitter/nvim-treesitter-textobjects",
 	cmd = {
 		"TSInstall",
 		"TSUninstall",
