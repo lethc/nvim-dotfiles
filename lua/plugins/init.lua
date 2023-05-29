@@ -4,7 +4,6 @@ return {
 	"moll/vim-bbye",
 	"elkowar/yuck.vim",
 	"peterhoeg/vim-qml",
-	"tpope/vim-surround",
 	"tpope/vim-fugitive",
 	"KabbAmine/lazyList.vim",
 	"jwalton512/vim-blade",
