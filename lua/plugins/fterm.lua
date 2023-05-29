@@ -22,7 +22,7 @@ return {
 
 
 		-- Code Runner - execute commands in a floating terminal
-		local runners = { lua = "lua", javascript = "node", java = "java", cpp = "g++" }
+		local runners = { lua = "lua", javascript = "node", java = "java", python = "python" }
 		local aux = { cpp = "./*" }
 
 		vim.keymap.set("n", "<leader><Enter>", function()

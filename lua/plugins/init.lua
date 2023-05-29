@@ -8,7 +8,7 @@ return {
 	"KabbAmine/lazyList.vim",
 	"jwalton512/vim-blade",
 	"mihaifm/bufstop",
-	"adoy/vim-php-refactoring-toolbox",
+	-- "adoy/vim-php-refactoring-toolbox",
 	"uga-rosa/ccc.nvim", --Colorpicker
 	{
 		"weirongxu/plantuml-previewer.vim",
@@ -74,14 +74,6 @@ return {
 
 	-- LSP
 	"simrat39/rust-tools.nvim",
-
-	-- Debug Adapter Protocol
-	-- "mfussenegger/nvim-dap",
-	-- "rcarriga/nvim-dap-ui",
-	-- "theHamsta/nvim-dap-virtual-text",
-	-- "leoluz/nvim-dap-go",
-	-- "mfussenegger/nvim-dap-python",
-	-- "mfussenegger/nvim-jdtls",
 
 	-- Database connections
 	-- use { "kristijanhusak/vim-dadbod-ui" }

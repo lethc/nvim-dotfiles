@@ -20,6 +20,7 @@ require("lazy").setup {
     {import = "plugins"},
     {import = "plugins.lsp"},
     {import = "plugins.colorscheme"},
+    {import = "plugins.dap"},
   },
   ui = {
     border = "rounded"
