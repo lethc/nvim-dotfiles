@@ -70,46 +70,15 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Open a new tab
-keymap("n", "<C-n>", "<cmd>tabnew<CR>", opts)
+keymap("n", "<C-n>", "<cmd>enew<CR>", opts)
 
 -- Color
 keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 
-
 -- keymap("n", "<C-l>", "<cmd>:set spell! spelllang={'eng_gb', 'es'}<CR>", opts)
 
--- Quick Terminal
---keymap("i", "<C-i>", "<cmd>ToggleTerm<CR>", opts)
---keymap("n", "<C-i>", "<cmd>ToggleTerm<CR>", opts)
-
--- Execute file
---JAVA
---keymap("i", "<C-,>", "<cmd>split | terminal java %<CR>", opts)
---keymap("n", "<C-,>", "<cmd>split | terminal java %<CR>", opts)
---PYTHON
---keymap("i", "<A-,>", "<cmd>!python3 %:p <CR>", opts)
---keymap("i", "<A-,>", "<cmd>split | terminal python3 %<CR>", opts)
---keymap("n", "<A-,>", "<cmd>split | terminal python3 %<CR>", opts)
-
---Run files in Floaterm
---FloatermNew --autoclose=0 gcc % -o %< && ./%<
--- keymap("n", "<C-,>", "<cmd>FloatermNew --autoclose=0 python3 % -o %<CR>", opts)
-keymap("n", "<A-,>", "<cmd>FloatermNew --autoclose=0 java % -o %<CR>", opts)
--- keymap("n", "<C-->", "<cmd>FloatermNew --autoclose=0 node % -o %<CR>", opts)
-keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
 --Run Selection
--- keymap("v", "<C-->", "<cmd>'<,'>!node<CR>", opts)
--- keymap("v", "<C-->", "<cmd>'<,'>!FloatermNew --autoclose=0 node<CR>", opts)
-
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- Registers
--- let @c = $a; ,let @h = ciw"üR"
+keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
 
 -- Registers keybindings
 keymap("n", "<C-m>", "<cmd>exe 'normal @c'<CR>", opts)
