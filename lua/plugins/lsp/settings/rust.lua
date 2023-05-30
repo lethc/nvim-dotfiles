@@ -1,14 +1,19 @@
+--To rust debugging you'll need rust-tools and lldb --> yay -S lldb
 return {
-settings = {
-    ['rust-analyzer'] = {
+  settings = {
+    ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
       },
+      checkOnSave = {
+        command = "cargo clippy",
+        extraArgs = { "--no-deps" },
+      },
       diagnostics = {
-        enable = true;
-      }
-    }
-  }
+        enable = true,
+      },
+    },
+  },
 }
 -- return {
 --   tools = {
@@ -84,8 +89,8 @@ settings = {
 --     -- cmd = { os.getenv "HOME" .. "/.local/bin/rust-analyzer" },
 --     cmd = { "rustup", "run", "nightly", os.getenv "HOME" .. "/.local/share/nvim/mason/bin/rust-analyzer" },
 --     --cmd = { "rustup", "run", "nightly", os.getenv "/usr/bin/rust-analyzer" },
---     on_attach = require("user.lsp.handlers").on_attach,
---     capabilities = require("user.lsp.handlers").capabilities,
+--     on_attach = require("plugins.lsp.settings.handlers").on_attach,
+--     capabilities = require("plugins.lsp.settings.handlers").capabilities,
 --
 --     settings = {
 --       ["rust-analyzer"] = {

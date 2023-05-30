@@ -160,6 +160,12 @@ return {
 				l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
 				g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
 				x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+        u = {
+          name = "Rust",
+          a = { "<cmd>RustCodeAction<cr>" },
+          d = { "<cmd>RustDebuggables<cr>" },
+          r = { "<cmd>RustRun<cr>" },
+        }
 			},
 
 			-- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>

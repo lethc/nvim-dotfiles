@@ -8,7 +8,7 @@ return {
     "RRethy/vim-illuminate",
   },
   config = function()
-    require'lspconfig'.clangd.setup{}  --Install clangd in your system.
+    require("lspconfig").clangd.setup({}) --Install clangd in your system.
 
     local servers = {
       "lua_ls",
@@ -23,7 +23,7 @@ return {
       -- "yamlls",
       "jdtls",
       -- "intelephense",
-      -- "phpactor",
+      "phpactor",
       "gopls",
       "rust_analyzer",
       "clangd",
@@ -75,7 +75,7 @@ return {
       end
 
       -- if server == "rust_analyzer" then
-      --   local rust_opts = require "user.lsp.settings.rust"
+      --   local rust_opts = require("plugins.lsp.settings.rust")
       --   -- opts = vim.tbl_deep_extend("force", rust_opts, opts)
       --   local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
       --   if not rust_tools_status_ok then
@@ -87,7 +87,7 @@ return {
       -- end
       --
       lspconfig[server].setup(opts)
-      --  ::continue::
+      -- ::continue::
     end
-  end
+  end,
 }
