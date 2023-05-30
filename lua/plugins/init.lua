@@ -73,7 +73,12 @@ return {
 	{ "michaelb/sniprun" }, --run = 'bash ./install.sh 1'
 
 	-- LSP
-	"simrat39/rust-tools.nvim",
+	{ "simrat39/rust-tools.nvim",
+    ft = "rust",
+    config = function ()
+      require('rust-tools').setup(opt)
+    end
+  }
 
 	-- Database connections
 	-- use { "kristijanhusak/vim-dadbod-ui" }
