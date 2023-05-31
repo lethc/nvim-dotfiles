@@ -9,8 +9,8 @@ return {
 			logfile = false,
 			prompt_no_cr = false,
 			autosave = {
-				current = true, -- or fun(name): boolean
-				tmp = true, -- or fun(): boolean
+				current = false, -- or fun(name): boolean
+				tmp = false, -- or fun(): boolean
 				tmp_name = "tmp",
 				on_load = true,
 				on_quit = true,
