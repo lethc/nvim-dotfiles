@@ -46,7 +46,7 @@ return {
 		})
 
 		-- Use this to toggle ncdu in a floating terminal
-		vim.keymap.set("n", "<A-g>", function()
+		vim.keymap.set("n", "<A-c>", function()
 			ncdu:toggle()
 		end)
 
@@ -78,8 +78,8 @@ return {
 		-- 	joshuto:toggle()
 		-- end
 
-		vim.keymap.set("n", "<A-h>", function()
-			joshuto:toggle()
-		end)
+		-- vim.keymap.set("n", "<A-h>", function()
+		-- 	joshuto:toggle()
+		-- end)
 	end,
 }
