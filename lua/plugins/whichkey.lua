@@ -216,6 +216,7 @@ return {
 				R = { "<cmd>Telescope registers<cr>", "Registers" },
 				k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 				C = { "<cmd>Telescope commands<cr>", "Commands" },
+        m = { "<cmd>Telescope macros<cr>", "Macros" },
         t = {
           name = "Trouble.nvim",
           t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },

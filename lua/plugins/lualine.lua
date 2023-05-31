@@ -79,7 +79,7 @@ return {
 		end
 
 		local lsp_progess = function()
-      local msg
+			local msg
 			local msg = msg or "LS Inactive"
 			local buf_clients = vim.lsp.buf_get_clients()
 			if next(buf_clients) == nil then
@@ -189,6 +189,7 @@ return {
 					},
 					branch,
 					diff,
+					{ require("NeoComposer.ui").status_recording },
 				},
 				lualine_x = {
 					diagnostics,

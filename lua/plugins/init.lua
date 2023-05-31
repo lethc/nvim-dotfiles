@@ -17,13 +17,6 @@ return {
   "mihaifm/bufstop",
   -- "adoy/vim-php-refactoring-toolbox",
   "uga-rosa/ccc.nvim", --Colorpicker
-  {
-    "weirongxu/plantuml-previewer.vim",
-    dependencies = {
-      "aklt/plantuml-syntax",
-      "tyru/open-browser.vim",
-    },
-  },
   -- {
   -- 	"skanehira/preview-uml.vim",
   -- 	config = function()
