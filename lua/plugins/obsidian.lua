@@ -12,7 +12,7 @@ return {
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },
     daily_notes = {
-      folder = "Diary/2023/April/",
+      -- folder = "Diary/2023/April/",
     }
   }
 }
