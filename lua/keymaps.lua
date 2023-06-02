@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -35,41 +36,17 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<BS>", ":b#<CR>", { silent=true })
+vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent=true })
+
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
--- Switch buffers
-vim.keymap.set("n", "<BS>", ":b#<CR>", { silent=true })
-vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent=true })
-
--- Visual Block --
--- Move text up and down
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Open a new tab
+-- Open a new buffer
 keymap("n", "<C-n>", "<cmd>enew<CR>", opts)
 
 -- Color
@@ -82,3 +59,31 @@ keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
 
 -- Registers keybindings
 keymap("n", "<C-m>", "<cmd>exe 'normal @c'<CR>", opts)
+
+-- ciw
+-- vim.keymap.set(“n”, “<A-j>”, "ciw”, opts)
+keymap("n", "<cr>", "ciw", opts)
+
+-- Insert --
+-- Press jk fast to exit insert mode 
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
+
+
+-- Visual --
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
+-- Move text up and down
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dP', opts)
+
+
+-- Visual Block --
+-- Move text up and down
+-- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
