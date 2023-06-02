@@ -13,9 +13,9 @@ return {
 			post_hook = nil, -- Function to run after the scrolling animation ends
 			performance_mode = false, -- Disable "Performance Mode" on all buffers.
 		})
-		-- local t = {} -- Syntax: t[keys] = {function, {function arguments}}
-		-- t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-		-- t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+		local t = {} -- Syntax: t[keys] = {function, {function arguments}}
+		t["<A-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+		t["<A-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
 		-- t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
 		-- t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
 		-- t["<C-y>"] = { "scroll", { "-0.10", "false", "100" } }
@@ -23,7 +23,7 @@ return {
 		-- t["zt"] = { "zt", { "250" } }
 		-- t["zz"] = { "zz", { "250" } }
 		-- t["zb"] = { "zb", { "250" } }
-		--
-		-- require("neoscroll.config").set_mappings(t)
+
+		require("neoscroll.config").set_mappings(t)
 	end,
 }

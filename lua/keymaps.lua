@@ -43,8 +43,8 @@ vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent=true })
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Open a new buffer
 keymap("n", "<C-n>", "<cmd>enew<CR>", opts)
