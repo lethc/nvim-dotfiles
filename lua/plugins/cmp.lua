@@ -9,12 +9,12 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-git",
-    "saadparwaiz1/cmp_luasnip", 
+    "saadparwaiz1/cmp_luasnip",
     "chrisgrieser/cmp-nerdfont",
     "octaltree/cmp-look",
     "f3fora/cmp-spell",
     { "L3MON4D3/LuaSnip", version = "v1.*" },
-    "rafamadriz/friendly-snippets", 
+    "rafamadriz/friendly-snippets",
   },
   config = function()
     local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -38,7 +38,7 @@ return {
     local kind_icons = {
       Text = "󰉿",
       Method = "m",
-      Function = "󰊕",
+      Function = "󰆧",
       Constructor = "",
       Field = "",
       Variable = "󰆧",
@@ -50,7 +50,7 @@ return {
       Value = "󰎠",
       Enum = "",
       Keyword = "󰌋",
-      Snippet = "",
+      Snippet = "",
       Color = "󰏘",
       File = "󰈙",
       Reference = "",
@@ -114,16 +114,16 @@ return {
         }),
       },
       formatting = {
-        fields = { "kind", "abbr", "menu" },
+        fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
           -- Kind icons
           vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
           -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
           vim_item.menu = ({
-            luasnip = "[Snippet]",
-            nvim_lsp = "[LSP]",
-            buffer = "[Buffer]",
-            path = "[Path]",
+            luasnip = " Snippet",
+            nvim_lsp = " LSP",
+            buffer = " Text",
+            path = " Path",
           })[entry.source.name]
           return vim_item
         end,
