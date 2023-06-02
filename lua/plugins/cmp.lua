@@ -1,7 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
-  dependencies = { 
+  dependencies = {
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -30,8 +30,8 @@ return {
     require("luasnip/loaders/from_vscode").lazy_load()
 
     local check_backspace = function()
-      local col = vim.fn.col "." - 1
-      return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+      local col = vim.fn.col(".") - 1
+      return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
 
     -- 󰃐 󰆩 󰙅 󰛡  󰅲   some other good icons
@@ -62,9 +62,22 @@ return {
       Operator = "󰆕",
       TypeParameter = "󰊄",
     }
+
+    local function border(hl_name)
+      return {
+        { "╭", hl_name },
+        { "─", hl_name },
+        { "╮", hl_name },
+        { "│", hl_name },
+        { "╯", hl_name },
+        { "─", hl_name },
+        { "╰", hl_name },
+        { "│", hl_name },
+      }
+    end
     -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-    cmp.setup {
+    cmp.setup({
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -77,13 +90,13 @@ return {
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ["<C-e>"] = cmp.mapping {
+        ["<C-e>"] = cmp.mapping({
           i = cmp.mapping.abort(),
           c = cmp.mapping.close(),
-        },
+        }),
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
@@ -134,19 +147,21 @@ return {
         { name = "buffer" },
         { name = "path" },
         { name = "nerdfont" },
-        { name = "look",
+        {
+          name = "look",
           keyword_length = 2,
           option = {
-              convert_case = true,
-              loud = true
-              --dict = '/usr/share/dict/words'
+            convert_case = true,
+            loud = true,
+            --dict = '/usr/share/dict/words'
           },
         },
-        { name = "spell",
+        {
+          name = "spell",
           option = {
             keep_all_entries = false,
             enable_in_context = function()
-                return true
+              return true
             end,
           },
         },
@@ -160,8 +175,16 @@ return {
         --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         --   --border = {"rounded"},
         -- },
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = {
+          scrollbar = false,
+          -- border = border("CmpDocBorder"),
+          border = border("PmenuBorder"),
+          winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
+          -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        },
+        -- cmp.config.window.bordered(),
+        
+        documentation =  cmp.config.window.bordered(),
       },
       experimental = {
         ghost_text = false,
@@ -170,6 +193,6 @@ return {
       -- view = {
       --   entries = "native",
       -- },
-    }
+    })
   end,
 }
