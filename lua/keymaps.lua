@@ -59,8 +59,8 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Switch buffers
-keymap("n", "<C-j>", "<cmd>BufstopBack<CR>", opts)
-keymap("n", "<C-i>", "<cmd>BufstopForward<CR>", opts)
+vim.keymap.set("n", "<BS>", ":b#<CR>", { silent=true })
+vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent=true })
 
 -- Visual Block --
 -- Move text up and down

@@ -14,8 +14,6 @@ return {
   "tpope/vim-fugitive",
   "KabbAmine/lazyList.vim",
   "jwalton512/vim-blade",
-  "mihaifm/bufstop",
-  -- "adoy/vim-php-refactoring-toolbox",
   "uga-rosa/ccc.nvim", --Colorpicker
   -- {
   -- 	"skanehira/preview-uml.vim",
@@ -79,4 +77,6 @@ return {
   -- "JoosepAlviste/nvim-ts-context-commentstring",
   --"lewis6991/impatient.nvim"
   -- "toppair/peek.nvim", -- like markdown-preview
+  -- "mihaifm/bufstop",
+  -- "adoy/vim-php-refactoring-toolbox",
 }
