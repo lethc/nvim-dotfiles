@@ -130,13 +130,13 @@ return {
         fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
           -- Kind icons
-          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-          -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+          -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
           vim_item.menu = ({
-            luasnip = " Snippet",
-            nvim_lsp = " LSP",
-            buffer = " Text",
-            path = " Path",
+            luasnip = " [Snip]",
+            nvim_lsp = " [LSP]",
+            buffer = " [Text]",
+            path = " [Path]",
           })[entry.source.name]
           return vim_item
         end,
@@ -173,17 +173,13 @@ return {
       window = {
         -- documentation = {
         --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        --   --border = {"rounded"},
         -- },
         completion = {
           scrollbar = false,
-          -- border = border("CmpDocBorder"),
           border = border("PmenuBorder"),
           winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
           -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
-        -- cmp.config.window.bordered(),
-        
         documentation =  cmp.config.window.bordered(),
       },
       experimental = {
