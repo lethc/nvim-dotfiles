@@ -37,7 +37,3 @@ require("lazy").setup {
 
 require "colorscheme"
 require ("plugins.lsp.settings.handlers").setup()
-
--- --Peek Commands 
--- vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
--- vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
