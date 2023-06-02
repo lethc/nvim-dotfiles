@@ -91,7 +91,7 @@ return {
 			-- ["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["Q"] = { "<cmd>qa!<CR>", "Quit" },
+			["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 			["i"] = { "<cmd>Telescope notify<CR>", "Notify" },
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 			-- ["f"] = {
@@ -247,6 +247,8 @@ return {
 				s = { "<cmd>ObsidianSearch<CR>", "Obsidian Search" },
 				q = { "<cmd>ObsidianQuickSwitch<CR>", "Quick Switch" },
 				f = { "<cmd>ObsidianFollowLink<CR>", "Follow Link" },
+				p = { "<cmd>PeekOpen<CR>", "Open Peek" },
+				c = { "<cmd>PeekClose<CR>", "Close Peek" },
 			},
 		}
 
