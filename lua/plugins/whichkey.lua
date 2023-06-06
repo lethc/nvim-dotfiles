@@ -176,35 +176,98 @@ return {
 
 			l = {
 				name = "LSP",
-				-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-				a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
+        T = {
+          name = "Telescope",
+          l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+          q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+          a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+          j = {
+            "<cmd>lua vim.diagnostic.goto_next({buffer=0})<<CR>",
+            "Next Diagnostic",
+          },
+          k = {
+            "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+            "Prev Diagnostic",
+          },
+          r = {"<cmd>lua vim.lsp.buf.rename()<<cr>"},
+          w = {
+            "<cmd>Telescope diagnostics<cr>",
+            "Workspace Diagnostics",
+          },
+          d = {
+            "<cmd>Telescope diagnostics bufnr=0<cr>",
+            "Document Diagnostics",
+          },
+				  s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+          S = {
+            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            "Workspace Symbols",
+          },
+          K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "show hover" },
+        },
+        -- GO TO
+        g = {
+          -- Go to definition
+          -- Use <C-t> to jump back
+          name = "Go To...",
+          d = {"<cmd>Lspsaga goto_definition<cr>", "Go to Definition"},
+          D = {"<cmd>Lspsaga goto_type_definition<cr>", "Go to Type Definition"},
+          i = {"<cmd>lua vim.lsp.buf.implementation()<cr>", "Go to Implementation"},
+        },
+        p = {
+          name = "Peek...",
+          d = {"<cmd>Lspsaga peek_definition<cr>", "Peek Definition"},
+          D = {"<cmd>Lspsaga peek_type_definition<cr>", "Peek Type Definition"},
+        },
+        -- Call hierarchy
+        c = {
+          name = "Call hierarchy",
+          i = {"<cmd>Lspsaga incoming_calls<cr>", "Incomming Calls"},
+          o = {"<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls"},
+        },
+        -- LspInfo
+				i = { "<cmd>LspInfo<cr>", "Info" },
+        -- Code action
+				a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+        -- Show buffer diagnostics
 				d = {
-					"<cmd>Telescope diagnostics bufnr=0<cr>",
+					"<cmd>Lspsaga show_buf_diagnostics<cr>",
 					"Document Diagnostics",
 				},
+        -- Show workspace diagnostics
 				w = {
-					"<cmd>Telescope diagnostics<cr>",
+					"<cmd>Lspsaga show_workspace_diagnostics<cr>",
 					"Workspace Diagnostics",
 				},
+        -- Show cursor diagnostics
+        u = {
+          "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostic"
+        },
+        -- Show line diagnostics
+        l = {
+          "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic"
+        },
+        -- Format file
 				f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-				i = { "<cmd>LspInfo<cr>", "Info" },
-				I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        -- Diagnostic jump
 				j = {
-					"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+					"<cmd>Lspsaga diagnostic_jump_next<CR>",
 					"Next Diagnostic",
 				},
 				k = {
-					"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+					"<cmd>Lspsaga diagnostic_jump_prev<cr>",
 					"Prev Diagnostic",
 				},
-				l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-				q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-				r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-				S = {
-					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-					"Workspace Symbols",
-				},
+        -- Rename all occurrences of the hovered word for the entire file
+				r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+        -- Rename all occurrences of the hovered word for the selected files
+        R = { "<cmd>Lspsaga rename ++project<cr>", "Rename Project" },
+        -- LSP finder - Find the symbol's definition
+				s = { "<cmd>Lspsaga lsp_finder<cr>", "Document Symbols" },
+        -- Keep hover
+				K = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
+        -- Toggle outline
+				o = { "<cmd>Lspsaga outline<cr>", "Toggle outline" },
 			},
 			s = {
 				name = "Search",

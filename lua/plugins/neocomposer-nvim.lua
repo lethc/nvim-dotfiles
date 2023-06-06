@@ -19,7 +19,7 @@ return {
 				play_macro = "F",
 				yank_macro = "yq",
 				stop_macro = "cq",
-				toggle_record = "q",
+				toggle_record = "f",
 				cycle_next = "<c-n>",
 				cycle_prev = "<c-p>",
 				toggle_macro_menu = "<m-q>",
