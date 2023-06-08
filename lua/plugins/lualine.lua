@@ -18,7 +18,7 @@ return {
 		}
 
 		local file_status_symbol = {
-			modified = "",
+			modified = "",
 			readonly = "",
 			new = "",
 			unnamed = "󰽤",
