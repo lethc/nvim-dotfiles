@@ -31,6 +31,7 @@ return {
 				"error",
 				"warn",
 				"hint",
+        "info",
 			},
 			symbols = {
 				error = "󰅙 ",
@@ -186,7 +187,7 @@ return {
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					winbar = {
+					tabline = {
 						"alpha",
 						"dashboard",
 						"Outline",
@@ -297,7 +298,24 @@ return {
 					-- },
 				},
 			},
-			winbar = {
+			-- winbar = {
+			-- 	lualine_a = {
+			-- 		{ "filetype", icon_only = true },
+			-- 		{ "filename", path = 0, symbols = file_status_symbol, separator = {right = " "} },
+   --        -- separator = { left = "", right = " " },
+			-- 	},
+			-- 	lualine_c = { M.winbar_symbol },
+			-- 	lualine_x = {
+			-- 		function()
+			-- 			return " "
+			-- 		end,
+			-- 		-- this is to avoid annoying highlight (high contrast color)
+			-- 		-- when no winbar_symbol, diagnostics and diff is available.
+			-- 		{ "diagnostics", sources = { "nvim_diagnostic" } },
+			-- 		"diff",
+			-- 	},
+			-- },
+      tabline = {
 				lualine_a = {
 					{ "filetype", icon_only = true },
 					{ "filename", path = 0, symbols = file_status_symbol, separator = {right = " "} },
@@ -310,10 +328,11 @@ return {
 					end,
 					-- this is to avoid annoying highlight (high contrast color)
 					-- when no winbar_symbol, diagnostics and diff is available.
-					{ "diagnostics", sources = { "nvim_diagnostic" } },
-					"diff",
+					-- { "diagnostics", sources = { "nvim_diagnostic" } },
+					-- "diff",
 				},
-			},
+
+      }
 		})
 	end,
 }
