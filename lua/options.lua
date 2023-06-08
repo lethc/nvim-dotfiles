@@ -19,7 +19,7 @@ local options = { backup = false,                          -- creates a backup f
   --                r       for hit-enter and more-prompt prompt
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 0,                         -- always show tabs or buffers
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
