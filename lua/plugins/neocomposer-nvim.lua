@@ -16,10 +16,10 @@ return {
 				green = "#99c794",
 			},
 			keymaps = {
-				play_macro = "F",
+				play_macro = "M",
 				yank_macro = "yq",
 				stop_macro = "cq",
-				toggle_record = "f",
+				toggle_record = "m",
 				cycle_next = "<c-n>",
 				cycle_prev = "<c-p>",
 				toggle_macro_menu = "<m-q>",
