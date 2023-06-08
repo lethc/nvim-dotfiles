@@ -53,7 +53,7 @@ return {
 					},
 					force = false, -- or fun(buf): boolean
 				},
-				nvim_tree = true,
+				nvim_tree = false,
 				tabby = true,
 				dap = true,
 				delete_buffers = false,
