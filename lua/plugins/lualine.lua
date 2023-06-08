@@ -1,6 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
+		local M = {}
 		local status_ok, lualine = pcall(require, "lualine")
 		if not status_ok then
 			return
@@ -14,6 +15,13 @@ return {
 				return " "
 			end,
 			padding = -1,
+		}
+
+		local file_status_symbol = {
+			modified = "",
+			readonly = "",
+			new = "",
+			unnamed = "󰽤",
 		}
 
 		local diagnostics = {
@@ -57,7 +65,7 @@ return {
 			icons_enabled = true,
 		}
 
-		local location = {
+		local location1 = {
 			"location",
 		}
 
@@ -65,15 +73,31 @@ return {
 			function()
 				return ""
 			end,
-			separator = { left = "", right = "" },
+			separator = { left = "", right = "" },
 		}
 
 		local modes = {
 			"mode",
-			separator = { left = "", right = "" },
+			separator = { left = "", right = "" },
 			padding = 0.8,
 		}
+    
+    local location = {
+      "location",
+      separator = { left = "", right = "" },
+			color = { bg = "#1E2326", fg = "#D3C6AA" },
+      padding = 0.8,
 
+    }
+
+    local progress = {
+      "progress",
+      separator = { left = "", right = "" },
+			color = { bg = "#1E2326", fg = "#D3C6AA" },
+      padding = 0.8,
+
+    }
+    
 		local indent = function()
 			return "" .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 		end
@@ -161,7 +185,27 @@ return {
 				theme = "auto",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
-				disabled_filetypes = { "alpha", "dashboard", "Outline" },
+				disabled_filetypes = {
+					winbar = {
+						"alpha",
+						"dashboard",
+						"Outline",
+						"NvimTree",
+						"starter",
+						"Trouble",
+						"qf",
+						"NeogitStatus",
+						"NeogitCommitMessage",
+						"NeogitPopup",
+					},
+					statusline = {
+						"starter",
+						"alpha",
+						"dashboard",
+						"Outline",
+            -- "NvimTree",
+					},
+				},
 				always_divide_middle = true,
 			},
 			sections = {
@@ -172,21 +216,21 @@ return {
 				lualine_b = {},
 				lualine_c = {
 					spaces,
-					{
-						"filetype",
-						icon_only = true,
-						colored = true,
-						padding = 1,
-						color = { bg = "#2e383c" },
-						separator = { left = "", right = " " },
-					},
-					{
-						"filename",
-						file_status = false,
-						padding = 0.3,
-						separator = { left = "", right = " " },
-						color = { bg = "#2e383c" },
-					},
+					-- {
+					-- 	"filetype",
+					-- 	icon_only = true,
+					-- 	colored = true,
+					-- 	padding = 1,
+					-- 	color = { bg = "#2e383c" },
+					-- 	separator = { left = "", right = " " },
+					-- },
+					-- {
+					-- 	"filename",
+					-- 	file_status = false,
+					-- 	padding = 0.3,
+					-- 	separator = { left = "", right = " " },
+					-- 	color = { bg = "#2e383c" },
+					-- },
 					branch,
 					diff,
 					{ require("NeoComposer.ui").status_recording },
@@ -196,42 +240,51 @@ return {
 					{
 						lsp_progess,
 					},
-					{
-						function()
-							return " 󰣇 "
-						end,
-						separator = { left = "", right = "" },
-						color = { bg = "#83c092", fg = "#000000" },
-						padding = 0.3,
-					},
-					{
-						indent,
-					},
-					{
-						function()
-							return "  "
-						end,
-						separator = { left = "", right = "" },
-						color = { bg = "#dbbc7f", fg = "#000000" },
-						padding = 0.3,
-					},
-					"progress",
+					-- {
+					-- 	function()
+					-- 		return " 󰣇 "
+					-- 	end,
+					-- 	separator = { left = "", right = "" },
+					-- 	color = { bg = "#7fbbb3", fg = "#D3C6AA" },
+					-- 	padding = 0.3,
+					-- },
+					-- {
+					-- 	indent,
+					-- },
+					-- {
+					-- 	function()
+					-- 		return "  "
+					-- 	end,
+					-- 	separator = { left = "", right = "" },
+					-- 	color = { bg = "#dbbc7f", fg = "#D3C6AA" },
+					-- 	padding = 0.3,
+					-- },
+					-- "progress",
+					-- {
+					-- 	function()
+					-- 		return "  "
+					-- 	end,
+					-- 	separator = { left = "", right = "" },
+					-- 	color = { bg = "#A7C080", fg = "#D3C6AA" },
+					-- 	padding = 0.1,
+					-- },
+					location,
 					{
 						function()
 							return "  "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#7fbbb3", fg = "#000000" },
+						color = { bg = "#1E2326", fg = "#D3C6AA" },
 						padding = 0.1,
 					},
-					location,
+          progress,
 					{
 						function()
 							-- return "%P%L"
 							return " 󰗚  %L "
 						end,
-						separator = { left = "", right = "" },
-						color = { bg = "#a7c080", fg = "#000000" },
+						separator = { left = "", right = "" },
+						color = { bg = "#1E2326", fg = "#D3C6AA" },
 						padding = 0.3,
 					},
 				},
@@ -242,6 +295,23 @@ return {
 					-- 	-- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
 					-- 	style = ("%H:%M"),
 					-- },
+				},
+			},
+			winbar = {
+				lualine_a = {
+					{ "filetype", icon_only = true },
+					{ "filename", path = 0, symbols = file_status_symbol, separator = {right = " "} },
+          -- separator = { left = "", right = " " },
+				},
+				lualine_c = { M.winbar_symbol },
+				lualine_x = {
+					function()
+						return " "
+					end,
+					-- this is to avoid annoying highlight (high contrast color)
+					-- when no winbar_symbol, diagnostics and diff is available.
+					{ "diagnostics", sources = { "nvim_diagnostic" } },
+					"diff",
 				},
 			},
 		})
