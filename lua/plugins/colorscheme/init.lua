@@ -76,7 +76,7 @@ return {
   {
     "Alexis12119/nightly.nvim",
     cmd = "Telescope colorscheme",
-    lazy = true,
+    lazy = false,
     config = function()
       require("nightly").setup({
         color = "red", -- blue, green or red
@@ -201,13 +201,13 @@ return {
             surface1 = "#56635F",
             -- surface0 = "#343F44",
             surface0 = "#2E383C",
-            pink = "#7FBBB3",
-            blue = "#7FBBB3",
-            peach = "#A7C080",
-            green = "#83C092",
-            mauve = "#E27D7E",
-            text = "#D3C6AA",
-            sky = "#E69875",
+            pink     = "#7FBBB3",
+            blue     = "#7FBBB3",
+            peach    = "#A7C080",
+            green    = "#83C092",
+            mauve    = "#E27D7E",
+            text     = "#D3C6AA",
+            sky      = "#E69875",
             lavender = "#7FBBB3",
             overlay0 = "#859289",
             overlay1 = "#859289",
