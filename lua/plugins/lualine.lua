@@ -46,7 +46,7 @@ return {
 		local branch = {
 			"branch",
 			icon = "",
-			separator = { left = "", right = "" },
+			-- separator = { left = "", right = "" },
 			padding = 0.1,
 		}
 
