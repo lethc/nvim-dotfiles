@@ -86,7 +86,7 @@ return {
     local location = {
       "location",
       separator = { left = "", right = "" },
-			color = { bg = "#1E2326", fg = "#D3C6AA" },
+			color = { bg = "#0F1416", fg = "#DADADA" },
       padding = 0.8,
 
     }
@@ -94,7 +94,7 @@ return {
     local progress = {
       "progress",
       separator = { left = "", right = "" },
-			color = { bg = "#1E2326", fg = "#D3C6AA" },
+			color = { bg = "#0F1416", fg = "#DADADA" },
       padding = 0.8,
 
     }
@@ -246,7 +246,7 @@ return {
 					-- 		return " 󰣇 "
 					-- 	end,
 					-- 	separator = { left = "", right = "" },
-					-- 	color = { bg = "#7fbbb3", fg = "#D3C6AA" },
+					-- 	color = { bg = "#7fbbb3", fg = "#DADADA" },
 					-- 	padding = 0.3,
 					-- },
 					-- {
@@ -257,7 +257,7 @@ return {
 					-- 		return "  "
 					-- 	end,
 					-- 	separator = { left = "", right = "" },
-					-- 	color = { bg = "#dbbc7f", fg = "#D3C6AA" },
+					-- 	color = { bg = "#dbbc7f", fg = "#DADADA" },
 					-- 	padding = 0.3,
 					-- },
 					-- "progress",
@@ -266,7 +266,7 @@ return {
 					-- 		return "  "
 					-- 	end,
 					-- 	separator = { left = "", right = "" },
-					-- 	color = { bg = "#A7C080", fg = "#D3C6AA" },
+					-- 	color = { bg = "#A7C080", fg = "#DADADA" },
 					-- 	padding = 0.1,
 					-- },
 					location,
@@ -275,7 +275,7 @@ return {
 							return "  "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#1E2326", fg = "#D3C6AA" },
+						color = { bg = "#0F1416", fg = "#DADADA" },
 						padding = 0.1,
 					},
           progress,
@@ -285,7 +285,7 @@ return {
 							return " 󰗚  %L "
 						end,
 						separator = { left = "", right = "" },
-						color = { bg = "#1E2326", fg = "#D3C6AA" },
+						color = { bg = "#0F1416", fg = "#DADADA" },
 						padding = 0.3,
 					},
 				},
