@@ -1,6 +1,6 @@
--- local colorscheme = "themer_radium"
+-- local colorscheme = "catppuccin-frappe"
 -- local colorscheme = "horizon"
-local colorscheme = "catppuccin-frappe"
+local colorscheme = "nightly"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
