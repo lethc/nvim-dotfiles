@@ -1,5 +1,11 @@
 return {
 	{
+		"mzlogin/vim-markdown-toc",
+		"xorid/asciitree.nvim",
+		ft = "markdown",
+		config = function() end,
+	},
+	{
 		"xorid/asciitree.nvim",
 		ft = "markdown",
 		config = function()
