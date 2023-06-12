@@ -1,6 +1,7 @@
 return {
   'epwalsh/obsidian.nvim',
   cmd = { "ObsidianSearch", "ObsidianQuickSwitch", "ObsidianOpen" },
+  ft = "markdown",
   prioriy = 100,
   -- event = "InsertEnter",
   dependencies = {

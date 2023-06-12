@@ -1,6 +1,7 @@
 return {
 	"jakewvincent/mkdnflow.nvim",
 	-- rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
+  ft = "markdown",
 	config = function()
 		-- ** DEFAULT SETTINGS; TO USE THESE, PASS NO ARGUMENTS TO THE SETUP FUNCTION **
 		require("mkdnflow").setup({

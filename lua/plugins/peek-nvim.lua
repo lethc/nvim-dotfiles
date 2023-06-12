@@ -1,5 +1,6 @@
 return {
   "toppair/peek.nvim",
+  ft = "markdown",
   build = "deno task --quiet build:fast",
   config = function()
     -- default config:
