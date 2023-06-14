@@ -52,7 +52,6 @@ return {
 			vim.cmd([[silent UpdateRemotePlugins]])
 		end,
 	},
-	"theRealCarneiro/hyprland-vim-syntax",
 	{
 		"fei6409/log-highlight.nvim",
 		config = function()
@@ -62,37 +61,19 @@ return {
 	"arjunmahishi/flow.nvim", --Required for Telescope
 	"nvim-lua/plenary.nvim",
 	"moll/vim-bbye",
-	"elkowar/yuck.vim",
-	"peterhoeg/vim-qml",
+	{ "elkowar/yuck.vim", ft = "yuck" },
+	{ "peterhoeg/vim-qml", ft = "qml" },
+	{ "theRealCarneiro/hyprland-vim-syntax", ft = "hypr" },
+	{ "KabbAmine/lazyList.vim", ft = "markdown" },
+	{ "jwalton512/vim-blade", ft = "php" },
+	{ "uga-rosa/ccc.nvim", cmd = "CccPick" }, --Colorpicker
 	"tpope/vim-fugitive",
-	"KabbAmine/lazyList.vim",
-	"jwalton512/vim-blade",
-	"uga-rosa/ccc.nvim", --Colorpicker
-	-- {
-	-- 	"skanehira/preview-uml.vim",
-	-- 	config = function()
-	-- 		vim.g.preview_uml_url = "http://localhost:8080"
-	-- 	end,
-	-- }, --UML preview
 	{
 		"NvChad/nvim-colorizer.lua", --Display colors
 		opts = {},
 	},
-	"pedro757/emmet",
+	{ "pedro757/emmet", ft = { "html", "javascript" } },
 	"lervag/vimtex", --LaTeX
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	-- build = function ()
-	-- 	--   vim.fn["mkdp#util#install"]()
-	-- 	-- end,
-	-- 	config = function()
-	-- 		vim.g.mkdp_browser = "firefox"
-	-- 		-- function OpenMarkdownPreview(url)
-	-- 		--    vim.fn.execute("silent ! firefox --new-window " .. url)
-	-- 		-- end
-	-- 		-- vim.g.mkdp_browserfunc = 'OpenMarkdownPreview'
-	-- 	end,
-	-- },
 
 	{
 		"samjwill/nvim-unception", --Open files from within Neovim's terminal
@@ -120,6 +101,26 @@ return {
 	-- use { "tpope/vim-dotenv" }
 
 	-- Others
+
+	-- {
+	-- 	"skanehira/preview-uml.vim",
+	-- 	config = function()
+	-- 		vim.g.preview_uml_url = "http://localhost:8080"
+	-- 	end,
+	-- }, --UML preview
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	-- build = function ()
+	-- 	--   vim.fn["mkdp#util#install"]()
+	-- 	-- end,
+	-- 	config = function()
+	-- 		vim.g.mkdp_browser = "firefox"
+	-- 		-- function OpenMarkdownPreview(url)
+	-- 		--    vim.fn.execute("silent ! firefox --new-window " .. url)
+	-- 		-- end
+	-- 		-- vim.g.mkdp_browserfunc = 'OpenMarkdownPreview'
+	-- 	end,
+	-- },
 	-- use {
 	--     'glacambre/firenvim',
 	--     run = function() vim.fn['firenvim#install'](0) end
