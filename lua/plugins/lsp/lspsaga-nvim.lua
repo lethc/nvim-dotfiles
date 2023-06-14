@@ -52,6 +52,6 @@ return {
     keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
     -- Floating terminal
-    keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+    -- keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
   end,
 }

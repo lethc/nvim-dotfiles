@@ -1,5 +1,9 @@
 return {
 	"numToStr/FTerm.nvim",
+  keys = {
+    {"<A-g>", "<cmd><cr>", desc = "Gitui"},
+		{"<A-d>", "<cmd>FTermToggle<cr>", desc = "FTerm"},
+  },
 	config = function()
 		require("FTerm").setup({
 			ft = "FTerm",
