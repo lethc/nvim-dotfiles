@@ -1,7 +1,7 @@
 return {
   'navarasu/onedark.nvim',
   cmd = "Telescope colorscheme",
-  lazy = false,
+  lazy = true,
   config = function ()
   -- Lua
     require('onedark').setup  {

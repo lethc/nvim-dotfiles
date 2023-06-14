@@ -1,7 +1,7 @@
 return {
 	"themercorp/themer.lua",
   cmd = "Telescope colorscheme",
-  lazy = false,
+  lazy = true,
 	config = function()
 		require("themer").setup({
 			-- colorscheme = "radium",
