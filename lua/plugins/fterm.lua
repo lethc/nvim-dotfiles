@@ -3,6 +3,7 @@ return {
   keys = {
     {"<A-g>", "<cmd><cr>", desc = "Gitui"},
 		{"<A-d>", "<cmd>FTermToggle<cr>", desc = "FTerm"},
+		{"<leader>tf", "<cmd>FTermToggle<cr>", desc = "Toggle Terminals" },
   },
 	config = function()
 		require("FTerm").setup({

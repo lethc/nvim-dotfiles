@@ -304,10 +304,6 @@ return {
 			t = {
 				name = "Terminal",
 				c = { "<cmd>Compile<cr>", "Compiler File" },
-				t = { "<cmd>FTermOpen<cr>", "Open Terminal" },
-				f = { "<cmd>FTermToggle<cr>", "Toggle Terminals" },
-				q = { "<cmd>FTermClose<cr>", "Close Terminal" },
-				x = { "<cmd>FTermExit<cr>", "Kill Terminal" },
 				v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
 				h = { "<cmd>split | set norelativenumber | set nonumber  | terminal<cr>", "Horizontal Terminal" },
 			},
