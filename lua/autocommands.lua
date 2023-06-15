@@ -7,6 +7,7 @@ vim.cmd [[
     autocmd BufWinEnter * :set fillchars=eob:\ 
     autocmd FileType qf set nobuflisted
     autocmd BufEnter * silent! lcd %:p:h
+    autocmd VimLeave * set guicursor=a:ver90-blinkwait300-blinkon200-blinkoff150 augroup
   augroup end
 
   augroup _git

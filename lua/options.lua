@@ -48,7 +48,8 @@ local options = { backup = false,                          -- creates a backup f
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   spell = false,
-  spelllang = { 'en_gb', 'es' }
+  spelllang = { 'en_gb', 'es' },
+  guicursor = "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150",
 }
 
 vim.opt.shortmess:append "c"
@@ -58,5 +59,6 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
+-- vim.cmd "set mouseshape=n:busy,m:no"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
