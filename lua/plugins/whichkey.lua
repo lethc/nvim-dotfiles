@@ -83,23 +83,29 @@ return {
 
 		local mappings = {
 			["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-			-- ["b"] = {
-			--   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			--   "Buffers",
-			-- },
-			["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-			-- ["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
 			["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 			["i"] = { "<cmd>Telescope notify<CR>", "Notify" },
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-			-- ["f"] = {
-			--   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			--   "Find files",
-			-- },
-			-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-			-- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+			r = {
+				name = "Search-Replace",
+				s = { "<CMD>S archReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
+				o = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
+				w = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
+				W = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
+				e = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
+				f = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
+				b = {
+					name = "Search-Replace-MultiBuffer",
+					s = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
+          o = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
+          w = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
+          W = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
+          e = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
+          f = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
+				},
+			},
 			m = {
 				name = "Markdown-Files",
 				f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
@@ -168,12 +174,12 @@ return {
 				l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
 				g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
 				x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
-        u = {
-          name = "Rust",
-          a = { "<cmd>RustCodeAction<cr>" },
-          d = { "<cmd>RustDebuggables<cr>" },
-          r = { "<cmd>RustRun<cr>" },
-        }
+				u = {
+					name = "Rust",
+					a = { "<cmd>RustCodeAction<cr>" },
+					d = { "<cmd>RustDebuggables<cr>" },
+					r = { "<cmd>RustRun<cr>" },
+				},
 			},
 
 			-- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
@@ -184,80 +190,82 @@ return {
 
 			l = {
 				name = "LSP",
-        T = {
-          name = "Telescope",
-          l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-          q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-          a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-          j = {
-            "<cmd>lua vim.diagnostic.goto_next({buffer=0})<<CR>",
-            "Next Diagnostic",
-          },
-          k = {
-            "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
-            "Prev Diagnostic",
-          },
-          r = {"<cmd>lua vim.lsp.buf.rename()<<cr>"},
-          w = {
-            "<cmd>Telescope diagnostics<cr>",
-            "Workspace Diagnostics",
-          },
-          d = {
-            "<cmd>Telescope diagnostics bufnr=0<cr>",
-            "Document Diagnostics",
-          },
-				  s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-          S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-            "Workspace Symbols",
-          },
-          K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "show hover" },
-        },
-        -- GO TO
-        g = {
-          -- Go to definition
-          -- Use <C-t> to jump back
-          name = "Go To...",
-          d = {"<cmd>Lspsaga goto_definition<cr>", "Go to Definition"},
-          D = {"<cmd>Lspsaga goto_type_definition<cr>", "Go to Type Definition"},
-          i = {"<cmd>lua vim.lsp.buf.implementation()<cr>", "Go to Implementation"},
-        },
-        p = {
-          name = "Peek...",
-          d = {"<cmd>Lspsaga peek_definition<cr>", "Peek Definition"},
-          D = {"<cmd>Lspsaga peek_type_definition<cr>", "Peek Type Definition"},
-        },
-        -- Call hierarchy
-        c = {
-          name = "Call hierarchy",
-          i = {"<cmd>Lspsaga incoming_calls<cr>", "Incomming Calls"},
-          o = {"<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls"},
-        },
-        -- LspInfo
+				T = {
+					name = "Telescope",
+					l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+					q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+					a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+					j = {
+						"<cmd>lua vim.diagnostic.goto_next({buffer=0})<<CR>",
+						"Next Diagnostic",
+					},
+					k = {
+						"<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+						"Prev Diagnostic",
+					},
+					r = { "<cmd>lua vim.lsp.buf.rename()<<cr>" },
+					w = {
+						"<cmd>Telescope diagnostics<cr>",
+						"Workspace Diagnostics",
+					},
+					d = {
+						"<cmd>Telescope diagnostics bufnr=0<cr>",
+						"Document Diagnostics",
+					},
+					s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+					S = {
+						"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+						"Workspace Symbols",
+					},
+					K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "show hover" },
+				},
+				-- GO TO
+				g = {
+					-- Go to definition
+					-- Use <C-t> to jump back
+					name = "Go To...",
+					d = { "<cmd>Lspsaga goto_definition<cr>", "Go to Definition" },
+					D = { "<cmd>Lspsaga goto_type_definition<cr>", "Go to Type Definition" },
+					i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Go to Implementation" },
+				},
+				p = {
+					name = "Peek...",
+					d = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
+					D = { "<cmd>Lspsaga peek_type_definition<cr>", "Peek Type Definition" },
+				},
+				-- Call hierarchy
+				c = {
+					name = "Call hierarchy",
+					i = { "<cmd>Lspsaga incoming_calls<cr>", "Incomming Calls" },
+					o = { "<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls" },
+				},
+				-- LspInfo
 				i = { "<cmd>LspInfo<cr>", "Info" },
-        -- Code action
+				-- Code action
 				a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-        -- Show buffer diagnostics
+				-- Show buffer diagnostics
 				d = {
 					"<cmd>Lspsaga show_buf_diagnostics<cr>",
 					"Document Diagnostics",
 				},
-        -- Show workspace diagnostics
+				-- Show workspace diagnostics
 				w = {
 					"<cmd>Lspsaga show_workspace_diagnostics<cr>",
 					"Workspace Diagnostics",
 				},
-        -- Show cursor diagnostics
-        u = {
-          "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostic"
-        },
-        -- Show line diagnostics
-        l = {
-          "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic"
-        },
-        -- Format file
+				-- Show cursor diagnostics
+				u = {
+					"<cmd>Lspsaga show_cursor_diagnostics<cr>",
+					"Cursor Diagnostic",
+				},
+				-- Show line diagnostics
+				l = {
+					"<cmd>Lspsaga show_line_diagnostics<cr>",
+					"Line Diagnostic",
+				},
+				-- Format file
 				f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-        -- Diagnostic jump
+				-- Diagnostic jump
 				j = {
 					"<cmd>Lspsaga diagnostic_jump_next<CR>",
 					"Next Diagnostic",
@@ -266,15 +274,15 @@ return {
 					"<cmd>Lspsaga diagnostic_jump_prev<cr>",
 					"Prev Diagnostic",
 				},
-        -- Rename all occurrences of the hovered word for the entire file
+				-- Rename all occurrences of the hovered word for the entire file
 				r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-        -- Rename all occurrences of the hovered word for the selected files
-        R = { "<cmd>Lspsaga rename ++project<cr>", "Rename Project" },
-        -- LSP finder - Find the symbol's definition
+				-- Rename all occurrences of the hovered word for the selected files
+				R = { "<cmd>Lspsaga rename ++project<cr>", "Rename Project" },
+				-- LSP finder - Find the symbol's definition
 				s = { "<cmd>Lspsaga lsp_finder<cr>", "Document Symbols" },
-        -- Keep hover
+				-- Keep hover
 				K = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
-        -- Toggle outline
+				-- Toggle outline
 				o = { "<cmd>Lspsaga outline<cr>", "Toggle outline" },
 			},
 			s = {
@@ -287,18 +295,18 @@ return {
 				R = { "<cmd>Telescope registers<cr>", "Registers" },
 				k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 				C = { "<cmd>Telescope commands<cr>", "Commands" },
-        m = { "<cmd>Telescope macros<cr>", "Macros" },
-        t = {
-          name = "Trouble.nvim",
-          t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
-          w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Trouble" },
-          d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Trouble"  },
-          r = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-          a = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" },
-          l = { "<cmd>TroubleToggle lsp_references<cr>", "lsp_references" },
-          c = { "<cmd>TroubleClose<cr>", "Close Trouble" },
-          o = { "<cmd>TroubleRefresh<cr>", "Refresh Trouble" }
-        },
+				m = { "<cmd>Telescope macros<cr>", "Macros" },
+				t = {
+					name = "Trouble.nvim",
+					t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+					w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Trouble" },
+					d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Trouble" },
+					r = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+					a = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" },
+					l = { "<cmd>TroubleToggle lsp_references<cr>", "lsp_references" },
+					c = { "<cmd>TroubleClose<cr>", "Close Trouble" },
+					o = { "<cmd>TroubleRefresh<cr>", "Refresh Trouble" },
+				},
 			},
 
 			t = {

@@ -4,9 +4,9 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
-	-- keys = {
-	-- 	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
-	-- },
+	keys = {
+		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
+	},
 	config = function()
 		local HEIGHT_RATIO = 0.8 -- You can change this
 		local WIDTH_RATIO = 0.5 -- You can change this too

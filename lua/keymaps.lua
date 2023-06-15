@@ -10,7 +10,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -18,7 +17,6 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-
 
 -- Normal --
 -- Better window navigation
@@ -36,8 +34,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<BS>", ":b#<CR>", { silent=true })
-vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent=true })
+vim.keymap.set("n", "<BS>", ":b#<CR>", { silent = true })
+vim.keymap.set("n", "<Tab>", ":b#<CR>", { silent = true })
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
@@ -65,10 +63,9 @@ keymap("n", "<C-m>", "<cmd>exe 'normal @c'<CR>", opts)
 keymap("n", "<cr>", "ciw", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-
 
 -- Visual --
 -- Stay in indent mode
@@ -80,7 +77,6 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
-
 -- Visual Block --
 -- Move text up and down
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -90,3 +86,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Term Mode --
 keymap("t", "<Tab><Tab>", "<C-\\><C-n>", opts)
+
+-- Plugins --
+
+keymap("v", "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", opts)
+keymap("v", "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>", opts)
+keymap("v", "<C-c>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", opts)
