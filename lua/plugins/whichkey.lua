@@ -90,7 +90,7 @@ return {
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 			r = {
 				name = "Search-Replace",
-				s = { "<CMD>S archReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
+				s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
 				o = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
 				w = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
 				W = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
