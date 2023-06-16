@@ -4,6 +4,7 @@ return {
     {"<A-g>", "<cmd><cr>", desc = "Gitui"},
 		{"<A-d>", "<cmd>FTermToggle<cr>", desc = "FTerm"},
 		{"<leader>tf", "<cmd>FTermToggle<cr>", desc = "Toggle Terminals" },
+		{"<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute Terminals" },
   },
 	config = function()
 		require("FTerm").setup({
@@ -24,6 +25,7 @@ return {
 		vim.api.nvim_create_user_command("FTermClose", require("FTerm").close, { bang = true })
 		--Remove the terminal
 		vim.api.nvim_create_user_command("FTermExit", require("FTerm").exit, { bang = true })
+		vim.api.nvim_create_user_command("FTermEnter", require("FTerm").scratch, { bang = true })
 
 
 		-- Code Runner - execute commands in a floating terminal
