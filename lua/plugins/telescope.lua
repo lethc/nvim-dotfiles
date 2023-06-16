@@ -2,9 +2,11 @@ return {
 	-- Telescope 
 	"nvim-telescope/telescope.nvim",
   cmd = { "Telescope","Telescope find_files", "Telescope oldfiles", "Telescope live_grep" },
+	event = "VeryLazy",
   dependencies = {
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-dap.nvim",
+	  "arjunmahishi/flow.nvim", --Required for Telescope
   },
   keys = {
     -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},

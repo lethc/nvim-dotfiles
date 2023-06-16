@@ -1,5 +1,6 @@
 return {
 	"mxsdev/nvim-dap-vscode-js",
+	event = "VeryLazy",
 	config = function()
 		require("dap-vscode-js").setup({
 			-- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"

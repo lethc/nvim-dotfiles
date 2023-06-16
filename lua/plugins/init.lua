@@ -1,6 +1,7 @@
 return {
 	{
 		"roobert/search-replace.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("search-replace").setup({
 				-- optionally override defaults
@@ -52,6 +53,7 @@ return {
 	},
 	{
 		"turbio/bracey.vim",
+		event = "VeryLazy",
 		config = function() end,
 	},
 	{
@@ -64,29 +66,31 @@ return {
 	},
 	{
 		"fei6409/log-highlight.nvim",
+		ft = "log",
 		config = function()
 			require("log-highlight").setup({})
 		end,
 	},
-	"arjunmahishi/flow.nvim", --Required for Telescope
 	"nvim-lua/plenary.nvim",
-	"moll/vim-bbye",
+	{ "moll/vim-bbye", event = "VeryLazy" },
 	{ "elkowar/yuck.vim", ft = "yuck" },
 	{ "peterhoeg/vim-qml", ft = "qml" },
 	{ "theRealCarneiro/hyprland-vim-syntax", ft = "hypr" },
 	{ "KabbAmine/lazyList.vim", ft = "markdown" },
 	{ "jwalton512/vim-blade", ft = "php" },
 	{ "uga-rosa/ccc.nvim", cmd = "CccPick" }, --Colorpicker
-	"tpope/vim-fugitive",
+	{ "tpope/vim-fugitive", event = "VeryLazy" },
 	{
 		"NvChad/nvim-colorizer.lua", --Display colors
+		event = "VeryLazy",
 		opts = {},
 	},
 	{ "pedro757/emmet", ft = { "html", "javascript" } },
-	"lervag/vimtex", --LaTeX
+  {  "lervag/vimtex", event = "VeryLazy" },--LaTeX
 
 	{
 		"samjwill/nvim-unception", --Open files from within Neovim's terminal
+		event = "VeryLazy",
 		init = function()
 			-- Optional settings go here!
 			-- vim.g.unception_open_buffer_in_new_tab = true
@@ -100,8 +104,7 @@ return {
 		end,
 	},
 	--Run lines of code inside neovim
-	{ "michaelb/sniprun" }, --run = 'bash ./install.sh 1'
-
+	{ "michaelb/sniprun", event = "VeryLazy" }, --run = 'bash ./install.sh 1'
 	-- LSP
 
 	-- Database connections

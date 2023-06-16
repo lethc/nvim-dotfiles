@@ -1,5 +1,6 @@
 return {
 	"ecthelionvi/NeoComposer.nvim",
+	event = "VeryLazy",
 	dependencies = { "kkharji/sqlite.lua" },
 	-- Ensure you have sqlite3 installed locally.
 	config = function()

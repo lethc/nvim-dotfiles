@@ -1,5 +1,5 @@
 return {
-  "theHamsta/nvim-dap-virtual-text",
-  "mfussenegger/nvim-dap-python",
-  "mfussenegger/nvim-jdtls",
+	{ "theHamsta/nvim-dap-virtual-text", event = "VeryLazy" },
+	{ "mfussenegger/nvim-dap-python", event = "VeryLazy" },
+	{ "mfussenegger/nvim-jdtls", event = "VeryLazy" },
 }

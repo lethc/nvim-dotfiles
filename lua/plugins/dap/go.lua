@@ -1,5 +1,6 @@
 return {
 	"leoluz/nvim-dap-go",
+	event = "VeryLazy",
   config = function()
     -- fetch the dap plugin
     local dap = require("dap")
