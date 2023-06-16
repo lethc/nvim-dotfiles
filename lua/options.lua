@@ -50,6 +50,12 @@ local options = { backup = false,                          -- creates a backup f
   spell = false,
   spelllang = { 'en_gb', 'es' },
   guicursor = "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150",
+  -- nvim-ufo 
+  foldcolumn = "1", -- '0' is not bad
+  foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
+  foldlevelstart = 99,
+  foldenable = true,
+  -- fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 }
 
 vim.opt.shortmess:append "c"

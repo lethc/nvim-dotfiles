@@ -1,5 +1,8 @@
 return {
 	{
+		"RutaTang/spectacle.nvim",
+	},
+	{
 		"roobert/search-replace.nvim",
 		event = "VeryLazy",
 		config = function()
@@ -86,7 +89,7 @@ return {
 		opts = {},
 	},
 	{ "pedro757/emmet", ft = { "html", "javascript" } },
-  {  "lervag/vimtex", event = "VeryLazy" },--LaTeX
+	{ "lervag/vimtex", event = "VeryLazy" }, --LaTeX
 
 	{
 		"samjwill/nvim-unception", --Open files from within Neovim's terminal

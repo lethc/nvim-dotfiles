@@ -4,7 +4,7 @@ vim.cmd [[
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
-    autocmd BufWinEnter * :set fillchars=eob:\ 
+    autocmd BufWinEnter * :set fillchars=eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose: 
     autocmd FileType qf set nobuflisted
     autocmd BufEnter * silent! lcd %:p:h
     autocmd VimLeave * set guicursor=a:ver90-blinkwait300-blinkon200-blinkoff150 augroup
