@@ -1,6 +1,10 @@
 return {
 	{
-		"RutaTang/spectacle.nvim",
+		"HampusHauffman/block.nvim",
+		cmd = { "Block", "BlockOn" },
+		config = function()
+			require("block").setup({})
+		end,
 	},
 	{
 		"roobert/search-replace.nvim",

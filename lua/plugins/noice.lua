@@ -27,7 +27,7 @@ return {
 						icon = "",
 						lang = "lua",
 					},
-					help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+					help = { pattern = "^:%s*he?l?p?%s+", icon = "󰋖" },
 					input = {}, -- Used by input()
 					-- lua = false, -- to disable a format, set to `false`
 				},

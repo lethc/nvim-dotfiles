@@ -15,6 +15,8 @@ return {
     "f3fora/cmp-spell",
     { "L3MON4D3/LuaSnip", version = "v1.*" },
     "rafamadriz/friendly-snippets",
+    "jcha0713/cmp-tw2css",
+    "amarakon/nvim-cmp-fonts",
   },
   config = function()
     local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -132,7 +134,7 @@ return {
         format = function(entry, vim_item)
           -- Kind icons
           -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+          vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
           -- vim_item.menu = ({
           --   luasnip = " [Snip]",
           --   nvim_lsp = " [LSP]",
@@ -166,6 +168,8 @@ return {
             end,
           },
         },
+        { name = "cmp-tw2css" },
+        { name = "fonts",     option = { space_filter = "-" } },
       },
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
@@ -181,7 +185,7 @@ return {
           winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
           -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
-        documentation =  cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
       experimental = {
         ghost_text = false,
