@@ -78,8 +78,8 @@ return {
         MkdnEnter = false, --[[ { { "n", "v" }, "<CR>" }, ]]
         MkdnTab = false, --jump to the next cell in a table
         MkdnSTab = false,
-        MkdnNextLink = { "n", "<Tab>" },
-        MkdnPrevLink = { "n", "<S-Tab>" },
+        MkdnNextLink = { "n", "<BS>" },
+        MkdnPrevLink = { "n", "<S-BS>" },
         MkdnNextHeading = { "n", "]]" },
         MkdnPrevHeading = { "n", "[[" },
         MkdnGoBack = false,
