@@ -165,7 +165,8 @@ return {
 				},
 			},
 			view = {
-				width = 30,
+        adaptive_size = true,
+				-- width = 30,
 				side = "left",
 				-- float = {
 				-- 	enable = true,
