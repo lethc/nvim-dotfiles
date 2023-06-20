@@ -8,5 +8,6 @@ return{
 		},
 	},
   -- filetypes = { "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex", "pandoc", "text","html", "css", "rust", "python", "java", "javascript" }
-  filetypes = { "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex", "pandoc", "text" }
+  -- filetypes = { "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex", "pandoc", "text" }
+  filetypes = { "org" }
 }

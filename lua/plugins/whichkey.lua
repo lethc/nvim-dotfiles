@@ -239,6 +239,11 @@ return {
 					i = { "<cmd>Lspsaga incoming_calls<cr>", "Incomming Calls" },
 					o = { "<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls" },
 				},
+        s = {
+          name = "Status LSP",
+					s = { "<cmd>LspStop<cr>", "Stop LSP" },
+					l = { "<cmd>LspStart ltex<cr>", "Start ltex" },
+        },
 				-- LspInfo
 				i = { "<cmd>LspInfo<cr>", "Info" },
 				-- Code action
@@ -279,7 +284,7 @@ return {
 				-- Rename all occurrences of the hovered word for the selected files
 				R = { "<cmd>Lspsaga rename ++project<cr>", "Rename Project" },
 				-- LSP finder - Find the symbol's definition
-				s = { "<cmd>Lspsaga lsp_finder<cr>", "Document Symbols" },
+				S = { "<cmd>Lspsaga lsp_finder<cr>", "Document Symbols" },
 				-- Keep hover
 				K = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
 				-- Toggle outline
