@@ -1,5 +1,42 @@
 return {
 	{
+		"Exafunction/codeium.vim",
+    cmd = "CodeiumEnable",
+		config = function()
+			vim.g.codeium_disable_bindings = 0
+			vim.g.codeium_no_map_tab = 1
+      -- vim.g.codeium_filetypes = { "bash" == false, "typescript" == true }
+
+			vim.keymap.set("i", "<c-c>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<c-.>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<c-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+			vim.keymap.set("i", "<c-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+		end,
+	},
+	-- {
+	-- 	"jcdickinson/http.nvim",
+	-- 	build = "cargo build --workspace --release",
+	-- },
+	-- {
+	-- 	"jcdickinson/codeium.nvim",
+	-- 	dependencies = {
+	-- 		-- "jcdickinson/http.nvim",
+	-- 		-- "nvim-lua/plenary.nvim",
+	-- 		"hrsh7th/nvim-cmp",
+	-- 	},
+	-- 	config = function()
+	-- 		require("codeium").setup({})
+	-- 	end,
+	-- },
+	{
 		"HampusHauffman/block.nvim",
 		cmd = { "Block", "BlockOn" },
 		config = function()

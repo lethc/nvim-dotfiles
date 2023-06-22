@@ -84,10 +84,15 @@ return {
 		local mappings = {
 			["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
-			["q"] = { "<cmd>q!<CR>", "Quit" },
-			["Q"] = { "<cmd>qa!<CR>", "Quit All" },
+			-- ["q"] = { "<cmd>q!<CR>", "Quit" },
+			-- ["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 			["i"] = { "<cmd>Telescope notify<CR>", "Notify" },
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      c = {
+        name = "Control Switch",
+        c = { "<cmd>CodeiumEnable<CR>", "Activate Codeium" },
+        C = { "<cmd>CodeiumDisable<CR>", "Desactivate Codeium" },
+      },
 			r = {
 				name = "Search-Replace",
 				s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
