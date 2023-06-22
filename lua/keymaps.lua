@@ -53,10 +53,10 @@ keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 -- keymap("n", "<C-l>", "<cmd>:set spell! spelllang={'eng_gb', 'es'}<CR>", opts)
 
 --Run Selection
-keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
+-- keymap("n", "<C-,>", "<cmd>%SnipRun<CR>", opts)
 
 -- Registers keybindings
-keymap("n", "<C-m>", "<cmd>exe 'normal @c'<CR>", opts)
+-- keymap("n", "<C-m>", "<cmd>exe 'normal @c'<CR>", opts)
 
 -- ciw
 -- vim.keymap.set(“n”, “<A-j>”, "ciw”, opts)
@@ -87,8 +87,10 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Term Mode --
 keymap("t", "<Tab><Tab>", "<C-\\><C-n>", opts)
 
--- Plugins --
+-- Plugins and more --
 
 keymap("v", "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", opts)
 keymap("v", "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>", opts)
 keymap("v", "<C-c>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", opts)
+keymap("n", "<leader>q", "<CMD>q!<CR>", opts)
+keymap("n", "<leader>Q", "<CMD>qa!<CR>", opts)
