@@ -133,7 +133,7 @@ return {
 				x = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all" },
 				r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "References" },
 				h = { "<cmd>Bracey<CR>", "Preview HTML" },
-				H = { "<cmd>BraceyStop<CR>", "Stop Prevew HTML" },
+				p = { "<cmd>PlantUMLRun<CR>", "Plantuml" },
 			},
 
 			L = {
@@ -297,6 +297,7 @@ return {
 			},
 			s = {
 				name = "Search",
+				s = { "<cmd>Telescope smart_open<cr>", "Smart Open" },
 				b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 				c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 				h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
