@@ -61,6 +61,7 @@ keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 -- ciw
 -- vim.keymap.set(“n”, “<A-j>”, "ciw”, opts)
 keymap("n", "<cr>", "ciw", opts)
+keymap("n", "t", "s", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode

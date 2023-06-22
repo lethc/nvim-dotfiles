@@ -1,25 +1,34 @@
 return {
-	-- Telescope 
-	"nvim-telescope/telescope.nvim",
-  cmd = { "Telescope","Telescope find_files", "Telescope oldfiles", "Telescope live_grep" },
-	event = "VeryLazy",
+  -- Telescope
+  "nvim-telescope/telescope.nvim",
+  cmd = { "Telescope", "Telescope find_files", "Telescope oldfiles", "Telescope live_grep", "Telescope smart_open" },
+  event = "VeryLazy",
   dependencies = {
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-dap.nvim",
-	  "arjunmahishi/flow.nvim", --Required for Telescope
+    "arjunmahishi/flow.nvim", --Required for Telescope
+    {
+      "danielfalk/smart-open.nvim",
+      branch = "0.2.x",
+      "kkharji/sqlite.lua",
+      -- Only required if using match_algorithm fzf
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      dependencies = {
+
+      },
+    },
   },
   keys = {
     -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
-    {"<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers"},
-    {"<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files"},
-    {"<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Find Text"},
-    {"<leader>n", "<cmd>Telescope file_browser<cr>", desc = "File Browser"},
+    { "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers" },
+    { "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files" },
+    { "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>",                                                                            desc = "Find Text" },
+    { "<leader>n", "<cmd>Telescope file_browser<cr>",                                                                                   desc = "File Browser" },
     -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
     -- {"<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope"},
 
   },
   config = function()
-
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then
       return
@@ -104,9 +113,9 @@ return {
       },
       pickers = {
         live_grep = {
-            additional_args = function(opts)
-                return {"--hidden"}
-            end
+          additional_args = function(opts)
+            return { "--hidden" }
+          end
         }
         -- Default configuration for builtin pickers goes here:
         -- picker_name = {
@@ -135,10 +144,17 @@ return {
             },
           },
         },
+        smart_open = {
+          show_scores = false,
+          ignore_patterns = { "*.git/*", "*/tmp/*" },
+          match_algorithm = "fzf",
+          disable_devicons = false,
+        },
       },
     }
     telescope.load_extension "file_browser"
     telescope.load_extension("notify")
+    telescope.load_extension("smart_open")
   end
 
 }

@@ -10,6 +10,7 @@ local options = { backup = false,                          -- creates a backup f
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
+  -- :h mapmode
   --                n       Normal mode and Terminal modes
   --                v       Visual mode
   --                i       Insert mode

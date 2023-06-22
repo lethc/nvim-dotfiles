@@ -1,11 +1,15 @@
 return {
 	{
+		"mg979/vim-visual-multi",
+		lazy = true,
+	},
+	{
 		"Exafunction/codeium.vim",
-    cmd = "CodeiumEnable",
+		cmd = "CodeiumEnable",
 		config = function()
 			vim.g.codeium_disable_bindings = 0
 			vim.g.codeium_no_map_tab = 1
-      -- vim.g.codeium_filetypes = { "bash" == false, "typescript" == true }
+			-- vim.g.codeium_filetypes = { "bash" == false, "typescript" == true }
 
 			vim.keymap.set("i", "<c-c>", function()
 				return vim.fn["codeium#Accept"]()
@@ -122,6 +126,7 @@ return {
 	{ "theRealCarneiro/hyprland-vim-syntax", ft = "hypr" },
 	{ "KabbAmine/lazyList.vim", ft = "markdown" },
 	{ "jwalton512/vim-blade", ft = "php" },
+	{ "aklt/plantuml-syntax" },
 	{ "uga-rosa/ccc.nvim", cmd = "CccPick" }, --Colorpicker
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
 	{
