@@ -2,6 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
+    -- "onsails/lspkind.nvim",
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -129,22 +130,29 @@ return {
         }),
       },
       formatting = {
-        -- fields = { "abbr", "kind", "menu" },
-        fields = { "abbr", "kind" },
+        fields = { "abbr", "kind", "menu" },
+        -- fields = { "abbr", "kind" },
+        -- format = require('lspkind').cmp_format({
+        --     mode = "symbol",
+        --     maxwidth = 50,
+        --     ellipsis_char = '...',
+        --     symbol_map = { Codeium = "", }
+        -- })
         format = function(entry, vim_item)
           -- Kind icons
           -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
           vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-          -- vim_item.menu = ({
-          --   luasnip = " [Snip]",
-          --   nvim_lsp = " [LSP]",
-          --   buffer = " [Text]",
-          --   path = " [Path]",
-          -- })[entry.source.name]
+          vim_item.menu = ({
+            luasnip = " [Snip]",
+            nvim_lsp = " [LSP]",
+            buffer = " [Text]",
+            path = " [Path]",
+          })[entry.source.name]
           return vim_item
         end,
       },
       sources = {
+        -- { name = "codeium" },
         { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "buffer" },
