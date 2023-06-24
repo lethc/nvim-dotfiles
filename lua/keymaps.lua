@@ -63,6 +63,10 @@ keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 keymap("n", "<cr>", "ciw", opts)
 keymap("n", "t", "s", opts)
 keymap("n", "J", "mzJ`z", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
