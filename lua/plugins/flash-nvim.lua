@@ -4,7 +4,7 @@ return {
 	---@tpe Flash.Config
 	opts = {
 		-- labels = "abcdefghijklmnopqrstuvwxyz",
-		labels = "asdfghjklqwertyuiopzxcvbnm",
+		labels = "asdfghjklqwertyuiopzxcvbnm,123456789",
 		search = {
 			-- search/jump in all windows
 			multi_window = true,
@@ -120,38 +120,38 @@ return {
 		},
 	},
 	keys = {
-		-- {
-		-- 	"s",
-		-- 	mode = { "n", "x", "o" },
-		-- 	function()
-		-- 		-- default options: exact mode, multi window, all directions, with a backdrop
-		-- 		require("flash").jump({})
-		-- 	end,
-		-- },
 		{
-			"T",
+			"s",
+			mode = { "n", "x", "o" },
+			function()
+				-- default options: exact mode, multi window, all directions, with a backdrop
+				require("flash").jump({})
+			end,
+		},
+		{
+			"S",
 			mode = { "n", "o", "x" },
 			function()
 				require("flash").treesitter()
 			end,
 		},
-		{
-			"s",
-			mode = { "n", "x", "o" },
-			function()
-				require("flash").jump({
-					search = { forward = true, wrap = false, multi_window = false },
-				})
-			end,
-		},
-		{
-			"S",
-			mode = { "n", "x", "o" },
-			function()
-				require("flash").jump({
-					search = { forward = false, wrap = false, multi_window = false },
-				})
-			end,
-		},
+		-- {
+		-- 	"s",
+		-- 	mode = { "n", "x", "o" },
+		-- 	function()
+		-- 		require("flash").jump({
+		-- 			search = { forward = true, wrap = false, multi_window = false },
+		-- 		})
+		-- 	end,
+		-- },
+		-- {
+		-- 	"S",
+		-- 	mode = { "n", "x", "o" },
+		-- 	function()
+		-- 		require("flash").jump({
+		-- 			search = { forward = false, wrap = false, multi_window = false },
+		-- 		})
+		-- 	end,
+		-- },
 	},
 }

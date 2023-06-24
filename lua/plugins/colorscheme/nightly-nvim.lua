@@ -5,7 +5,7 @@ return {
   config = function()
     require("nightly").setup({
       -- color = "red", -- blue, green or red
-      transparent = false,
+      transparent = true,
       styles = {
         comments = { italic = true },
         functions = { italic = false },
