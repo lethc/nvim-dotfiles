@@ -10,9 +10,9 @@ return {
 			opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
 			resizing_mappings = false, -- Binds arrow keys to resizing the floating window.
 			post_open_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
-			references = { -- Configure the telescope UI for slowing the references cycling window.
-				telescope = require("telescope.themes").get_dropdown({ hide_preview = false }),
-			},
+			-- references = { -- Configure the telescope UI for slowing the references cycling window.
+			-- 	telescope = require("telescope.themes").get_dropdown({ hide_preview = false }),
+			-- },
 			-- These two configs can also be passed down to the goto-preview definition and implementation calls for one off "peak" functionality.
 			focus_on_open = true, -- Focus the floating window when opening it.
 			dismiss_on_move = false, -- Dismiss the floating window when moving the cursor.
