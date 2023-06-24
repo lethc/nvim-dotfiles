@@ -62,6 +62,7 @@ keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 -- vim.keymap.set(“n”, “<A-j>”, "ciw”, opts)
 keymap("n", "<cr>", "ciw", opts)
 keymap("n", "t", "s", opts)
+keymap("n", "J", "mzJ`z", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -72,18 +73,19 @@ keymap("i", "kj", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+-- keymap("v", "J", ":m .+1<CR>==", opts)
+-- keymap("v", "K", ":m .-2<CR>==", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "<A-J>", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "<A-K>", ":move '<-2<CR>gv-gv", opts)
 
 -- Term Mode --
 keymap("t", "<Tab><Tab>", "<C-\\><C-n>", opts)
