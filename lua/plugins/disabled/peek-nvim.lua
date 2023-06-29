@@ -1,5 +1,6 @@
 return {
-  "toppair/peek.nvim",
+  -- "toppair/peek.nvim",
+  "cloudsftp/peek.nvim",
   ft = "markdown",
   build = "deno task --quiet build:fast",
   config = function()
