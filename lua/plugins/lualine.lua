@@ -31,7 +31,7 @@ return {
 				"error",
 				"warn",
 				"hint",
-        "info",
+				"info",
 			},
 			symbols = {
 				error = "󰅙 ",
@@ -82,23 +82,21 @@ return {
 			separator = { left = "", right = "" },
 			padding = 0.8,
 		}
-    
-    local location = {
-      "location",
-      separator = { left = "", right = "" },
+
+		local location = {
+			"location",
+			separator = { left = "", right = "" },
 			color = { bg = "#0F1416", fg = "#DADADA" },
-      padding = 0.8,
+			padding = 0.8,
+		}
 
-    }
-
-    local progress = {
-      "progress",
-      separator = { left = "", right = "" },
+		local progress = {
+			"progress",
+			separator = { left = "", right = "" },
 			color = { bg = "#0F1416", fg = "#DADADA" },
-      padding = 0.8,
+			padding = 0.8,
+		}
 
-    }
-    
 		local indent = function()
 			return "" .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 		end
@@ -178,6 +176,19 @@ return {
 
 			return language_servers
 		end
+		local function getWords()
+			if vim.bo.filetype == "tex" or vim.bo.filetype == "txt" or vim.bo.filetype == "markdown" then
+				if vim.fn.wordcount().visual_words == 1 then
+					return tostring(vim.fn.wordcount().visual_words) .. " word"
+				elseif not (vim.fn.wordcount().visual_words == nil) then
+					return tostring(vim.fn.wordcount().visual_words) .. " words"
+				else
+					return tostring(vim.fn.wordcount().words) .. " words"
+				end
+			else
+				return ""
+			end
+		end
 
 		lualine.setup({
 			options = {
@@ -204,7 +215,7 @@ return {
 						"alpha",
 						"dashboard",
 						"Outline",
-            -- "NvimTree",
+						-- "NvimTree",
 					},
 				},
 				always_divide_middle = true,
@@ -269,6 +280,7 @@ return {
 					-- 	color = { bg = "#A7C080", fg = "#DADADA" },
 					-- 	padding = 0.1,
 					-- },
+					{ getWords },
 					location,
 					{
 						function()
@@ -278,7 +290,7 @@ return {
 						color = { bg = "#0F1416", fg = "#DADADA" },
 						padding = 0.1,
 					},
-          progress,
+					progress,
 					{
 						function()
 							-- return "%P%L"
@@ -302,7 +314,7 @@ return {
 			-- 	lualine_a = {
 			-- 		{ "filetype", icon_only = true },
 			-- 		{ "filename", path = 0, symbols = file_status_symbol, separator = {right = " "} },
-   --        -- separator = { left = "", right = " " },
+			--        -- separator = { left = "", right = " " },
 			-- 	},
 			-- 	lualine_c = { M.winbar_symbol },
 			-- 	lualine_x = {
@@ -315,11 +327,11 @@ return {
 			-- 		"diff",
 			-- 	},
 			-- },
-      tabline = {
+			tabline = {
 				lualine_a = {
 					{ "filetype", icon_only = true },
-					{ "filename", path = 0, symbols = file_status_symbol, separator = {right = " "} },
-          -- separator = { left = "", right = " " },
+					{ "filename", path = 0, symbols = file_status_symbol, separator = { right = " " } },
+					-- separator = { left = "", right = " " },
 				},
 				lualine_c = { M.winbar_symbol },
 				lualine_x = {
@@ -331,8 +343,7 @@ return {
 					-- { "diagnostics", sources = { "nvim_diagnostic" } },
 					-- "diff",
 				},
-
-      }
+			},
 		})
 	end,
 }
