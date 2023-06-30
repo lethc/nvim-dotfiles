@@ -53,6 +53,7 @@ return {
   },
   {
     "aktersnurra/no-clown-fiesta.nvim",
+    lazy = true,
     config = function()
       require("no-clown-fiesta").setup({
         transparent = false, -- Enable this to disable the bg color
@@ -71,7 +72,7 @@ return {
   {
     "akinsho/horizon.nvim",
     cmd = "Telescope colorscheme",
-    lazy = false,
+    lazy = true,
   },
   {
     "rebelot/kanagawa.nvim",

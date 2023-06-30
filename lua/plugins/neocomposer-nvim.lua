@@ -4,7 +4,6 @@ return {
 	dependencies = { "kkharji/sqlite.lua" },
 	-- Ensure you have sqlite3 installed locally.
 	config = function()
-		require("telescope").load_extension("macros")
 		require("NeoComposer.ui").status_recording()
 		require("NeoComposer").setup({
 			notify = true,

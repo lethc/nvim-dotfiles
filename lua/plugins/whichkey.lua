@@ -88,10 +88,16 @@ return {
 			-- ["Q"] = { "<cmd>qa!<CR>", "Quit All" },
 			["i"] = { "<cmd>Telescope notify<CR>", "Notify" },
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
+      f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
+      F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+      n = { "<cmd>Telescope file_browser<cr>", "File Browser" },
       c = {
         name = "Control Switch",
         c = { "<cmd>CodeiumEnable<CR>", "Activate Codeium" },
         C = { "<cmd>CodeiumDisable<CR>", "Desactivate Codeium" },
+        a = { "<cmd>lua require('asciitree').setup()<CR>", "Activate AsciiTree"},
+        b = { "<cmd>lua require('clipboard-image').setup()<CR>", "Activate Clipboard Image"},
       },
 			r = {
 				name = "Search-Replace",
@@ -134,6 +140,8 @@ return {
 				-- r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "References" },
 				h = { "<cmd>Bracey<CR>", "Preview HTML" },
 				p = { "<cmd>PlantUMLRun<CR>", "Plantuml" },
+        m = { "<cmd>MarkdownPreview<CR>", "Markdown" },
+        M = { "<cmd>MarkdownPreviewStop<CR>", "Stop Markdown" }
 			},
 
 			L = {

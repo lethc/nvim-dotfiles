@@ -1,5 +1,9 @@
 return {
 	{
+		"nvim-tree/nvim-web-devicons", --Dependency for various plugins
+    lazy = true,
+  },
+	{
 		"mg979/vim-visual-multi",
 		lazy = true,
 	},
@@ -59,14 +63,14 @@ return {
 			vim.o.inccommand = "split"
 		end,
 	},
-	{
-		"mzlogin/vim-markdown-toc",
-		ft = "markdown",
-		config = function() end,
-	},
+	-- {
+	-- 	"mzlogin/vim-markdown-toc",
+	-- 	 ft = "markdown",
+	-- },
 	{
 		"xorid/asciitree.nvim",
-		ft = "markdown",
+		-- ft = "markdown",
+    keys = {"<leader>ca", "<cmd>lua require('asciitree').setup()<CR>", },
 		config = function()
 			-- Default values
 			require("asciitree").setup({
@@ -119,7 +123,7 @@ return {
 			require("log-highlight").setup({})
 		end,
 	},
-	"nvim-lua/plenary.nvim",
+	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "moll/vim-bbye", event = "VeryLazy" },
 	{ "elkowar/yuck.vim", ft = "yuck" },
 	{ "peterhoeg/vim-qml", ft = "qml" },
