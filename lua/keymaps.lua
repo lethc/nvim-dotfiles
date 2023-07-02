@@ -60,7 +60,8 @@ keymap("n", "<A-p>", "<cmd>PasteImg<CR>", opts)
 
 -- ciw
 -- vim.keymap.set(“n”, “<A-j>”, "ciw”, opts)
-keymap("n", "<cr>", "ciw", opts)
+-- keymap("n", "<cr>", "ciw", opts)
+keymap("n", "<C-c>", "<cmd>normal! ciw<cr>a", opts)
 keymap("n", "t", "s", opts)
 keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
