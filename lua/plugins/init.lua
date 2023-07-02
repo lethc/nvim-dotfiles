@@ -139,7 +139,7 @@ return {
 		opts = {},
 	},
 	{ "pedro757/emmet", ft = { "html", "javascript" } },
-	{ "lervag/vimtex", event = "VeryLazy" }, --LaTeX
+	{ "lervag/vimtex", ft = {"tex"}}, --LaTeX
 
 	{
 		"samjwill/nvim-unception", --Open files from within Neovim's terminal
