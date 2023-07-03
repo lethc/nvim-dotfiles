@@ -29,6 +29,7 @@ return {
       "clangd",
       "texlab",
       "ltex",
+      "marksman",
       -- "csharp_ls",
       -- "omnisharp",
       -- "omnisharp_mono",
