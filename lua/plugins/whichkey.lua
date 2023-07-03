@@ -98,6 +98,9 @@ return {
         C = { "<cmd>CodeiumDisable<CR>", "Desactivate Codeium" },
         a = { "<cmd>lua require('asciitree').setup()<CR>", "Activate AsciiTree"},
         b = { "<cmd>lua require('clipboard-image').setup()<CR>", "Activate Clipboard Image"},
+        t = { "<cmd>TransparentEnable<CR>", "Enable Transparency" },
+        T = { "<cmd>TransparentDisable<CR>", "Disable Transparency" },
+        b = { "<cmd>Block<CR>", "Toggle Block" },
       },
 			r = {
 				name = "Search-Replace",
