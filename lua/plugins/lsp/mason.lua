@@ -17,7 +17,7 @@ return {
       "emmet_ls",
       "html",
       "tsserver",
-      "pyright",
+      "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
       "bashls",
       "jsonls",
       -- "yamlls",
