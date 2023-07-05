@@ -192,9 +192,9 @@ return {
 				x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
 				u = {
 					name = "Rust",
-					a = { "<cmd>RustCodeAction<cr>" },
-					d = { "<cmd>RustDebuggables<cr>" },
-					r = { "<cmd>RustRun<cr>" },
+					a = { "<cmd>RustCodeAction<cr>", "Code Action"},
+					d = { "<cmd>RustDebuggables<cr>", "Run Debug" },
+					r = { "<cmd>RustRun<cr>", "Run" },
 				},
 			},
 
