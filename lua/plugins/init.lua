@@ -134,6 +134,7 @@ return {
 	},
 	{
 		"turbio/bracey.vim",
+    --execute npm install --prefix server
 		event = "VeryLazy",
 		config = function() end,
 	},
