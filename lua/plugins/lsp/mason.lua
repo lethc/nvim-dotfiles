@@ -21,7 +21,7 @@ return {
       "bashls",
       "jsonls",
       -- "yamlls",
-      "jdtls",
+      "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
       -- "intelephense",
       "phpactor",
       "gopls",

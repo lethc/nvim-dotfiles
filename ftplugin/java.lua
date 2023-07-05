@@ -56,15 +56,14 @@ local bundles = {}
 JAVA_DAP_ACTIVE = true
 
 if JAVA_DAP_ACTIVE then
-  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.dap-server/vscode-java-test/server/*.jar"), "\n"))
-  -- vim.list_extend(bundles, vim.split(vim.fn.glob("/home/luis501/.dotfiles/nvim/vscode-java-test/server/*.jar"), "\n"))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-test/extension/server/*.jar"), "\n"))
+  -- vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.dap-server/vscode-java-test/server/*.jar"), "\n"))
   vim.list_extend(
     bundles,
     vim.split(
       vim.fn.glob(
-        -- home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-        home .. "/.dap-server/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-        -- "/home/luis501/.dotfiles/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+        home .. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+        -- home .. "/.dap-server/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
       ),
       "\n"
     )
