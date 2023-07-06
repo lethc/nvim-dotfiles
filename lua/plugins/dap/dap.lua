@@ -129,6 +129,36 @@ return {
 		dap.configurations.c = dap.configurations.cpp
 		-- dap.configurations.rust = dap.configurations.cpp
 
+		------------- Bash -------------------
+
+		dap.adapters.bashdb = {
+			type = "executable",
+			command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+			name = "bashdb",
+		}
+
+		dap.configurations.sh = {
+			{
+				type = "bashdb",
+				request = "launch",
+				name = "Launch file",
+				showDebugOutput = true,
+				pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+				pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+				trace = true,
+				file = "${file}",
+				program = "${file}",
+				cwd = "${workspaceFolder}",
+				pathCat = "cat",
+				pathBash = "/bin/bash",
+				pathMkfifo = "mkfifo",
+				pathPkill = "pkill",
+				args = {},
+				env = {},
+				terminalKind = "integrated",
+			},
+		}
+
 		------------- PHP -------------------
 		dap.adapters.php = {
 			type = "executable",
