@@ -18,7 +18,7 @@ return {
       "html",
       "tsserver",
       "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
-      "bashls",
+      "bashls", --"To Debug, activate: bash-debug-adapter"
       "jsonls",
       -- "yamlls",
       "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
@@ -26,14 +26,14 @@ return {
       "phpactor",
       "gopls",
       "rust_analyzer",
-      "clangd",
+      "clangd", --"to Debug, Install in your system codelldb"
       "texlab",
       "ltex",
       "marksman",
       -- "csharp_ls",
       -- "omnisharp",
       -- "omnisharp_mono",
-      -- "tailwindcss"
+      "tailwindcss"
     }
 
     local settings = {
