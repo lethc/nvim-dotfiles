@@ -1,7 +1,7 @@
 return {
 	"ekickx/clipboard-image.nvim",
 	-- cmd = "require("clipboard-image").setup()",
-	keys = { "<leader>cb", "<cmd>lua require('clipboard-image').setup()<CR>" },
+	keys = { "<leader>cp", "<cmd>lua require('clipboard-image').setup()<CR>" },
 	config = function() --Set a symbolic link between your Obsidian img folder and your user path
 		require("clipboard-image").setup({
 			-- Default configuration for all filetype
