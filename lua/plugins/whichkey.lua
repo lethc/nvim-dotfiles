@@ -97,7 +97,7 @@ return {
         c = { "<cmd>CodeiumEnable<CR>", "Activate Codeium" },
         C = { "<cmd>CodeiumDisable<CR>", "Desactivate Codeium" },
         a = { "<cmd>lua require('asciitree').setup()<CR>", "Activate AsciiTree"},
-        b = { "<cmd>lua require('clipboard-image').setup()<CR>", "Activate Clipboard Image"},
+        p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Activate Clipboard Image"},
         t = { "<cmd>TransparentEnable<CR>", "Enable Transparency" },
         T = { "<cmd>TransparentDisable<CR>", "Disable Transparency" },
         b = { "<cmd>Block<CR>", "Toggle Block" },
@@ -300,7 +300,7 @@ return {
 				-- Rename all occurrences of the hovered word for the selected files
 				R = { "<cmd>Lspsaga rename ++project<cr>", "Rename Project" },
 				-- LSP finder - Find the symbol's definition
-				S = { "<cmd>Lspsaga lsp_finder<cr>", "Document Symbols" },
+				S = { "<cmd>Lspsaga finder<cr>", "Document Symbols" },
 				-- Keep hover
 				K = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
 				-- Toggle outline
