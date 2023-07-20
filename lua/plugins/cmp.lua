@@ -189,11 +189,11 @@ return {
         -- },
         completion = {
           scrollbar = false,
-          border = border("PmenuBorder"),
-          winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
+          -- border = border("PmenuBorder"),
+          -- winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
           -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
-        documentation = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
       },
       experimental = {
         ghost_text = false,
