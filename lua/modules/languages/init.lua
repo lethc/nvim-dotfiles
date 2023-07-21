@@ -92,10 +92,10 @@ local modules = {
     "rcarriga/nvim-dap-ui",
     lazy = true,
   },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   config = languages_config.null_ls,
-  -- },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = languages_config.null_ls,
+  },
   -- {
   --   "mhartington/formatter.nvim",
   --   config = languages_config.formatter_nvim,
