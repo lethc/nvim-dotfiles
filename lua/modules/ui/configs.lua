@@ -7,9 +7,9 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "lvim", "nightly", "astrotheme", "astromars", "astrodark", "astrolight", "dayfox", "dawnfox", "duskfox",
+    themes = { "lvim", "nightly", "astromars", "astrodark", "astrolight", "dayfox", "dawnfox", "duskfox",
       "nordfox", "terafox", "nightfox", "carbonfox" },                -- Your list of installed colorschemes
-    themeConfigFile = "~/.config/new/lua/configs/ui/colorscheme.lua", -- Described below
+    themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
 end
@@ -711,7 +711,7 @@ config.alpha = function()
     dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("r", "󱎫  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("t", "󰚞  Find text", ":Telescope live_grep <CR>"),
+    dashboard.button("F", "󰚞  Find text", ":Telescope live_grep <CR>"),
     dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
     dashboard.button("q", "󰅚  Quit Neovim", ":qa<CR>"),
     -- (function()
