@@ -46,7 +46,7 @@ local modules = {
   {
     "roobert/search-replace.nvim",
     -- event = "VeryLazy",
-    keys = { "<leader>" },
+    keys = { "<leader>c" },
     config = edit_config.search_replace
   },
   { "uga-rosa/ccc.nvim",         cmd = "CccPick" }, --Colorpicker
