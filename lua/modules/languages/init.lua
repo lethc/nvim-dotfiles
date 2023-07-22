@@ -95,9 +95,6 @@ local modules = {
   {
     "jose-elias-alvarez/null-ls.nvim",
 
-    -- keys = { { "<leader>lf", "<Cmd>lua vim.lsp.buf.format{async=true}<CR>" } },
-    --
-
     keys = "<space>l",
     config = languages_config.null_ls,
   },
