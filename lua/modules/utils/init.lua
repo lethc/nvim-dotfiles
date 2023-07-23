@@ -109,7 +109,11 @@ local modules = {
     "turbio/bracey.vim",
     ft = "html",
     build = "npm install --prefix server",
-    config = function() end,
+    config = function()
+      vim.cmd([[
+        let g:bracey_browser_command='firefox-developer-edition'
+      ]])
+    end,
   },
   {
     "samjwill/nvim-unception", --Open files from Neovim's terminal
