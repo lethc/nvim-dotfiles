@@ -94,8 +94,7 @@ local modules = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-
-    keys = "<space>l",
+    -- keys = "<space>l",
     config = languages_config.null_ls,
   },
   -- {
