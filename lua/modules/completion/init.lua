@@ -49,8 +49,8 @@ local modules = {
     config = completion_config.mkdnflow_nvim,
   },
   {
-    "ekickx/clipboard-image.nvim",
-    keys = { "<leader>cp", "<cmd>lua require('clipboard-image').setup()<CR>" },
+    "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
+    keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
     config = completion_config.clipboard_image,
   },
   {

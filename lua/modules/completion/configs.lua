@@ -284,7 +284,7 @@ config.clipboard_image = function()
     },
     markdown = {
     	img_dir = { "assets/img" }, -- Use table for nested dir (New feature form PR #20)
-    	img_dir_txt = "assets/img",
+    	img_dir_txt = "/assets/img",
     	-- img_handler = function(img) -- New feature from PR #22
     	-- 	local script = string.format('./image_compressor.sh "%s"', img.path)
     	-- 	os.execute(script)
