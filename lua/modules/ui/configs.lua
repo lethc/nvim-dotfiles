@@ -7,8 +7,7 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "lvim", "nightly", "astromars", "astrodark", "astrolight", "dayfox", "dawnfox", "duskfox",
-      "nordfox", "terafox", "nightfox", "carbonfox" },                -- Your list of installed colorschemes
+    themes = { "no-clown-fiesta", "lvim", "nightly", "astromars", "astrodark", "github_dark", "github_dark_dimmed", "github_dark_default", "github_dark_tritanopia", "aesthetic", "mellifluous", "mellow", "gabriel", "my_vivid", "leeward" },
     themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
@@ -150,7 +149,7 @@ config.lualine = function()
     options = {
       globalstatus = true,
       icons_enabled = true,
-      -- theme = "nightly",
+      theme = "nightly",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
