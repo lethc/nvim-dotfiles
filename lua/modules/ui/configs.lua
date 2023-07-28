@@ -149,7 +149,7 @@ config.lualine = function()
     options = {
       globalstatus = true,
       icons_enabled = true,
-      theme = "nightly",
+      theme = "mellow",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
