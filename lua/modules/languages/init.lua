@@ -95,6 +95,7 @@ local modules = {
   {
     "jose-elias-alvarez/null-ls.nvim",
     -- keys = "<space>l",
+    event = "LspAttach",
     config = languages_config.null_ls,
   },
   -- {
