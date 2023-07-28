@@ -93,6 +93,13 @@ return {
     },
   },
 
+  i = {
+    name = "Directory",
+    i = { "<cmd>cd %:p:h<cr>:pwd<CR>", "Change Directory" },
+    c = { "<cmd>lcd %:p:h<cr>:pwd<CR>", "Change Directory only for current window" },
+    v = { "<cmd>pwd<cr>", "View Current Directory" },
+  },
+
   l = {
     name = "LSP",
     -- Code action
