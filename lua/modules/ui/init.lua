@@ -3,6 +3,10 @@ local modules = {
   { "lvim-tech/lvim-colorscheme" },
   { "edmondburnett/leeward.nvim" },
   {
+    "rockyzhang24/arctic.nvim",
+    dependencies = {"rktjmp/lush.nvim"}
+  },
+  {
     "RaphaeleL/my_vivid",
   },
   {
