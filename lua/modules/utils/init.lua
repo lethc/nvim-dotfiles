@@ -80,7 +80,11 @@ local modules = {
     "folke/flash.nvim",
     event = { "InsertEnter" },
     keys = {
-      { "<leader>" }, { "/", mode = { "n" } }
+      { "f", mode = { "n" } },
+      { "F", mode = { "n" } },
+      { "t", mode = { "n" } },
+      { "T", mode = { "n" } },
+      { "/", mode = { "n" } },
     },
     config = edit_config.flash_nvim,
   },
