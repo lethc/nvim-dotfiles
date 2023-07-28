@@ -4,11 +4,11 @@ local modules = {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     keys = {
-      { "<leader>sf",  "<Cmd>Telescope find_files<CR>",   desc = "Telescope find files" },
-      { "<leader>si",  "<Cmd>Telescope notify<CR>",       desc = "Telescope Notify" },
-      { "<leader>sF",  "<Cmd>Telescope live_grep<CR>",    desc = "Telescope live grep" },
+      { "<leader>sf", "<Cmd>Telescope find_files<CR>",   desc = "Telescope find files" },
+      { "<leader>si", "<Cmd>Telescope notify<CR>",       desc = "Telescope Notify" },
+      { "<leader>sF", "<Cmd>Telescope live_grep<CR>",    desc = "Telescope live grep" },
       { "<leader>n",  "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
-      { "<leader>sb",  "<Cmd>Telescope buffers<CR>",      desc = "Telescope buffers" },
+      { "<leader>sb", "<Cmd>Telescope buffers<CR>",      desc = "Telescope buffers" },
       { "<leader>so", "<cmd>Telescope oldfiles<cr>",     desc = "Telescope old files" },
     },
     dependencies = {
@@ -150,13 +150,13 @@ local modules = {
     -- build = "cd app && npm install && git reset --hard",
     config = edit_config.markdown_preview,
   },
-  { -- Compiler 
+  { -- Compiler
     "Zeioth/compiler.nvim",
     cmd = { "CompilerOpen", "CompilerToggleResults" },
     dependencies = { "stevearc/overseer.nvim" },
     config = function(_, opts) require("compiler").setup(opts) end,
   },
-  { -- The framework that compiler use to run tasks
+  {                                                      -- The framework that compiler use to run tasks
     "stevearc/overseer.nvim",
     commit = "3047ede61cc1308069ad1184c0d447ebee92d749", -- avoid breaking changes
     cmd = { "CompilerOpen", "CompilerToggleResults" },
@@ -175,6 +175,11 @@ local modules = {
       },
     },
   },
-  { "CRAG666/code_runner.nvim", config = true },
+  {
+    "CRAG666/code_runner.nvim",
+    config = true,
+    cmd = { "RunCode", "RunFile", "RunProject", "CompilerOpen" },
+    -- keys = { "<Leader>r" },
+  },
 }
 return modules

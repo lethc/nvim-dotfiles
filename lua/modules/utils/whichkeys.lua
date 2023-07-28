@@ -60,6 +60,7 @@ return {
 
   e = { [[<cmd>lua require("mini.files").open()<CR>]], "Mini files" },
   f = {
+    name = "DiffView",
     c = { "<cmd>DiffviewClose<cr>", "Close DiffView" },
     f = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files DiffView" },
     j = { "<cmd>DiffviewFileHistory %<cr>", "History Current File DiffView" },
