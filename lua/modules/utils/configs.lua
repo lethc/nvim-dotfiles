@@ -429,8 +429,9 @@ config.obsidian_nvim = function()
   if not obsidian_status_ok then
     return
   end
+  local path = os.getenv("HOME") .. "/Sync/"
   obsidian.setup({
-    dir = "/home/lummyn/Sync/",
+    dir = path,
     completion = {
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },
