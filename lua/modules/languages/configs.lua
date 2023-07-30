@@ -15,6 +15,7 @@ config.nvim_treesitter = function()
     auto_install = true,
     highlight = {
       enable = true, -- false will disable the whole extension
+      additional_vim_regex_highlighting = { "markdown" },
       -- disable = { "markdown" },-- list of language that will be disabled
     },
     indent = {
