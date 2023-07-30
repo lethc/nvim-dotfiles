@@ -193,7 +193,7 @@ config.which_key = function()
     icons = {
       breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
       separator = "➜", -- symbol used between a key and it's label
-      group = "+",      -- symbol prepended to a group
+      group = "+", -- symbol prepended to a group
     },
     popup_mappings = {
       scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -436,8 +436,16 @@ config.obsidian_nvim = function()
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },
     daily_notes = {
-      -- folder = "Diary/2023/April/",
-    }
+      folder = "Diary/a. Today/",
+    },
+    templates = {
+      subdir = "Templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M"
+    },
+    -- mappings = {
+    --   ["fo"] = require("obsidian.mapping").gf_passthrough(),
+    -- },
   })
 end
 config.asciitree_nvim = function()
