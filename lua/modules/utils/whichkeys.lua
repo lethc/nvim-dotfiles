@@ -229,6 +229,7 @@ return {
   o = {
     name = "Obsidian",
     c = { "<cmd>PeekClose<CR>", "Close Peek" },
+    e = { "<cmd>ObsidianTemplate<CR>", "Chose Template" },
     f = { "<cmd>ObsidianFollowLink<CR>", "Follow Link" },
     o = { "<cmd>ObsidianOpen<cr>", "Open File" },
     p = { "<cmd>PeekOpen<CR>", "Open Peek" },
