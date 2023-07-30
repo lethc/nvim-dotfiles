@@ -98,7 +98,9 @@ local modules = {
   },
   {
     'epwalsh/obsidian.nvim',
-    cmd = { "ObsidianSearch", "ObsidianQuickSwitch", "ObsidianOpen" },
+    -- cmd = { "ObsidianSearch", "ObsidianQuickSwitch", "ObsidianOpen" },
+    -- event = { "BufReadPre " .. vim.fn.expand "~" .. "/Sync/**.md" },
+    keys = { "<Leader>o" },
     -- dependencies = {
     --   'junegunn/fzf.vim'
     -- },
