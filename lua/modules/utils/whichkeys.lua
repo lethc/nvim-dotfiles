@@ -245,6 +245,12 @@ return {
     m = { "<cmd>MarkdownPreview<CR>", "Markdown" },
     M = { "<cmd>MarkdownPreviewStop<CR>", "Stop Markdown" },
     p = { "<cmd>PlantUMLRun<CR>", "Plantuml" },
+    t = {
+      "<cmd>VimtexCompile<CR>",
+      "LaTeX",
+      w = { "<cmd>VimtexCountWords<CR>", "spell word" },
+      t = { "<cmd>VimtexCompile<CR>", "LaTeX" }
+    },
   },
 
   r = {

@@ -22,6 +22,11 @@ local modules = {
   { "MunifTanjim/nui.nvim",                       lazy = true },
   { "jwalton512/vim-blade",                       ft = "php" },
   { "kkharji/sqlite.lua",                         lazy = true },
-	{ "lervag/vimtex", ft = { "tex" } }, --LaTeX
+  {
+    "lervag/vimtex", ft = { "tex" },
+    config = function ()
+      vim.g.vimtex_mappings_enabled = false
+    end
+  }, --LaTeX
 }
 return modules
