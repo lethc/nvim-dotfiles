@@ -443,9 +443,9 @@ config.obsidian_nvim = function()
       date_format = "%Y-%m-%d-%a",
       time_format = "%H:%M"
     },
-    -- mappings = {
-    --   ["fo"] = require("obsidian.mapping").gf_passthrough(),
-    -- },
+    mappings = {
+      ["_"] = require("obsidian.mapping").gf_passthrough(),
+    },
   })
 end
 config.asciitree_nvim = function()
