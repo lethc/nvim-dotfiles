@@ -523,7 +523,8 @@ config.dap = function()
   end
 
   -- require("dap-go").setup()
-  require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+  require("dap-python").setup("~/env/.virtualenvs/debugpy/bin/python")
+  -- require("dap-python").setup("~/.local/share/nvim/mason/bin/debugpy-adapter")
 
   ------------- DAP cpp, c, rust -------------------
   dap.adapters.lldb = {
