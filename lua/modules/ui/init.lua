@@ -12,8 +12,18 @@ local modules = {
   {
     "gantoreno/nvim-gabriel",
   },
+  -- {
+  --   "kvrohit/mellow.nvim",
+  --   config = function()
+  --     vim.g.mellow_italic_comments = true
+  --     vim.g.mellow_italic_functions = true
+  --     vim.g.mellow_bold_functions = true
+  --     vim.g.mellow_transparent = true
+  --     vim.g.mellow_bold_keywords = true
+  --   end,
+  -- },
   {
-    "kvrohit/mellow.nvim",
+    "lethc/mellow.nvim",
     config = function()
       vim.g.mellow_italic_comments = true
       vim.g.mellow_italic_functions = true
