@@ -438,6 +438,7 @@ config.obsidian_nvim = function()
     daily_notes = {
       folder = "Diary/a. Today/",
     },
+    disable_frontmatter = false,
     templates = {
       subdir = "Templates",
       date_format = "%Y-%m-%d-%a",
