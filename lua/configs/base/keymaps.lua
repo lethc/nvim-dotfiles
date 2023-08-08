@@ -37,9 +37,9 @@ keymaps["visual"] = {
   { "J",     ":m '>+1<CR>gv=gv" },                                      -- Move the selected text up and down
   { "K",     ":m '<-2<CR>gv=gv" },
   { "p",     '"_dP' },                                                  -- Paste the same text multiple times
-  { "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>" },     -- search-replace.nvim plugin
-  { "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>" },
-  { "<C-c>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>" },
+  { "<C-r>", "<CMD>lua require('search-replace')<CR><CMD>SearchReplaceSingleBufferVisualSelection<CR>" },     -- search-replace.nvim plugin
+  { "<C-s>", "<CMD>lua require('search-replace')<CR><CMD>SearchReplaceWithinVisualSelection<CR>" },
+  { "<C-c>", "<CMD>lua require('search-replace')<CR><CMD> SearchReplaceWithinVisualSelectionCWord<CR>" },
 }
 keymaps["visual_block"] = {
   { "J", ":m '>+1<CR>gv-gv" }, -- Move the selected text up and down
