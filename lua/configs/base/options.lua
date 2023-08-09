@@ -2,6 +2,7 @@ local M = {}
 
 M.options = function()
   local N = {
+    guifont = { "JetBrainsMono Nerd Font:h11" },                            -- the font used in graphical neovim applications
     backup = false,
     -- laststatus = 0, -- hide the bottom bar
     swapfile = false,
@@ -50,7 +51,6 @@ M.options = function()
     showbreak = "↳ ",                                                         -- character for line break
     scrolloff = 20,                                                             -- minimal number of screen lines to keep above and below the cursor
     sidescrolloff = 8,                                                          -- minimal number of screen columns either side of cursor if wrap is `false`
-    guifont = "monospace:h17",                                                  -- the font used in graphical neovim applications
     shortmess = { c = true, W = true, a = true, F = true, I = true, s = true }, --controls which messages are displayed in the status line, c = about completions
     spell = false,
     spelllang = { "en_gb", "es" },
