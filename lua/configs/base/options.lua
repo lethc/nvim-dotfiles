@@ -2,7 +2,7 @@ local M = {}
 
 M.options = function()
   local N = {
-    guifont = { "JetBrainsMono Nerd Font:h11" },                            -- the font used in graphical neovim applications
+    guifont = { "JetBrainsMono Nerd Font:h10.5" },                            -- the font used in graphical neovim applications
     backup = false,
     -- laststatus = 0, -- hide the bottom bar
     swapfile = false,
