@@ -314,6 +314,7 @@ return {
     C = { "<cmd>CodeiumDisable<CR>", "Disable Codeium" },
     d = { "<cmd>ColorizerToggle<CR>", "Display Colours in File" },
     e = { "<cmd>Themery<CR>", "Change Colorscheme" },
+    h = { "<cmd>UndotreeToggle<CR>", "Show File Change History" },
     o = { "<cmd>CccPick<CR>", "ColorPicker" },
     p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Enable Clipboard Images" },
     t = { "<cmd>TransparentEnable<CR>", "Enable Transparency" },
