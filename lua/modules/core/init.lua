@@ -7,7 +7,7 @@ local modules = {
   }, --delete buffers without losing window layout
   -- { "lvim-tech/lvim-linguistics" }
   { "nvim-tree/nvim-web-devicons",                lazy = true },
-  { "theRealCarneiro/hyprland-vim-syntax",        ft = "hypr" },
+  -- { "theRealCarneiro/hyprland-vim-syntax",        ft = "hypr" },
   { "elkowar/yuck.vim",                           ft = "yuck" },
   { "peterhoeg/vim-qml",                          ft = "qml" },
   { "fei6409/log-highlight.nvim",                 ft = "log" },
