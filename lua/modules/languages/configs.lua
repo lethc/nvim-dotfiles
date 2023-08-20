@@ -6,6 +6,15 @@ config.nvim_treesitter = function()
   if not nvim_treesitter_configs_status_ok then
     return
   end
+  local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+  parser_config.hypr = {
+    install_info = {
+      url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+      files = { "src/parser.c" },
+      branch = "master",
+    },
+    filetype = "hypr",
+  }
   nvim_treesitter_configs.setup({
     -- ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "vimdoc", "javascript", "c_sharp", "cmake", "cpp", "css", "diff", "git_config", "git_rebase", "gitcommit", "gitignore", "go", "html", "java", "json", "kotlin", "latex", "luadoc", "make", "php", "python", "rust", "scss", "sql", "toml", "ungrammar", "zig" }, --vim, vim-doc
 
