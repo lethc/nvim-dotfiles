@@ -23,7 +23,7 @@ local modules = {
   --   end,
   -- },
   {
-    "lethc/mellow.nvim",
+    "lethc/mellow-red",
     config = function()
       vim.g.mellow_italic_comments = true
       vim.g.mellow_italic_functions = true
