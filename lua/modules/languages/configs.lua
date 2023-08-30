@@ -807,24 +807,76 @@ config.nvim_jdtls = function()
   jdtls.start_or_attach(config)
 end
 config.null_ls = function()
-  local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-  if not null_ls_status_ok then
-    return
-  end
-  -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-  local formatting = null_ls.builtins.formatting
-  -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-  local diagnostics = null_ls.builtins.diagnostics
-  null_ls.setup({
-    debug = false,
-    sources = {
-      formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-      formatting.black.with({ extra_args = { "--fast" } }),
-      formatting.stylua,
-      formatting.google_java_format,
-      -- diagnostics.flake8
-    },
-  })
+	local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+	if not null_ls_status_ok then
+		return
+	end
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+	local formatting = null_ls.builtins.formatting
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+	local diagnostics = null_ls.builtins.diagnostics
+	null_ls.setup({
+		debug = false,
+		sources = {
+			formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+			formatting.black.with({ extra_args = { "--fast" } }),
+			formatting.stylua,
+			formatting.shfmt,
+			formatting.google_java_format,
+			-- diagnostics.flake8
+		},
+	})
+end
+config.conform_nvim = function()
+	local conform_nvim_status_ok, conform_nvim = pcall(require, "conform")
+	if not conform_nvim_status_ok then
+		return
+	end
+	conform_nvim.setup({
+		formatters_by_ft = {
+			lua = { "stylua" },
+			-- Conform will use the first available formatter in the list
+			javascript = {
+        formatters = { "prettier" },
+        args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      },
+			json = { "jq" },
+      -- html = { "prettier" },
+			typescript = { "prettier" },
+			cmake = { "cmake_format" },
+			sh = { "shfmt" },
+			yaml = { "yamlfmt" },
+			markdown = { "prettier" },
+			-- Formatters can also be specified with additional options
+			python = {
+				formatters = { "isort", "black" },
+				-- Run formatters one after another instead of stopping at the first success
+				run_all_formatters = true,
+			},
+		},
+    -- formatters = {
+    --   my_formatter = {
+    --     command = "google-java-format",
+    --   },
+    -- },
+		-- format_on_save = {
+		-- 	-- I recommend these options. See :help conform.format for details.
+		-- 	lsp_fallback = true,
+		-- 	timeout_ms = 500,
+		-- },
+	})
+  -- require("conform").formatters.my_formatter = {
+  --   command = "google-java-format",
+  -- }
+	-- vim.keymap.set("", "<leader>fm", function()
+	--   require("conform").format({ async = true, lsp_fallback = true })
+	-- end, { desc = "Format Buffer" })
+	-- vim.api.nvim_create_autocmd("BufWritePre", {
+	--   pattern = "*",
+	--   callback = function(args)
+	--     require("conform").format({ buf = args.buf })
+	--   end,
+	-- })
 end
 -- config.formatter_nvim = function()
 --   local formatter_nvim_status_ok, formatter_nvim = pcall(require, "formatter")

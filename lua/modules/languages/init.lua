@@ -100,6 +100,10 @@ local modules = {
     config = languages_config.null_ls,
   },
   -- {
+  --   "stevearc/conform.nvim",
+  --   config = languages_config.conform_nvim,
+  -- },
+  -- {
   --   "mhartington/formatter.nvim",
   --   config = languages_config.formatter_nvim,
   -- },
