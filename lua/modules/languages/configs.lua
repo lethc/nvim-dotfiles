@@ -19,7 +19,7 @@ config.nvim_treesitter = function()
     -- ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "vimdoc", "javascript", "c_sharp", "cmake", "cpp", "css", "diff", "git_config", "git_rebase", "gitcommit", "gitignore", "go", "html", "java", "json", "kotlin", "latex", "luadoc", "make", "php", "python", "rust", "scss", "sql", "toml", "ungrammar", "zig" }, --vim, vim-doc
 
     -- ensure_installed = "all", -- one of "all" or a list of languages
-		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline" }, --vim, vim-doc
+		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "sql" }, --vim, vim-doc
     ignore_install = {},      -- List of parsers to ignore installing
     auto_install = true,
     highlight = {
