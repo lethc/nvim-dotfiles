@@ -73,6 +73,7 @@ config.nvim_cmp = function()
           path = "[Path]",
           crates = "[Crates]",
           latex_symbols = "[LaTex]",
+          ['vim-dadbod-completion'] = '[DB]',
         })[entry.source.name]
         return item
       end,
@@ -96,9 +97,9 @@ config.nvim_cmp = function()
       {
         name = "latex_symbols",
       },
-      -- {
-      --   name = "orgmode",
-      -- },
+      {
+        name = "vim-dadbod-completion",
+      },
     },
   })
   cmp.setup.cmdline({ ":", "/", "?" }, {
