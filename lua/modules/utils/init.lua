@@ -223,6 +223,7 @@ local modules = {
       "kristijanhusak/vim-dadbod-completion",
       "tpope/vim-dotenv",
     },
+    keys = { { "<leader><leader>wd", ":DBUIToggle<cr>", desc = "Open Database client" } },
     init = function()
       vim.g.db_ui_use_nerd_fonts = 1
       vim.g.db_ui_show_database_icon = 1
