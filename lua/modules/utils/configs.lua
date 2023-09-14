@@ -554,14 +554,22 @@ config.markdown_preview = function()
         let g:mkdp_browser = ''
         let g:mkdp_echo_preview_url = 0
 
-				function OpenMarkdownPreview (url)
-        let appname = "qutebrowser"
-        let pid = system("pgrep -f " . appname)
-        if pid != ""
-				  execute "silent ! qutebrowser --target=window " . a:url
-        else
-				  execute "!qutebrowser " . a:url . " &"
-        endif
+        " Function to open all previews in different windows
+
+				" function OpenMarkdownPreview (url)
+        " let appname = "qutebrowser"
+        " let pid = system("pgrep -f " . appname)
+        " if pid != ""
+				"   execute "silent ! qutebrowser --target=window " . a:url
+        " else
+				"   execute "!qutebrowser " . a:url . " &"
+        " endif
+				" endfunction
+        
+        " Function to open all previews in the same window
+
+        function OpenMarkdownPreview (url)
+				  execute "! qutebrowser " . a:url . " &"
 				endfunction
 
 				let g:mkdp_browserfunc = 'OpenMarkdownPreview'
