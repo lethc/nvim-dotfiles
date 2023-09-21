@@ -116,8 +116,8 @@ return {
       "Document Diagnostics",
     },
     -- Format file
-    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-    -- f = { [[<CMD>lua require("conform").format({ async = true, lsp_fallback = true })<CR>]], "Format" },
+    -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+    f = { [[<CMD>lua require("conform").format({ async = true, lsp_fallback = true })<CR>]], "Format" },
     g = {
       -- Go to definition
       -- Use <C-t> to jump back

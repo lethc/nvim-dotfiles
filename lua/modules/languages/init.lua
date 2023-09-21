@@ -93,16 +93,16 @@ local modules = {
     "rcarriga/nvim-dap-ui",
     lazy = true,
   },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    -- keys = "<space>l",
-    event = "LspAttach",
-    config = languages_config.null_ls,
-  },
   -- {
-  --   "stevearc/conform.nvim",
-  --   config = languages_config.conform_nvim,
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   -- keys = "<space>l",
+  --   event = "LspAttach",
+  --   config = languages_config.null_ls,
   -- },
+  {
+    "stevearc/conform.nvim",
+    config = languages_config.conform_nvim,
+  },
   -- {
   --   "mhartington/formatter.nvim",
   --   config = languages_config.formatter_nvim,
