@@ -838,7 +838,7 @@ config.conform_nvim = function()
 	if not conform_nvim_status_ok then
 		return
 	end
-	require("conform.formatters.prettier").args = {
+	require("conform.formatters.prettierd").args = {
 		"--jsx-single-quote",
 		"--single-quote",
 		"--no-semi",
@@ -858,10 +858,10 @@ config.conform_nvim = function()
 			lua = { "stylua" },
 			java = { "java_google_format" },
 			javascript = {
-				formatters = { "prettier" },
+				formatters = { "prettierd" },
 			},
 			json = { "jq" },
-			typescript = { "prettier" },
+			typescript = { "prettierd" },
 			cmake = { "cmake_format" },
 			sh = { "shfmt" },
 			yaml = { "yamlfmt" },
