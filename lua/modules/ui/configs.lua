@@ -7,7 +7,7 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "no-clown-fiesta", "lvim", "nightly", "astromars", "astrodark", "aesthetic", "mellifluous", "mellow", "gabriel", "my_vivid", "leeward", "arctic" },
+    themes = { "no-clown-fiesta", "lvim", "nightly", "astromars", "astrodark", "aesthetic", "mellifluous", "mellow", "gabriel", "my_vivid", "leeward", "arctic", "nightcity", "nightcity-kabuki", "nightcity-afterlife" },
     themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
