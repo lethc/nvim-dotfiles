@@ -13,7 +13,8 @@ return {
     u = { [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]], "Go to 3" },
   },
   b = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    -- "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<cr>",
     "Buffers",
   },
 
