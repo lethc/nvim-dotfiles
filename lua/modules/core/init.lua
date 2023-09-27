@@ -3,7 +3,8 @@ local modules = {
   {
     "famiu/bufdelete.nvim",
     -- event = "VeryLazy",
-    event = { "InsertEnter" },
+    -- event = { "InsertEnter" },
+    event = "BufReadPre",
   }, --delete buffers without losing window layout
   -- { "lvim-tech/lvim-linguistics" }
   { "nvim-tree/nvim-web-devicons",                lazy = true },
