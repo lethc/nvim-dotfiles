@@ -237,6 +237,7 @@ local modules = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     -- event = "BufEnter",
     event = "BufReadPre",
     -- event = { 'BufRead', 'BufNewFile' },

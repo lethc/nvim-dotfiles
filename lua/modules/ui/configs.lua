@@ -437,7 +437,7 @@ config.nvim_noice = function()
   })
 end
 config.indent_blankline = function()
-  local indent_status_ok, indent_blankline = pcall(require, "indent_blankline")
+  local indent_status_ok, indent_blankline = pcall(require, "ibl")
   if not indent_status_ok then
     return
   end
