@@ -82,7 +82,7 @@ config.mason_nvim = function()
 		"texlab",
 		"ltex",
 		"marksman",
-		-- "tailwindcss"
+		"tailwindcss"
 	}
 	local settings = {
 		ui = {
