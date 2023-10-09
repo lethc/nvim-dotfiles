@@ -855,13 +855,17 @@ config.conform_nvim = function()
 	}
 	conform_nvim.setup({
 		formatters_by_ft = {
-			lua = { "stylua" },
-			java = { "java_google_format" },
 			javascript = {
 				formatters = { "prettierd" },
 			},
+			typescript = {
+				formatters = { "prettierd" },
+			},
+      javascriptreact = { "prettierd" },
+		  typescriptreact = { "prettierd" },
+			lua = { "stylua" },
+			java = { "java_google_format" },
 			json = { "jq" },
-			typescript = { "prettierd" },
 			cmake = { "cmake_format" },
 			sh = { "shfmt" },
 			yaml = { "yamlfmt" },
