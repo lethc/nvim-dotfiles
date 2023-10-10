@@ -112,7 +112,8 @@ local modules = {
     config = edit_config.asciitree_nvim
   },
   {
-    "turbio/bracey.vim",
+    -- "turbio/bracey.vim",
+    "lethc/bracey.vim",
     ft = "html",
     build = "npm install --prefix server",
     config = function()
