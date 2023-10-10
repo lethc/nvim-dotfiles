@@ -91,6 +91,8 @@ local modules = {
   {
     "ecthelionvi/NeoComposer.nvim",
     event = { "BufReadPre" },
+    branch = "main",
+    commit = "d1d17ebef4d5824517076c4c94fe479ba28b2d56",
     -- keys = {
     --   { "m", mode = { "n" } }
     -- },
