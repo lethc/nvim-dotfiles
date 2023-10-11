@@ -237,6 +237,7 @@ local modules = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
     main = "ibl",
     -- event = "BufEnter",
     event = "BufReadPre",
