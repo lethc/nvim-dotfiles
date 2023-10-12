@@ -309,6 +309,12 @@ return {
     v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
   },
 
+  v = {
+    name = "view",
+    m = { "<cmd>mkview<cr>", "Make view" },
+    l = { "<cmd>loadview<cr>", "Load View" },
+  },
+
   w = {
     name = "Switch",
     a = { "<cmd>lua require('asciitree').setup()<CR>", "Enable AsciiTree" },
