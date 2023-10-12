@@ -1,5 +1,6 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
+  { "folke/tokyonight.nvim" },
   { "cryptomilk/nightcity.nvim", version = false },
   { "lvim-tech/lvim-colorscheme" },
   { "edmondburnett/leeward.nvim" },
