@@ -51,6 +51,12 @@ configs["auto_commands"] = function()
   "   autocmd!
   "   autocmd BufReadPost,BufNewFile sagaoutline :UfoDisable :UfoDetach
   " autgroup end
+
+  "augroup remember_folds
+  "  autocmd!
+  "  autocmd BufWinLeave * mkview
+  "  autocmd BufWinEnter * silent! loadview
+  "augroup end
 ]])
 end
 
