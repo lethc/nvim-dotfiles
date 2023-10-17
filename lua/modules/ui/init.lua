@@ -294,6 +294,15 @@ local modules = {
     event = "VimEnter",
     config = ui_config.alpha,
   },
+  {
+    "wfxr/minimap.vim",
+    cmd = { "MinimapToggle" },
+    config = function ()
+      vim.g.minimap_width = 20
+      vim.g.minimap_auto_start = 1
+      vim.g.minimap_auto_start_win_enter = 1
+    end
+  }
 }
 
 return modules

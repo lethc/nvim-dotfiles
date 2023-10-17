@@ -325,6 +325,7 @@ return {
     h = { "<cmd>UndotreeToggle<CR>", "Show File Change History" },
     i = { "<cmd>CodeiumEnable<CR>", "Enable Codeium" },
     I = { "<cmd>CodeiumDisable<CR>", "Disable Codeium" },
+    m = { "<cmd>MinimapToggle<CR>", "MinMap" },
     o = { "<cmd>CccPick<CR>", "ColorPicker" },
     p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Enable Clipboard Images" },
     t = { "<cmd>TransparentEnable<CR>", "Enable Transparency" },
