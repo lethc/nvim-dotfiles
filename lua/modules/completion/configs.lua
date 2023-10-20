@@ -71,7 +71,7 @@ config.nvim_cmp = function()
           luasnip = "[Snipt]",
           buffer = "[Buffer]",
           path = "[Path]",
-          crates = "[Crates]",
+          crates = "[Version]",
           latex_symbols = "[LaTex]",
           ['vim-dadbod-completion'] = '[DB]',
         })[entry.source.name]

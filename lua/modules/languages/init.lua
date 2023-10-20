@@ -65,7 +65,12 @@ local modules = {
     ft = { "rust", "toml" },
     config = function()
       local crates = require("crates")
-      crates.setup()
+      crates.setup({
+        src = {
+          cmp = { enabled = true, },
+        }
+      }
+      )
       crates.show()
     end
 
@@ -101,6 +106,7 @@ local modules = {
   -- },
   {
     "stevearc/conform.nvim",
+    event = "LspAttach",
     config = languages_config.conform_nvim,
   },
   -- {
