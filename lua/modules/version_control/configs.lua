@@ -33,7 +33,7 @@ config.gitsigns_nvim = function()
         numhl = "GitSignsChangeNr",
         linehl = "GitSignsChangeLn",
       },
-      untracked = { text = "*" },
+      untracked = { text = "▎" },
     },
     signcolumn = true,   -- Toggle with `:Gitsigns toggle_signs`
     numhl = false,       -- Toggle with `:Gitsigns toggle_numhl`
