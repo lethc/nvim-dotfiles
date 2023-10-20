@@ -147,7 +147,7 @@ return {
     n = { "<cmd>Navbuddy<cr>", "Navbuddy" },
     -- Toggle outline
     o = { "<cmd>Lspsaga outline<cr>", "Toggle outline" },
-    O = { "<cmd>Lspsaga term_toggle<cr>", "Toggle outline" },
+    O = { "<cmd>Lspsaga term_toggle<cr>", "Toggle Terminal" },
     -- Peek Definition
     p = {
       name = "Peek...",
