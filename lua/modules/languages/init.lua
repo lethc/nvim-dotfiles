@@ -15,15 +15,19 @@ local modules = {
   },
   {
     "williamboman/mason.nvim",
-    -- dependencies = {
-    --   "neovim/nvim-lspconfig",
-    -- },
+    cmd = "Mason",
+    build = ":MasonUpdate",
     config = languages_config.mason_nvim,
   },
   { "williamboman/mason-lspconfig.nvim", lazy = true },
   {
     "neovim/nvim-lspconfig",
-    lazy = true,
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    -- lazy = true,
     -- config = languages_config.nvim_lspconfig,
   },
   {
