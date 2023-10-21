@@ -39,7 +39,10 @@ local modules = {
   {
     "folke/which-key.nvim",
     -- event = "VeryLazy",
-    keys = "<leader>",
+    keys = {
+      { "z", mode = { "n" } },
+      "<leader>",
+    },
     config = edit_config.which_key
   },
   { "HampusHauffman/block.nvim", cmd = { "Block", "BlockOn" }, config = edit_config.block },
