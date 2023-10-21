@@ -43,13 +43,13 @@ return {
     name = "Debug",
     b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
     c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-    g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
+    u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
     i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
     l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
     o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
     O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
     r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
-    u = {
+    g = {
       name = "Debug Rust",
       a = { "<cmd>RustCodeAction<cr>", "Code Action" },
       d = { "<cmd>RustDebuggables<cr>", "Run Debug" },

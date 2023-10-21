@@ -82,7 +82,7 @@ config.mason_nvim = function()
 		"texlab",
 		"ltex",
 		"marksman",
-		"tailwindcss"
+		"tailwindcss",
 	}
 	local settings = {
 		ui = {
@@ -445,6 +445,15 @@ config.rust_tools = function()
 			end,
 		},
 		tools = {
+			on_initialized = function()
+				vim.cmd([[
+                  augroup RustLSP
+                    autocmd CursorHold                      *.rs silent! lua vim.lsp.buf.document_highlight()
+                    autocmd CursorMoved,InsertEnter         *.rs silent! lua vim.lsp.buf.clear_references()
+                    autocmd BufEnter,CursorHold,InsertLeave *.rs silent! lua vim.lsp.codelens.refresh()
+                  augroup END
+                ]])
+			end,
 			hover_actions = {
 				auto_focus = true,
 			},
@@ -861,8 +870,8 @@ config.conform_nvim = function()
 			typescript = {
 				formatters = { "prettierd" },
 			},
-      javascriptreact = { "prettierd" },
-		  typescriptreact = { "prettierd" },
+			javascriptreact = { "prettierd" },
+			typescriptreact = { "prettierd" },
 			lua = { "stylua" },
 			java = { "java_google_format" },
 			json = { "jq" },

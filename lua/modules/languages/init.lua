@@ -61,7 +61,8 @@ local modules = {
   },
   { --#### RUST LANGUAGE ####
     "simrat39/rust-tools.nvim",
-    ft = { "rust" },
+    lazy = true,
+    -- ft = { "rust" },
     config = languages_config.rust_tools,
   },
   {
@@ -81,6 +82,12 @@ local modules = {
   },
   {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      keys = {
+        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+      },
+    },
     lazy = true,
     config = languages_config.dap,
   },
@@ -96,10 +103,6 @@ local modules = {
   {
     "theHamsta/nvim-dap-virtual-text",
     -- event = "VeryLazy"
-    lazy = true,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
     lazy = true,
   },
   -- {
