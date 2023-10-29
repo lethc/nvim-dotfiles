@@ -237,8 +237,17 @@ local modules = {
     config = ui_config.nvim_noice,
   },
   {
+    'echasnovski/mini.indentscope',
+    event = "BufReadPre",
+    version = '*',
+    config = ui_config.indetscope,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
-    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
+    dependencies = {
+      { "HiPhish/rainbow-delimiters.nvim" },
+    },
+    enabled = false,
     main = "ibl",
     -- event = "BufEnter",
     event = "BufReadPre",
