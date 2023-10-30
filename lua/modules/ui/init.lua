@@ -1,19 +1,17 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
-  { "folke/tokyonight.nvim" },
-  { "cryptomilk/nightcity.nvim", version = false },
-  { "lvim-tech/lvim-colorscheme" },
-  { "edmondburnett/leeward.nvim" },
+  { "lethc/colorscheme-nvim" },
+  { "folke/tokyonight.nvim", enabled = false },
+  { "cryptomilk/nightcity.nvim", version = false, enabled = false },
+  { "lvim-tech/lvim-colorscheme", enabled = false },
+  { "edmondburnett/leeward.nvim", enabled = false },
   {
     "rockyzhang24/arctic.nvim",
+    enabled = false,
     dependencies = {"rktjmp/lush.nvim"}
   },
-  {
-    "RaphaeleL/my_vivid",
-  },
-  {
-    "gantoreno/nvim-gabriel",
-  },
+  { "RaphaeleL/my_vivid", enabled = false },
+  { "gantoreno/nvim-gabriel", enabled = false },
   -- {
   --   "kvrohit/mellow.nvim",
   --   config = function()
@@ -36,6 +34,7 @@ local modules = {
   },
   {
     "jadnw/aesthetic.nvim",
+    enabled = false,
     config = function()
       require("aesthetic").setup({
         accent = "green",    -- values: "orange", "teal", "white", "cyan", "green", "magenta", "purple", "red", "blue", "yellow"
@@ -90,6 +89,7 @@ local modules = {
   },
   {
     "ramojus/mellifluous.nvim",
+    enabled = false,
     config = function()
       require("mellifluous").setup({
         dim_inactive = true,
@@ -157,6 +157,7 @@ local modules = {
   },
   {
     "AstroNvim/astrotheme",
+    enabled = false,
     config = function()
       require("astrotheme").setup({
         style = {
@@ -196,6 +197,7 @@ local modules = {
   },
   {
     "Alexis12119/nightly.nvim",
+    enabled = false,
     config = function()
       require("nightly").setup({
         transparent = vim.g.transparent_enabled,
