@@ -754,9 +754,9 @@ config.alpha = function()
 
   dashboard.section.footer.val = footer()
 
-  dashboard.section.footer.opts.hl = "Type"
-  dashboard.section.header.opts.hl = "Include"
-  dashboard.section.buttons.opts.hl = "Keyword"
+  dashboard.section.footer.opts.hl = "Keyword"
+  dashboard.section.header.opts.hl = "Identifier"
+  dashboard.section.buttons.opts.hl = "Character"
 
   dashboard.opts.opts.noautocmd = true
   -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
