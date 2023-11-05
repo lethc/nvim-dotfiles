@@ -21,7 +21,7 @@ return {
     buffer = "󱔗 ",
     git = " ",
     lsp = " ",
-    separator = "➤",
+    separator = "➤ ",
     dot = "",
     fix = " ",
     todo = " ",
