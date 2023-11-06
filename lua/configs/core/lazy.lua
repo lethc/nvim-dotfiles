@@ -23,7 +23,7 @@ lazy["load"] = function()
   require("lazy").setup(modules, {
     install = {
       missing = true,
-      colorscheme = { "mellow", "lvim", "habamax" },
+      colorscheme = { "tokyonight", "lvim", "habamax" },
     },
     ui = {
       size = {
