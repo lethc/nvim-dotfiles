@@ -24,6 +24,15 @@ local modules = {
     config = edit_config.telescope_nvim,
   },
   {
+    "folke/which-key.nvim",
+    -- event = "VeryLazy",
+    keys = {
+      { "z", mode = { "n" } },
+      "<leader>",
+    },
+    config = edit_config.which_key
+  },
+  {
     "echasnovski/mini.files",
     keys = {
       {
@@ -36,15 +45,11 @@ local modules = {
     },
     config = edit_config.mini_files,
   },
-  {
-    "folke/which-key.nvim",
-    -- event = "VeryLazy",
-    keys = {
-      { "z", mode = { "n" } },
-      "<leader>",
-    },
-    config = edit_config.which_key
-  },
+  -- {
+  --   'echasnovski/mini.clue',
+  --   version = '*',
+  --   config = edit_config.mini_clue,
+  -- },
   { "HampusHauffman/block.nvim", cmd = { "Block", "BlockOn" }, config = edit_config.block },
   {
     "roobert/search-replace.nvim",
