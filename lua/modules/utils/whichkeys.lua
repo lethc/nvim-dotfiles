@@ -58,7 +58,11 @@ return {
     x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
   },
 
-  e = { [[<cmd>lua require("mini.files").open()<CR>]], "Mini files" },
+  e = {
+    name = "Explore",
+    d = { [[<cmd>lua require("mini.files").open()<CR>]], "Directory" },
+    e = { [[<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0))<CR>]], "File files" },
+  },
   f = {
     name = "DiffView",
     c = { "<cmd>DiffviewClose<cr>", "Close DiffView" },
