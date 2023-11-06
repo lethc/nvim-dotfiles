@@ -54,8 +54,7 @@ local modules = {
   { "HampusHauffman/block.nvim", cmd = { "Block", "BlockOn" }, config = edit_config.block },
   {
     "roobert/search-replace.nvim",
-    -- event = "VeryLazy",
-    keys = { "<leader>c" },
+    cmd = { "SearchReplaceSingleBufferCExpr", "SearchReplaceSingleBufferCFile", "SearchReplaceSingleBufferOpen", "SearchReplaceSingleBufferSelections", "SearchReplaceSingleBufferCWord", "SearchReplaceSingleBufferCWORD" },
     config = edit_config.search_replace
   },
   { "uga-rosa/ccc.nvim",         cmd = "CccPick" }, --Colorpicker
