@@ -6,7 +6,7 @@ keymaps["normal"] = {
 	{ "<S-h>"     ,     ":bprevious<CR>"          },
 	{ "<BS>"      ,     ":b#<CR>"                 }, -- Like Ctrl + Tab in a browser
 	{ "<Tab>"     ,     ":b#<CR>"                 },
-	{ "<S-q>"     ,     "<cmd>Bdelete!<CR>"       }, -- Close buffer
+	{ "<S-l>"     ,     "<cmd>Bdelete!<CR>"       }, -- Close buffer
 	{ "<C-h>"     ,     "<C-w>h"                  }, -- Better window navigation
 	{ "<C-j>"     ,     "<C-w>j"                  },
 	{ "<C-k>"     ,     "<C-w>k"                  },

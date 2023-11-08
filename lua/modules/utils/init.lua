@@ -28,6 +28,7 @@ local modules = {
     -- event = "VeryLazy",
     keys = {
       { "z", mode = { "n" } },
+      { "'", mode = { "n" } },
       "<leader>",
     },
     config = edit_config.which_key
