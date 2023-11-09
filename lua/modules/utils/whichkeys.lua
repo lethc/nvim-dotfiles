@@ -228,11 +228,11 @@ return {
     F = { "<cmd>MkdnFoldSection<cr>", "Unfold" },
     -- l = { "<cmd>MkdnNewListItem<cr>", "NewList" },
     l = { "<cmd>MkdnExtendList<cr>", "NewListNoMove" },
+    m = { "<cmd>MkdnTableFormat<cr>", "FormatTable" },
     n = { "<cmd>MkdnCreateLink<cr>", "CreateLink" },
     N = { "<cmd>MkdnDestroyLink<cr>", "DestroyLink" },
     r = { "<cmd>MkdnTableNewRowBelow<cr>", "TableNewRowBelow" },
     R = { "<cmd>MkdnTableNewRowAbove<cr>", "TableNewRowAfter" },
-    t = { "<cmd>MkdnTableFormat <cr>", "FormatTable" },
   },
 
   o = {
