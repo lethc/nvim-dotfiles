@@ -73,6 +73,7 @@ config.nvim_cmp = function()
           path = "[Path]",
           crates = "[Version]",
           latex_symbols = "[LaTex]",
+          nerdfont = "[NerdFont]",
           ['vim-dadbod-completion'] = '[DB]',
         })[entry.source.name]
         return item
@@ -100,6 +101,9 @@ config.nvim_cmp = function()
       {
         name = "vim-dadbod-completion",
       },
+      {
+        name = 'nerdfont'
+      }
     },
   })
   cmp.setup.cmdline({ ":", "/", "?" }, {

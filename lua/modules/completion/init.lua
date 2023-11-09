@@ -10,6 +10,7 @@ local modules = {
       "kdheepak/cmp-latex-symbols",
       "hrsh7th/cmp-cmdline",
       "rafamadriz/friendly-snippets",
+      "chrisgrieser/cmp-nerdfont",
     },
     event = { "InsertEnter" },
     keys = {
