@@ -11,11 +11,12 @@ config.telescope_nvim = function()
     defaults = {
       prompt_prefix = " " .. icons.common.search .. " ",
       selection_caret = "  ",
+      -- selection_caret = " ",
       entry_prefix = "  ",
       initial_mode = "insert",
       selection_strategy = "reset",
       sorting_strategy = "ascending",
-      layout_strategy = "horizontal",
+      layout_strategy = "vertical",
       layout_config = {
         horizontal = {
           prompt_position = "top",
@@ -24,10 +25,12 @@ config.telescope_nvim = function()
         },
         vertical = {
           mirror = false,
+          prompt_position = "top",
+          preview_cutoff = 0.2,
+          preview_height = 0.4
         },
-        width = 0.95,
-        height = 0.95,
-        preview_cutoff = 120,
+        height = 0.9,
+        width = 0.8,
       },
       vimgrep_arguments = {
         "rg",
@@ -116,6 +119,7 @@ config.telescope_nvim = function()
         hidden = true,
       },
       find_files = {
+        -- theme = "dropdown",
         hidden = true,
       },
       live_grep = {
