@@ -14,10 +14,6 @@ return {
     i = { [[<cmd>lua require("harpoon.ui").nav_file(8)<CR>]], "go to 8" },
     o = { [[<cmd>lua require("harpoon.ui").nav_file(9)<CR>]], "go to 9" },
   },
-  b = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<cr>",
-    "Buffers",
-  },
 
   c = {
     name = "Search-Replace",
@@ -273,7 +269,7 @@ return {
   s = {
     name = "Search",
     b = {
-      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "<cmd>Telescope buffers<cr>",
       "Buffers",
     },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
@@ -281,7 +277,8 @@ return {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Find files",
     },
-    F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    F = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
+
     h = {
       name = "Help",
       c = { "<cmd>Telescope commands<cr>", "Commands" },
