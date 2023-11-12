@@ -269,8 +269,8 @@ config.mkdnflow_nvim = function()
       MkdnTableNewRowAbove = { "n", "<leader>mR" },
       MkdnTableNewColAfter = { "n", "<leader>mc" },
       MkdnTableNewColBefore = { "n", "<leader>iC" },
-      MkdnFoldSection = { "n", "<leader>mf" },
-      MkdnUnfoldSection = { "n", "<leader>mF" },
+      -- MkdnFoldSection = { "n", "<leader>mf" },
+      -- MkdnUnfoldSection = { "n", "<leader>mF" },
     },
   })
 end
