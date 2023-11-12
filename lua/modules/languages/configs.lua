@@ -864,12 +864,8 @@ config.conform_nvim = function()
 	}
 	conform_nvim.setup({
 		formatters_by_ft = {
-			javascript = {
-				formatters = { "prettierd" },
-			},
-			typescript = {
-				formatters = { "prettierd" },
-			},
+			javascript = { "prettierd" },
+			typescript = {"prettierd"	},
 			javascriptreact = { "prettierd" },
 			typescriptreact = { "prettierd" },
 			lua = { "stylua" },
@@ -880,10 +876,7 @@ config.conform_nvim = function()
 			yaml = { "yamlfmt" },
 			markdown = { "prettier" },
 			-- html = { "prettier" },
-			python = {
-				formatters = { "isort", "black" },
-				run_all_formatters = true,
-			},
+			python = { "isort", "black"	},
 		},
 		formatters = {
 			java_google_format = java_google_format,
