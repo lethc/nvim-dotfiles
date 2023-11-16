@@ -241,6 +241,7 @@ return {
     q = { "<cmd>ObsidianQuickSwitch<CR>", "Quick Switch" },
     s = { "<cmd>ObsidianSearch<CR>", "Obsidian Search" },
     t = { "<cmd>ObsidianToday<cr>", "Open Today File" },
+    T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow File" },
     y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday File" },
   },
 
