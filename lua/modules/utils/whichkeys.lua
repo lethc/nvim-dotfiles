@@ -165,7 +165,7 @@ return {
       name = "Status LSP",
       l = { "<cmd>LspStart ltex<cr>", "Start ltex" },
       s = { "<cmd>LspStop<cr>", "Stop LSP" },
-      t = { "<cmd>LspStart tailwindcss<cr>", "Start ltex" },
+      t = { "<cmd>LspStart tailwindcss<cr>", "Start tailwindcss" },
     },
     -- LSP finder - Find the symbol's definition
     S = { "<cmd>Lspsaga finder def+ref+im<cr>", "Document Symbols" },
