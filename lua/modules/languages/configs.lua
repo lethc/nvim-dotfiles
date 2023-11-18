@@ -207,7 +207,7 @@ config.lsp_saga = function()
 				vsplit = '<C-x>v',
 				split = '<C-x>i',
 				tabe = '<C-x>t',
-				quit = { '<C-x>q' , '<ESC>' },
+				quit = { 'q', '<C-x>q' , '<ESC>' },
 				close = '<C-x>k',
 			},
 		},
@@ -225,8 +225,8 @@ config.lsp_saga = function()
         split = "i",
         tabe = "t",
         tabnew = "n",
-        quit = { "q", "<Esc>" },
-        close = "<C-x>k'",
+        quit = { "q", "<C-x>q","<Esc>" },
+        close = { "<C-x>k", "k" }
       },
     },
 	})
