@@ -227,7 +227,7 @@ local modules = {
     cmd = { "RunCode", "RunFile", "RunProject", "CompilerOpen" },
     -- keys = { "<Leader>r" },
   },
-  -- { 
+  -- {
   --   "kndndrj/nvim-dbee",
   --   -- dependencies = {
   --   --   "MunifTanjim/nui.nvim",
@@ -254,7 +254,7 @@ local modules = {
   --       }
   --     })
   --   end,
-  -- }, 
+  -- },
   -- Database connections
   {
     "kristijanhusak/vim-dadbod-ui",
