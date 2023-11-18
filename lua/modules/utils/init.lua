@@ -245,7 +245,7 @@ local modules = {
   --         require("dbee.sources").MemorySource:new({
   --           {
   --             name = "testdb",
-  --             url = "mysql://lummyn:loonass501@localhost:3306",
+  --             url = "mysql://user:passwd@localhost:3306",
   --             type = "mysql",
   --           },
   --           -- ...
