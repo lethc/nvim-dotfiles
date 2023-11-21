@@ -226,7 +226,7 @@ config.lsp_saga = function()
         tabe = "t",
         tabnew = "n",
         quit = { "q", "<C-x>q","<Esc>" },
-        close = { "<C-x>k", "k" }
+        close = { "<C-x>k" }
       },
     },
 	})
