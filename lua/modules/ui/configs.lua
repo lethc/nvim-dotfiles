@@ -699,27 +699,30 @@ config.alpha = function()
   end
   local dashboard = require("alpha.themes.dashboard")
   dashboard.section.header.val = {
-    [[⣿⣿⣿⡏⣿⣿⣿⡟⡠⠀⣼⡿⠁⠀⣠⣴⡿⢁⡴⠁⣼⠟⢁⡏⢸⢸⠀⠀⢡⠀]],
-    [[⣿⣿⢛⠷⢿⣿⡿⣰⠃⠘⢋⠃⣠⣾⣿⣿⢁⣾⠁⢸⠏⡀⣼⡁⠀⠈⠀⠀⠸⡀]],
-    [[⣿⣿⣎⣃⣵⣿⣻⢣⠀⠀⢀⣼⣷⣾⣿⡇⣾⡟⢀⠏⡐⣼⣿⣧⠀⠀⠀⠀⠀⣇]],
-    [[⣿⣿⣿⣿⣿⣿⢧⢿⠇⠀⠎⢛⡋⠻⣿⣷⣿⣧⠈⣰⣳⣝⢿⣿⡀⠀⠀⠀⢠⢻]],
-    [[⣿⣿⣿⣿⡿⠳⣳⠋⠀⠀⣼⠋⠀⠠⢸⣿⣿⣿⣠⣿⣿⣿⣷⣝⡷⠀⢠⠀⢨⢸]],
-    [[⣿⣿⡿⢋⢄⠞⠁⣠⡆⢸⣿⢸⡻⡀⣸⣿⣿⣿⣿⣿⣿⠂⠉⠻⢿⣧⡈⢆⠀⠀]],
-    [[⣿⣿⠘⠁⢀⣴⣾⡿⢣⣦⢻⣬⣯⣾⣿⣿⣿⣿⣿⣿⢃⣤⣄⠠⣤⠹⣷⡈⠀⠀]],
-    [[⠋⠁⠠⠊⠀⠀⠀⠾⡸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢘⣟⣫⢆⣿⡇⣿⠃⠀⠀]],
-    [[⣀⢂⡔⢶⣿⠟⣫⣾⢿⣪⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣩⣵⣿⣿⡵⠁⡀⢀⣶]],
-    [[⣿⣾⣿⢆⡗⣾⣯⣷⡿⢟⣯⣾⣻⣞⢿⢿⣿⣿⣿⣿⣿⣿⣿⣟⣉⡤⢗⣵⣿⣿]],
-    [[⣿⣿⢣⣿⣷⠽⣿⣿⣿⣿⢟⣯⣶⢹⣿⠿⡿⠿⠿⠿⢿⣿⣿⠿⣋⠾⢿⣛⣿⣿]],
-    [[⣿⣷⣿⣿⣿⢸⣮⡻⣿⣿⣿⣿⠍⡚⢱⣿⡏⣿⡇⣿⡿⣶⣦⠀⠘⠿⠿⠽⠛⠃]],
-    [[⣿⣿⣿⣹⣾⣼⣿⣿⣷⣭⣭⣵⠇⣥⣾⣿⣿⣿⣿⣿⣿⣿⢣⣾⣿⣿⣿⣿⣷⣥]],
+-- [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
+-- [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
+-- [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
+-- [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+-- [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+-- [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+-- [[                                                   ]],
+[[                                                              ]],
+[[ ███╗   ███╗██╗   ██╗    ██╗  ██╗ ██████╗ ███╗   ███╗███████╗ ]],
+[[ ████╗ ████║╚██╗ ██╔╝    ██║  ██║██╔═══██╗████╗ ████║██╔════╝ ]],
+[[ ██╔████╔██║ ╚████╔╝     ███████║██║   ██║██╔████╔██║█████╗   ]],
+[[ ██║╚██╔╝██║  ╚██╔╝      ██╔══██║██║   ██║██║╚██╔╝██║██╔══╝   ]],
+[[ ██║ ╚═╝ ██║   ██║       ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗ ]],
+[[ ╚═╝     ╚═╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ]],
+[[                                                              ]],
   }
   dashboard.section.buttons.val = {
-    dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
+    dashboard.button("h", "  Home", ":e ~/Sync/Templates/template_today.md <CR>"),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
     dashboard.button("r", "󱎫  Recently used files", ":Telescope oldfiles <CR>"),
     dashboard.button("F", "󰚞  Find text", ":Telescope live_grep <CR>"),
     dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-    dashboard.button("q", "󰅚  Quit Neovim", ":qa<CR>"),
+    dashboard.button("q", "󰅚  Quit", ":qa<CR>"),
     -- (function()
     --   local group = { type = "group", opts = { spacing = 0 } }
     --   group.val = {
@@ -749,7 +752,7 @@ config.alpha = function()
     -- local fortune = handle:read("*a")
     -- handle:close()
     -- return fortune
-    return "~Okaerinasaimase Goshujin-Sama~"
+    return "~There's no place like Home~"
   end
 
   dashboard.section.footer.val = footer()
