@@ -670,7 +670,7 @@ config.obsidian_nvim = function()
   if not obsidian_status_ok then
     return
   end
-  local path = os.getenv("HOME") .. "/Sync/"
+  local path = os.getenv("HOME") .. "/Home/"
   obsidian.setup({
     dir = path,
     completion = {
