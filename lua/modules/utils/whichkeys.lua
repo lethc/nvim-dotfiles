@@ -1,7 +1,7 @@
 return {
   -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   a = {
-    name = "Harpoon",
+    name = " 󰠳 Harpoon",
     a = { [[<cmd>lua require("harpoon.mark").add_file()<CR>]], "Add File" },
     m = { [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], "Toggle Menu" },
     q = { [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]], "Go to 1" },
@@ -16,7 +16,7 @@ return {
   },
 
   c = {
-    name = "Search-Replace",
+    name = " 󰛔 Search-Replace",
     b = {
       name = "Search-Replace-MultiBuffer",
       e = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
@@ -38,7 +38,7 @@ return {
   },
 
   d = {
-    name = "Debug",
+    name = "  Debug",
     b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
     c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
     u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
@@ -57,12 +57,13 @@ return {
   },
 
   e = {
-    name = "Explore",
+    name = "  Explore",
     d = { [[<cmd>lua require("mini.files").open()<CR>]], "Directory" },
     e = { [[<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0))<CR>]], "File files" },
   },
+
   f = {
-    name = "DiffView",
+    name = "  DiffView",
     c = { "<cmd>DiffviewClose<cr>", "Close DiffView" },
     f = { "<cmd>DiffviewFocusFiles<cr>", "Focus Files DiffView" },
     j = { "<cmd>DiffviewFileHistory %<cr>", "History Current File DiffView" },
@@ -73,7 +74,7 @@ return {
   },
 
   g = {
-    name = "Git",
+    name = "  Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
@@ -96,14 +97,14 @@ return {
   },
 
   i = {
-    name = "Directory",
+    name = "  Directory",
     i = { "<cmd>cd %:p:h<cr>:pwd<CR>", "Change Directory" },
     c = { "<cmd>lcd %:p:h<cr>:pwd<CR>", "Change Directory only for current window" },
     v = { "<cmd>pwd<cr>", "View Current Directory" },
   },
 
   l = {
-    name = "LSP",
+    name = " 󰘦 LSP",
     -- Code action
     a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
     -- Call hierarchy
@@ -217,7 +218,7 @@ return {
   },
 
   m = {
-    name = "Markdown-Files",
+    name = "  Markdown-Files",
     c = { "<cmd>MkdnTableNewColAfter<cr>", "TableNewColAfter" },
     C = { "<cmd>MkdnTableNewColBefore<cr>", "TableNewColBefore" },
     -- f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
@@ -232,7 +233,7 @@ return {
   },
 
   o = {
-    name = "Obsidian",
+    name = "  Obsidian",
     c = { "<cmd>PeekClose<CR>", "Close Peek" },
     e = { "<cmd>ObsidianTemplate<CR>", "Chose Template" },
     f = { "<cmd>ObsidianFollowLink<CR>", "Follow Link" },
@@ -246,7 +247,7 @@ return {
   },
 
   p = {
-    name = "Preview",
+    name = "  Preview",
     h = { "<cmd>Bracey<CR>", "Preview HTML" },
     m = { "<cmd>MarkdownPreview<CR>", "Markdown" },
     M = { "<cmd>MarkdownPreviewStop<CR>", "Stop Markdown" },
@@ -260,7 +261,7 @@ return {
   },
 
   r = {
-    name = "Run Code",
+    name = "  Run-Code",
     c = { "<cmd>RunCode<CR>", "Run Code" },
     f = { "<cmd>RunFile<CR>", "Run File" },
     p = { "<cmd>RunProject<CR>", "Run Project" },
@@ -268,7 +269,7 @@ return {
   },
 
   s = {
-    name = "Search",
+    name = " 󰥨 Search",
     b = {
       "<cmd>Telescope buffers<cr>",
       "Buffers",
@@ -307,20 +308,20 @@ return {
   },
 
   t = {
-    name = "Terminal",
+    name = "  Terminal",
     c = { "<cmd>Compile<cr>", "Compiler File" },
     h = { "<cmd>split | set norelativenumber | set nonumber  | terminal<cr>", "Horizontal Terminal" },
     v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
   },
 
   v = {
-    name = "view",
-    m = { "<cmd>mkview<cr>", "Make view" },
-    l = { "<cmd>loadview<cr>", "Load View" },
+    name = "  view fold",
+    m = { "<cmd>mkview<cr>", "Make view (remember fold)" },
+    l = { "<cmd>loadview<cr>", "Load View (apply fold)" },
   },
 
   w = {
-    name = "Switch On",
+    name = " 󰨚 Switch On",
     a = { "<cmd>lua require('asciitree').setup()<CR>", "AsciiTree" },
     b = { "<cmd>Block<CR>", "Toggle Block" },
     c = { "<cmd>ColorizerToggle<CR>", "Colours in current file" },
@@ -337,7 +338,7 @@ return {
   },
 
   z = {
-    name = "Lazy",
+    name = " 󰒲 Lazy",
     a = { "<cmd>Lazy show<cr>", "Status" },
     c = { "<cmd>Lazy check<cr>", "Check" },
     i = { "<cmd>Lazy install<cr>", "Install" },
