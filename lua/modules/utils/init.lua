@@ -5,7 +5,8 @@ local modules = {
     tag = '0.1.4',
     cmd = "Telescope",
     keys = {
-      { "<leader>b" , "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<CR>", desc = "Buffers"},
+      -- { "<leader>b" , "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<CR>", desc = "Buffers"},
+      { "<leader>b" , "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>", desc = "Buffers"},
       { "<leader>sf", "<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",   desc = "Telescope find files" },
       { "<leader>si", "<Cmd>Telescope notify<CR>",       desc = "Telescope Notify" },
       { "<leader>sF", "<Cmd>Telescope live_grep theme=dropdown<CR>",    desc = "Telescope live grep" },
