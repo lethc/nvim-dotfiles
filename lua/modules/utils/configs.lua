@@ -686,7 +686,7 @@ config.obsidian_nvim = function()
       time_format = "%H:%M"
     },
     mappings = {
-      ["_"] = require("obsidian.mapping").gf_passthrough(),
+      -- ["_"] = require("obsidian.mapping").gf_passthrough(),
     },
   })
 end
