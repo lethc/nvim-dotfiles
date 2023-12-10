@@ -188,7 +188,7 @@ config.lualine = function()
         --   left = 1, right = 0 } },
         -- { "filename", path = 1,         symbols = { modified = "  ", readonly = "", unnamed = "" } },
         diff,
-        { require("NeoComposer.ui").status_recording },
+        -- { require("NeoComposer.ui").status_recording },
       },
       lualine_x = {
         diagnostics,

@@ -123,15 +123,24 @@ local modules = {
     },
     config = edit_config.flash_nvim,
   },
+  -- {
+  --   "ecthelionvi/NeoComposer.nvim",
+  --   event = { "BufReadPre" },
+  --   branch = "main",
+  --   -- commit = "d1d17ebef4d5824517076c4c94fe479ba28b2d56",
+  --   -- keys = {
+  --   --   { "m", mode = { "n" } }
+  --   -- },
+  --   config = edit_config.NeoComposer_nvim,
+  -- },
   {
-    "ecthelionvi/NeoComposer.nvim",
-    event = { "BufReadPre" },
-    branch = "main",
-    -- commit = "d1d17ebef4d5824517076c4c94fe479ba28b2d56",
-    -- keys = {
-    --   { "m", mode = { "n" } }
-    -- },
-    config = edit_config.NeoComposer_nvim,
+	  "chrisgrieser/nvim-recorder",
+    keys = {
+      -- these must match the keys in the mapping config below
+      { "q", desc = " Start Recording" },
+      { "Q", desc = " Play Recording" },
+    },
+    config = edit_config.nvim_recorder,
   },
   {
     'epwalsh/obsidian.nvim',
