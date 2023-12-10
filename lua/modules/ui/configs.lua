@@ -122,13 +122,13 @@ config.lualine = function()
   local location = {
     "location",
     separator = { left = "", right = "" },
-    color = { bg = "#0F1416", fg = "#DADADA" },
+    color = { bg = "#171717", fg = "#E1E1E1" },
     padding = 0.8,
   }
   local progress = {
     "progress",
     separator = { left = "", right = "" },
-    color = { bg = "#0F1416", fg = "#DADADA" },
+    color = { bg = "#171717", fg = "#E1E1E1" },
     padding = 0.8,
   }
   local function getWords()
@@ -149,7 +149,7 @@ config.lualine = function()
     options = {
       globalstatus = true,
       icons_enabled = true,
-      theme = "tokyonight",
+      theme = "no-clown-fiesta",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
@@ -203,7 +203,7 @@ config.lualine = function()
           "filename",
           path = 1,
           symbols = icons.file_status_symbol,
-          -- color = { bg = "#0F1416", fg = "#DADADA" },
+          -- color = { bg = "#171717", fg = "#E1E1E1" },
         },
         { getWords },
         location,
@@ -212,7 +212,7 @@ config.lualine = function()
             return "  "
           end,
           separator = { left = "", right = "" },
-          color = { bg = "#0F1416", fg = "#DADADA" },
+          color = { bg = "#171717", fg = "#E1E1E1" },
           padding = 0.1,
         },
         progress,
@@ -222,7 +222,7 @@ config.lualine = function()
             return " 󰗚  %L "
           end,
           separator = { left = "", right = "" },
-          color = { bg = "#0F1416", fg = "#DADADA" },
+          color = { bg = "#171717", fg = "#E1E1E1" },
           padding = 0.3,
         },
       },
