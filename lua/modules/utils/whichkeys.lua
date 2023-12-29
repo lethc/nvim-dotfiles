@@ -205,7 +205,7 @@ return {
       "Cursor Diagnostic",
     },
     -- Show Tailwind CSS values
-    v = { "<cmd>TWValues<cr>", "Show tailwind CSS values" },
+    -- v = { "<cmd>TWValues<cr>", "Show tailwind CSS values" },
     -- Show workspace diagnostics
     w = {
       "<cmd>Lspsaga show_workspace_diagnostics<cr>",
