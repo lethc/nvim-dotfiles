@@ -83,6 +83,7 @@ config.mason_nvim = function()
 		"ltex",
 		"marksman",
 		"tailwindcss",
+    "astro",
 	}
 	local settings = {
 		ui = {
