@@ -7,7 +7,7 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "no-clown-fiesta", "canon", "canonr", "tokyonight", "catppuccin", "lvim", "leeward" },
+    themes = { "no-clown-fiesta", "canon", "canonr", "tokyonight", "catppuccin" },
     themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
