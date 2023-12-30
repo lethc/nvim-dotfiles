@@ -7,7 +7,7 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "no-clown-fiesta", "mellow", "tokyonight", "catppuccin" },
+    themes = { "no-clown-fiesta", "canon", "canonr", "tokyonight", "catppuccin", "lvim", "leeward" },
     themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
@@ -599,7 +599,7 @@ config.true_zen = function()
         shade = "dark",          -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
         backdrop = 0,            -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
         minimum_writing_area = { -- minimum size of main window
-          width = 70,
+          width = 120, --70
           height = 44,
         },
         quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
@@ -619,7 +619,7 @@ config.true_zen = function()
       minimalist = {
         ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
         options = {                       -- options to be disabled when entering Minimalist mode
-          number = true,
+          number = false,
           relativenumber = false,
           showtabline = 0,
           signcolumn = "no",
@@ -667,7 +667,7 @@ config.true_zen = function()
         enabled = false,
         font = "+3",
       },
-      twilight = false, -- enable twilight (ataraxis)
+      twilight = true, -- enable twilight (ataraxis)
       lualine = true,   -- hide nvim-lualine (ataraxis)
     },
   })

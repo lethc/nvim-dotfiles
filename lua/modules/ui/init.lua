@@ -13,24 +13,14 @@ local modules = {
   },
   { "RaphaeleL/my_vivid", enabled = false },
   { "gantoreno/nvim-gabriel", enabled = false },
-  -- {
-  --   "kvrohit/mellow.nvim",
-  --   config = function()
-  --     vim.g.mellow_italic_comments = true
-  --     vim.g.mellow_italic_functions = true
-  --     vim.g.mellow_bold_functions = true
-  --     vim.g.mellow_transparent = true
-  --     vim.g.mellow_bold_keywords = true
-  --   end,
-  -- },
   {
-    "lethc/mellow-red",
+    "lethc/Canon.nvim",
     config = function()
-      vim.g.mellow_italic_comments = true
-      vim.g.mellow_italic_functions = true
-      vim.g.mellow_bold_functions = true
-      vim.g.mellow_transparent = false
-      vim.g.mellow_bold_keywords = true
+      vim.g.canon_italic_comments = true
+      vim.g.canon_italic_functions = true
+      vim.g.canon_bold_functions = true
+      vim.g.canon_transparent = false
+      vim.g.canon_bold_keywords = true
     end,
   },
   {
@@ -290,6 +280,9 @@ local modules = {
   },
   {
     "Pocco81/true-zen.nvim",
+    dependencies = {
+      "folke/twilight.nvim",
+    },
     keys = {
       { "<leader>j", "<cmd>TZAtaraxis<cr>", desc = "Zen" },
     },
