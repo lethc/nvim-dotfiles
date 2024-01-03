@@ -866,6 +866,8 @@ config.conform_nvim = function()
 	}
 	conform_nvim.setup({
 		formatters_by_ft = {
+			astro = { "prettierd" },
+			mdx = { "prettierd" },
 			javascript = { "prettierd" },
 			typescript = {"prettierd"	},
 			javascriptreact = { "prettierd" },
