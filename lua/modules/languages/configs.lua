@@ -6,6 +6,11 @@ config.nvim_treesitter = function()
 	if not nvim_treesitter_configs_status_ok then
 		return
 	end
+
+  -- syntax for mdx files (astro)
+  -- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+  -- ft_to_parser.mdx = "markdown"
+
 	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 	parser_config.hypr = {
 		install_info = {
