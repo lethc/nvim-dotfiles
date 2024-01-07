@@ -31,6 +31,13 @@ config.nvim_treesitter = function()
 			enable = true, -- false will disable the whole extension
 			additional_vim_regex_highlighting = { "markdown" },
 			-- disable = { "markdown" },-- list of language that will be disabled
+      -- disable = function(lang, bufnr) -- Disable in files with more than 5K
+      --   return vim.api.nvim_buf_line_count(bufnr) > 5000
+      -- end,
+      disable = function(lang, bufnr)
+        return vim.fn.strlen(vim.fn.getbufoneline(bufnr, 1)) > 300
+        or vim.fn.getfsize(vim.fn.expand("%")) > 1024 * 1024
+      end,
 		},
 		indent = {
 			enable = true,
@@ -871,8 +878,8 @@ config.conform_nvim = function()
 	}
 	conform_nvim.setup({
 		formatters_by_ft = {
-			astro = { "prettierd" },
-			mdx = { "prettierd" },
+			-- astro = { "prettierd" },
+			-- mdx = { "prettierd" },
 			javascript = { "prettierd" },
 			typescript = {"prettierd"	},
 			javascriptreact = { "prettierd" },
