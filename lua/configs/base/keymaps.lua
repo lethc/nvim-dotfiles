@@ -27,6 +27,8 @@ keymaps["normal"] = {
 	{ "<leader>E" ,     "<cmd>Explore<cr>"        },
 	{ "<A-p>"     ,     "<cmd>PasteImg<CR>"       }, -- Clipboard-image.nvim plugin
 	{ "<leader>b" ,     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<cr>" },
+  { "<Up>"      ,     "gk"                      },
+  { "<Down>"    ,     "gj"                      },
 }
 
 keymaps["insert"] = {
