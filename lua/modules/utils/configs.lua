@@ -116,6 +116,15 @@ config.telescope_nvim = function()
       },
     },
     pickers = {
+      buffers = {
+        show_all_buffers = false,
+        sort_mru = true,
+        mappings = {
+          i = {
+            ["<c-d>"] = "delete_buffer",
+          },
+        },
+      },
       file_browser = {
         hidden = true,
       },
