@@ -2,7 +2,7 @@ local edit_config = require("modules.utils.configs")
 local modules = {
   {
     "nvim-telescope/telescope.nvim",
-    tag = '0.1.4',
+    -- tag = '0.1.4',
     cmd = "Telescope",
     keys = {
       -- { "<leader>b" , "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<CR>", desc = "Buffers"},
@@ -23,9 +23,27 @@ local modules = {
         -- Only required if using match_algorithm fzf
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       },
+      {
+        "tiagovla/scope.nvim",
+        -- event = "VimEnter",
+        config = function()
+          require("scope").setup({ restore_state = true })
+        end,
+      },
     },
     config = edit_config.telescope_nvim,
   },
+  -- {
+  --   'LukasPietzschmann/telescope-tabs',
+  --   dependencies = {
+  --     'nvim-telescope/telescope.nvim',
+  --   },
+  --   config = function()
+  --     require'telescope-tabs'.setup{
+  --       -- Your custom config :^)
+  --     }
+	 --  end
+  -- },
   {
     "folke/which-key.nvim",
     -- event = "VeryLazy",
