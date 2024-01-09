@@ -98,7 +98,7 @@ config.lualine = function()
     "diff",
     colored = true,
     symbols = icons.git_status,
-    separator = { left = "", right = "" },
+    separator = { left = "", right = "" },
   }
   local diagnostics = {
     "diagnostics",
@@ -131,6 +131,12 @@ config.lualine = function()
     color = { bg = "#171717", fg = "#E1E1E1" },
     padding = 0.8,
   }
+  local tabs0 = {
+    "tabs",
+    separator = { left = "", right = "" },
+    color = { bg = "#171717", fg = "#F4BF75" },
+    padding = 0.8,
+  }
   local function getWords()
     if vim.bo.filetype == "tex" or vim.bo.filetype == "txt" or vim.bo.filetype == "markdown" then
       if vim.fn.wordcount().visual_words == 1 then
@@ -144,12 +150,13 @@ config.lualine = function()
       return ""
     end
   end
+  local function num() return vim.fn.tabpagenr() end
 
   lualine.setup({
     options = {
       globalstatus = true,
       icons_enabled = true,
-      theme = "no-clown-fiesta",
+      theme = "canon",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
@@ -188,6 +195,21 @@ config.lualine = function()
         --   left = 1, right = 0 } },
         -- { "filename", path = 1,         symbols = { modified = "  ", readonly = "", unnamed = "" } },
         diff,
+      {
+        'tabs',
+        mode = 0,
+        tabs_color = {
+            active = 'lualine_a_normal',
+            -- active = {
+            --   fg = "#E1E1E1";
+            --   bg = "#323232";
+            -- },
+            inactive = 'lualine_b_normal',
+        },
+        margin = 1.5,
+        -- separator = { left = "", right = "" },
+      },
+        -- num,
         -- { require("NeoComposer.ui").status_recording },
       },
       lualine_x = {
