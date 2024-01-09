@@ -211,14 +211,26 @@ local modules = {
   {
     "numToStr/FTerm.nvim",
     keys = {
+      "<leader>",
       { "<A-g>",           "<cmd><cr>",            desc = "Gitui" },
       { "<A-c>",           "<cmd><cr>",            desc = "ncdu" },
       { "<A-y>",           "<cmd><cr>",            desc = "Yazi" },
       -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
-      { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminals" },
-      { "<leader><Enter>", "<cmd>FTermEnter<cr>",  desc = "Execute Terminals" },
+      -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
+      { "<leader><Enter>", "<cmd>FTermEnter<cr>",  desc = "Execute in Terminal" },
     },
     config = edit_config.fterm,
+  },
+  {
+    "DreamMaoMao/yazi.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      "<leader>",
+      -- { "<leader>ty", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+    },
   },
   {
     "iamcco/markdown-preview.nvim",

@@ -835,12 +835,12 @@ config.fterm = function()
     border = "rounded",
     -- border     = 'none',
     dimensions = {
-      height = 0.8,
-      width = 0.8,
-      -- height = .5,
-      -- width = 1,
-      -- x = 0, -- X axis of the terminal window
-      -- y = 1, -- Y axis of the terminal window
+      -- height = 0.8,
+      -- width = 0.8,
+      height = .5,
+      width = 1,
+      x = 0, -- X axis of the terminal window
+      y = 1, -- Y axis of the terminal window
     },
     auto_close = true,
   })
@@ -913,9 +913,9 @@ config.fterm = function()
     yazi:toggle()
   end)
 
-  vim.api.nvim_create_user_command('Yazi', function()
-      require('FTerm').run('yazi')
-  end, { bang = true })
+  -- vim.api.nvim_create_user_command('Yazi', function()
+  --     require('FTerm').run('yazi')
+  -- end, { bang = true })
 
   -- Stratch Terminal
   -- require('FTerm').scratch({ cmd = 'yazi' })
