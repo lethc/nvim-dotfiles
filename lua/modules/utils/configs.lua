@@ -830,12 +830,17 @@ config.fterm = function()
     return
   end
   fterm.setup({
-    ft = "FTerm",
+    ft = "terminal",
     cmd = os.getenv("SHELL"),
     border = "rounded",
+    -- border     = 'none',
     dimensions = {
       height = 0.8,
       width = 0.8,
+      -- height = .5,
+      -- width = 1,
+      -- x = 0, -- X axis of the terminal window
+      -- y = 1, -- Y axis of the terminal window
     },
     auto_close = true,
   })
@@ -865,7 +870,7 @@ config.fterm = function()
   local fterm = require("FTerm")
 
   local ncdu = fterm:new({
-    ft = "fterm_ncdu", -- You can also override the default filetype, if you want
+    ft = "terminal", -- You can also override the default filetype, if you want
     cmd = "ncdu",
     dimensions = {
       height = 0.9,
@@ -878,8 +883,12 @@ config.fterm = function()
     ncdu:toggle()
   end)
 
+  vim.api.nvim_create_user_command('Ncdu', function()
+      require('FTerm').run('ncdu')
+  end, { bang = true })
+
   local gitui = fterm:new({
-    ft = "fterm_gitui", -- You can also override the default filetype, if you want
+    ft = "terminal", -- You can also override the default filetype, if you want
     cmd = "gitui",
     dimensions = {
       height = 0.9,
@@ -892,14 +901,28 @@ config.fterm = function()
     gitui:toggle()
   end)
 
-  local joshuto = fterm:new({
-    ft = "FTerm",
-    cmd = "joshuto",
+  local yazi = fterm:new({
+    ft = "terminal",
+    cmd = "yazi",
     dimensions = {
       height = 0.9,
       width = 0.9,
     },
   })
+  vim.keymap.set("n", "<A-y>", function()
+    yazi:toggle()
+  end)
+
+  vim.api.nvim_create_user_command('Yazi', function()
+      require('FTerm').run('yazi')
+  end, { bang = true })
+
+  -- Stratch Terminal
+  -- require('FTerm').scratch({ cmd = 'yazi' })
+
+  vim.api.nvim_create_user_command('Yazi2', function()
+      require('FTerm').scratch({ cmd = { 'yazi'} })
+  end, { bang = true })
 end
 config.markdown_preview = function()
   vim.cmd([[

@@ -196,11 +196,14 @@ local modules = {
     init = function()
       -- Optional settings go here!
       -- vim.g.unception_open_buffer_in_new_tab = true
+      vim.g.unception_enable_flavor_text = true
+      vim.g.unception_delete_replaced_buffer = false
       vim.api.nvim_create_autocmd("User", {
         pattern = "UnceptionEditRequestReceived",
         callback = function()
           -- Toggle the terminal off.
           require("FTerm").toggle()
+          -- require("FTerm").close()
         end,
       })
     end,
@@ -209,7 +212,9 @@ local modules = {
     "numToStr/FTerm.nvim",
     keys = {
       { "<A-g>",           "<cmd><cr>",            desc = "Gitui" },
-      { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
+      { "<A-c>",           "<cmd><cr>",            desc = "ncdu" },
+      { "<A-y>",           "<cmd><cr>",            desc = "Yazi" },
+      -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
       { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminals" },
       { "<leader><Enter>", "<cmd>FTermEnter<cr>",  desc = "Execute Terminals" },
     },
