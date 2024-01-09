@@ -92,12 +92,15 @@ config.lualine = function()
   local branch = {
     "branch",
     icon = "",
-    padding = 0.1,
+    padding = { left = 0.1, right = 1 },
+    separator = { left = "", right = "" },
+    -- color = { bg = "#171717", fg = "#E1E1E1" },
   }
   local diff = {
     "diff",
     colored = true,
     symbols = icons.git_status,
+    -- separator = { left = "", right = "" },
     separator = { left = "", right = "" },
   }
   local diagnostics = {
@@ -129,12 +132,6 @@ config.lualine = function()
     "progress",
     separator = { left = "", right = "" },
     color = { bg = "#171717", fg = "#E1E1E1" },
-    padding = 0.8,
-  }
-  local tabs0 = {
-    "tabs",
-    separator = { left = "", right = "" },
-    color = { bg = "#171717", fg = "#F4BF75" },
     padding = 0.8,
   }
   local function getWords()
@@ -206,8 +203,7 @@ config.lualine = function()
             -- },
             inactive = 'lualine_b_normal',
         },
-        margin = 1.5,
-        -- separator = { left = "", right = "" },
+        separator = { left = "", right = "" },
       },
         -- num,
         -- { require("NeoComposer.ui").status_recording },
