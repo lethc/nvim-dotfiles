@@ -47,12 +47,12 @@ return {
     o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
     O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
     r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
-    g = {
-      name = "Debug Rust",
-      a = { "<cmd>RustCodeAction<cr>", "Code Action" },
-      d = { "<cmd>RustDebuggables<cr>", "Run Debug" },
-      r = { "<cmd>RustRun<cr>", "Run Code" },
-    },
+    -- g = {
+    --   name = "Debug Rust",
+    --   a = { "<cmd>RustCodeAction<cr>", "Code Action" },
+    --   d = { "<cmd>RustLsp Debuggables<cr>", "Run Debug" },
+    --   r = { "<cmd>RustRun<cr>", "Run Code" },
+    -- },
     x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
   },
 

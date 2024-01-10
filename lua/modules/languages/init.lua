@@ -59,11 +59,16 @@ local modules = {
     },
     config = languages_config.trouble_nvim,
   },
+  -- { --#### RUST LANGUAGE ####
+  --   "simrat39/rust-tools.nvim",
+  --   -- lazy = true,
+  --   ft = { "rust" },
+  --   config = languages_config.rust_tools,
+  -- },
   { --#### RUST LANGUAGE ####
-    "simrat39/rust-tools.nvim",
-    lazy = true,
-    -- ft = { "rust" },
-    config = languages_config.rust_tools,
+    'mrcjkb/rustaceanvim',
+    version = '^3', -- Recommended
+    ft = { 'rust' },
   },
   {
     "Saecki/crates.nvim",
