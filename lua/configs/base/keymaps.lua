@@ -24,7 +24,7 @@ keymaps["normal"] = {
 	{ "<leader>Q" ,     "<CMD>qa!<CR>"            },
 	{ "<leader>w" ,     "<cmd>w!<CR>"             },
 	{ "<leader>h" ,     "<cmd>nohlsearch<CR>"     },
-	{ "<leader>E" ,     "<cmd>Explore<cr>"        },
+	-- { "<leader>E" ,     "<cmd>Explore<cr>"        },
 	{ "<A-p>"     ,     "<cmd>PasteImg<CR>"       }, -- Clipboard-image.nvim plugin
   { "<Up>"      ,     "gk"                      },
   { "<Down>"    ,     "gj"                      },
