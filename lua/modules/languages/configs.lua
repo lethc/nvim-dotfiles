@@ -382,7 +382,8 @@ config.nvim_navic = function()
 		separator = " " .. icons.common.separator,
 		lsp = {
 			auto_attach = true, -- If set to true, you don't need to manually use attach function
-			preference = nil, -- list of lsp server names in order of preference
+			preference = { "rust-analyzer", }, -- list of lsp server names in order of preference
+			-- preference = { "rust_analyzer", }, -- Mason server
 		},
 	})
 	vim.g.navic_silence = true
