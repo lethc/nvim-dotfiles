@@ -19,7 +19,7 @@ local modules = {
       vim.g.canon_italic_comments = true
       vim.g.canon_italic_functions = true
       vim.g.canon_bold_functions = true
-      vim.g.canon_transparent = false
+      vim.g.canon_transparent = true
       vim.g.canon_bold_keywords = true
     end,
   },
