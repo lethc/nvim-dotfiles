@@ -2,6 +2,9 @@ local M = {}
 
 M.options = function()
   local N = {
+    title = true,
+    titlelen = 0,
+    titlestring='%{expand(\"%:p\")} [%{mode()}]',
     guifont = { "RobotoMono Nerd Font:h11" },                            -- the font used in graphical neovim applications
     backup = false,
     -- laststatus = 0, -- hide the bottom bar
