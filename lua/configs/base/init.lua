@@ -12,6 +12,27 @@ configs["base_keymaps"] = function()
   funcs.keymaps("x", opts, keymaps.visual_block)
   funcs.keymaps("t", opts, keymaps.terminal)
 end
+configs["remember_folds"] = function ()
+  local function remember(mode)
+    -- avoid complications with some special filetypes
+    local ignoredFts = { "TelescopePrompt", "DressingSelect", "DressingInput", "toggleterm", "gitcommit", "replacer", "harpoon", "help", "qf", "minifiles" }
+    if vim.tbl_contains(ignoredFts, vim.bo.filetype) or vim.bo.buftype ~= "" or not vim.bo.modifiable then return end
+
+    if mode == "save" then
+      vim.cmd("mkview 1")
+    else
+      pcall(function() vim.cmd("loadview 1") end) -- pcall, since new files have no view yet
+    end
+  end
+  vim.api.nvim_create_autocmd("BufWinLeave", {
+    pattern = "?*",
+    callback = function() remember("save") end,
+  })
+  vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = "?*",
+    callback = function() remember("load") end,
+  })
+end
 configs["auto_commands"] = function()
   vim.cmd([[
   augroup _general_settings
