@@ -1,5 +1,6 @@
 local modules = {
   { "nvim-lua/plenary.nvim",                      lazy = true },
+  { "farmergreg/vim-lastplace" },
   {
     "famiu/bufdelete.nvim",
     -- event = "VeryLazy",
