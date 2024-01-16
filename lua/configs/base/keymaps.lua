@@ -28,6 +28,7 @@ keymaps["normal"] = {
 	{ "<A-p>"     ,     "<cmd>PasteImg<CR>"       }, -- Clipboard-image.nvim plugin
   { "<Up>"      ,     "gk"                      },
   { "<Down>"    ,     "gj"                      },
+  { "<leader>u" ,     "mzlblgueh~`z"            }, -- Quickly Toggle Casing
 }
 
 keymaps["insert"] = {
@@ -49,6 +50,7 @@ keymaps["visual"] = {
 keymaps["visual_block"] = {
 	{ "J"         ,     ":m '>+1<CR>gv-gv"        }, -- Move the selected text up and down
 	{ "K"         ,     ":m '<-2<CR>gv-gv"        },
+  { "V"         ,     "j"                       }, -- Repeated V in Visual Line Mode
 }
 
 keymaps["terminal"] = {
