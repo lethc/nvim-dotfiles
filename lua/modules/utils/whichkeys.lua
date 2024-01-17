@@ -279,7 +279,7 @@ return {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Find files",
     },
-    F = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
+    F = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 
     h = {
       name = "Help",
