@@ -764,7 +764,7 @@ config.obsidian_nvim = function()
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },
     daily_notes = {
-      folder = "Diary/a._Today/",
+      folder = "2._Diary/a._Today/",
     },
     disable_frontmatter = false,
     templates = {
