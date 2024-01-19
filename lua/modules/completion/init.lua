@@ -62,14 +62,16 @@ local modules = {
   },
   {
     "Exafunction/codeium.nvim",
-    event = { "InsertEnter" },
+    -- event = { "InsertEnter" },
     keys = {
-      { "/", mode = { "n" } }
+      {
+        "<Leader>cc",
+        function()
+          require("codeium").setup({})
+        end,
+        desc = "Codeium nvim",
+      },
     },
-    config = function()
-        require("codeium").setup({
-        })
-    end
   },
   {
    "Exafunction/codeium.vim",
