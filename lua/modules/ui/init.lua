@@ -296,7 +296,7 @@ local modules = {
   },
   {
     "xiyaowong/transparent.nvim",
-    event = "BufReadPre",
+    -- event = "BufReadPre",
     -- keys = { "<leader>" },
     config = ui_config.transparent,
   },
