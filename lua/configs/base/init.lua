@@ -43,7 +43,7 @@ configs["auto_commands"] = function()
     autocmd BufWinEnter * :set fillchars=eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose:
     autocmd FileType qf set nobuflisted
     " autocmd BufEnter * silent! lcd %:p:h "Change directory
-    autocmd VimLeave * set guicursor=a:hor90-blinkwait300-blinkon200-blinkoff150 augroup
+    autocmd VimLeave * set guicursor=a:ver90-blinkwait300-blinkon200-blinkoff150 augroup
   augroup end
 
   augroup _git

@@ -5,7 +5,7 @@ M.options = function()
     title = true,
     titlelen = 0,
     titlestring='%{expand(\"%:p\")} [%{mode()}]',
-    guifont = { "RobotoMono Nerd Font:h11" },                            -- the font used in graphical neovim applications
+    guifont = { "RobotoMono Nerd Font:h11" },                                   -- the font used in graphical neovim applications
     backup = false,
     -- laststatus = 0, -- hide the bottom bar
     swapfile = false,
@@ -15,8 +15,8 @@ M.options = function()
     fileformats = "unix,mac,dos",
     -- magic = true,
     encoding = "utf-8",
-    fileencoding = "utf-8",    -- the encoding written to a file
-    clipboard = "unnamedplus", -- allows neovim to access the system clipboard
+    fileencoding = "utf-8",                                                     -- the encoding written to a file
+    clipboard = "unnamedplus",                                                  -- allows neovim to access the system clipboard
     wildignorecase = true,
     wildignore =
     ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
@@ -51,14 +51,14 @@ M.options = function()
     linebreak = true,                                                           -- companion to wrap, don't split words
     breakindent = true,                                                         -- break indentation for long lines
     breakindentopt = { shift = 2 },
-    showbreak = "↳ ",                                                         -- character for line break
+    showbreak = "↳ ",                                                           -- character for line break
     scrolloff = 20,                                                             -- minimal number of screen lines to keep above and below the cursor
     sidescrolloff = 8,                                                          -- minimal number of screen columns either side of cursor if wrap is `false`
     shortmess = { c = true, W = true, a = true, F = true, I = true, s = true }, --controls which messages are displayed in the status line, c = about completions
     spell = false,
     spelllang = { "en_gb", "es" },
     guicursor =
-    "n-v-c-sm:block,i-ci-ve:hor25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150",
+    "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150",
     foldcolumn = "1", -- '0' is not bad
     foldlevel = 99,   -- Using ufo provider need a large value, feel free to decrease the value
     foldlevelstart = 99,
