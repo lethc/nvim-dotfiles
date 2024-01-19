@@ -74,6 +74,7 @@ config.nvim_cmp = function()
           crates = "[Version]",
           latex_symbols = "[LaTex]",
           nerdfont = "[NerdFont]",
+          codeium = "[AI]",
           ['vim-dadbod-completion'] = '[DB]',
         })[entry.source.name]
         return item
@@ -103,6 +104,9 @@ config.nvim_cmp = function()
       },
       {
         name = 'nerdfont'
+      },
+      {
+        name = "codeium"
       }
     },
   })

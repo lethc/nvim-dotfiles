@@ -60,7 +60,28 @@ local modules = {
     cmd = "UndotreeToggle",
     config = function ()end
   },
-
+  {
+    "Exafunction/codeium.nvim",
+    event = { "InsertEnter" },
+    keys = {
+      { "/", mode = { "n" } }
+    },
+    config = function()
+        require("codeium").setup({
+        })
+    end
+  },
+  {
+   "Exafunction/codeium.vim",
+    -- event = 'BufEnter',
+    cmd = "CodeiumEnable",
+    config = function ()
+      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-.>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+    end
+  }
 }
 
 return modules
