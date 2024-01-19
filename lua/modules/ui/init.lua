@@ -1,6 +1,12 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
-  { "lethc/colorscheme-nvim" },
+  { "lethc/colorscheme-nvim";
+     config = function ()
+      require("tokyonight").setup({
+        transparent = true, -- Enable this to disable setting the background color
+      })
+     end
+  },
   -- { "folke/tokyonight.nvim", enabled = true },
   { "catppuccin/nvim", as = "catppuccin" },
   { "cryptomilk/nightcity.nvim", version = false, enabled = false },
