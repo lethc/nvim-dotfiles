@@ -27,6 +27,7 @@ local modules = {
       vim.g.canon_bold_functions = true
       -- vim.g.canon_transparent = true
       vim.g.canon_bold_keywords = true
+      vim.g.canon_italic_keywords = true
     end,
   },
   {
