@@ -23,11 +23,11 @@ local modules = {
     "lethc/Canon.nvim",
     config = function()
       vim.g.canon_italic_comments = true
-      vim.g.canon_italic_functions = true
-      vim.g.canon_bold_functions = true
+      vim.g.canon_italic_functions = false
+      vim.g.canon_bold_functions = false
       -- vim.g.canon_transparent = true
-      vim.g.canon_bold_keywords = true
-      vim.g.canon_italic_keywords = true
+      vim.g.canon_bold_keywords = false
+      vim.g.canon_italic_keywords = false
     end,
   },
   {
