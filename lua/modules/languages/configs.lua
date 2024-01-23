@@ -96,6 +96,9 @@ config.mason_nvim = function()
 		"marksman",
 		"tailwindcss",
     "astro",
+    -- "blade-formatter",
+    -- "php-debug-adapter",
+    -- "pint",
 	}
 	local settings = {
 		ui = {
@@ -868,6 +871,7 @@ config.conform_nvim = function()
 		"--no-semi",
 		"$FILENAME",
 	}
+  local util = require("conform.util")
 	local java_google_format = {
 		meta = {
 			url = "https://github.com/google/google-java-format",
@@ -894,9 +898,23 @@ config.conform_nvim = function()
 			markdown = { "prettier" },
 			-- html = { "prettier" },
 			python = { "isort", "black"	},
+      blade = { "blade-formatter" },
+      php = { "pint" },
 		},
 		formatters = {
 			java_google_format = java_google_format,
+      pint = {
+        meta = {
+          url = "https://github.com/laravel/pint",
+          description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
+        },
+        command = util.find_executable({
+          vim.fn.stdpath("data") .. "/mason/bin/pint",
+          "vendor/bin/pint",
+        }, "pint"),
+        args = { "$FILENAME" },
+        stdin = false,
+      },
 		},
 		-- format_on_save = {
 		-- 	-- I recommend these options. See :help conform.format for details.
