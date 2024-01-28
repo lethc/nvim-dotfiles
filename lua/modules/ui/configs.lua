@@ -264,6 +264,11 @@ config.lualine = function()
         -- when no winbar_symbol, diagnostics and diff is available.
         -- { "diagnostics", sources = { "nvim_diagnostic" } },
         -- "diff",
+        {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#F4BF75" },
+        },
       },
     },
   })
