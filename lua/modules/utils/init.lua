@@ -159,15 +159,15 @@ local modules = {
   --   -- },
   --   config = edit_config.NeoComposer_nvim,
   -- },
-  {
-	  "chrisgrieser/nvim-recorder",
-    keys = {
-      -- these must match the keys in the mapping config below
-      { "q", desc = " Start Recording" },
-      { "Q", desc = " Play Recording" },
-    },
-    config = edit_config.nvim_recorder,
-  },
+  -- {
+	 --  "chrisgrieser/nvim-recorder",
+  --   keys = {
+  --     -- these must match the keys in the mapping config below
+  --     { "q", desc = " Start Recording" },
+  --     { "Q", desc = " Play Recording" },
+  --   },
+  --   config = edit_config.nvim_recorder,
+  -- },
   {
     'epwalsh/obsidian.nvim',
     -- cmd = { "ObsidianSearch", "ObsidianQuickSwitch", "ObsidianOpen", "PeekOpen", "PeekClose", "ObsidianTemplate", "ObsidianFollowLink", "ObsidianToday", "ObsidianYesterday" },
