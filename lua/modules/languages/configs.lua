@@ -96,6 +96,7 @@ config.mason_nvim = function()
 		"marksman",
 		"tailwindcss",
     "astro",
+    "csharp_ls",
     -- "blade-formatter",
     -- "php-debug-adapter",
     -- "pint",
