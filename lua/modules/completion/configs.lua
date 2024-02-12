@@ -91,7 +91,7 @@ config.nvim_cmp = function()
       { name = "vim-dadbod-completion", },
       { name = 'nerdfont' },
       { name = "codeium" },
-      { name = "fonts" }
+      -- { name = "fonts" }
     },
   })
   cmp.setup.cmdline({ ":", "/", "?" }, {
