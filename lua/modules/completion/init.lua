@@ -11,6 +11,7 @@ local modules = {
       "hrsh7th/cmp-cmdline",
       "rafamadriz/friendly-snippets",
       "chrisgrieser/cmp-nerdfont",
+      "amarakon/nvim-cmp-fonts",
     },
     event = { "InsertEnter" },
     keys = {

@@ -75,53 +75,31 @@ config.nvim_cmp = function()
           latex_symbols = "[LaTex]",
           nerdfont = "[NerdFont]",
           codeium = "[AI]",
+          fonts = "[Local Fonts]",
           ['vim-dadbod-completion'] = '[DB]',
         })[entry.source.name]
         return item
       end,
     },
     sources = {
-      {
-        name = "luasnip",
-      },
-      {
-        name = "nvim_lsp",
-      },
-      {
-        name = "buffer",
-      },
-      {
-        name = "path",
-      },
-      {
-        name = "crates",
-      },
-      {
-        name = "latex_symbols",
-      },
-      {
-        name = "vim-dadbod-completion",
-      },
-      {
-        name = 'nerdfont'
-      },
-      {
-        name = "codeium"
-      }
+      { name = "luasnip", },
+      { name = "nvim_lsp", },
+      { name = "buffer", },
+      { name = "path", },
+      { name = "crates", },
+      { name = "latex_symbols", },
+      { name = "vim-dadbod-completion", },
+      { name = 'nerdfont' },
+      { name = "codeium" },
+      { name = "fonts" }
     },
   })
   cmp.setup.cmdline({ ":", "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      {
-        name = "cmdline",
-      },
-      {
-        name = "buffer",
-      },
-      {
-        name = "path",
-      },
+      { name = "cmdline", },
+      { name = "buffer", },
+      { name = "path", },
     },
   })
 end
