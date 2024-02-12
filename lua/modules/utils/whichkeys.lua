@@ -2,17 +2,22 @@ return {
   -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   a = {
     name = " 󰠳 Harpoon",
-    a = { [[<cmd>lua require("harpoon.mark").add_file()<CR>]], "Add File" },
-    m = { [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], "Toggle Menu" },
-    q = { [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]], "Go to 1" },
-    w = { [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]], "Go to 2" },
-    e = { [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]], "Go to 3" },
-    r = { [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]], "go to 4" },
-    t = { [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]], "go to 5" },
-    y = { [[<cmd>lua require("harpoon.ui").nav_file(6)<CR>]], "go to 6" },
-    u = { [[<cmd>lua require("harpoon.ui").nav_file(7)<CR>]], "go to 7" },
-    i = { [[<cmd>lua require("harpoon.ui").nav_file(8)<CR>]], "go to 8" },
-    o = { [[<cmd>lua require("harpoon.ui").nav_file(9)<CR>]], "go to 9" },
+    a = { [[<cmd>HarpoonAppend<CR>]], "Add File" },
+    m = { [[<cmd>HarpoonQuickMenu<CR>]], "Toggle Menu" },
+    q = { [[<cmd>Harpoon1<CR>]], "Go to 1" },
+    w = { [[<cmd>Harpoon2<CR>]], "Go to 2" },
+    e = { [[<cmd>Harpoon3<CR>]], "Go to 3" },
+    r = { [[<cmd>Harpoon4<CR>]], "go to 4" },
+    t = { [[<cmd>Harpoon5<CR>]], "go to 5" },
+    y = { [[<cmd>Harpoon6<CR>]], "go to 6" },
+    u = { [[<cmd>Harpoon7<CR>]], "go to 7" },
+    i = { [[<cmd>Harpoon8<CR>]], "go to 8" },
+    o = { [[<cmd>Harpoon9<CR>]], "go to 9" },
+    l = {
+      name = "Previous/Next",
+      p = { "<cmd>HarpoonPrevious<CR>", "Previous" },
+      n = { "<cmd>HarpoonNext<CR>", "Next" }
+    },
   },
 
   c = {
