@@ -11,20 +11,11 @@ config.nvim_treesitter = function()
   -- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
   -- ft_to_parser.mdx = "markdown"
 
-	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-	parser_config.hypr = {
-		install_info = {
-			url = "https://github.com/luckasRanarison/tree-sitter-hypr",
-			files = { "src/parser.c" },
-			branch = "master",
-		},
-		filetype = "hypr",
-	}
 	nvim_treesitter_configs.setup({
 		-- ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "vimdoc", "javascript", "c_sharp", "cmake", "cpp", "css", "diff", "git_config", "git_rebase", "gitcommit", "gitignore", "go", "html", "java", "json", "kotlin", "latex", "luadoc", "make", "php", "python", "rust", "scss", "sql", "toml", "ungrammar", "zig" }, --vim, vim-doc
 
 		-- ensure_installed = "all", -- one of "all" or a list of languages
-		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "sql", "css", "html", "typescript", "tsx" }, --vim, vim-doc
+		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "sql", "css", "html", "typescript", "tsx", "hyprlang", "rust"}, --vim, vim-doc
 		ignore_install = {}, -- List of parsers to ignore installing
 		auto_install = true,
 		highlight = {
@@ -60,6 +51,10 @@ config.nvim_treesitter = function()
 			},
 		},
 	})
+
+  vim.filetype.add({
+    pattern = { [".*/hyprland%.conf"] = "hyprlang" },
+  })
 end
 config.mason_nvim = function()
 	local mason_status_ok, mason = pcall(require, "mason")
