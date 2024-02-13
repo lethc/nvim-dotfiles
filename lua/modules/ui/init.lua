@@ -1,5 +1,13 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
+  {
+    "preservim/vim-colors-pencil",
+    -- config = function()
+    --   vim.g.tex_conceal = ""
+    --   vim.g['pencil#conceallevel'] = 0
+    --   vim.g['pencil#wrapModeDefault'] = 'soft'
+    -- end,
+  },
   { "lethc/colorscheme-nvim";
      config = function ()
       require("tokyonight").setup({

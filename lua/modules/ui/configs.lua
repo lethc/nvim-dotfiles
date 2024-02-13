@@ -7,7 +7,7 @@ config.themery = function()
     return
   end
   themery.setup({
-    themes = { "no-clown-fiesta", "canon", "canonr", "tokyonight", "catppuccin" },
+    themes = { "no-clown-fiesta", "canon", "canonr", "tokyonight", "catppuccin", "pencil" },
     themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
     livePreview = true,                                               -- Apply theme while browsing. Default to true.
   })
@@ -622,7 +622,7 @@ config.true_zen = function()
         shade = "dark",          -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
         backdrop = 0,            -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
         minimum_writing_area = { -- minimum size of main window
-          width = 120, --70
+          width = 90, --70
           height = 44,
         },
         quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode

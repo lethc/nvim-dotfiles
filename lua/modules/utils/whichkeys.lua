@@ -342,6 +342,7 @@ return {
     p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Clipboard Images" },
     t = { "<cmd>TransparentEnable<CR>", "Transparency" },
     T = { "<cmd>TransparentDisable<CR>", "No Transparency" },
+    v = { "<cmd>PencilToggle<CR>", "vim-pencil" },
   },
 
   z = {
