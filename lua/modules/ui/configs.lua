@@ -740,7 +740,7 @@ config.alpha = function()
 [[                                                              ]],
   }
   dashboard.section.buttons.val = {
-    dashboard.button("h", "  Home", ":e ~/Home/Welcome.md<CR>"),
+    dashboard.button("h", "  Home", ":e ~/Home/Templates/Today.md<CR>"),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
     dashboard.button("r", "󱎫  Recently used files", ":Telescope oldfiles <CR>"),
