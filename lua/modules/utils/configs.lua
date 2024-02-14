@@ -840,7 +840,7 @@ config.obsidian_nvim = function()
         yesterday = function()
           return os.date("%Y-%m-%d", os.time() - 86400)
         end,
-        day = function ()
+        today = function ()
           return os.date("%A %e %b")
         end
       }
