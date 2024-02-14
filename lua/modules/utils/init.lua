@@ -365,6 +365,24 @@ local modules = {
         connection_error = "✕",
       }
     end,
+  },
+  {
+    "backdround/global-note.nvim",
+    config = function ()
+      local global_note = require("global-note")
+      global_note.setup(
+        {
+          filename = "Today.md",
+          -- directory = vim.fn.stdpath("data") .. "/global-note/",
+          directory = os.getenv("HOME") .. "/Home/Templates/",
+          title = "Today List",
+        }
+      )
+
+      vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
+        desc = "Toggle global note",
+      })
+    end
   }
 }
 return modules
