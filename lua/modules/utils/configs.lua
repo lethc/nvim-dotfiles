@@ -835,7 +835,15 @@ config.obsidian_nvim = function()
     templates = {
       subdir = "Templates",
       date_format = "%Y-%m-%d-%a",
-      time_format = "%H:%M"
+      time_format = "%H:%M",
+      substitutions = {
+        yesterday = function()
+          return os.date("%Y-%m-%d", os.time() - 86400)
+        end,
+        day = function ()
+          return os.date("%A %e %b")
+        end
+      }
     },
     -- mappings = {
     --   -- ["_"] = require("obsidian.mapping").gf_passthrough(),
