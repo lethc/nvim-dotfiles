@@ -12,10 +12,8 @@ config.nvim_treesitter = function()
   -- ft_to_parser.mdx = "markdown"
 
 	nvim_treesitter_configs.setup({
-		-- ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "vimdoc", "javascript", "c_sharp", "cmake", "cpp", "css", "diff", "git_config", "git_rebase", "gitcommit", "gitignore", "go", "html", "java", "json", "kotlin", "latex", "luadoc", "make", "php", "python", "rust", "scss", "sql", "toml", "ungrammar", "zig" }, --vim, vim-doc
-
-		-- ensure_installed = "all", -- one of "all" or a list of languages
-		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "sql", "css", "html", "typescript", "tsx", "hyprlang", "rust"}, --vim, vim-doc
+		-- ensure_installed = "all", -- one of "all" or a list of languages --vim, vim-doc
+		ensure_installed = { "c", "lua", "query", "regex", "bash", "markdown", "markdown_inline", "sql", "css", "html", "typescript", "tsx", "hyprlang", "rust", "python", "php", "json", "latex", "cpp", "javascript", "java", "xml", "yaml", "yuck", "http", "csv", "c", "c_sharp", "go", "git_config", "gitcommit", "gitignore", "git_rebase", "diff", "cmake", "toml", "vim", "vimdoc", "scss" },
 		ignore_install = {}, -- List of parsers to ignore installing
 		auto_install = true,
 		highlight = {
