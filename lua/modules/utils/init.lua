@@ -196,7 +196,7 @@ local modules = {
     build = "npm install --prefix server",
     config = function()
       vim.cmd([[
-        let g:bracey_browser_command='firefox-developer-edition'
+        let g:bracey_browser_command='firefox'
       ]])
     end,
   },
