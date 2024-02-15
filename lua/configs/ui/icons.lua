@@ -37,10 +37,10 @@ return {
     lock = " ",
   },
   git_status = {
-    added = " ",
+    added = " ",
     deleted = " ",
     removed = " ",
-    modified = " ",
+    modified = " ",
     renamed = " ",
     untracked = " ",
     ignored = " ",
