@@ -152,6 +152,7 @@ config.telescope_nvim = function()
       -- },
       file_browser = {
         initial_mode = "insert",
+        dir_icon = "󰉋",
       },
       smart_open = {
         show_scores = false,
