@@ -17,7 +17,7 @@ keymaps["normal"] = {
 	{ "<C-Right>" ,     ":vertical resize +2<CR>" },
 	{ "<C-c>"     ,     "<cmd>normal! ciw<cr>a"   }, --ciw
 	-- { "t"         ,     "s"                       }, -- Replace s with the t
-	{ "J"         ,     "mzJ`z"                   }, -- Don't move the cursor when you press J
+	{ "L"         ,     "mzJ`z"                   }, -- Don't move the cursor when you press J
 	{ "n"         ,     "nzzzv"                   }, -- Set the cursor to the middle of the screen
 	{ "N"         ,     "Nzzzv"                   },
 	{ "<leader>q" ,     "<CMD>q!<CR>"             },
