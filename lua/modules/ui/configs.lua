@@ -523,8 +523,8 @@ config.neoscroll_nvim = function()
     return
   end
   local t = {} -- Syntax: t[keys] = {function, {function arguments}}
-  t["<A-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-  t["<A-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+  t["<S-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+  t["<S-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
   require("neoscroll.config").set_mappings(t)
   neoscroll.setup({
     -- All these keys will be mapped to their corresponding default scrolling animation

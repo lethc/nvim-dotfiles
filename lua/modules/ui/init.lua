@@ -266,8 +266,8 @@ local modules = {
     "karb94/neoscroll.nvim",
     config = ui_config.neoscroll_nvim,
     keys = {
-      { "<A-k>", mode = { "n", "v", "x" } },
-      { "<A-j>", mode = { "n", "v", "x" } },
+      { "<S-k>", mode = { "n", "v", "x" } },
+      { "<S-j>", mode = { "n", "v", "x" } },
     },
   },
   {
