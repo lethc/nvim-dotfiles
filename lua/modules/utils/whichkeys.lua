@@ -146,7 +146,7 @@ return {
       "Prev Diagnostic",
     },
     -- Keep hover
-    K = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
+    H = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Keep hover" },
     -- Show line diagnostics
     l = {
       "<cmd>Lspsaga show_line_diagnostics<cr>",
