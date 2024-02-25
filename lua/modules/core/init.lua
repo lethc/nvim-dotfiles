@@ -29,5 +29,8 @@ local modules = {
       vim.g.vimtex_mappings_enabled = false
     end
   }, --LaTeX
+  {
+    "vim-scripts/ReplaceWithRegister"
+  },
 }
 return modules
