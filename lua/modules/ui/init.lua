@@ -268,6 +268,12 @@ local modules = {
     keys = {
       { "<S-k>", mode = { "n", "v", "x" } },
       { "<S-j>", mode = { "n", "v", "x" } },
+      { "<C-d>", mode = { "n", "v", "x" } },
+      { "<C-u>", mode = { "n", "v", "x" } },
+      { "<C-f>", mode = { "n", "v", "x" } },
+      { "<C-b>", mode = { "n", "v", "x" } },
+      { "<C-e>", mode = { "n", "v", "x" } },
+      { "<C-y>", mode = { "n", "v", "x" } },
     },
   },
   {
