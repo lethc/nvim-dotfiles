@@ -862,7 +862,8 @@ config.conform_nvim = function()
 	require("conform.formatters.prettierd").args = {
 		"--jsx-single-quote",
 		"--single-quote",
-		"--no-semi",
+		-- "--no-semi",
+    "--tab-width=4",
 		"$FILENAME",
 	}
   local util = require("conform.util")
@@ -889,14 +890,19 @@ config.conform_nvim = function()
 			cmake = { "cmake_format" },
 			sh = { "shfmt" },
 			yaml = { "yamlfmt" },
-			markdown = { "prettier" },
+			markdown = { "prettierd" },
 			-- html = { "prettier" },
 			python = { "isort", "black"	},
       blade = { "blade-formatter" },
       php = { "pint" },
-			css = { "prettier" },
-			html = { "prettier" },
+			css = { "prettierd" },
+			html = { "prettierd" },
 		},
+    -- format_on_save = {
+    --   -- These options will be passed to conform.format()
+    --   timeout_ms = 500,
+    --   lsp_fallback = true,
+    -- },
 		formatters = {
 			java_google_format = java_google_format,
       pint = {
