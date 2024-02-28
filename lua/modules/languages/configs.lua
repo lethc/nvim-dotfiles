@@ -894,6 +894,8 @@ config.conform_nvim = function()
 			python = { "isort", "black"	},
       blade = { "blade-formatter" },
       php = { "pint" },
+			css = { "prettier" },
+			html = { "prettier" },
 		},
 		formatters = {
 			java_google_format = java_google_format,
