@@ -14,7 +14,7 @@ lazy.load()
 theme.colour()
 
 for _, func in pairs(base) do
-  if type(func) == "function" then
-    func()
-  end
+    if type(func) == "function" then
+        func()
+    end
 end

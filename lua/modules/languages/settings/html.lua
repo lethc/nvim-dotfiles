@@ -1,7 +1,7 @@
-return{
-  filetypes = {
-    "html",
-    "php",
-    -- "astro",
-  }
+return {
+    filetypes = {
+        "html",
+        "php",
+        -- "astro",
+    },
 }

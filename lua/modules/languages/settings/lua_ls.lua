@@ -1,15 +1,15 @@
 return {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim", "JAVA_DAP_ACTIVE" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-		},
-	},
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim", "JAVA_DAP_ACTIVE" },
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.stdpath("config") .. "/lua"] = true,
+                },
+            },
+        },
+    },
 }
