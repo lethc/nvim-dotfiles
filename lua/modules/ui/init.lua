@@ -17,7 +17,7 @@ local modules = {
         end,
     },
     -- { "folke/tokyonight.nvim", enabled = true },
-    { "catppuccin/nvim", as = "catppuccin" },
+    { "catppuccin/nvim", name = "catppuccin" },
     { "cryptomilk/nightcity.nvim", version = false, enabled = false },
     { "lvim-tech/lvim-colorscheme", enabled = false },
     { "edmondburnett/leeward.nvim", enabled = false },
@@ -183,7 +183,7 @@ local modules = {
     },
     {
         "EdenEast/nightfox.nvim",
-        enable = false,
+        -- enable = false,
     },
     {
         "aktersnurra/no-clown-fiesta.nvim",
