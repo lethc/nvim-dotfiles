@@ -15,11 +15,14 @@ local modules = {
     },
     {
         "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
         cmd = "Mason",
         build = ":MasonUpdate",
         config = languages_config.mason_nvim,
     },
-    { "williamboman/mason-lspconfig.nvim", lazy = true },
     {
         "neovim/nvim-lspconfig",
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
@@ -128,6 +131,29 @@ local modules = {
     },
     {
         "mfussenegger/nvim-lint",
+        event = "LspAttach",
+        config = function ()
+            local lint = require("lint");
+            lint.linters_by_ft = {
+                javascript = { "eslint_d" },
+                typescript = { "eslint_d" },
+                javascriptreact = { "eslint_d" },
+                typescriptreact = { "eslint_d" },
+                svelte = { "eslint_d" },
+                python = { "pylint" },
+            }
+            local lint_autogroup = vim.api.nvim_create_autogroup("lint", { clear = true })
+            vim.api.nvim_create_autocmd({ "BufWritePost"  }, {
+                -- pattern = { "*.ts", "*.js" },
+                group = lint_autogroup,
+                callback = function ()
+                    lint.try_lint()
+                end,
+            })
+            vim.keymap.set("n", "<leader>L", function ()
+                lint.try_lint()
+            end, { desc = "Trigger linting for current file" })
+        end
     },
     -- {
     --   "mhartington/formatter.nvim",

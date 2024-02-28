@@ -107,6 +107,10 @@ config.mason_nvim = function()
     if not lspconfig_status_ok then
         return
     end
+    local mason_tool_installer_status_ok, mason_tool_installer = pcall(require, "mason-tool-installer")
+    if not mason_tool_installer_status_ok then
+        return
+    end
     local servers = {
         "lua_ls",
         "cssls",
@@ -152,6 +156,17 @@ config.mason_nvim = function()
         ensure_installed = servers,
         automatic_installation = true,
         -- handlers = handlers,
+    })
+    mason_tool_installer.setup({
+        ensure_installed = {
+            "prettier",
+            "prettierd",
+            "stylua",
+            "isort",
+            "black",
+            "pylint",
+            "eslint_d",
+        }
     })
     local opts = {}
     for _, server in pairs(servers) do
