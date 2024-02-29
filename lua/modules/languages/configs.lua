@@ -31,7 +31,7 @@ config.nvim_treesitter = function()
             "python",
             "php",
             "json",
-            "latex",
+            -- "latex",
             "cpp",
             "javascript",
             "java",
@@ -54,7 +54,7 @@ config.nvim_treesitter = function()
             "vimdoc",
             "scss",
         },
-        ignore_install = {}, -- List of parsers to ignore installing
+        ignore_install = { "latex" }, -- List of parsers to ignore installing
         auto_install = true,
         highlight = {
             enable = true, -- false will disable the whole extension
