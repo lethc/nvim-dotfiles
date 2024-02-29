@@ -31,6 +31,8 @@ keymaps["normal"] = {
     { "<leader>u", "mzlblgueh~`z" }, -- Quickly Toggle Casing
     { "gD", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "gl", "<cmd>lua vim.lsp.buf.declaration()<CR>" },
+    { "<leader>hn", "<cmd>set nowrap<CR>" },
+    { "<leader>hw", "<cmd>set wrap<CR>" },
 }
 
 keymaps["insert"] = {
