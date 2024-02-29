@@ -91,8 +91,11 @@ config.nvim_treesitter = function()
     })
 
     vim.filetype.add({
-        pattern = { [".*/hyprland%.conf"] = "hyprlang" },
+        pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
     })
+    -- vim.filetype.add {
+    --   pattern = { [".*.conf"] = "hyprlang" },
+    -- }
 end
 config.mason_nvim = function()
     local mason_status_ok, mason = pcall(require, "mason")
