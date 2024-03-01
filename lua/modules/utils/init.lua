@@ -446,9 +446,6 @@ local modules = {
             enable_cmds = true,
             -- Custom keybindings only applied within the TFM buffer
             -- Default: {}
-            keybindings = {
-                ["<ESC>"] = "q"
-            },
             -- Customise UI. The below options are the default
             ui = {
                 border = "rounded",
