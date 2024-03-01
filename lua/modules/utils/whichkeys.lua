@@ -316,7 +316,6 @@ return {
         name = "  Terminal",
         c = { "<cmd>CompilerOpen<cr>", "Compiler File" },
         f = { "<cmd>FTermToggle<cr>", "Toggle Terminal" },
-        y = { "<cmd>Yazi<cr>", "Yazi File Manager" },
         h = { "<cmd>split | set norelativenumber | set nonumber  | terminal<cr>", "Horizontal Terminal" },
         v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
     },
