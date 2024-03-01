@@ -443,7 +443,7 @@ local modules = {
             --   TfmSplit: selected file(s) will be opened in a horizontal split
             --   TfmVsplit: selected file(s) will be opened in a vertical split
             --   TfmTabedit: selected file(s) will be opened in a new tab page
-            enable_cmds = false,
+            enable_cmds = true,
             -- Custom keybindings only applied within the TFM buffer
             -- Default: {}
             keybindings = {
