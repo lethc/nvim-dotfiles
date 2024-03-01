@@ -272,17 +272,6 @@ local modules = {
         config = edit_config.fterm,
     },
     {
-        "DreamMaoMao/yazi.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
-        keys = {
-            "<leader>",
-            -- { "<leader>ty", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
-        },
-    },
-    {
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
         build = "cd app && yarn install",
