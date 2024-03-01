@@ -435,7 +435,7 @@ local modules = {
             file_manager = "yazi",
             -- Replace netrw entirely
             -- Default: false
-            replace_netrw = true,
+            replace_netrw = false,
             -- Enable creation of commands
             -- Default: false
             -- Commands:
