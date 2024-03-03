@@ -80,14 +80,14 @@ config.nvim_treesitter = function()
         rainbow = {
             enable = true,
         },
-        context_commentstring = {
-            enable = true,
-            config = {
-                javascriptreact = {
-                    style_element = "{/*%s*/}",
-                },
-            },
-        },
+        -- context_commentstring = {
+        --     enable = true,
+        --     config = {
+        --         javascriptreact = {
+        --             style_element = "{/*%s*/}",
+        --         },
+        --     },
+        -- },
     })
 
     vim.filetype.add({

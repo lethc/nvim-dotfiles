@@ -102,7 +102,20 @@ local modules = {
         },
         config = edit_config.search_replace,
     },
-    { "uga-rosa/ccc.nvim", cmd = "CccPick" }, --Colorpicker
+    { --Colorpicker
+        "uga-rosa/ccc.nvim",
+        cmd = "CccPick",
+        config = function()
+            local ccc = require("ccc")
+
+            ccc.setup({
+                pickers = {
+                    -- Default colors came from Campbell (WindowsTerminal)
+                    ccc.picker.ansi_escape(),
+                },
+            })
+        end,
+    },
     {
         "NvChad/nvim-colorizer.lua",
         ft = { "vim", "html", "css", "python", "vue", "js", "ts" }, --"markdown"
@@ -111,11 +124,20 @@ local modules = {
     }, --Display colors
     {
         "numToStr/Comment.nvim",
-        dependencies = {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-        },
         keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
         config = edit_config.comment,
+    },
+    {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function ()
+            require('ts_context_commentstring').setup {
+              enable_autocmd = false,
+              languages = {
+                typescript = '// %s',
+                -- javascriptreact = '{/*%s*/}'
+              },
+            }
+        end
     },
     {
         "ThePrimeagen/harpoon",
@@ -477,6 +499,6 @@ local modules = {
                 desc = "TFM - new tab",
             },
         },
-    }
+    },
 }
 return modules
