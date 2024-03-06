@@ -297,6 +297,17 @@ return {
         l = { "<cmd>Telescope registers<cr>", "Registers History" },
         m = { "<cmd>Telescope macros<cr>", "Macros" },
         n = { "<cmd>Telescope file_browser<cr>", "Telescope File Browser" },
+        o = {
+            name = "Comment To-dos",
+            o = { "<cmd>TodoTelescope cwd=~/Home/<cr>", "Search in a specific folder" },
+            a = { "<cmd>TodoTelescope<cr>", "Search for All comments" },
+            f = { "<cmd>TodoTelescope keywords=FIX<cr>", "Search just for FIX" },
+            h = { "<cmd>TodoTelescope keywords=HACK<cr>", "Search just for HACK" },
+            n = { "<cmd>TodoTelescope keywords=NOTE<cr>", "Search just for NOTE" },
+            p = { "<cmd>TodoTelescope keywords=PERF<cr>", "Search just for PERF" },
+            t = { "<cmd>TodoTelescope keywords=TODO<cr>", "Search just for TODO" },
+            w = { "<cmd>TodoTelescope keywords=WARNING<cr>", "Search just for WARNING" },
+        },
         s = { "<cmd>Telescope smart_open<cr>", "Smart Open" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
         t = {
