@@ -132,8 +132,8 @@ local modules = {
     {
         "mfussenegger/nvim-lint",
         event = { "BufReadPre", "BufNewFile" },
-        config = function ()
-            local lint = require("lint");
+        config = function()
+            local lint = require("lint")
             lint.linters_by_ft = {
                 javascript = { "eslint_d" },
                 typescript = { "eslint_d" },
@@ -146,14 +146,14 @@ local modules = {
             vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
                 pattern = { "*.ts", "*.js" },
                 group = lint_augroup,
-                callback = function ()
+                callback = function()
                     lint.try_lint()
                 end,
             })
-            vim.keymap.set("n", "<leader>L", function ()
+            vim.keymap.set("n", "<leader>L", function()
                 lint.try_lint()
             end, { desc = "Trigger linting for current file" })
-        end
+        end,
     },
     -- {
     --   "mhartington/formatter.nvim",
