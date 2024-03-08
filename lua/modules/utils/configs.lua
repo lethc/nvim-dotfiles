@@ -381,6 +381,18 @@ config.nvim_colorizer = function()
     end
     colorizer.setup({})
 end
+config.ccc = function()
+    local ccc_status_ok, ccc = pcall(require, "ccc")
+    if not ccc_status_ok then
+        return
+    end
+    ccc.setup({
+        pickers = {
+            -- Default colors came from Campbell (WindowsTerminal)
+            ccc.picker.ansi_escape(),
+        },
+    })
+end
 config.comment = function()
     local comment_status_ok, Comment = pcall(require, "Comment")
     if not comment_status_ok then
@@ -395,6 +407,19 @@ config.comment = function()
         --     -- do something with lines range
         --   end
         -- end,
+    })
+end
+config.context_commentstring = function()
+    local context_commentstring_status_ok, context_commentstring = pcall(require, "ts_context_commentstring")
+    if not context_commentstring_status_ok then
+        return
+    end
+    context_commentstring.setup({
+        enable_autocmd = false,
+        languages = {
+            typescript = "// %s",
+            -- javascriptreact = '{/*%s*/}'
+        },
     })
 end
 config.harpoon = function()
@@ -1077,5 +1102,86 @@ config.markdown_preview = function()
         let g:mkdp_theme = 'dark'
 			]])
 end
+config.vim_dadbod_ui = function()
+    vim.g.db_ui_use_nerd_fonts = 1
+    vim.g.db_ui_show_database_icon = 1
+    vim.g.db_ui_force_echo_notifications = 1
+    vim.g.db_ui_win_position = "left"
+    vim.g.db_ui_winwidth = 40
 
+    vim.g.db_ui_table_helpers = {
+        mysql = {
+            Count = "select count(1) from {optional_schema}{table}",
+            Explain = "EXPLAIN {last_query}",
+        },
+        sqlite = {
+            Describe = "PRAGMA table_info({table})",
+        },
+    }
+
+    vim.g.db_ui_icons = {
+        expanded = {
+            db = "▾ 󰆼",
+            buffers = "▾ ",
+            saved_queries = "▾ ",
+            schemas = "▾ ",
+            schema = "▾ 󰙅",
+            tables = "▾ 󰓱",
+            table = "▾ ",
+        },
+        collapsed = {
+            db = "▸ 󰆼",
+            buffers = "▸ ",
+            saved_queries = "▸ ",
+            schemas = "▸ ",
+            schema = "▸ 󰙅",
+            tables = "▸ 󰓱",
+            table = "▸ ",
+        },
+        saved_query = "",
+        new_query = "󰓰",
+        tables = "󰓫",
+        buffers = "󱈛",
+        add_connection = "󰆺",
+        connection_ok = "✓",
+        connection_error = "✕",
+    }
+end
+config.global_note = function()
+    local global_note_status_ok, global_note = pcall(require, "global-note")
+    if not global_note_status_ok then
+        return
+    end
+    global_note.setup({
+        filename = "Today.md",
+        -- directory = vim.fn.stdpath("data") .. "/global-note/",
+        directory = os.getenv("HOME") .. "/Home/Templates/",
+        title = "Today List",
+    })
+
+    vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
+        desc = "Toggle global note",
+    })
+end
+config.before = function()
+    local before_status_ok, before = pcall(require, "before")
+    if not before_status_ok then
+        return
+    end
+    before.setup({
+        telescope_for_preview = true,
+    })
+
+    -- Jump to previous entry in the edit history
+    vim.keymap.set("n", "g;", before.jump_to_last_edit, {})
+
+    -- Jump to next entry in the edit history
+    vim.keymap.set("n", "g,", before.jump_to_next_edit, {})
+
+    -- Move edit history to quickfix (or telescope)
+    -- vim.keymap.set('n', '<leader>od', before.show_edits, {})
+    vim.keymap.set("n", "<leader>cl", function()
+        before.show_edits(require("telescope.themes").get_dropdown())
+    end, {})
+end
 return config

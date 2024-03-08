@@ -105,16 +105,7 @@ local modules = {
     { --Colorpicker
         "uga-rosa/ccc.nvim",
         cmd = "CccPick",
-        config = function()
-            local ccc = require("ccc")
-
-            ccc.setup({
-                pickers = {
-                    -- Default colors came from Campbell (WindowsTerminal)
-                    ccc.picker.ansi_escape(),
-                },
-            })
-        end,
+        config = edit_config.ccc,
     },
     {
         "NvChad/nvim-colorizer.lua",
@@ -129,15 +120,7 @@ local modules = {
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        config = function ()
-            require('ts_context_commentstring').setup {
-              enable_autocmd = false,
-              languages = {
-                typescript = '// %s',
-                -- javascriptreact = '{/*%s*/}'
-              },
-            }
-        end
+        config = edit_config.context_commentstring,
     },
     {
         "ThePrimeagen/harpoon",
@@ -375,67 +358,11 @@ local modules = {
             "tpope/vim-dotenv",
         },
         keys = { { "<leader><leader>wd", ":DBUIToggle<cr>", desc = "Open Database client" } },
-        init = function()
-            vim.g.db_ui_use_nerd_fonts = 1
-            vim.g.db_ui_show_database_icon = 1
-            vim.g.db_ui_force_echo_notifications = 1
-            vim.g.db_ui_win_position = "left"
-            vim.g.db_ui_winwidth = 40
-
-            vim.g.db_ui_table_helpers = {
-                mysql = {
-                    Count = "select count(1) from {optional_schema}{table}",
-                    Explain = "EXPLAIN {last_query}",
-                },
-                sqlite = {
-                    Describe = "PRAGMA table_info({table})",
-                },
-            }
-
-            vim.g.db_ui_icons = {
-                expanded = {
-                    db = "▾ 󰆼",
-                    buffers = "▾ ",
-                    saved_queries = "▾ ",
-                    schemas = "▾ ",
-                    schema = "▾ 󰙅",
-                    tables = "▾ 󰓱",
-                    table = "▾ ",
-                },
-                collapsed = {
-                    db = "▸ 󰆼",
-                    buffers = "▸ ",
-                    saved_queries = "▸ ",
-                    schemas = "▸ ",
-                    schema = "▸ 󰙅",
-                    tables = "▸ 󰓱",
-                    table = "▸ ",
-                },
-                saved_query = "",
-                new_query = "󰓰",
-                tables = "󰓫",
-                buffers = "󱈛",
-                add_connection = "󰆺",
-                connection_ok = "✓",
-                connection_error = "✕",
-            }
-        end,
+        config = edit_config.vim_dadbod_ui,
     },
     {
         "backdround/global-note.nvim",
-        config = function()
-            local global_note = require("global-note")
-            global_note.setup({
-                filename = "Today.md",
-                -- directory = vim.fn.stdpath("data") .. "/global-note/",
-                directory = os.getenv("HOME") .. "/Home/Templates/",
-                title = "Today List",
-            })
-
-            vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
-                desc = "Toggle global note",
-            })
-        end,
+        config = edit_config.global_note,
     },
     {
         "rolv-apneseth/tfm.nvim",
@@ -501,13 +428,17 @@ local modules = {
         },
     },
     {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
+    {
+        "bloznelis/before.nvim",
+        config = edit_config.before,
     },
 }
 return modules
