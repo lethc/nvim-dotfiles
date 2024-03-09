@@ -2,7 +2,7 @@ require("configs")
 
 if vim.g.neovide then
     local alpha = function()
-        return string.format("%x", math.floor(255 * vim.g.transparency or 0.9))
+        return string.format("%x", math.floor(255 * (vim.g.transparency or 0.9)))
     end
     -- vim.o.guifont = "RobotoMono Nerd Font:h11" -- Font
     vim.o.guifont = "SF Mono:h11" -- Font
