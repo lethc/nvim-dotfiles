@@ -443,6 +443,8 @@ config.comment = function()
     if not comment_status_ok then
         return
     end
+    local ft = require("Comment.ft")
+    ft.hyprlang = "#%s"
     Comment.setup({
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
         -- post_hook = function(ctx)
