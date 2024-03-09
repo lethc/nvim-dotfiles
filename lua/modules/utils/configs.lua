@@ -374,13 +374,6 @@ config.search_replace = function()
     end
     search_replace.setup({})
 end
-config.nvim_colorizer = function()
-    local colorizer_status_ok, colorizer = pcall(require, "colorizer")
-    if not colorizer_status_ok then
-        return
-    end
-    colorizer.setup({})
-end
 config.ccc = function()
     local ccc_status_ok, ccc = pcall(require, "ccc")
     if not ccc_status_ok then
