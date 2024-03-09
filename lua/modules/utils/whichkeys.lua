@@ -235,20 +235,19 @@ return {
         N = { "<cmd>MkdnDestroyLink<cr>", "DestroyLink" },
         r = { "<cmd>MkdnTableNewRowBelow<cr>", "TableNewRowBelow" },
         R = { "<cmd>MkdnTableNewRowAbove<cr>", "TableNewRowAfter" },
-    },
-
-    o = {
-        name = "  Obsidian",
-        c = { "<cmd>PeekClose<CR>", "Close Peek" },
-        e = { "<cmd>ObsidianTemplate<CR>", "Chose Template" },
-        f = { "<cmd>ObsidianFollowLink<CR>", "Follow Link" },
-        o = { "<cmd>ObsidianOpen<cr>", "Open File" },
-        p = { "<cmd>PeekOpen<CR>", "Open Peek" },
-        q = { "<cmd>ObsidianQuickSwitch<CR>", "Quick Switch" },
-        s = { "<cmd>ObsidianSearch<CR>", "Obsidian Search" },
-        t = { "<cmd>ObsidianToday<cr>", "Open Today File" },
-        T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow File" },
-        y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday File" },
+        o = {
+            name = "  Obsidian",
+            c = { "<cmd>PeekClose<CR>", "Close Peek" },
+            e = { "<cmd>ObsidianTemplate<CR>", "Chose Template" },
+            f = { "<cmd>ObsidianFollowLink<CR>", "Follow Link" },
+            o = { "<cmd>ObsidianOpen<cr>", "Open File" },
+            p = { "<cmd>PeekOpen<CR>", "Open Peek" },
+            q = { "<cmd>ObsidianQuickSwitch<CR>", "Quick Switch" },
+            s = { "<cmd>ObsidianSearch<CR>", "Obsidian Search" },
+            t = { "<cmd>ObsidianToday<cr>", "Open Today File" },
+            T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow File" },
+            y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday File" },
+        },
     },
 
     p = {
