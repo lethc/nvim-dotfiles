@@ -108,6 +108,11 @@ local modules = {
         config = edit_config.ccc,
     },
     {
+        "max397574/colortils.nvim",
+        cmd = "Colortils",
+        config = edit_config.colortils,
+    },
+    {
         "brenoprata10/nvim-highlight-colors",
         -- ft = { "vim", "html", "css", "python", "vue", "js", "ts" }, --"markdown"
         config = function()
