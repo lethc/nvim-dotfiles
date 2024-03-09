@@ -80,14 +80,74 @@ config.nvim_treesitter = function()
         rainbow = {
             enable = true,
         },
-        -- context_commentstring = {
-        --     enable = true,
-        --     config = {
-        --         javascriptreact = {
-        --             style_element = "{/*%s*/}",
-        --         },
-        --     },
-        -- },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "gnn", -- set to `false` to disable one of the mappings
+                node_incremental = "grn",
+                scope_incremental = "grc",
+                node_decremental = "grm",
+            },
+        },
+        textobjects = {
+            select = {
+                enable = true,
+                lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+                keymaps = {
+                    -- You can use the capture groups defined in textobjects.scm
+                    ["aa"] = "@parameter.outer",
+                    ["ia"] = "@parameter.inner",
+                    ["af"] = "@function.outer",
+                    ["if"] = "@function.inner",
+                    ["ac"] = "@class.outer",
+                    ["ic"] = "@class.inner",
+                    ["ii"] = "@conditional.inner",
+                    ["ai"] = "@conditional.outer",
+                    ["il"] = "@loop.inner",
+                    ["al"] = "@loop.outer",
+                    ["at"] = "@comment.outer",
+                    -- You can also use captures from other query groups like `locals.scm`
+                    ["as"] = "@scope",
+                },
+            },
+            swap = {
+                enable = true,
+                swap_next = {
+                    ["<leader>oa"] = "@parameter.inner",
+                },
+                swap_previous = {
+                    ["<leader>oA"] = "@parameter.inner",
+                },
+            },
+            move = {
+                enable = true,
+                set_jumps = true, -- whether to set jumps in the jumplist
+                goto_next_start = {
+                    ["]m"] = "@function.outer",
+                    ["]]"] = "@class.outer",
+                },
+                goto_next_end = {
+                    ["]M"] = "@function.outer",
+                    ["]["] = "@class.outer",
+                },
+                goto_previous_start = {
+                    ["[m"] = "@function.outer",
+                    ["[["] = "@class.outer",
+                },
+                goto_previous_end = {
+                    ["[M"] = "@function.outer",
+                    ["[]"] = "@class.outer",
+                },
+                goto_next = {
+                  [']i'] = "@conditional.inner",
+                  [']a'] = "@conditional.outer",
+                },
+                goto_previous = {
+                  ['[i'] = "@conditional.inner",
+                  ['[a'] = "@conditional.outer",
+                }
+            },
+        },
     })
 
     vim.filetype.add({
@@ -169,7 +229,7 @@ config.mason_nvim = function()
             "black",
             "pylint",
             "eslint_d",
-        }
+        },
     })
     local opts = {}
     for _, server in pairs(servers) do
