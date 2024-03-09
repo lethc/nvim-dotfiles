@@ -340,7 +340,7 @@ return {
         name = " 󰨚 Switch On",
         a = { "<cmd>lua require('asciitree').setup()<CR>", "AsciiTree" },
         b = { "<cmd>Block<CR>", "Toggle Block" },
-        c = { "<cmd>ColorizerToggle<CR>", "Colours in current file" },
+        c = { "<cmd>lua require('nvim-highlight-colors').toggle()<CR>", "Colours in current file" },
         d = { "<cmd>DBUIToggle<CR>", "Database UI" },
         e = { "<cmd>Themery<CR>", "Colorscheme picker" },
         h = { "<cmd>UndotreeToggle<CR>", "Current File History" },
