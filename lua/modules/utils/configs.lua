@@ -388,7 +388,6 @@ config.ccc = function()
     end
     ccc.setup({
         pickers = {
-            -- Default colors came from Campbell (WindowsTerminal)
             ccc.picker.ansi_escape(),
         },
     })
