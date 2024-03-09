@@ -108,11 +108,12 @@ local modules = {
         config = edit_config.ccc,
     },
     {
-        "NvChad/nvim-colorizer.lua",
-        ft = { "vim", "html", "css", "python", "vue", "js", "ts" }, --"markdown"
-        cmd = "ColorizerToggle",
-        config = edit_config.nvim_colorizer,
-    }, --Display colors
+        "brenoprata10/nvim-highlight-colors",
+        -- ft = { "vim", "html", "css", "python", "vue", "js", "ts" }, --"markdown"
+        config = function()
+            require("nvim-highlight-colors").setup({})
+        end,
+    },
     {
         "numToStr/Comment.nvim",
         keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
