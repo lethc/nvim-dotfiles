@@ -387,9 +387,6 @@ config.ccc = function()
         return
     end
     ccc.setup({
-        pickers = {
-            ccc.picker.ansi_escape(),
-        },
     })
 end
 config.comment = function()
