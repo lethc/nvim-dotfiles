@@ -21,11 +21,142 @@ config.nvim_cmp = function()
         local col = vim.fn.col(".") - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
-    local lsp_symbols = icons.cmp
+    -- CONFIGURATION: cmp without rounded borders
+
+    -- local lsp_symbols = icons.cmp
+    -- cmp.setup({
+    --     -- preselect = cmp.PreselectMode.None, -- Autoselect the first option
+    --     snippet = {
+    --         expand = function(args)
+    --             luasnip.lsp_expand(args.body) -- For `luasnip` users.
+    --         end,
+    --     },
+    --     mapping = {
+    --         ["<C-j>"] = cmp.mapping.select_next_item(),
+    --         ["<C-k>"] = cmp.mapping.select_prev_item(),
+    --         ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    --         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    --         ["<C-Space>"] = cmp.mapping.complete(),
+    --         ["<C-e>"] = cmp.mapping.close(),
+    --         -- ["<CR>"] = cmp.mapping.confirm({
+    --         -- 	behavior = cmp.ConfirmBehavior.Replace,
+    --         -- 	select = true,
+    --         -- }),
+    --         ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    --         ["<Tab>"] = cmp.mapping(function(fallback)
+    --             if cmp.visible() then
+    --                 cmp.select_next_item()
+    --             elseif luasnip.expandable() then
+    --                 luasnip.expand()
+    --             elseif luasnip.expand_or_jumpable() then
+    --                 luasnip.expand_or_jump()
+    --             elseif check_backspace() then
+    --                 fallback()
+    --             else
+    --                 fallback()
+    --             end
+    --         end, { "i", "s" }),
+    --         ["<S-Tab>"] = cmp.mapping(function(fallback)
+    --             if cmp.visible() then
+    --                 cmp.select_prev_item()
+    --             elseif luasnip.jumpable(-1) then
+    --                 luasnip.jump(-1)
+    --             else
+    --                 fallback()
+    --             end
+    --         end, { "i", "s" }),
+    --     },
+    --     formatting = {
+    --         format = function(entry, item)
+    --             item.kind = lsp_symbols[item.kind]
+    --             item.menu = ({
+    --                 nvim_lsp = "[LSP]",
+    --                 luasnip = "[Snipt]",
+    --                 buffer = "[Buffer]",
+    --                 path = "[Path]",
+    --                 crates = "[Version]",
+    --                 latex_symbols = "[LaTex]",
+    --                 nerdfont = "[NerdFont]",
+    --                 codeium = "[AI]",
+    --                 fonts = "[Local Fonts]",
+    --                 ["vim-dadbod-completion"] = "[DB]",
+    --             })[entry.source.name]
+    --             return item
+    --         end,
+    --     },
+    --     sources = {
+    --         { name = "luasnip" },
+    --         { name = "nvim_lsp" },
+    --         { name = "buffer" },
+    --         { name = "path" },
+    --         { name = "crates" },
+    --         { name = "latex_symbols" },
+    --         { name = "vim-dadbod-completion" },
+    --         { name = "nerdfont" },
+    --         { name = "codeium" },
+    --         -- { name = "fonts" }
+    --     },
+    -- })
+
+    -- CONFIGURATION: cmp with rounded borders and NvChapt appearance
+
+    local lspkind = require("lspkind")
+    local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
+    -- vscode like icons
+    local cmp_kinds = {
+        Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "",
+        Variable = "",
+        Class = "",
+        Interface = "",
+        Module = "",
+        Property = "",
+        Unit = "",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "",
+        Event = "",
+        Operator = "",
+        TypeParameter = "",
+    }
+    local settings = {
+        theme = "gruvbox", -- ayu|gruvbox
+        indentChar = "│", -- │, |, ¦, ┆, ┊
+        separatorChar = "-", -- ─, -, .
+        aspect = "clean", -- normal|clean
+        lualine_separator = "rect", -- rect|triangle|semitriangle|curve
+        cmp_style = "nvchad", -- default|nvchad
+        cmp_icons_style = "vscode", -- devicons|vscode
+    }
     cmp.setup({
+        window = {
+            completion = {
+                border = "rounded", -- single|rounded|none
+                -- custom colors
+                winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
+                side_padding = settings.cmp_style == "default" and 1 or 0, -- padding at sides
+                col_offset = settings.cmp_style == "default" and -1 or -4, -- move floating box left or right
+            },
+            documentation = {
+                border = "rounded", -- single|rounded|none
+                -- custom colors
+                winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
+            },
+        },
         snippet = {
             expand = function(args)
-                luasnip.lsp_expand(args.body) -- For `luasnip` users.
+                luasnip.lsp_expand(args.body)
             end,
         },
         mapping = {
@@ -63,24 +194,6 @@ config.nvim_cmp = function()
                 end
             end, { "i", "s" }),
         },
-        formatting = {
-            format = function(entry, item)
-                item.kind = lsp_symbols[item.kind]
-                item.menu = ({
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[Snipt]",
-                    buffer = "[Buffer]",
-                    path = "[Path]",
-                    crates = "[Version]",
-                    latex_symbols = "[LaTex]",
-                    nerdfont = "[NerdFont]",
-                    codeium = "[AI]",
-                    fonts = "[Local Fonts]",
-                    ["vim-dadbod-completion"] = "[DB]",
-                })[entry.source.name]
-                return item
-            end,
-        },
         sources = {
             { name = "luasnip" },
             { name = "nvim_lsp" },
@@ -92,6 +205,43 @@ config.nvim_cmp = function()
             { name = "nerdfont" },
             { name = "codeium" },
             -- { name = "fonts" }
+        },
+        formatting = {
+            fields = settings.cmp_style == "nvchad" and { "kind", "abbr", "menu" } or nil,
+            format = function(entry, item)
+                -- vscode like icons for cmp autocompletion
+                local fmt = lspkind.cmp_format({
+                    -- with_text = false, -- hide kind beside the icon
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                    before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
+                })(entry, item)
+
+                -- customize lspkind format
+                local strings = vim.split(fmt.kind, "%s", { trimempty = true })
+
+                -- strings[1] -> default icon
+                -- strings[2] -> kind
+
+                -- set different icon styles
+                if settings.cmp_icons_style == "vscode" then
+                    fmt.kind = " " .. (cmp_kinds[strings[2]] or "") -- concatenate icon based on kind
+                else
+                    fmt.kind = " " .. (strings[1] or "") -- just use the default icon
+                end
+
+                -- append customized kind text
+                if settings.cmp_style == "nvchad" then
+                    fmt.kind = fmt.kind .. " " -- just an extra space at the end
+                    fmt.menu = strings[2] ~= nil and ("  " .. (strings[2] or "")) or ""
+                else
+                    -- default and others
+                    fmt.menu = strings[2] ~= nil and (strings[2] or "") or ""
+                end
+
+                return fmt
+            end,
         },
     })
     cmp.setup.cmdline({ ":", "/", "?" }, {
