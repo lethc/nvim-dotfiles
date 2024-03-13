@@ -12,6 +12,8 @@ local modules = {
             "rafamadriz/friendly-snippets",
             "chrisgrieser/cmp-nerdfont",
             "amarakon/nvim-cmp-fonts",
+            "onsails/lspkind.nvim",
+            "roobert/tailwindcss-colorizer-cmp.nvim",
         },
         event = { "InsertEnter" },
         keys = {
