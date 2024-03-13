@@ -98,7 +98,7 @@ config.nvim_cmp = function()
     --     },
     -- })
 
-    -- CONFIGURATION: cmp with rounded borders and NvChapt appearance
+    -- CONFIGURATION: cmp with rounded borders and NvChad appearance
 
     local lspkind = require("lspkind")
     local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
