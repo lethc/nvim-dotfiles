@@ -129,6 +129,7 @@ config.nvim_cmp = function()
         Event = "",
         Operator = "",
         TypeParameter = "",
+        Codeium = "",
     }
     local settings = {
         theme = "gruvbox", -- ayu|gruvbox
@@ -142,7 +143,7 @@ config.nvim_cmp = function()
     cmp.setup({
         window = {
             completion = {
-                border = "rounded", -- single|rounded|none
+                border = "single", -- single|rounded|none
                 -- custom colors
                 winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
                 side_padding = settings.cmp_style == "default" and 1 or 0, -- padding at sides
@@ -215,6 +216,7 @@ config.nvim_cmp = function()
                     mode = "symbol_text",
                     maxwidth = 50,
                     ellipsis_char = "...",
+                    symbol_map = { Codeium = "", },
                     before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
                 })(entry, item)
 
