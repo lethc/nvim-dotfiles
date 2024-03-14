@@ -21,9 +21,50 @@ config.nvim_cmp = function()
         local col = vim.fn.col(".") - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
+
+    local lsp_symbols = icons.cmp
+    local settings = {
+        theme = "gruvbox", -- ayu|gruvbox
+        indentChar = "│", -- │, |, ¦, ┆, ┊
+        separatorChar = "-", -- ─, -, .
+        aspect = "clean", -- normal|clean
+        lualine_separator = "rect", -- rect|triangle|semitriangle|curve
+        cmp_style = "nvchad", -- default|nvchad
+        cmp_icons_style = "vscode", -- devicons|vscode
+    }
+    local lspkind = require("lspkind")
+    local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
+    -- vscode like icons
+    local cmp_kinds = {
+        Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "",
+        Variable = "",
+        Class = "",
+        Interface = "",
+        Module = "",
+        Property = "",
+        Unit = "",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "",
+        Event = "",
+        Operator = "",
+        TypeParameter = "",
+        Codeium = "",
+    }
     -- CONFIGURATION: cmp without rounded borders
 
-    -- local lsp_symbols = icons.cmp
     -- cmp.setup({
     --     -- preselect = cmp.PreselectMode.None, -- Autoselect the first option
     --     snippet = {
@@ -100,50 +141,10 @@ config.nvim_cmp = function()
 
     -- CONFIGURATION: cmp with rounded borders and NvChad appearance
 
-    local lspkind = require("lspkind")
-    local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
-    -- vscode like icons
-    local cmp_kinds = {
-        Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Field = "",
-        Variable = "",
-        Class = "",
-        Interface = "",
-        Module = "",
-        Property = "",
-        Unit = "",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "",
-        Event = "",
-        Operator = "",
-        TypeParameter = "",
-        Codeium = "",
-    }
-    local settings = {
-        theme = "gruvbox", -- ayu|gruvbox
-        indentChar = "│", -- │, |, ¦, ┆, ┊
-        separatorChar = "-", -- ─, -, .
-        aspect = "clean", -- normal|clean
-        lualine_separator = "rect", -- rect|triangle|semitriangle|curve
-        cmp_style = "nvchad", -- default|nvchad
-        cmp_icons_style = "vscode", -- devicons|vscode
-    }
     cmp.setup({
         window = {
             completion = {
-                border = "single", -- single|rounded|none
+                border = "rounded", -- single|rounded|none
                 -- custom colors
                 winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
                 side_padding = settings.cmp_style == "default" and 1 or 0, -- padding at sides
@@ -216,7 +217,7 @@ config.nvim_cmp = function()
                     mode = "symbol_text",
                     maxwidth = 50,
                     ellipsis_char = "...",
-                    symbol_map = { Codeium = "", },
+                    symbol_map = { Codeium = "" },
                     before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
                 })(entry, item)
 
