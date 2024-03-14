@@ -446,5 +446,12 @@ local modules = {
         "bloznelis/before.nvim",
         config = edit_config.before,
     },
+    -- {
+    --     -- https://www.vim.org/scripts/script.php?script_id=2227
+    --     "mjbrownie/browser.vim",
+    -- },
+    {
+        "yuratomo/w3m.vim",
+    },
 }
 return modules
