@@ -81,7 +81,7 @@ local modules = {
         -- event = 'BufEnter',
         cmd = "CodeiumEnable",
         config = function()
-            vim.keymap.set("i", "<C-g>", function()
+            vim.keymap.set("i", "<A-g>", function()
                 return vim.fn["codeium#Accept"]()
             end, { expr = true, silent = true })
             vim.keymap.set("i", "<c-,>", function()
