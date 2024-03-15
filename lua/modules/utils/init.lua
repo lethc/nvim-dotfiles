@@ -453,5 +453,51 @@ local modules = {
     {
         "yuratomo/w3m.vim",
     },
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "smoka7/hydra.nvim",
+        },
+        opts = {
+            hint_config = {
+                border = "rounded",
+            },
+        },
+        cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+        keys = {
+            {
+                mode = { "v", "n" },
+                "<Leader><leader>v",
+                "<cmd>MCstart<cr>",
+                desc = "Create a selection for selected text or word under the cursor",
+            },
+            -- {
+            --     mode = { "v", "n" },
+            --     "<Leader><leader>vp",
+            --     "<cmd>MCpattern<cr>",
+            -- },
+            -- {
+            --     mode = { "v", "n" },
+            --     "<Leader><leader>vv",
+            --     "<cmd>MCvisual<cr>",
+            -- },
+            -- {
+            --     mode = { "v", "n" },
+            --     "<Leader><leader>vvp",
+            --     "<cmd>MCvisualPattern<cr>",
+            -- },
+            -- {
+            --     mode = { "v", "n" },
+            --     "<Leader><leader>vu",
+            --     "<cmd>MCunderCursor<cr>",
+            -- },
+            -- {
+            --     mode = { "v", "n" },
+            --     "<Leader><leader>vc",
+            --     "<cmd>MCclear<cr>",
+            -- },
+        },
+    },
 }
 return modules
