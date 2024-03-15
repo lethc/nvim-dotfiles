@@ -455,7 +455,7 @@ local modules = {
     },
     {
         "smoka7/multicursors.nvim",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
         dependencies = {
             "smoka7/hydra.nvim",
         },
