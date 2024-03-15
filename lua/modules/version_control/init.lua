@@ -21,14 +21,14 @@ local modules = {
     },
     {
         "NeogitOrg/neogit",
-        dependencies = {
-            -- "nvim-lua/plenary.nvim", -- required
-            -- "sindrets/diffview.nvim", -- optional - Diff integration
-
-            -- Only one of these is needed, not both.
-            -- "nvim-telescope/telescope.nvim", -- optional
-        },
         config = true,
+        keys = {
+            { "<leader><leader>g", ":Neogit<cr>", desc = "Open Neogit" },
+            { "<leader><leader>gc", ":Neogit commit<cr>", desc = "Commit in Neogit" },
+            { "<leader><leader>gp", ":Neogit pull<cr>", desc = "Pull in Neogit" },
+            { "<leader><leader>gP", ":Neogit push<cr>", desc = "Push in Neogit" },
+            { "<leader><leader>gb", ":Telescope git_branches<cr>", desc = "View Branches" },
+        },
     },
 }
 return modules
