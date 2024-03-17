@@ -124,13 +124,13 @@ config.lualine = function()
     local location = {
         "location",
         separator = { left = "", right = "" },
-        color = { bg = "#171717", fg = "#E1E1E1" },
+        -- color = { bg = "#171717", fg = "#E1E1E1" },
         padding = 0.8,
     }
     local progress = {
         "progress",
-        separator = { left = "", right = "" },
-        color = { bg = "#171717", fg = "#E1E1E1" },
+        -- separator = { left = "", right = "" },
+        -- color = { bg = "#171717", fg = "#E1E1E1" },
         padding = 0.8,
     }
     local function getWords()
@@ -196,6 +196,7 @@ config.lualine = function()
                 {
                     "tabs",
                     mode = 0,
+                    show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
                     tabs_color = {
                         active = "lualine_a_normal",
                         -- active = {
@@ -205,6 +206,7 @@ config.lualine = function()
                         inactive = "lualine_b_normal",
                     },
                     separator = { left = "", right = "" },
+                    symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
                 },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
@@ -221,30 +223,35 @@ config.lualine = function()
                 {
                     "filename",
                     path = 1,
-                    symbols = icons.file_status_symbol,
+                    show_modified_status = false, -- Shows a symbol next to the tab name if the file has been modified.
+                    -- symbols = icons.file_status_symbol,
+                    symbols = {
+                        modified = "[󰗧]", -- Text to show when the buffer is modified
+                        alternate_file = "#", -- Text to show to identify the alternate file
+                        directory = "", -- Text to show when the buffer is a directory
+                    },
                 },
                 { getWords },
             },
-            lualine_y = {
+            lualine_y = {},
+            lualine_z = {
                 location,
                 {
                     function()
                         return "  "
                     end,
-                    separator = { left = "", right = "" },
-                    color = { bg = "#171717", fg = "#E1E1E1" },
+                    -- separator = { left = "", right = "" },
+                    -- color = { bg = "#171717", fg = "#E1E1E1" },
                     padding = 0.1,
                 },
                 progress,
-            },
-            lualine_z = {
                 {
                     function()
                         -- return "%P%L"
                         return " 󰗚  %L "
                     end,
-                    separator = { left = "", right = "" },
-                    color = { bg = "#171717", fg = "#E1E1E1" },
+                    -- separator = { left = "", right = "" },
+                    -- color = { bg = "#171717", fg = "#E1E1E1" },
                     padding = 0.3,
                 },
             },
