@@ -113,7 +113,7 @@ config.lualine = function()
     }
     local custom_icons = {
         function()
-            return ""
+            return ""
         end,
         separator = { left = "", right = "" },
     }
