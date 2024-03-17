@@ -94,7 +94,6 @@ config.lualine = function()
         icon = "",
         padding = { left = 0.1, right = 1 },
         separator = { left = "", right = "" },
-        -- color = { bg = "#171717", fg = "#E1E1E1" },
     }
     local diff = {
         "diff",
@@ -223,9 +222,10 @@ config.lualine = function()
                     "filename",
                     path = 1,
                     symbols = icons.file_status_symbol,
-                    -- color = { bg = "#171717", fg = "#E1E1E1" },
                 },
                 { getWords },
+            },
+            lualine_y = {
                 location,
                 {
                     function()
@@ -236,6 +236,8 @@ config.lualine = function()
                     padding = 0.1,
                 },
                 progress,
+            },
+            lualine_z = {
                 {
                     function()
                         -- return "%P%L"
@@ -246,8 +248,6 @@ config.lualine = function()
                     padding = 0.3,
                 },
             },
-            lualine_y = {},
-            lualine_z = {},
         },
         tabline = {
             lualine_a = {
