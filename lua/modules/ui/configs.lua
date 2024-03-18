@@ -298,16 +298,17 @@ config.nvim_notify = function()
         minimum_height = "10",
         fps = 30,
         icons = {
-            DEBUG = "",
-            ERROR = "",
-            INFO = "",
-            TRACE = "✎",
-            WARN = "",
+            DEBUG = " ",
+            ERROR = " ",
+            INFO = " ",
+            TRACE = " ",
+            WARN = " ",
         },
         level = 2,
         timeout = 1000,
-        top_down = false,
+        top_down = true,
     })
+    vim.cmd("command! Message :lua require('notify').print_history()<CR>")
 end
 config.nvim_noice = function()
     local noice_status_ok, noice = pcall(require, "noice")
