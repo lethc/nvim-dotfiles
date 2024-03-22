@@ -499,5 +499,10 @@ local modules = {
             -- },
         },
     },
+    {
+        "siadat/shell.nvim",
+        keys = { { "<leader><leader>s", ":Shell ", desc = "Run a Shell command in a buffer" } },
+        opts = {},
+    },
 }
 return modules
