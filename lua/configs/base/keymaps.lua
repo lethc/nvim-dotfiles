@@ -2,6 +2,18 @@ local keymaps = {}
 
 keymaps["normal"] = {
     { "<C-n>", ":enew<CR>" }, -- New empty buffer
+    { "<C-t>", ":tabnew<CR>" }, -- New empty tab
+    { "<C-tab>", ":tabnext<CR>" }, -- Move next tab
+    { "<C-S-tab>", ":tabprevious<CR>" }, -- Move previous tab
+    { "<A-1>", "1gt" }, -- Move 1 tab
+    { "<A-2>", "2gt" }, -- Move 2 tab
+    { "<A-3>", "3gt" }, -- Move 3 tab
+    { "<A-4>", "4gt" }, -- Move 4 tab
+    { "<A-5>", "5gt" }, -- Move 5 tab
+    { "<A-6>", "6gt" }, -- Move 6 tab
+    { "<A-7>", "7gt" }, -- Move 7 tab
+    { "<A-8>", "8gt" }, -- Move 8 tab
+    { "<A-9>", "1gT" }, -- Move to the last tab
     { "<S-l>", ":bnext<CR>" }, -- Navigate between buffers
     { "<S-h>", ":bprevious<CR>" },
     { "<BS>", ":b#<CR>" }, -- Like Ctrl + Tab in a browser
