@@ -193,21 +193,6 @@ config.lualine = function()
                 --   left = 1, right = 0 } },
                 -- { "filename", path = 1,         symbols = { modified = "  ", readonly = "", unnamed = "" } },
                 diff,
-                {
-                    "tabs",
-                    mode = 0,
-                    show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
-                    tabs_color = {
-                        active = "lualine_a_normal",
-                        -- active = {
-                        --   fg = "#E1E1E1";
-                        --   bg = "#323232";
-                        -- },
-                        inactive = "lualine_b_normal",
-                    },
-                    separator = { left = "", right = "" },
-                    symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
-                },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
             },
@@ -235,6 +220,22 @@ config.lualine = function()
             },
             lualine_y = {},
             lualine_z = {
+                {
+                    "tabs",
+                    mode = 0,
+                    show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
+                    -- tabs_color = {
+                    --     active = "lualine_a_normal",
+                    --     -- active = {
+                    --     --   fg = "#E1E1E1";
+                    --     --   bg = "#323232";
+                    --     -- },
+                    --     inactive = "lualine_b_normal",
+                    -- },
+                    -- separator = { left = "", right = "" },
+                    separator = { left = "", right = "" },
+                    symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
+                },
                 location,
                 {
                     function()
