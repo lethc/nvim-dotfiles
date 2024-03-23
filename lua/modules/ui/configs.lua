@@ -193,12 +193,12 @@ config.lualine = function()
                 --   left = 1, right = 0 } },
                 -- { "filename", path = 1,         symbols = { modified = "  ", readonly = "", unnamed = "" } },
                 diff,
+                diagnostics,
+                -- { "require('lsp-progress').progress()" },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
             },
             lualine_x = {
-                diagnostics,
-                -- { "require('lsp-progress').progress()" },
                 "filetype",
                 {
                     function()
