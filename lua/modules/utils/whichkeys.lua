@@ -331,10 +331,10 @@ return {
         name = "  Terminal",
         c = { "<cmd>CompilerOpen<cr>", "Compiler File" },
         f = { "<cmd>FTermToggle<cr>", "Toggle Terminal" },
-        h = { "<cmd>split | set norelativenumber | set nonumber  | terminal<cr>", "Horizontal Terminal" },
-        v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
-        t = { "<cmd>startinsert | tabnew | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
-        T = { "<cmd>startinsert | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
+        e = { "<cmd>startinsert | split | resize 13 | set norelativenumber | set nonumber  | terminal<cr>", "bottom Terminal" },
+        -- v = { "<cmd>startinsert | vsplit | startinsert | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
+        t = { "<cmd>startinsert | tabnew | set norelativenumber | set nonumber  | terminal<cr>", "Terminal in a new Tab" },
+        T = { "<cmd>startinsert | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal in a new Buffer" },
     },
 
     v = {
