@@ -333,6 +333,8 @@ return {
         f = { "<cmd>FTermToggle<cr>", "Toggle Terminal" },
         h = { "<cmd>split | set norelativenumber | set nonumber  | terminal<cr>", "Horizontal Terminal" },
         v = { "<cmd>vsplit | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
+        t = { "<cmd>startinsert | tabnew | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
+        T = { "<cmd>startinsert | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
     },
 
     v = {
