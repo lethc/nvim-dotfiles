@@ -918,7 +918,7 @@ config.obsidian_nvim = function()
             nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
         },
         daily_notes = {
-            folder = "2._Diary/a._Today/",
+            folder = "Today/",
         },
         disable_frontmatter = false,
         templates = {
@@ -971,6 +971,10 @@ config.obsidian_nvim = function()
                 ObsidianHighlightText = { bg = "#75662e" },
             },
         },
+        follow_url_func = function(url)
+            -- Open the URL in the default web browser.
+            vim.fn.jobstart({ "xdg-open", url }) -- linux
+        end,
     })
 end
 config.asciitree_nvim = function()
@@ -1143,9 +1147,9 @@ config.markdown_preview = function()
 			]])
 end
 config.vim_dadbod_ui = function()
-    vim.cmd [[
+    vim.cmd([[
      autocmd FileType dbui nnoremap <buffer> v <Plug>(DBUI_SelectLineVsplit)
-    ]]
+    ]])
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_show_database_icon = 1
     vim.g.db_ui_force_echo_notifications = 1
