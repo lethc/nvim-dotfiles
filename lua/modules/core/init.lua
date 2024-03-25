@@ -8,7 +8,28 @@ local modules = {
         event = "BufReadPre",
     }, --delete buffers without losing window layout
     -- { "lvim-tech/lvim-linguistics" }
-    { "nvim-tree/nvim-web-devicons", lazy = true },
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+        config = function()
+            require("nvim-web-devicons").setup({
+                override = {
+                    zsh = {
+                        icon = "",
+                        color = "#428850",
+                        cterm_color = "65",
+                        name = "Zsh",
+                    },
+                    json = {
+                        icon = "",
+                        color = "#F1F134",
+                        -- cterm_color = "65",
+                        name = "json",
+                    },
+                },
+            })
+        end,
+    },
     -- { "theRealCarneiro/hyprland-vim-syntax",        ft = "hypr" },
     { "elkowar/yuck.vim", ft = "yuck" },
     { "peterhoeg/vim-qml", ft = "qml" },
