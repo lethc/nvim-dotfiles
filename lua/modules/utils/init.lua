@@ -446,7 +446,7 @@ local modules = {
                 },
                 TODO = { icon = " ", color = "info" },
                 HACK = { icon = " ", color = "warning" },
-                WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "MEDIUM"  } },
+                WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "MEDIUM" } },
                 PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
                 NOTE = { icon = " ", color = "hint", alt = { "INFO", "LOW" } },
                 TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
