@@ -613,11 +613,15 @@ config.nvim_ufo = function()
             return { "treesitter", "indent" }
         end,
         open_fold_hl_timeout = 150,
-        close_fold_kinds = { "imports", "comment" },
+        close_fold_kinds_for_ft = {
+            default = { "imports", "comment" },
+            json = { "array" },
+            c = { "comment", "region" },
+        },
         preview = {
             win_config = {
-                -- border = { "", "─", "", "", "", "─", "", "" },
-                border = "rounded",
+                border = { "", "─", "", "", "", "─", "", "" },
+                -- border = "rounded",
                 winhighlight = "Normal:Folded",
                 winblend = 0,
             },
