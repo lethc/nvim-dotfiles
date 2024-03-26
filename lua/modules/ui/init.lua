@@ -1,6 +1,14 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
     {
+        "comfysage/evergarden",
+        opts = {
+            transparent_background = false,
+            contrast_dark = "medium", -- 'hard'|'medium'|'soft'
+            overrides = {}, -- add custom overrides
+        },
+    },
+    {
         "preservim/vim-colors-pencil",
         -- config = function()
         --   vim.g.tex_conceal = ""
@@ -12,7 +20,7 @@ local modules = {
         "lethc/colorscheme-nvim",
         config = function()
             require("tokyonight").setup({
-                transparent = true, -- Enable this to disable setting the background color
+                transparent = false, -- Enable this to disable setting the background color
             })
         end,
     },
