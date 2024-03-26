@@ -515,5 +515,12 @@ local modules = {
         keys = { { "<leader><leader>s", ":Shell ", desc = "Run a Shell command in a buffer" } },
         opts = {},
     },
+    -- {
+    --     "https://gitlab.com/itaranto/plantuml.nvim",
+    --     version = "*",
+    --     config = function()
+    --         require("plantuml").setup()
+    --     end,
+    -- },
 }
 return modules
