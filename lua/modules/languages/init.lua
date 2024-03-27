@@ -7,10 +7,8 @@ local modules = {
             "nvim-treesitter/nvim-treesitter-context",
         },
         event = { "BufReadPost", "BufNewFile" },
-        -- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
         config = languages_config.nvim_treesitter,
     },
-    -- { "luckasRanarison/tree-sitter-hypr" },
     {
         "RRethy/vim-illuminate",
         -- event = "VeryLazy",
