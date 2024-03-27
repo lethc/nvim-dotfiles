@@ -223,7 +223,6 @@ local modules = {
     -- },
     {
         "epwalsh/obsidian.nvim",
-        -- cmd = { "ObsidianSearch", "ObsidianQuickSwitch", "ObsidianOpen", "PeekOpen", "PeekClose", "ObsidianTemplate", "ObsidianFollowLink", "ObsidianToday", "ObsidianYesterday" },
         version = "*", -- recommended, use latest release instead of latest commit
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "/Home/**.md",
