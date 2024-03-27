@@ -15,30 +15,26 @@ local modules = {
         lazy = true,
     },
     {
-        "williamboman/mason.nvim",
-        dependencies = {
-            "williamboman/mason-lspconfig.nvim",
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
-        },
-        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-        build = ":MasonUpdate",
-        config = languages_config.mason_nvim,
-    },
-    {
         "neovim/nvim-lspconfig",
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
+            {
+                "williamboman/mason.nvim",
+                dependencies = {
+                    "williamboman/mason-lspconfig.nvim",
+                    "WhoIsSethDaniel/mason-tool-installer.nvim",
+                },
+                cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+                build = ":MasonUpdate",
+                config = languages_config.mason_nvim,
+            },
             {
                 "glepnir/lspsaga.nvim",
                 -- event = "LspAttach",
                 config = languages_config.lsp_saga,
             },
         },
-        -- lazy = true,
-        -- config = languages_config.nvim_lspconfig,
     },
     {
         "SmiteshP/nvim-navbuddy",
