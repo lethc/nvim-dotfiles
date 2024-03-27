@@ -4,10 +4,9 @@ local modules = {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "nvim-treesitter/nvim-treesitter-context"
+            "nvim-treesitter/nvim-treesitter-context",
         },
-        -- event = "BufEnter",
-        -- event = "BufReadPre",
+        event = { "BufReadPost", "BufNewFile" },
         -- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
         config = languages_config.nvim_treesitter,
     },
