@@ -22,7 +22,7 @@ local modules = {
             "williamboman/mason-lspconfig.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
-        cmd = "Mason",
+        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
         build = ":MasonUpdate",
         config = languages_config.mason_nvim,
     },
