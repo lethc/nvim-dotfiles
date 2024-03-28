@@ -310,56 +310,6 @@ config.mini_files = function()
         end,
     })
 end
--- config.mini_clue = function ()
---   local mini_clue_ok, mini_clue = pcall(require, "mini.clue")
---   if not mini_clue_ok then
---     return
---   end
---   mini_clue.setup({
---   triggers = {
---       -- Leader triggers
---       { mode = 'n', keys = '<Leader>' },
---       { mode = 'x', keys = '<Leader>' },
---
---       -- Built-in completion
---       { mode = 'i', keys = '<C-x>' },
---
---       -- `g` key
---       { mode = 'n', keys = 'g' },
---       { mode = 'x', keys = 'g' },
---
---       -- Marks
---       { mode = 'n', keys = "'" },
---       { mode = 'n', keys = '`' },
---       { mode = 'x', keys = "'" },
---       { mode = 'x', keys = '`' },
---
---       -- Registers
---       { mode = 'n', keys = '"' },
---       { mode = 'x', keys = '"' },
---       { mode = 'i', keys = '<C-r>' },
---       { mode = 'c', keys = '<C-r>' },
---
---       -- Window commands
---       { mode = 'n', keys = '<C-w>' },
---
---       -- `z` key
---       { mode = 'n', keys = 'z' },
---       { mode = 'x', keys = 'z' },
---     },
---
---     clues = {
---       -- Enhance this by adding descriptions for <Leader> mapping groups
---       { mode = "n", keys = "<Leader>i", desc = "Directory" },
---       mini_clue.gen_clues.builtin_completion(),
---       mini_clue.gen_clues.g(),
---       mini_clue.gen_clues.marks(),
---       mini_clue.gen_clues.registers(),
---       mini_clue.gen_clues.windows(),
---       mini_clue.gen_clues.z(),
---     },
---   })
--- end
 config.block = function()
     local block_status_ok, block = pcall(require, "block")
     if not block_status_ok then
@@ -942,7 +892,6 @@ config.obsidian_nvim = function()
             update_debounce = 200, -- update delay after a text change (in milliseconds)
             -- Define how various check-boxes are displayed
             checkboxes = {
-                -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
                 [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
                 ["x"] = { char = "", hl_group = "ObsidianDone" },
                 [">"] = { char = "", hl_group = "ObsidianRightArrow" },
