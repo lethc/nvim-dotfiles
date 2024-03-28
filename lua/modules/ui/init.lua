@@ -288,7 +288,7 @@ local modules = {
     {
         "kevinhwang91/nvim-ufo",
         -- event = "BufReadPre",
-        event = { "BufRead", "BufNewFile" },
+        -- event = { "BufRead", "BufNewFile" },
         dependencies = {
             "kevinhwang91/promise-async",
             {
