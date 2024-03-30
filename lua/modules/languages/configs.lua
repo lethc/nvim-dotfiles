@@ -97,6 +97,8 @@ config.nvim_treesitter = function()
                     -- You can use the capture groups defined in textobjects.scm
                     ["aa"] = "@parameter.outer",
                     ["ia"] = "@parameter.inner",
+                    ["ab"] = "@block.outer",
+                    ["ib"] = "@block.inner",
                     ["af"] = "@function.outer",
                     ["if"] = "@function.inner",
                     ["ac"] = "@class.outer",
