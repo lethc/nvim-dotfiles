@@ -521,5 +521,10 @@ local modules = {
     --         require("plantuml").setup()
     --     end,
     -- },
+    {
+        "tamton-aquib/mpv.nvim",
+        keys = { { "<leader><leader>p", ":MpvToggle<CR>", desc = "Play music with mpv nvim" } },
+        config = true,
+    },
 }
 return modules
