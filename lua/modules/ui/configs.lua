@@ -288,14 +288,16 @@ config.lualine = function()
                     cond = require("noice").api.statusline.mode.has,
                     color = { fg = "#F4BF75" },
                 },
+                -- "g:mpv_visualizer",
+                "g:mpv_title",
+                -- "g:mpv_percent",
                 {
                     function()
                         return "  "
                     end,
-                    color = "green",
+                    color = "black",
                     on_click = require("mpv").toggle_player,
                 },
-                "g:mpv_title",
             },
         },
     })

@@ -524,7 +524,18 @@ local modules = {
     {
         "tamton-aquib/mpv.nvim",
         keys = { { "<leader><leader>p", ":MpvToggle<CR>", desc = "Play music with mpv nvim" } },
-        config = true,
+        config = function()
+            require("mpv").setup({
+                width = 50,
+                height = 5, -- Changing these two might break the UI 😬
+                border = "single",
+                setup_widgets = true, -- to activate the widget components
+                timer = {
+                    after = 1000,
+                    throttle = 250, -- Update time for the widgets. (lesser the faster)
+                },
+            })
+        end,
     },
 }
 return modules
