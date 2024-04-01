@@ -142,6 +142,11 @@ config.nvim_cmp = function()
     -- CONFIGURATION: cmp with rounded borders and NvChad appearance
 
     cmp.setup({
+        view = {
+            entries = {
+                follow_cursor = true,
+            },
+        },
         window = {
             completion = {
                 border = "rounded", -- single|rounded|none
