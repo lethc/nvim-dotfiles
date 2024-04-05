@@ -246,6 +246,11 @@ config.lualine = function()
                     separator = { left = "", right = "" },
                     symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
                 },
+                {
+                    function()
+                        return "󰓩"
+                    end,
+                },
                 location,
                 {
                     function()
