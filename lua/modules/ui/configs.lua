@@ -12,6 +12,7 @@ config.themery = function()
             "no-clown-fiesta",
             "canon",
             "canonr",
+            "canonl",
             "evergarden",
             "tokyonight",
             "catppuccin",
@@ -293,7 +294,7 @@ config.lualine = function()
                 -- "g:mpv_percent",
                 {
                     function()
-                        return "  "
+                        return " 󰲸 "
                     end,
                     color = "black",
                     on_click = require("mpv").toggle_player,
