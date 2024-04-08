@@ -920,6 +920,16 @@ config.obsidian_nvim = function()
                 ObsidianHighlightText = { bg = "#75662e" },
             },
         },
+        attachments = {
+            -- The default folder to place images in via `:ObsidianPasteImg`.
+            -- If this is a relative path it will be interpreted as relative to the vault root.
+            -- You can always override this per image by passing a full path to the command instead of just a filename.
+            img_folder = "assets/img", -- This is the default
+            img_text_func = function(client, path)
+                path = client:vault_relative_path(path) or path
+                return string.format("![%s](%s)", path.name, path)
+            end,
+        },
         follow_url_func = function(url)
             -- Open the URL in the default web browser.
             vim.fn.jobstart({ "xdg-open", url }) -- linux
