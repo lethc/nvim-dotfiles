@@ -37,7 +37,7 @@ keymaps["normal"] = {
     { "<leader>w", "<cmd>w!<CR>" },
     { "<leader>h", "<cmd>nohlsearch<CR>" },
     -- { "<leader>E" ,     "<cmd>Explore<cr>"        },
-    { "<A-p>", "<cmd>PasteImg<CR>" }, -- Clipboard-image.nvim plugin
+    -- { "<A-p>", "<cmd>PasteImg<CR>" }, -- Clipboard-image.nvim plugin
     { "<Up>", "gk" },
     { "<Down>", "gj" },
     { "<leader>u", "mzlblgueh~`z" }, -- Quickly Toggle Casing

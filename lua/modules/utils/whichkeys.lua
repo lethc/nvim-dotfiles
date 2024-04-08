@@ -373,7 +373,7 @@ return {
         i = { "<cmd>CodeiumEnable<CR>", "Codeium" },
         I = { "<cmd>CodeiumDisable<CR>", "No Codeium" },
         m = { "<cmd>MinimapToggle<CR>", "MinMap" },
-        p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Clipboard Images" },
+        -- p = { "<cmd>lua require('clipboard-image').setup()<CR>", "Clipboard Images" },
         t = { "<cmd>TransparentEnable<CR>", "Transparency" },
         T = { "<cmd>TransparentDisable<CR>", "No Transparency" },
         v = { "<cmd>PencilToggle<CR>", "vim-pencil" },

@@ -53,10 +53,21 @@ local modules = {
         ft = "markdown",
         config = completion_config.mkdnflow_nvim,
     },
+    -- {
+    --     "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
+    --     keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
+    --     config = completion_config.clipboard_image,
+    -- },
     {
-        "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
-        keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
-        config = completion_config.clipboard_image,
+        "HakonHarnes/img-clip.nvim",
+        keys = {
+            { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+        },
+        opts = {
+            default = {
+                dir_path = "assets/img",
+            },
+        },
     },
     {
         "mbbill/undotree",
