@@ -11,7 +11,6 @@ config.themery = function()
             "default",
             "no-clown-fiesta",
             "canon",
-            "canonr",
             "canonl",
             "evergarden",
             "tokyonight",
