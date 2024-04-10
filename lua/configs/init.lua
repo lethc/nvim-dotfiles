@@ -24,7 +24,7 @@ if vim.g.neovide then
         return string.format("%x", math.floor(255 * (vim.g.transparency or 0.9)))
     end
     -- vim.o.guifont = "SF Mono:h11" -- Font
-    vim.o.guifont = "RobotoMono Nerd Font:h11" -- Font
+    vim.o.guifont = "Maple Mono NF:h11" -- Font
     vim.opt.linespace = 0
     vim.g.neovide_scale_factor = 1.0
     vim.g.neovide_padding_top = 0 --padding
