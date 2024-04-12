@@ -141,13 +141,13 @@ config.nvim_treesitter = function()
                     ["[]"] = "@class.outer",
                 },
                 goto_next = {
-                  [']i'] = "@conditional.inner",
-                  [']a'] = "@conditional.outer",
+                    ["]i"] = "@conditional.inner",
+                    ["]a"] = "@conditional.outer",
                 },
                 goto_previous = {
-                  ['[i'] = "@conditional.inner",
-                  ['[a'] = "@conditional.outer",
-                }
+                    ["[i"] = "@conditional.inner",
+                    ["[a"] = "@conditional.outer",
+                },
             },
         },
     })
@@ -199,9 +199,6 @@ config.mason_nvim = function()
         "tailwindcss",
         "astro",
         "csharp_ls",
-        -- "blade-formatter",
-        -- "php-debug-adapter",
-        -- "pint",
     }
     local settings = {
         ui = {
@@ -224,6 +221,9 @@ config.mason_nvim = function()
     })
     mason_tool_installer.setup({
         ensure_installed = {
+            "blade-formatter",
+            "php-debug-adapter",
+            "pint",
             "prettier",
             "prettierd",
             "stylua",
