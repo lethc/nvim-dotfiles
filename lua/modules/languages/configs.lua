@@ -1012,6 +1012,7 @@ config.conform_nvim = function()
             json = { "jq" },
             cmake = { "cmake_format" },
             sh = { "shfmt" },
+            zsh = { "shfmt" },
             yaml = { "yamlfmt" },
             markdown = { "prettier" },
             -- html = { "prettier" },
