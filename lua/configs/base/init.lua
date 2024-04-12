@@ -87,6 +87,12 @@ configs["auto_commands"] = function()
     autocmd User AlphaReady set showtabline=0 | set laststatus=0 | set noruler | autocmd BufUnload <buffer> set showtabline=2
     " autocmd User AlphaReady set noruler | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  augroup _zshAsBash
+    autocmd!
+    autocmd BufWinEnter,FileType * silent! if &ft == 'zsh' | set filetype=sh | endif
+  augroup end
+
   " autgroup _ufo "Trying to disable sagaoutline uggly ufo lines, need more research
   "   autocmd!
   "   autocmd BufReadPost,BufNewFile sagaoutline :UfoDisable :UfoDetach
