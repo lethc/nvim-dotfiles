@@ -778,10 +778,10 @@ config.nvim_jdtls = function()
     -- Determine OS
     local home = os.getenv("HOME")
     if vim.fn.has("mac") == 1 then
-        WORKSPACE_PATH = home .. "/workspace/"
+        WORKSPACE_PATH = home .. "/Workspace/JavaDev/Debug/"
         CONFIG = "mac"
     elseif vim.fn.has("unix") == 1 then
-        WORKSPACE_PATH = home .. "/workspace/"
+        WORKSPACE_PATH = home .. "/Workspace/JavaDev/Debug/"
         CONFIG = "linux"
     else
         print("Unsupported system")
