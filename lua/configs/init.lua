@@ -13,6 +13,8 @@ lazy.is_lazy()
 lazy.load()
 theme.colour()
 
+vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#E1E1E1 ]])
+
 for _, func in pairs(base) do
     if type(func) == "function" then
         func()
