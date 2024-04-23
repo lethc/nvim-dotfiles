@@ -50,6 +50,7 @@ keymaps["normal"] = {
 keymaps["insert"] = {
     { "jk", "<ESC>" }, -- Exit from insert mode easily
     { "kj", "<ESC>" },
+    { "jj", "<ESC>" },
 }
 
 keymaps["visual"] = {
