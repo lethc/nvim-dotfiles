@@ -25,7 +25,12 @@ local modules = {
         end,
     },
     -- { "folke/tokyonight.nvim", enabled = true },
-    { "catppuccin/nvim", name = "catppuccin" },
+    {
+        "catppuccin/nvim",
+        priority = 150,
+        name = "catppuccin",
+        config = ui_config.catppuccin,
+    },
     { "cryptomilk/nightcity.nvim", version = false, enabled = false },
     { "lvim-tech/lvim-colorscheme", enabled = false },
     { "edmondburnett/leeward.nvim", enabled = false },
@@ -38,6 +43,7 @@ local modules = {
     { "gantoreno/nvim-gabriel", enabled = false },
     {
         "lethc/Canon.nvim",
+        priority = 150,
         config = function()
             vim.g.canon_italic_comments = true
             vim.g.canon_italic_functions = false
