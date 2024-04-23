@@ -1159,14 +1159,27 @@ config.global_note = function()
         return
     end
     global_note.setup({
-        filename = "Today.md",
+        filename = "0000000001-todo.md",
         -- directory = vim.fn.stdpath("data") .. "/global-note/",
-        directory = os.getenv("HOME") .. "/Home/Templates/",
-        title = "Today List",
+        directory = os.getenv("HOME") .. "/Home/",
+        title = "Todo List",
+        additional_presets = {
+            inbox = {
+                filename = "0000000004-inbox.md",
+                title = "fleeting Notes",
+                command_name = "FleetingNotes",
+                -- All not specified options are used from the root.
+            },
+        },
     })
 
     vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
-        desc = "Toggle global note",
+        desc = "Toggle todo list",
+    })
+    vim.keymap.set("n", "<leader><leader>k", function()
+        global_note.toggle_note("inbox")
+    end, {
+        desc = "Toggle fleeting notes",
     })
 end
 config.before = function()
