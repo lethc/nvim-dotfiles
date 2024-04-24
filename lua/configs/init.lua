@@ -45,7 +45,7 @@ function Cutlinetotodolist()
     -- Get the current cursor position
     local cursor_pos = vim.api.nvim_win_get_cursor(0)
     -- Define the path to the todo list file
-    local todo_list_path = "/home/Lummyn/Home/0000000001-todo.md"
+    local todo_list_path = os.getenv("HOME") .. "/Home/01-todo.md"
     -- Open the todo list file in append mode
     local file = io.open(todo_list_path, "a")
     if file then

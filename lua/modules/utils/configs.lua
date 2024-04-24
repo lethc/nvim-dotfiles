@@ -1159,13 +1159,13 @@ config.global_note = function()
         return
     end
     global_note.setup({
-        filename = "0000000001-todo.md",
+        filename = "01-todo.md",
         -- directory = vim.fn.stdpath("data") .. "/global-note/",
         directory = os.getenv("HOME") .. "/Home/",
         title = "Todo List",
         additional_presets = {
             inbox = {
-                filename = "0000000004-inbox.md",
+                filename = "04-inbox.md",
                 title = "fleeting Notes",
                 command_name = "FleetingNotes",
                 -- All not specified options are used from the root.
