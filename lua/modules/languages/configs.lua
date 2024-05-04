@@ -231,6 +231,7 @@ config.mason_nvim = function()
             "black",
             "pylint",
             "eslint_d",
+            "eslint-lsp",
             "java-test",
             "java-debug-adapter",
             "bash-debug-adapter",
