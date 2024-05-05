@@ -1170,6 +1170,16 @@ config.global_note = function()
                 command_name = "FleetingNotes",
                 -- All not specified options are used from the root.
             },
+            flashcards = {
+                filename = "Templates/flashcards.md",
+                title = "flashcards",
+                command_name = "FlashCards",
+            },
+            flashcardsCloze = {
+                filename = "Templates/flashcards_cloze.md",
+                title = "flashcards Cloze",
+                command_name = "FlashCardsCloze",
+            }
         },
     })
 
@@ -1180,6 +1190,16 @@ config.global_note = function()
         global_note.toggle_note("inbox")
     end, {
         desc = "Toggle fleeting notes",
+    })
+    vim.keymap.set("n", "<leader><leader>f", function()
+        global_note.toggle_note("flashcards")
+    end, {
+        desc = "Toggle flashcards",
+    })
+    vim.keymap.set("n", "<leader><leader>fc", function()
+        global_note.toggle_note("flashcardsCloze")
+    end, {
+        desc = "Toggle flashcards Cloze",
     })
 end
 config.before = function()
