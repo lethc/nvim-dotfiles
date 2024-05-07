@@ -6,21 +6,21 @@ local modules = {
         cmd = "Telescope",
         keys = {
             -- { "<leader>b" , "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({sort_lastused = true, previewer = false}))<CR>", desc = "Buffers"},
-            {
-                "<leader>b",
-                "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
-                desc = "Buffers",
-            },
-            {
-                "<leader>sf",
-                "<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
-                desc = "Telescope find files",
-            },
+            -- {
+            --     "<leader>b",
+            --     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
+            --     desc = "Buffers",
+            -- },
+            -- {
+            --     "<leader>sf",
+            --     "<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
+            --     desc = "Telescope find files",
+            -- },
             { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
-            { "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
-            { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
-            { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
-            { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
+            -- { "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
+            -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
+            -- { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
+            -- { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
         },
         dependencies = {
             "nvim-telescope/telescope-file-browser.nvim",
@@ -40,6 +40,58 @@ local modules = {
             },
         },
         config = edit_config.telescope_nvim,
+    },
+    {
+        "ibhagwan/fzf-lua",
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        keys = {
+            {
+                "<Leader>sa",
+                function()
+                    vim.cmd("FzfLua")
+                end,
+                desc = "FzfLua",
+            },
+            {
+                "<Leader>sf",
+                function()
+                    vim.cmd("FzfLua files")
+                end,
+                desc = "FzfLua files",
+            },
+            {
+                "<Leader>sF",
+                function()
+                    vim.cmd("FzfLua live_grep")
+                end,
+                desc = "FzfLua search text (live grep)",
+            },
+            {
+                "<Leader>sr",
+                function()
+                    vim.cmd("FzfLua oldfiles")
+                end,
+                desc = "FzfLua oldfiles",
+            },
+            {
+                "<Leader>b",
+                function()
+                    vim.cmd("FzfLua buffers")
+                end,
+                desc = "FzfLua buffers",
+            },
+            -- {
+            --     "<leader>b",
+            --     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
+            --     desc = "Buffers",
+            -- },
+            -- { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
+            -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
+            -- { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
+            -- { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
+        },
+        config = edit_config.fzf_lua,
     },
     -- {
     --   'LukasPietzschmann/telescope-tabs',

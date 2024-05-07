@@ -174,6 +174,50 @@ config.telescope_nvim = function()
         end,
     })
 end
+config.fzf_lua = function()
+    local fzf_lua_status_ok, fzf_lua = pcall(require, "fzf-lua")
+    if not fzf_lua_status_ok then
+        return
+    end
+    fzf_lua.setup({
+        fzf_colors = {
+            ["fg"] = { "fg", "FzfLuaLine" },
+            ["bg"] = { "bg", "FzfLuaNormal" },
+            ["hl"] = { "fg", "FzfLuaItemKindVariable" },
+            ["fg+"] = { "fg", "FzfLuaLinePlus" },
+            ["bg+"] = { "bg", "FzfLuaNormal" },
+            ["hl+"] = { "fg", "FzfLuaItemKindVariable" },
+            ["info"] = { "fg", "FzfLuaPrompt" },
+            ["prompt"] = { "fg", "FzfLuaPrompt" },
+            ["pointer"] = { "fg", "DiagnosticError" },
+            ["marker"] = { "fg", "DiagnosticError" },
+            ["spinner"] = { "fg", "FzfLuaPrompt" },
+            ["header"] = { "fg", "FzfLuaPrompt" },
+            ["gutter"] = { "bg", "FzfLuaNormal" },
+        },
+        winopts_fn = function()
+            local win_height = math.ceil(vim.api.nvim_get_option("lines") * 0.4)
+            local win_width = math.ceil(vim.api.nvim_get_option("columns") * 1)
+            local col = math.ceil((vim.api.nvim_get_option("columns") - win_width) * 1)
+            local row = math.ceil((vim.api.nvim_get_option("lines") - win_height) * 1 - 3)
+            return {
+                title = "FZF LUA",
+                title_pos = "center",
+                width = win_width,
+                height = win_height,
+                row = row,
+                col = col,
+                border = { " ", " ", " ", " ", " ", " ", " ", " " },
+                preview = {
+                    layout = "horizontal",
+                    vertical = "down:45%",
+                    horizontal = "right:50%",
+                    border = "noborder",
+                },
+            }
+        end,
+    })
+end
 config.which_key = function()
     local status_ok, which_key = pcall(require, "which-key")
     if not status_ok then
@@ -1179,7 +1223,7 @@ config.global_note = function()
                 filename = "Templates/flashcards_cloze.md",
                 title = "flashcards Cloze",
                 command_name = "FlashCardsCloze",
-            }
+            },
         },
     })
 

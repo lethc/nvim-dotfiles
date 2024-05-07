@@ -280,27 +280,37 @@ return {
     s = {
         name = " 󰥨 Search",
         b = {
-            "<cmd>Telescope buffers<cr>",
+            "<cmd>lua require('fzf-lua').buffers()<cr>",
             "Buffers",
         },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        c = {
+            "<cmd>lua require('fzf-lua').colorschemes()<cr>",
+            "Colorscheme",
+        },
         f = {
-            "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+            "<cmd>lua require('fzf-lua').files()<cr>",
             "Find files",
         },
-        F = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-
+        F = {
+            "<cmd>lua require('fzf-lua').live_grep()<cr>",
+            "Find Text",
+        },
         h = {
             name = "Help",
-            c = { "<cmd>Telescope commands<cr>", "Commands" },
-            h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-            k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-            m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+            h = {
+                "<cmd>lua require('fzf-lua').helptags()<cr>",
+                "Help Tags",
+            },
+            m = {
+                "<cmd>lua require('fzf-lua').manpages()<cr>",
+                "Man Pages",
+            },
         },
         i = { "<cmd>Telescope notify<CR>", "Notifications" },
-        l = { "<cmd>Telescope registers<cr>", "Registers History" },
-        m = { "<cmd>Telescope macros<cr>", "Macros" },
-        n = { "<cmd>Telescope file_browser<cr>", "Telescope File Browser" },
+        l = {
+            "<cmd>lua require('fzf-lua').registers()<cr>",
+            "Registers History",
+        },
         o = {
             name = "Comment To-dos",
             o = { "<cmd>TodoTelescope cwd=~/Home/<cr>", "Search in a specific folder" },
@@ -313,7 +323,10 @@ return {
             w = { "<cmd>TodoTelescope keywords=WARNING<cr>", "Search just for WARNING" },
         },
         s = { "<cmd>Telescope smart_open<cr>", "Smart Open" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+        r = {
+            "<cmd>lua require('fzf-lua').oldfiles()<cr>",
+            "Recent File",
+        },
         t = {
             name = "Trouble.nvim",
             a = { "<cmd>TroubleToggle quickfix<cr>", "QuickFix" },
