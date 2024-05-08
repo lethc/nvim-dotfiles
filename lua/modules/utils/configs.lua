@@ -978,6 +978,9 @@ config.obsidian_nvim = function()
             -- Open the URL in the default web browser.
             vim.fn.jobstart({ "xdg-open", url }) -- linux
         end,
+        picker = {
+            name = "fzf-lua",
+        }
     })
 end
 config.asciitree_nvim = function()
