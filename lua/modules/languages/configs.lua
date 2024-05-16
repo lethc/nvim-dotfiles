@@ -991,15 +991,15 @@ config.conform_nvim = function()
         "$FILENAME",
     }
     local util = require("conform.util")
-    local java_google_format = {
-        meta = {
-            url = "https://github.com/google/google-java-format",
-            description = "google-java-format is a program that reformats Java source code to comply with Google Java Style.",
-        },
-        command = "google-java-format",
-        args = { "-" },
-        stdin = true,
-    }
+    -- local java_google_format = {
+    --     meta = {
+    --         url = "https://github.com/google/google-java-format",
+    --         description = "google-java-format is a program that reformats Java source code to comply with Google Java Style.",
+    --     },
+    --     command = "google-java-format",
+    --     args = { "-" },
+    --     stdin = true,
+    -- }
     conform_nvim.setup({
         formatters_by_ft = {
             -- astro = { "prettierd" },
@@ -1009,7 +1009,7 @@ config.conform_nvim = function()
             javascriptreact = { "prettierd" },
             typescriptreact = { "prettierd" },
             lua = { "stylua" },
-            java = { "java_google_format" },
+            java = { "google-java-format" },
             json = { "jq" },
             cmake = { "cmake_format" },
             sh = { "shfmt" },
@@ -1029,7 +1029,7 @@ config.conform_nvim = function()
         --   lsp_fallback = true,
         -- },
         formatters = {
-            java_google_format = java_google_format,
+            -- java_google_format = java_google_format,
             pint = {
                 meta = {
                     url = "https://github.com/laravel/pint",
@@ -1049,6 +1049,9 @@ config.conform_nvim = function()
         -- 	timeout_ms = 500,
         -- },
     })
+    conform_nvim.formatters["google-java-format"] = {
+        prepend_args = { "--aosp" }, -- 4-space indentation
+    }
     -- require("conform").formatters.my_formatter = {
     --   command = "google-java-format",
     -- }
