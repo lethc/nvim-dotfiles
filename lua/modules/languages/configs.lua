@@ -235,6 +235,7 @@ config.mason_nvim = function()
             "java-test",
             "java-debug-adapter",
             "bash-debug-adapter",
+            "google-java-format",
         },
     })
     local opts = {}
