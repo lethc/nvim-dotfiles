@@ -48,6 +48,7 @@ keymaps["normal"] = {
     { "<Leader><leader>a", "<CMD>!apy add-from-file ~/Home/Templates/flashcards.md<CR>" },
     { "<Leader><leader>ac", "<CMD>!apy add-from-file ~/Home/Templates/flashcards_cloze.md<CR>" },
     { "<Leader><leader>s", "<CMD>!apy sync<CR>" },
+    { "<Leader><leader>m", "<CMD>source ~/Home/Scripts/VI/macros.vim<CR> | <CMD>lua require('notify')('Macros Updated')<CR>" },
 }
 
 keymaps["insert"] = {
