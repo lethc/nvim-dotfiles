@@ -54,6 +54,17 @@ local modules = {
         end,
     },
     {
+        "mellow-theme/mellow.nvim",
+        config = function()
+            vim.g.mellow_italic_comments = true
+            vim.g.mellow_italic_functions = false
+            vim.g.mellow_bold_functions = false
+            vim.g.mellow_transparent = false
+            vim.g.mellow_bold_keywords = false
+            vim.g.mellow_italic_keywords = false
+        end,
+    },
+    {
         "jadnw/aesthetic.nvim",
         enabled = false,
         config = function()
