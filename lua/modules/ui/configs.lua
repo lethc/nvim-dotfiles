@@ -1167,13 +1167,13 @@ config.alpha = function()
         [[                                                              ]],
     }
     dashboard.section.buttons.val = {
-        dashboard.button("h", "  Home", ":e ~/Home/Templates/Today.md<CR>"),
-        dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
-        dashboard.button("r", "󱎫  Recently used files", ":Telescope oldfiles <CR>"),
-        dashboard.button("F", "󰚞  Find text", ":Telescope live_grep <CR>"),
-        dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-        dashboard.button("q", "󰅚  Quit", ":qa<CR>"),
+        dashboard.button("h", "  Home", "<cmd>e ~/Home/Templates/Today.md<CR>"),
+        dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert <CR>"),
+        dashboard.button("f", "󰈞  Find file", "<cmd>lua require('fzf-lua').files()<CR>"),
+        dashboard.button("r", "󱎫  Recently used files", "<cmd>lua require('fzf-lua').oldfiles()<CR>"),
+        dashboard.button("F", "󰚞  Find text", "<cmd>lua require('fzf-lua').live_grep()<CR>"),
+        dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC <CR>"),
+        dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
         -- (function()
         --   local group = { type = "group", opts = { spacing = 0 } }
         --   group.val = {
