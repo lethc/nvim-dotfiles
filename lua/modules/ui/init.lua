@@ -255,6 +255,30 @@ local modules = {
         "nvim-lualine/lualine.nvim",
         -- dependencies = { "linrongbin16/lsp-progress.nvim" },
         -- event = { "VeryLazy" },
+        dependencies = {
+            {
+                "Bekaboo/dropbar.nvim",
+                keys = {
+                    {
+                        "<space><space>i",
+                        function()
+                            require("dropbar.api").pick()
+                        end,
+                    },
+                },
+                opts = {
+                    general = { enable = false },
+                    menu = {
+                        win_configs = {
+                            border = "rounded",
+                        },
+                    },
+                    bar = {
+                        padding = { left = 0, right = 0}
+                    },
+                },
+            },
+        },
         event = "BufRead",
         config = ui_config.lualine,
     },

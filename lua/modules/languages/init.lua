@@ -46,6 +46,29 @@ local modules = {
         event = "LspAttach",
         config = languages_config.nvim_navic,
     },
+    -- {
+    --     "Bekaboo/dropbar.nvim",
+    --     -- optional, but required for fuzzy finder support
+    --     dependencies = {
+    --         "nvim-telescope/telescope-fzf-native.nvim",
+    --     },
+    --     keys = {
+    --         {
+    --             "<leader><leader>i",
+    --             function()
+    --                 require("dropbar.api").pick()
+    --             end,
+    --         },
+    --     },
+    --     opts = {
+    --         general = { enable = false },
+    --         menu = {
+    --             win_configs = {
+    --                 border = "rounded",
+    --             },
+    --         },
+    --     },
+    -- },
     {
         "folke/trouble.nvim",
         cmd = {

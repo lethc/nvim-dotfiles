@@ -573,7 +573,7 @@ config.lualine = function()
                 },
                 {
                     "filename",
-                    path = 1,
+                    -- path = 1,
                     show_modified_status = false, -- Shows a symbol next to the tab name if the file has been modified.
                     -- symbols = icons.file_status_symbol,
                     symbols = {
@@ -634,9 +634,10 @@ config.lualine = function()
                 { "filename", path = 0, symbols = icons.file_status_symbol, separator = { right = " " } },
                 -- separator = { left = "", right = " " },
             },
-            lualine_c = {
-                M.winbar_symbol,
-            },
+            -- lualine_c = {
+            --     M.winbar_symbol,
+            -- },
+            lualine_b = { '%{%v:lua.dropbar.get_dropbar_str()%}' },
             lualine_x = {
                 function()
                     return " "
