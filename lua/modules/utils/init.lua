@@ -392,7 +392,6 @@ local modules = {
                     description = "test",
                     file_name = "src/main/java/com/mycompany/app/app.java",
                     command = "mvn clean package && java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App",
-
                 },
             },
             startinsert = true,
