@@ -637,7 +637,7 @@ config.lualine = function()
             -- lualine_c = {
             --     M.winbar_symbol,
             -- },
-            lualine_b = { '%{%v:lua.dropbar.get_dropbar_str()%}' },
+            lualine_b = { "%{%v:lua.dropbar.get_dropbar_str()%}" },
             lualine_x = {
                 function()
                     return " "
