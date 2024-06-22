@@ -987,7 +987,7 @@ config.conform_nvim = function()
     require("conform.formatters.prettierd").args = {
         "--jsx-single-quote",
         "--single-quote",
-        -- "--no-semi",
+        "--no-semi",
         "--tab-width=4",
         "$FILENAME",
     }
