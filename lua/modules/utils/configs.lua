@@ -1268,6 +1268,6 @@ config.before = function()
     -- vim.keymap.set('n', '<leader>od', before.show_edits, {})
     vim.keymap.set("n", "<leader>cl", function()
         before.show_edits(require("telescope.themes").get_dropdown())
-    end, {})
+    end, { desc = "before.nvim"})
 end
 return config
