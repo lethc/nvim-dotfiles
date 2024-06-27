@@ -383,7 +383,7 @@ config.lsp_saga = function()
     -- there is no information available.
     -- To disable it just use ":Lspsaga hover_doc ++quiet"
     -- Pressing the key twice will enter the hover window
-    keymap("n", "H", "<cmd>Lspsaga hover_doc<CR>")
+    keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
     -- Floating terminal
     -- keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
