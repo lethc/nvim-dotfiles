@@ -52,7 +52,7 @@ M.options = function()
         breakindent = true, -- break indentation for long lines
         breakindentopt = { shift = 2 },
         showbreak = "↳ ", -- character for line break
-        scrolloff = 0, --99(cursor in center)                                       -- minimal number of screen lines to keep above and below the cursor
+        scrolloff = 3, --99(cursor in center)                                       -- minimal number of screen lines to keep above and below the cursor
         sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
         shortmess = { c = true, W = true, a = true, F = true, I = true, s = true }, --controls which messages are displayed in the status line, c = about completions
         spell = false,
