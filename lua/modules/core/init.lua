@@ -65,5 +65,8 @@ local modules = {
             vim.keymap.set({ "x", "n" }, "<leader>y", "<Plug>(YANoMove)", { silent = true })
         end,
     },
+    {
+        "yogeshdhamija/enter-insert-on-click.vim",
+    },
 }
 return modules
