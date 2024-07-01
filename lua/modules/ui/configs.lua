@@ -927,10 +927,13 @@ config.neoscroll_nvim = function()
     if not neoscroll_status_ok then
         return
     end
-    local t = {} -- Syntax: t[keys] = {function, {function arguments}}
-    t["<S-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-    t["<S-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-    require("neoscroll.config").set_mappings(t)
+
+    -- Use Shift + j or Shift + k to scroll in neovim 
+    -- local t = {} -- Syntax: t[keys] = {function, {function arguments}}
+    -- t["<S-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+    -- t["<S-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+    -- require("neoscroll.config").set_mappings(t)
+
     neoscroll.setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
         mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
