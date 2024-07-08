@@ -15,6 +15,6 @@ return {
         "typescriptreact",
         "vue",
         "php",
-        "markdown",
+        -- "markdown",
     },
 }
