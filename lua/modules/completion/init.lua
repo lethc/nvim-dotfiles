@@ -48,11 +48,12 @@ local modules = {
         },
         config = completion_config.nvim_surround,
     },
-    {
-        "jakewvincent/mkdnflow.nvim",
-        ft = "markdown",
-        config = completion_config.mkdnflow_nvim,
-    },
+    -- {
+    --     "jakewvincent/mkdnflow.nvim",
+    --     ft = "markdown",
+    --     config = completion_config.mkdnflow_nvim,
+    -- },
+    { "bullets-vim/bullets.vim", ft = "markdown" },
     -- {
     --     "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
     --     keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
@@ -115,6 +116,11 @@ local modules = {
     },
     {
         "preservim/vim-pencil",
+        init = function()
+            vim.g["pencil#wrapModeDefault"] = "hard"
+            vim.g["pencil#textwidth"] = 79
+            vim.g["pencil#autoformat"] = 1 -- Enable autoformat by default (1) or disable (0)
+        end,
     },
 }
 
