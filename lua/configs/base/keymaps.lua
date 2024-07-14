@@ -19,10 +19,10 @@ keymaps["normal"] = {
     { "<BS>", ":b#<CR>" }, -- Like Ctrl + Tab in a browser
     { "<Tab>", ":b#<CR>" },
     { "<S-q>", "<cmd>Bdelete!<CR>" }, -- Close buffer
-    { "<C-h>", "<C-w>h" }, -- Better window navigation
-    { "<C-j>", "<C-w>j" },
-    { "<C-k>", "<C-w>k" },
-    { "<C-l>", "<C-w>l" },
+    -- { "<C-h>", "<C-w>h" }, -- Better window navigation
+    -- { "<C-j>", "<C-w>j" },
+    -- { "<C-k>", "<C-w>k" },
+    -- { "<C-l>", "<C-w>l" },
     { "<C-Up>", ":resize -2<CR>" }, -- Resize windows with arrows
     { "<C-Down>", ":resize +2<CR>" },
     { "<C-Left>", ":vertical resize -2<CR>" },
@@ -55,6 +55,10 @@ keymaps["insert"] = {
     { "jk", "<ESC>" }, -- Exit from insert mode easily
     { "kj", "<ESC>" },
     { "jj", "<ESC>" },
+    { "<C-h>", "<Left>" }, -- Better window navigation
+    { "<C-j>", "<Down>" },
+    { "<C-k>", "<Up>" },
+    { "<C-l>", "<Right>" },
 }
 
 keymaps["visual"] = {
