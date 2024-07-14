@@ -287,6 +287,50 @@ local modules = {
         config = edit_config.obsidian_nvim,
     },
     {
+        "Myzel394/easytables.nvim",
+        ft = "markdown",
+        config = function()
+            require("easytables").setup({
+                -- Your configuration comes here
+            })
+        end,
+    },
+    {
+        "OXY2DEV/markview.nvim",
+        ft = "markdown",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
+        },
+
+        config = function()
+            require("markview").setup({
+                -- highlight_groups = {},
+
+                -- checkbox = {
+                --     checked = {
+                --         marker = " checked ",
+                --         marker_hl = "@markup.list.checked",
+                --     },
+                --     unchecked = {
+                --         marker = " unchecked ",
+                --         marker_hl = "@markup.list.checked",
+                --     },
+                -- },
+            })
+        end,
+    },
+    {
+        "Bekaboo/deadcolumn.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {
+            -- modes = { "i", "n" },
+            blending = {
+                colorcode = "#1F2430",
+                hlgroup = { "NonText", "bg" },
+            },
+        },
+    },
+    {
         "xorid/asciitree.nvim",
         keys = { "<leader>ca", "<cmd>lua require('asciitree').setup()<CR>" },
         config = edit_config.asciitree_nvim,
