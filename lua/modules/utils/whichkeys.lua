@@ -232,6 +232,7 @@ return {
         I = { "<cmd>ObsidianLinkNew<CR>", "Create new link" },
         n = { "<cmd>ObsidianNew<CR>", "Create new file" },
         o = { "<cmd>ObsidianOpen<cr>", "Open File" },
+        p = { "<cmd>PencilToggle<CR>", "Pencil Toggle" },
         q = { "<cmd>ObsidianQuickSwitch<CR>", "Quick Switch" },
         R = { "<cmd>ObsidianRename<CR>", "Rename File" },
         s = { "<cmd>ObsidianSearch<CR>", "Search File" },
