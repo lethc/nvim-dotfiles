@@ -10,6 +10,13 @@ local modules = {
         config = languages_config.nvim_treesitter,
     },
     {
+        "echasnovski/mini.ai",
+        version = "*",
+        config = function()
+            require("mini.ai").setup()
+        end,
+    },
+    {
         "RRethy/vim-illuminate",
         -- event = "VeryLazy",
         lazy = true,
