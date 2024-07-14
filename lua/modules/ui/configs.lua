@@ -565,6 +565,7 @@ config.lualine = function()
                 -- { require("NeoComposer.ui").status_recording },
             },
             lualine_x = {
+                { "%{PencilMode()}" },
                 "filetype",
                 {
                     function()
