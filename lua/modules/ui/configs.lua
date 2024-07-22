@@ -1171,7 +1171,7 @@ config.alpha = function()
         [[                                                              ]],
     }
     dashboard.section.buttons.val = {
-        dashboard.button("h", "  Home", "<cmd>e ~/Home/Templates/Today.md<CR>"),
+        dashboard.button("h", "  Home", "<cmd>e ~/Home/01-todo.md<CR>"),
         dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert <CR>"),
         dashboard.button("f", "󰈞  Find file", "<cmd>lua require('fzf-lua').files()<CR>"),
         dashboard.button("r", "󱎫  Recently used files", "<cmd>lua require('fzf-lua').oldfiles()<CR>"),
