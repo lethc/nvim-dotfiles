@@ -346,7 +346,7 @@ return {
         c = { "<cmd>CompilerOpen<cr>", "Compiler File" },
         f = { "<cmd>FTermToggle<cr>", "Toggle Terminal" },
         e = {
-            "<cmd>startinsert | split | resize 13 | set norelativenumber | set nonumber  | terminal<cr>",
+            "<cmd>startinsert | split | resize 15 | set norelativenumber | set nonumber  | terminal<cr>",
             "bottom Terminal",
         },
         -- v = { "<cmd>startinsert | vsplit | startinsert | set norelativenumber | set nonumber  | terminal<cr>", "Vertical Terminal" },
