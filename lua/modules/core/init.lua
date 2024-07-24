@@ -58,11 +58,12 @@ local modules = {
         "svban/YankAssassin.nvim", -- Will avoid the cursor move when copy
         config = function()
             require("YankAssassin").setup({
-                auto = true, -- if auto is true, autocmds are used. Whenever y is used anywhere, the cursor doesn't move to start
+                auto_normal = true, -- if auto is true, autocmds are used. Whenever y is used anywhere, the cursor doesn't move to start
+                auto_visual = true,
             })
             -- Optional Mappings
             vim.keymap.set({ "x", "n" }, "gy", "<Plug>(YADefault)", { silent = true })
-            vim.keymap.set({ "x", "n" }, "<leader>y", "<Plug>(YANoMove)", { silent = true })
+            -- vim.keymap.set({ "x", "n" }, "<leader>y", "<Plug>(YANoMove)", { silent = true })
         end,
     },
     {
