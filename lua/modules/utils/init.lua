@@ -354,14 +354,15 @@ local modules = {
             -- vim.g.unception_open_buffer_in_new_tab = true
             vim.g.unception_enable_flavor_text = true
             vim.g.unception_delete_replaced_buffer = false
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "UnceptionEditRequestReceived",
-                callback = function()
-                    -- Toggle the terminal off.
-                    require("FTerm").toggle()
-                    -- require("FTerm").close()
-                end,
-            })
+            vim.g.unception_block_while_host_edits = true
+            -- vim.api.nvim_create_autocmd("User", {
+            --     pattern = "UnceptionEditRequestReceived",
+            --     callback = function()
+            --         -- Toggle the terminal off.
+            --         require("FTerm").toggle()
+            --         -- require("FTerm").close()
+            --     end,
+            -- })
         end,
     },
     {
