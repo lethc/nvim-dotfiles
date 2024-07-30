@@ -225,6 +225,8 @@ config.which_key = function()
     end
 
     local setup = {
+        ---@type false | "classic" | "modern" | "helix"
+        preset = "helix",
         plugins = {
             marks = true, -- shows a list of your marks on ' and `
             registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -244,63 +246,74 @@ config.which_key = function()
                 g = true, -- bindings for prefixed with g
             },
         },
-        -- add operators that will trigger motion and text object completion
-        -- to enable all native operators, set the preset / operators plugin above
-        -- operators = { gc = "Comments" },
-        key_labels = {
-            -- override the label used to display some keys. It doesn't effect WK in any other way.
-            -- For example:
-            -- ["<space>"] = "SPC",
-            -- ["<cr>"] = "RET",
-            -- ["<tab>"] = "TAB",
+        -- icons = {
+        --     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+        --     separator = "➜", -- symbol used between a key and it's label
+        --     group = "", -- symbol prepended to a group
+        -- },
+        win = {
+            -- don't allow the popup to overlap with the cursor
+            no_overlap = true,
+            -- width = 1,
+            -- height = { min = 4, max = 25 },
+            -- col = 0,
+            -- row = math.huge,
+            border = "rounded",
+            padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+            title = true,
+            title_pos = "center",
+            zindex = 1000,
+            -- Additional vim.wo and vim.bo options
+            bo = {},
+            wo = {
+                -- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+            },
         },
-        icons = {
-            breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-            separator = "➜", -- symbol used between a key and it's label
-            group = "", -- symbol prepended to a group
+        layout = {
+            width = { min = 20, max = 50 }, -- min and max width of the columns
+            spacing = 3, -- spacing between columns
         },
-        popup_mappings = {
+        keys = {
             scroll_down = "<c-d>", -- binding to scroll down inside the popup
             scroll_up = "<c-u>", -- binding to scroll up inside the popup
         },
-        window = {
-            border = "rounded", -- none, single, double, shadow
-            position = "bottom", -- bottom, top
-            margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-            padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-            winblend = 0,
+        replace = {
+            key = {
+                function(key)
+                    return require("which-key.view").format(key)
+                end,
+                -- { "<Space>", "SPC" },
+            },
+            desc = {
+                { "<Plug>%(?(.*)%)?", "%1" },
+                { "^%+", "" },
+                { "<[cC]md>", "" },
+                { "<[cC][rR]>", "" },
+                { "<[sS]ilent>", "" },
+                { "^lua%s+", "" },
+                { "^call%s+", "" },
+                { "^:%s*", "" },
+            },
         },
-        layout = {
-            height = { min = 4, max = 25 }, -- min and max height of the columns
-            width = { min = 20, max = 50 }, -- min and max width of the columns
-            spacing = 3, -- spacing between columns
-            align = "center", -- align columns left, center or right
-        },
-        ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-        hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
         show_help = true, -- show help message on the command line when the popup is visible
-        triggers = "auto", -- automatically setup triggers
-        -- triggers = {"<leader>"} -- or specify a list manually
-        triggers_blacklist = {
-            -- list of mode / prefixes that should never be hooked by WhichKey
-            -- this is mostly relevant for key maps that start with a native binding
-            -- most people should not need to change this
-            i = { "j", "k" },
-            v = { "j", "k" },
+        triggers = {
+            { "<auto>", mode = "nisotc" },
         },
     }
 
     local opts = {
         mode = "n", -- NORMAL mode
-        prefix = "<leader>",
+        -- prefix = "<leader>",
         buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
         silent = true, -- use `silent` when creating keymaps
         noremap = true, -- use `noremap` when creating keymaps
         nowait = true, -- use `nowait` when creating keymaps
+        remap = false
     }
     local mappings = require("modules.utils.whichkeys")
     which_key.setup(setup)
-    which_key.register(mappings, opts)
+    which_key.add(mappings, opts)
+    -- which_key.register(mappings, opts)
 end
 config.mini_files = function()
     local mini_files_status_ok, mini_files = pcall(require, "mini.files")
@@ -460,46 +473,46 @@ config.harpoon = function()
     local harpoon = require("harpoon")
     harpoon:setup()
     vim.keymap.set("n", "<leader>aa", function()
-        harpoon:list():append()
+        harpoon:list():add()
     end)
-    vim.keymap.set("n", "<leader>am", function()
+    vim.keymap.set("n", "<leader>aw", function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set("n", "<leader>aq", function()
+    vim.keymap.set("n", "<leader>a1", function()
         harpoon:list():select(1)
     end)
-    vim.keymap.set("n", "<leader>aw", function()
+    vim.keymap.set("n", "<leader>a2", function()
         harpoon:list():select(2)
     end)
-    vim.keymap.set("n", "<leader>ae", function()
+    vim.keymap.set("n", "<leader>a3", function()
         harpoon:list():select(3)
     end)
-    vim.keymap.set("n", "<leader>ar", function()
+    vim.keymap.set("n", "<leader>a4", function()
         harpoon:list():select(4)
     end)
-    vim.keymap.set("n", "<leader>at", function()
+    vim.keymap.set("n", "<leader>a5", function()
         harpoon:list():select(5)
     end)
-    vim.keymap.set("n", "<leader>ay", function()
+    vim.keymap.set("n", "<leader>a6", function()
         harpoon:list():select(6)
     end)
-    vim.keymap.set("n", "<leader>au", function()
+    vim.keymap.set("n", "<leader>a7", function()
         harpoon:list():select(7)
     end)
-    vim.keymap.set("n", "<leader>ai", function()
+    vim.keymap.set("n", "<leader>a8", function()
         harpoon:list():select(8)
     end)
-    vim.keymap.set("n", "<leader>ao", function()
+    vim.keymap.set("n", "<leader>a9", function()
         harpoon:list():select(9)
     end)
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set("n", "<leader>alp", function()
-        harpoon:list():prev()
-    end)
-    vim.keymap.set("n", "<leader>aln", function()
+    vim.keymap.set("n", "<leader>an", function()
         harpoon:list():next()
+    end)
+    vim.keymap.set("n", "<leader>ap", function()
+        harpoon:list():prev()
     end)
 
     --
@@ -514,8 +527,8 @@ config.harpoon = function()
     vim.api.nvim_create_user_command("HarpoonQuickMenu", function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
     end, {})
-    vim.api.nvim_create_user_command("HarpoonAppend", function()
-        harpoon:list():append()
+    vim.api.nvim_create_user_command("HarpoonAdd", function()
+        harpoon:list():add()
     end, {})
     vim.api.nvim_create_user_command("Harpoon1", function()
         harpoon:list():select(1)
@@ -932,7 +945,7 @@ config.obsidian_nvim = function()
         --   -- ["_"] = require("obsidian.mapping").gf_passthrough(),
         -- },
         ui = {
-            enable = true, -- set to false to disable all additional syntax features
+            enable = false, -- set to false to disable all additional syntax features
             update_debounce = 200, -- update delay after a text change (in milliseconds)
             -- Define how various check-boxes are displayed
             checkboxes = {
@@ -980,7 +993,7 @@ config.obsidian_nvim = function()
         end,
         picker = {
             name = "fzf-lua",
-        }
+        },
     })
 end
 config.asciitree_nvim = function()
@@ -1231,22 +1244,22 @@ config.global_note = function()
     })
 
     vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
-        desc = "Toggle todo list",
+        desc = "Open todo list file",
     })
     vim.keymap.set("n", "<leader><leader>k", function()
         global_note.toggle_note("inbox")
     end, {
-        desc = "Toggle fleeting notes",
+        desc = "Open fleeting file",
     })
     vim.keymap.set("n", "<leader><leader>f", function()
         global_note.toggle_note("flashcards")
     end, {
-        desc = "Toggle flashcards",
+        desc = "Open flashcards file",
     })
     vim.keymap.set("n", "<leader><leader>fc", function()
         global_note.toggle_note("flashcardsCloze")
     end, {
-        desc = "Toggle flashcards Cloze",
+        desc = "Open flashcards Cloze file",
     })
 end
 config.before = function()
@@ -1268,6 +1281,6 @@ config.before = function()
     -- vim.keymap.set('n', '<leader>od', before.show_edits, {})
     vim.keymap.set("n", "<leader>cl", function()
         before.show_edits(require("telescope.themes").get_dropdown())
-    end, { desc = "before.nvim"})
+    end, { desc = "before.nvim" })
 end
 return config

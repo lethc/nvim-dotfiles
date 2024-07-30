@@ -247,7 +247,6 @@ local modules = {
     },
     {
         "zaldih/themery.nvim",
-        -- keys = { "<leader>" },
         -- event = "VeryLazy",
         config = ui_config.themery,
     },
@@ -439,7 +438,7 @@ local modules = {
     {
         "xiyaowong/transparent.nvim",
         -- event = "BufReadPre",
-        -- keys = { "<leader>" },
+        keys = { "<leader>w" },
         config = ui_config.transparent,
     },
     {

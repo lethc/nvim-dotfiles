@@ -104,14 +104,29 @@ local modules = {
     --     }
     --  end
     -- },
+    -- {
+    --     "folke/which-key.nvim",
+    --     -- event = "VeryLazy",
+    -- },
     {
         "folke/which-key.nvim",
-        -- event = "VeryLazy",
-        keys = {
-            { "z", mode = { "n" } },
-            { "'", mode = { "n" } },
-            "<leader>",
+        event = "VeryLazy",
+        cmd = "WhichKey",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         },
+        -- keys = {
+        --     {
+        --         "<leader>",
+        --         function()
+        --             require("which-key").show({ global = true })
+        --         end,
+        --         desc = "Buffer Local Keymaps (which-key)",
+        --     },
+        -- },
+        keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "g" },
         config = edit_config.which_key,
     },
     {
@@ -368,7 +383,6 @@ local modules = {
     {
         "numToStr/FTerm.nvim",
         keys = {
-            "<leader>",
             { "<A-g>", "<cmd><cr>", desc = "Gitui" },
             { "<A-c>", "<cmd><cr>", desc = "ncdu" },
             { "<A-y>", "<cmd><cr>", desc = "Yazi" },
