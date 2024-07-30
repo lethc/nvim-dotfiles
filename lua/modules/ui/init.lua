@@ -1,5 +1,6 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
+    { "akinsho/horizon.nvim", version = "*" },
     {
         "comfysage/evergarden",
         opts = {

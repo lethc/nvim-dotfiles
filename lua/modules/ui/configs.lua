@@ -373,6 +373,7 @@ config.themery = function()
             "pencil",
             "canonl",
             "no-clown-fiesta",
+            "horizon",
         },
         -- themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
         livePreview = true, -- Apply theme while browsing. Default to true.
