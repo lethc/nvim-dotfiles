@@ -247,7 +247,7 @@ local modules = {
     },
     {
         "zaldih/themery.nvim",
-        keys = { "<leader>" },
+        -- keys = { "<leader>" },
         -- event = "VeryLazy",
         config = ui_config.themery,
     },

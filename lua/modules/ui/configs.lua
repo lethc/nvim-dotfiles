@@ -374,7 +374,7 @@ config.themery = function()
             "canonl",
             "no-clown-fiesta",
         },
-        themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
+        -- themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
         livePreview = true, -- Apply theme while browsing. Default to true.
     })
 end

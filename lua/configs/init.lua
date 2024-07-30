@@ -1,7 +1,7 @@
 -- require("configs.core")
 local base = require("configs.base")
 local lazy = require("configs.core.lazy")
-local theme = require("configs.ui.colorscheme")
+-- local theme = require("configs.ui.colorscheme")
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 --Remap space as leader key
@@ -11,7 +11,7 @@ vim.g.maplocalleader = " "
 
 lazy.is_lazy()
 lazy.load()
-theme.colour()
+-- theme.colour()
 
 vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#E1E1E1 ]])
 
