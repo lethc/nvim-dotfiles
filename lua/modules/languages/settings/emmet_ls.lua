@@ -15,6 +15,7 @@ return {
         "typescriptreact",
         "vue",
         "php",
+        "blade"
         -- "markdown",
     },
 }

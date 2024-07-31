@@ -7,6 +7,8 @@ config.nvim_treesitter = function()
         return
     end
 
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
     -- syntax for mdx files (astro)
     -- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
     -- ft_to_parser.mdx = "markdown"
@@ -23,12 +25,14 @@ config.nvim_treesitter = function()
             "markdown_inline",
             "sql",
             "css",
-            "html",
             "typescript",
             "tsx",
             "hyprlang",
             "rust",
             "python",
+            "html",
+            "php_only",
+            "blade",
             "php",
             "json",
             -- "latex",
@@ -152,8 +156,20 @@ config.nvim_treesitter = function()
         },
     })
 
+    parser_config.blade = {
+        install_info = {
+            url = "https://github.com/EmranMR/tree-sitter-blade",
+            files = { "src/parser.c" },
+            branch = "main",
+        },
+        filetype = "blade",
+    }
+
     vim.filetype.add({
-        pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+        pattern = {
+            [".*/hypr/.*%.conf"] = "hyprlang",
+            [".*%.blade%.php"] = "blade",
+        },
     })
     -- vim.filetype.add {
     --   pattern = { [".*.conf"] = "hyprlang" },
