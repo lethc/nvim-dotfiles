@@ -42,7 +42,7 @@ local modules = {
     -- { "kdheepak/cmp-latex-symbols",                 ft = "latex", lazy = true, enabled = false },
     -- { "rafamadriz/friendly-snippets",               lazy = true, enabled = false },
     { "MunifTanjim/nui.nvim", lazy = true },
-    { "jwalton512/vim-blade", ft = "php" },
+    -- { "jwalton512/vim-blade", ft = "php" },
     { "kkharji/sqlite.lua", lazy = true },
     {
         "lervag/vimtex",
