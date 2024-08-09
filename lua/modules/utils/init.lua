@@ -319,18 +319,16 @@ local modules = {
 
         config = function()
             require("markview").setup({
-                -- highlight_groups = {},
+                modes = { "n", "i", "no", "c" },
+                hybrid_modes = { "i" },
 
-                -- checkbox = {
-                --     checked = {
-                --         marker = " checked ",
-                --         marker_hl = "@markup.list.checked",
-                --     },
-                --     unchecked = {
-                --         marker = " unchecked ",
-                --         marker_hl = "@markup.list.checked",
-                --     },
-                -- },
+                -- This is nice to have
+                callbacks = {
+                    on_enable = function(_, win)
+                        vim.wo[win].conceallevel = 2
+                        vim.wo[win].concealcursor = "nc"
+                    end,
+                },
             })
         end,
     },
