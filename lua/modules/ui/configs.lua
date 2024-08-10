@@ -366,6 +366,7 @@ config.themery = function()
         themes = {
             "default",
             "canon",
+            "carbonfox",
             "mellow",
             "catppuccin",
             "tokyonight",
