@@ -75,18 +75,19 @@ local modules = {
     -- },
     { --#### RUST LANGUAGE ####
         "mrcjkb/rustaceanvim",
-        version = "^3", -- Recommended
+        version = '^5', -- Recommended
         ft = { "rust" },
     },
     {
         "Saecki/crates.nvim",
         ft = { "rust", "toml" },
+        tag = 'stable',
         config = function()
             local crates = require("crates")
             crates.setup({
-                src = {
-                    cmp = { enabled = true },
-                },
+                -- src = {
+                --     cmp = { enabled = true },
+                -- },
             })
             crates.show()
         end,
