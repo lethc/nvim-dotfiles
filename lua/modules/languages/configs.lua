@@ -207,14 +207,14 @@ config.mason_nvim = function()
         -- "intelephense",
         "phpactor",
         "gopls",
-        "rust_analyzer",
+        -- "rust_analyzer",
         "clangd", --"to Debug, Install in your system codelldb"
         "texlab",
         "ltex",
         "marksman",
         "tailwindcss",
         "astro",
-        "csharp_ls",
+        -- "csharp_ls",
     }
     local settings = {
         ui = {
