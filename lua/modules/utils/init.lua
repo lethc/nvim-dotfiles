@@ -312,6 +312,7 @@ local modules = {
     },
     {
         "OXY2DEV/markview.nvim",
+        lazy = false,
         ft = "markdown",
         dependencies = {
             "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
@@ -326,8 +327,31 @@ local modules = {
                 callbacks = {
                     on_enable = function(_, win)
                         vim.wo[win].conceallevel = 2
-                        vim.wo[win].concealcursor = "nc"
+                        vim.wo[win].concealcursor = "c"
                     end,
+                },
+                headings = {
+                    enable = true,
+                    shift_width = 0,
+                    shift_char = "",
+                    heading_1 = {
+                        hl = "@markup.heading.1.markdown",
+                    },
+                    heading_2 = {
+                        hl = "@markup.heading.2.markdown",
+                    },
+                    heading_3 = {
+                        hl = "@markup.heading.3.markdown",
+                    },
+                    heading_4 = {
+                        hl = "@markup.heading.4.markdown",
+                    },
+                    heading_5 = {
+                        hl = "@markup.heading.5.markdown",
+                    },
+                    heading_6 = {
+                        hl = "@markup.heading.6.markdown",
+                    },
                 },
             })
         end,
