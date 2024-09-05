@@ -17,6 +17,7 @@ config.nvim_cmp = function()
     --   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     --   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     -- end
+    local compare = require("cmp.config.compare")
     local check_backspace = function()
         local col = vim.fn.col(".") - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -212,6 +213,12 @@ config.nvim_cmp = function()
             { name = "nerdfont" },
             { name = "codeium" },
             -- { name = "fonts" }
+        },
+        sorting = {
+            comparators = {
+                priority_weight = 2.,
+                comparators = { compare.score, compare.exact, compare.order },
+            },
         },
         formatting = {
             fields = settings.cmp_style == "nvchad" and { "kind", "abbr", "menu" } or nil,
