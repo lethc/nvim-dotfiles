@@ -348,7 +348,7 @@ config.mini_files = function()
     local map_split = function(buf_id, lhs, direction)
         local rhs = function()
             local new_target_window
-            vim.api.nvim_win_call(mini_files.get_target_window(), function()
+			vim.api.nvim_win_call(mini_files.get_explorer_state().target_window, function()
                 vim.cmd(direction .. " split")
                 new_target_window = vim.api.nvim_get_current_win()
             end)
