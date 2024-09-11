@@ -198,7 +198,7 @@ config.mason_nvim = function()
         "cssmodules_ls",
         "emmet_ls",
         "html",
-        "tsserver",
+        -- "tsserver", --This now is called ts_ls remember that
         "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
@@ -835,7 +835,7 @@ config.nvim_jdtls = function()
             )
         )
     end
-    local config = {
+    local jdtls_config = {
         -- The command that starts the language server
         -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
         cmd = {
@@ -972,7 +972,7 @@ config.nvim_jdtls = function()
     -- vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
     -- This starts a new client & server,
     -- or attaches to an existing client & server depending on the `root_dir`.
-    jdtls.start_or_attach(config)
+    jdtls.start_or_attach(jdtls_config)
 end
 config.null_ls = function()
     local null_ls_status_ok, null_ls = pcall(require, "null-ls")
