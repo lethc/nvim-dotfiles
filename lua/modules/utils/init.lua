@@ -692,8 +692,5 @@ local modules = {
             })
         end,
     },
-    {
-        "ericbn/vim-relativize",
-    },
 }
 return modules
