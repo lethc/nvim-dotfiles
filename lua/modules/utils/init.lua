@@ -336,27 +336,28 @@ local modules = {
                     shift_char = "",
                     heading_1 = {
                         sign = "",
-                        hl = "@markup.heading.1.markdown",
+                        -- hl = "@markup.heading.1.markdown",
+                        hl = "markdownH1",
                     },
                     heading_2 = {
                         sign = "",
-                        hl = "@markup.heading.2.markdown",
+                        hl = "markdownH2",
                     },
                     heading_3 = {
                         sign = "",
-                        hl = "@markup.heading.3.markdown",
+                        hl = "markdownH3",
                     },
                     heading_4 = {
                         sign = "",
-                        hl = "@markup.heading.4.markdown",
+                        hl = "markdownH4",
                     },
                     heading_5 = {
                         sign = "",
-                        hl = "@markup.heading.5.markdown",
+                        hl = "markdownH5",
                     },
                     heading_6 = {
                         sign = "",
-                        hl = "@markup.heading.6.markdown",
+                        hl = "markdownH6",
                     },
                 },
                 code_blocks = {
