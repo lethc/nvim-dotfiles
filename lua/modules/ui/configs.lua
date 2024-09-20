@@ -375,6 +375,8 @@ config.themery = function()
             "canonl",
             "no-clown-fiesta",
             "horizon",
+            "horizon-extended",
+            "srcery",
         },
         -- themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
         livePreview = true, -- Apply theme while browsing. Default to true.
@@ -931,7 +933,7 @@ config.neoscroll_nvim = function()
         return
     end
 
-    -- Use Shift + j or Shift + k to scroll in neovim 
+    -- Use Shift + j or Shift + k to scroll in neovim
     -- local t = {} -- Syntax: t[keys] = {function, {function arguments}}
     -- t["<S-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
     -- t["<S-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }

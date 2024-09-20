@@ -1,6 +1,15 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
+    { "srcery-colors/srcery-vim" },
     { "akinsho/horizon.nvim", version = "*" },
+    {
+        "lancewilhelm/horizon-extended.nvim",
+        config = function()
+            require("horizon-extended").setup({
+                style = "neo",
+            })
+        end,
+    },
     {
         "comfysage/evergarden",
         opts = {
