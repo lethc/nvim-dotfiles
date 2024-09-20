@@ -78,3 +78,6 @@ function Cutlinetotodolist()
 end
 vim.cmd([[command! CutLineToTodoList lua Cutlinetotodolist()]])
 vim.api.nvim_set_keymap('n', '<Leader>ct', ':CutLineToTodoList<CR>', { noremap = true, silent = true })
+
+-- Value required for cmp selection colours
+vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#cac9dd ]])
