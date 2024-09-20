@@ -335,23 +335,32 @@ local modules = {
                     shift_width = 0,
                     shift_char = "",
                     heading_1 = {
+                        sign = "",
                         hl = "@markup.heading.1.markdown",
                     },
                     heading_2 = {
+                        sign = "",
                         hl = "@markup.heading.2.markdown",
                     },
                     heading_3 = {
+                        sign = "",
                         hl = "@markup.heading.3.markdown",
                     },
                     heading_4 = {
+                        sign = "",
                         hl = "@markup.heading.4.markdown",
                     },
                     heading_5 = {
+                        sign = "",
                         hl = "@markup.heading.5.markdown",
                     },
                     heading_6 = {
+                        sign = "",
                         hl = "@markup.heading.6.markdown",
                     },
+                },
+                code_blocks = {
+                    sign = "",
                 },
             })
         end,
@@ -691,6 +700,35 @@ local modules = {
                 },
             })
         end,
+    },
+    {
+        "epilande/checkbox-cycle.nvim",
+        ft = "markdown",
+        opts = {
+            -- states = { "[ ]", "[/]", "[x]", "[~]" },
+            states = {
+                { "[ ]", "[x]" },
+                { "[ ]", "[/]", "[x]" },
+                { "[>]", "[<]" },
+                { "[!]", "[~]", "[-]" },
+            },
+        },
+        keys = {
+            {
+                "<CR>",
+                "<Cmd>CheckboxCycleNext<CR>",
+                desc = "Checkbox Next",
+                ft = { "markdown" },
+                mode = { "n", "v" },
+            },
+            {
+                "<S-CR>",
+                "<Cmd>CheckboxCyclePrev<CR>",
+                desc = "Checkbox Previous",
+                ft = { "markdown" },
+                mode = { "n", "v" },
+            },
+        },
     },
 }
 return modules
