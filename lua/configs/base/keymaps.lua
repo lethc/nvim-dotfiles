@@ -1,7 +1,7 @@
 local keymaps = {}
 
 keymaps["normal"] = {
-    { "<C-n>", ":enew<CR>" }, -- New empty buffer
+    -- { "<C-n>", ":enew<CR>" }, -- New empty buffer
     { "<C-t>", ":tabnew<CR>" }, -- New empty tab
     { "<C-tab>", ":tabnext<CR>" }, -- Move next tab
     { "<C-S-tab>", ":tabprevious<CR>" }, -- Move previous tab
@@ -27,7 +27,7 @@ keymaps["normal"] = {
     { "<C-Down>", ":resize +2<CR>" },
     { "<C-Left>", ":vertical resize -2<CR>" },
     { "<C-Right>", ":vertical resize +2<CR>" },
-    { "<C-c>", "<cmd>normal! ciw<cr>a" }, --ciw
+    -- { "<C-c>", "<cmd>normal! ciw<cr>a" }, --ciw
     -- { "t"         ,     "s"                       }, -- Replace s with the t
     { "J", "mzJ`z" }, -- Don't move the cursor when you press J
     { "n", "nzzzv" }, -- Set the cursor to the middle of the screen
@@ -38,8 +38,8 @@ keymaps["normal"] = {
     { "<leader>h", "<cmd>nohlsearch<CR>" },
     -- { "<leader>E" ,     "<cmd>Explore<cr>"        },
     -- { "<A-p>", "<cmd>PasteImg<CR>" }, -- Clipboard-image.nvim plugin
-    { "<Up>", "gk" },
-    { "<Down>", "gj" },
+    -- { "<Up>", "gk" },
+    -- { "<Down>", "gj" },
     { "<leader>u", "mzlblgueh~`z" }, -- Quickly Toggle Casing
     { "gD", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "gl", "<cmd>lua vim.lsp.buf.declaration()<CR>" },
