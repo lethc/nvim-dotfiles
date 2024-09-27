@@ -203,7 +203,7 @@ config.mason_nvim = function()
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
-        "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
+        -- "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
         -- "intelephense",
         "phpactor",
         "gopls",
