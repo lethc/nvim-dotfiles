@@ -69,5 +69,14 @@ local modules = {
     {
         "yogeshdhamija/enter-insert-on-click.vim",
     },
+    -- {
+    --     "christoomey/vim-tmux-navigator",
+    --     init = function()
+    --         vim.keymap.set("n", "C-h", ":TmuxNavigateLeft")
+    --         vim.keymap.set("n", "C-l", ":TmuxNavigateRight")
+    --         vim.keymap.set("n", "C-k", ":TmuxNavigateUp")
+    --         vim.keymap.set("n", "C-j", ":TmuxNavigateDown")
+    --     end,
+    -- },
 }
 return modules
