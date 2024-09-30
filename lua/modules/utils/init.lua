@@ -621,6 +621,22 @@ local modules = {
         "bloznelis/before.nvim",
         config = edit_config.before,
     },
+    {
+        "gcmt/vessel.nvim",
+        config = function()
+            require("vessel").setup({
+                create_commands = true,
+                commands = {
+                    view_marks = "Marks", -- you can customize each command name
+                    view_jumps = "Jumps",
+                },
+            })
+            vim.keymap.set("n", "gl", "<Plug>(VesselViewLocalJumps)")
+            vim.keymap.set("n", "gL", "<Plug>(VesselViewExternalJumps)")
+            vim.keymap.set("n", "gm", "<plug>(VesselViewBufferMarks)")
+            vim.keymap.set("n", "gM", "<plug>(VesselViewExternalMarks)")
+        end,
+    },
     -- {
     --     -- https://www.vim.org/scripts/script.php?script_id=2227
     --     "mjbrownie/browser.vim",
