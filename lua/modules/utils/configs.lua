@@ -308,7 +308,7 @@ config.which_key = function()
         silent = true, -- use `silent` when creating keymaps
         noremap = true, -- use `noremap` when creating keymaps
         nowait = true, -- use `nowait` when creating keymaps
-        remap = false
+        remap = false,
     }
     local mappings = require("modules.utils.whichkeys")
     which_key.setup(setup)
@@ -348,7 +348,7 @@ config.mini_files = function()
     local map_split = function(buf_id, lhs, direction)
         local rhs = function()
             local new_target_window
-			vim.api.nvim_win_call(mini_files.get_explorer_state().target_window, function()
+            vim.api.nvim_win_call(mini_files.get_explorer_state().target_window, function()
                 vim.cmd(direction .. " split")
                 new_target_window = vim.api.nvim_get_current_win()
             end)
@@ -1277,10 +1277,9 @@ config.before = function()
     -- Jump to next entry in the edit history
     vim.keymap.set("n", "g,", before.jump_to_next_edit, {})
 
-    -- Move edit history to quickfix (or telescope)
-    -- vim.keymap.set('n', '<leader>od', before.show_edits, {})
+    -- You can provide telescope opts to the picker as show_edits_in_telescope argument:
     vim.keymap.set("n", "<leader>cl", function()
-        before.show_edits(require("telescope.themes").get_dropdown())
-    end, { desc = "before.nvim" })
+        before.show_edits_in_telescope(require("telescope.themes").get_dropdown())
+    end, {})
 end
 return config
