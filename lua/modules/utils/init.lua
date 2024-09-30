@@ -389,7 +389,7 @@ local modules = {
         build = "npm install --prefix server",
         config = function()
             vim.cmd([[
-        let g:bracey_browser_command='naver-whale-stable --new-window'
+        let g:bracey_browser_command='zen-browser --new-window'
       ]])
         end,
     },
@@ -711,11 +711,6 @@ local modules = {
             vim.api.nvim_set_hl(0, "MultiCursorDisabledCursor", { link = "Visual" })
             vim.api.nvim_set_hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
         end,
-    },
-    {
-        "siadat/shell.nvim",
-        keys = { { "<leader><leader>s", ":Shell ", desc = "Run a Shell command in a buffer" } },
-        opts = {},
     },
     -- {
     --     "https://gitlab.com/itaranto/plantuml.nvim",
