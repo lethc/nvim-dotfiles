@@ -1182,14 +1182,11 @@ config.alpha = function()
         [[                              ]],
     }
     dashboard.section.buttons.val = {
-        dashboard.button("h", "  Home", "<cmd>e ~/Home/todo.md<CR>"),
-        dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert <CR>"),
-        dashboard.button("o", "󰃶  Todo Today", "<cmd>Trouble todo focus=true filter = {tag = {TEST}}<CR>"),
-        dashboard.button("w", "󰃶  Todo in a Week", "<cmd>Trouble todo focus=true filter = {tag = {HACK}}<cr>"),
-        dashboard.button("m", "󰃶  Todo in a month", "<cmd>Trouble todo focus=true filter = {tag = {PERF}}<cr>"),
         dashboard.button("r", "󱎫  Recently used files", "<cmd>lua require('fzf-lua').oldfiles()<CR>"),
+        dashboard.button("h", "  Home", "<cmd>e ~/Home/todo.md<CR>"),
+        dashboard.button("o", "󰃶  Todo Today", "<cmd>Trouble todo focus=true filter = {tag = {TEST}}<CR>"),
+        dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC <CR>"),
         dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
-        -- dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC <CR>"),
         -- dashboard.button("f", "󰈞  Find file", "<cmd>lua require('fzf-lua').files()<CR>"),
         -- dashboard.button("F", "󰚞  Find text", "<cmd>lua require('fzf-lua').live_grep()<CR>"),
         -- (function()
