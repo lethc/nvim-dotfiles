@@ -178,7 +178,7 @@ config.nvim_cmp = function()
             -- 	behavior = cmp.ConfirmBehavior.Replace,
             -- 	select = true,
             -- }),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+            ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Disable auto-select the first item on suggestion
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
