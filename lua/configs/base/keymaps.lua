@@ -18,6 +18,7 @@ keymaps["normal"] = {
     { "<S-h>", ":bprevious<CR>" },
     { "<BS>", ":b#<CR>" }, -- Like Ctrl + Tab in a browser
     { "<Tab>", ":b#<CR>" },
+    { "<A-BS>", ":wincmd j | :q | :b#<CR>" },
     { "<S-q>", "<cmd>Bdelete!<CR>" }, -- Close buffer
     -- { "<C-h>", "<C-w>h" }, -- Better window navigation
     -- { "<C-j>", "<C-w>j" },
@@ -52,8 +53,8 @@ keymaps["normal"] = {
 }
 
 keymaps["insert"] = {
-    { "jk", "<ESC>" }, -- Exit from insert mode easily
-    { "kj", "<ESC>" },
+    -- { "jk", "<ESC>" }, -- Exit from insert mode easily
+    -- { "kj", "<ESC>" },
     { "jj", "<ESC>" },
     { "<C-h>", "<Left>" }, -- Better window navigation
     { "<C-j>", "<Down>" },
