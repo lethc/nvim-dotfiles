@@ -1219,7 +1219,7 @@ config.global_note = function()
         return
     end
     global_note.setup({
-        filename = "01-todo.md",
+        filename = "todo.md",
         -- directory = vim.fn.stdpath("data") .. "/global-note/",
         directory = os.getenv("HOME") .. "/Home/",
         title = "Todo List",
