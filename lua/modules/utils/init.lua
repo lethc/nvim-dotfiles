@@ -335,28 +335,28 @@ local modules = {
                     shift_width = 0,
                     shift_char = "",
                     heading_1 = {
-                        sign = "",
+                        -- sign = "",
                         -- hl = "@markup.heading.1.markdown",
                         hl = "markdownH1",
                     },
                     heading_2 = {
-                        sign = "",
+                        -- sign = "",
                         hl = "markdownH2",
                     },
                     heading_3 = {
-                        sign = "",
+                        -- sign = "",
                         hl = "markdownH3",
                     },
                     heading_4 = {
-                        sign = "",
+                        -- sign = "",
                         hl = "markdownH4",
                     },
                     heading_5 = {
-                        sign = "",
+                        -- sign = "",
                         hl = "markdownH5",
                     },
                     heading_6 = {
-                        sign = "",
+                        -- sign = "",
                         hl = "markdownH6",
                     },
                 },
@@ -788,6 +788,60 @@ local modules = {
                 let g:calendar_google_calendar = 1
                 let g:calendar_google_task = 1
             ]])
+        end,
+    },
+    {
+        "j-hui/fidget.nvim",
+        opts = {},
+    },
+    {
+        "https://github.com/fresh2dev/zellij.vim.git",
+        lazy = false,
+        config = function()
+            vim.cmd([[
+                let g:zellij_navigator_no_default_mappings = 1
+                nnoremap <silent> <C-h> :ZellijNavigateLeft<CR>
+                nnoremap <silent> <C-j> :ZellijNavigateDown<CR>
+                nnoremap <silent> <C-k> :ZellijNavigateUp<CR>
+                nnoremap <silent> <C-l> :ZellijNavigateRight<CR>
+            ]])
+        end,
+    },
+    {
+        "nvim-focus/focus.nvim",
+        version = "*",
+        config = function()
+            require("focus").setup({
+                enable = true, -- Enable module
+                commands = true, -- Create Focus commands
+                autoresize = {
+                    enable = true, -- Enable or disable auto-resizing of splits
+                    width = 0, -- Force width for the focused window
+                    height = 0, -- Force height for the focused window
+                    minwidth = 0, -- Force minimum width for the unfocused window
+                    minheight = 0, -- Force minimum height for the unfocused window
+                    height_quickfix = 10, -- Set the height of quickfix panel
+                },
+                split = {
+                    bufnew = false, -- Create blank buffer for new split windows
+                    tmux = false, -- Create tmux splits instead of neovim splits
+                },
+                ui = {
+                    number = false, -- Display line numbers in the focussed window only
+                    relativenumber = false, -- Display relative line numbers in the focussed window only
+                    hybridnumber = false, -- Display hybrid line numbers in the focussed window only
+                    absolutenumber_unfocussed = false, -- Preserve absolute numbers in the unfocussed windows
+
+                    cursorline = true, -- Display a cursorline in the focussed window only
+                    cursorcolumn = false, -- Display cursorcolumn in the focussed window only
+                    colorcolumn = {
+                        enable = false, -- Display colorcolumn in the foccused window only
+                        list = "+1", -- Set the comma-saperated list for the colorcolumn
+                    },
+                    signcolumn = true, -- Display signcolumn in the focussed window only
+                    winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
+                },
+            })
         end,
     },
 }

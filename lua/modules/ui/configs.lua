@@ -366,6 +366,7 @@ config.themery = function()
         themes = {
             "default",
             "canon",
+            "canon-onedark",
             "carbonfox",
             "mellow",
             "catppuccin",
@@ -524,7 +525,7 @@ config.lualine = function()
         options = {
             globalstatus = true,
             icons_enabled = true,
-            theme = "canon",
+            -- theme = "canon",
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
             disabled_filetypes = {
@@ -776,7 +777,7 @@ config.nvim_noice = function()
         },
         lsp = {
             progress = {
-                enabled = true,
+                enabled = false,
                 format = "lsp_progress",
                 format_done = "lsp_progress_done",
                 throttle = 1000 / 30, -- frequency to update lsp progress message
@@ -794,7 +795,7 @@ config.nvim_noice = function()
                 opts = {}, -- merged with defaults from documentation
             },
             signature = {
-                enabled = true,
+                enabled = false,
                 auto_open = {
                     enabled = true,
                     trigger = true, -- Automatically show signature help when typing a trigger character from the LSP

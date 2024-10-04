@@ -80,4 +80,6 @@ vim.cmd([[command! CutLineToTodoList lua Cutlinetotodolist()]])
 vim.api.nvim_set_keymap('n', '<Leader>ct', ':CutLineToTodoList<CR>', { noremap = true, silent = true })
 
 -- Value required for cmp selection colours
-vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#cac9dd ]])
+-- vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#cac9dd ]])
+vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
+-- vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
