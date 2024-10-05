@@ -58,7 +58,9 @@ local modules = {
             vim.g.canon_italic_comments = true
             vim.g.canon_italic_functions = false
             vim.g.canon_bold_functions = false
-            vim.g.canon_transparent = false
+            vim.g.canon_transparent = true
+            vim.g.canonr_transparent = true
+            vim.g.canon_onedark_transparent = true
             vim.g.canon_bold_keywords = false
             vim.g.canon_italic_keywords = false
         end,
