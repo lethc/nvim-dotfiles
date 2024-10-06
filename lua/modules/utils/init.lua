@@ -844,5 +844,6 @@ local modules = {
             })
         end,
     },
+    { "kevinhwang91/nvim-hlslens" }, -- Show number of similar matches found when searching for a word (noice can do this too)
 }
 return modules
