@@ -96,8 +96,12 @@ configs["auto_commands"] = function()
 
   augroup _always_signcolumn
     autocmd!
-    autocmd BufEnter * :set signcolumn=yes:2
+    autocmd BufEnter,WinEnter * if &filetype !~# '^\(nofile\|prompt\|neo-tree\|alpha\|minifiles\)$' | set signcolumn=yes:2 | endif
+    " Apply signcolumn=yes:2 when a buffer becomes inactive
+    autocmd WinLeave * set signcolumn=yes:2
+
   augroup end
+
   " autgroup _ufo "Trying to disable sagaoutline uggly ufo lines, need more research
   "   autocmd!
   "   autocmd BufReadPost,BufNewFile sagaoutline :UfoDisable :UfoDetach
