@@ -93,6 +93,11 @@ configs["auto_commands"] = function()
     autocmd BufWinEnter,FileType * silent! if &ft == 'zsh' | set filetype=sh | endif
   augroup end
 
+
+  augroup _always_signcolumn
+    autocmd!
+    autocmd BufEnter * :set signcolumn=yes:2
+  augroup end
   " autgroup _ufo "Trying to disable sagaoutline uggly ufo lines, need more research
   "   autocmd!
   "   autocmd BufReadPost,BufNewFile sagaoutline :UfoDisable :UfoDetach
