@@ -652,11 +652,13 @@ config.lualine = function()
                 -- when no winbar_symbol, diagnostics and diff is available.
                 -- { "diagnostics", sources = { "nvim_diagnostic" } },
                 -- "diff",
-                {
-                    require("noice").api.statusline.mode.get,
-                    cond = require("noice").api.statusline.mode.has,
-                    color = { fg = "#F4BF75" },
-                },
+
+                -- This provides a way to display when a macro is recording... "qa -> @a"
+                -- {
+                --     require("noice").api.statusline.mode.get,
+                --     cond = require("noice").api.statusline.mode.has,
+                --     color = { fg = "#F4BF75" },
+                -- },
                 -- "g:mpv_visualizer",
                 "g:mpv_title",
                 -- "g:mpv_percent",

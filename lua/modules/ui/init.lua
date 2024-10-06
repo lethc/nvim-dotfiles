@@ -298,13 +298,13 @@ local modules = {
         lazy = true,
         config = ui_config.nvim_notify,
     },
-    {
-        "folke/noice.nvim",
-        event = "BufReadPre",
-        -- event = "VeryLazy",
-        -- lazy = true,
-        config = ui_config.nvim_noice,
-    },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "BufReadPre",
+    --     -- event = "VeryLazy",
+    --     -- lazy = true,
+    --     config = ui_config.nvim_noice,
+    -- },
     {
         "echasnovski/mini.indentscope",
         event = "BufReadPre",
