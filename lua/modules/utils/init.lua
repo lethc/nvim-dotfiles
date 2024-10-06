@@ -844,6 +844,11 @@ local modules = {
             })
         end,
     },
-    { "kevinhwang91/nvim-hlslens" }, -- Show number of similar matches found when searching for a word (noice can do this too)
+    {
+        "kevinhwang91/nvim-hlslens", -- Show number of similar matches found when searching for a word (noice can do this too)
+        config = function()
+            require("hlslens").setup()
+        end,
+    },
 }
 return modules
