@@ -35,9 +35,8 @@ keymaps["normal"] = {
     { "N", "Nzzzv" },
     { "<leader>q", "<CMD>q!<CR>" },
     { "<leader>Q", "<CMD>qa!<CR>" },
-    { "<leader>w", "<cmd>w!<CR>" },
+    { "<leader><leader>w", "<cmd>w!<CR>" },
     { "<leader>h", "<cmd>nohlsearch<CR>" },
-    -- { "<leader>E" ,     "<cmd>Explore<cr>"        },
     -- { "<A-p>", "<cmd>PasteImg<CR>" }, -- Clipboard-image.nvim plugin
     -- { "<Up>", "gk" },
     -- { "<Down>", "gj" },

@@ -52,13 +52,6 @@ return {
     { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", desc = "UI" },
     { "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", desc = "Exit" },
 
-    { "<leader>e", group = "Explore", icon = { icon = "", color = "yellow" } },
-    { "<leader>ed", '<cmd>lua require("mini.files").open()<CR>', desc = "Directory" },
-    {
-        "<leader>ee",
-        '<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0))<CR>',
-        desc = "File files",
-    },
     { "<leader>f", group = "DiffView", icon = { icon = "", color = "green" } },
     { "<leader>fc", "<cmd>DiffviewClose<cr>", desc = "Close DiffView" },
     { "<leader>ff", "<cmd>DiffviewFocusFiles<cr>", desc = "Focus Files DiffView" },

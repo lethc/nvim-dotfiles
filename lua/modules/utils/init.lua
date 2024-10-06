@@ -133,7 +133,7 @@ local modules = {
         "echasnovski/mini.files",
         keys = {
             {
-                "<Leader>e",
+                "<Leader><leader>e",
                 function()
                     -- require("mini.files").open()
                     require("mini.files").open(vim.api.nvim_buf_get_name(0))
@@ -141,7 +141,7 @@ local modules = {
                 desc = "Mini files Current Directory",
             },
             {
-                "<Leader>E",
+                "<Leader><leader>E",
                 function()
                     -- require("mini.files").open()
                     require("mini.files").open()
@@ -527,7 +527,7 @@ local modules = {
             "kristijanhusak/vim-dadbod-completion",
             "tpope/vim-dotenv",
         },
-        keys = { { "<leader><leader>wd", ":DBUIToggle<cr>", desc = "Open Database client" } },
+        keys = { { "<leader><leader>db", ":DBUIToggle<cr>", desc = "Open Database client" } },
         config = edit_config.vim_dadbod_ui,
     },
     {
@@ -572,7 +572,7 @@ local modules = {
                 desc = "TFM",
             },
             {
-                "<leader>es",
+                "<leader>ys",
                 function()
                     local tfm = require("tfm")
                     tfm.open(nil, tfm.OPEN_MODE.split)
@@ -580,7 +580,7 @@ local modules = {
                 desc = "TFM - horizonal split",
             },
             {
-                "<leader>ev",
+                "<leader>yv",
                 function()
                     local tfm = require("tfm")
                     tfm.open(nil, tfm.OPEN_MODE.vsplit)
@@ -588,7 +588,7 @@ local modules = {
                 desc = "TFM - vertical split",
             },
             {
-                "<leader>et",
+                "<leader>yt",
                 function()
                     local tfm = require("tfm")
                     tfm.open(nil, tfm.OPEN_MODE.tabedit)
