@@ -3,7 +3,19 @@ local M = {}
 M.options = function()
     local N = {
         -- Message output on vim actions
-        shortmess = { c = true, W = true, a = true, F = true, I = true, s = true }, --controls which messages are displayed in the status line, c = about completions
+        shortmess = {
+            t = true, -- truncate file messages at start
+            A = true, -- ignore annoying swap file messages
+            o = true, -- file-read message overwrites previous
+            O = true, -- file-read message overwrites previous
+            T = true, -- truncate non-file messages in middle
+            F = true, -- Don't give file info when editing a file, NOTE: this breaks autocommand messages
+            s = true,
+            c = true,
+            W = true, -- Don't show [w] or written when writing
+            a = true,
+            I = true,
+        }, --controls which messages are displayed in the status line, c = about completions
 
         -- Timings
         timeout = true,
