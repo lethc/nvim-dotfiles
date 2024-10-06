@@ -8,11 +8,19 @@ config.gitsigns_nvim = function()
     end
     gitsigns.setup({
         signs = {
-            add = { text = " ▎", },
-            change = { text = " ▎", },
-            delete = { text = " 󰐊", },
-            topdelete = { text = " 󰐊", },
-            changedelete = { text = " ▎", },
+            add = { text = " ▎" },
+            change = { text = " ▎" },
+            delete = { text = " 󰐊" },
+            topdelete = { text = " 󰐊" },
+            changedelete = { text = " ▎" },
+            untracked = { text = " ▎" },
+        },
+        signs_staged = {
+            add = { text = " ▎" },
+            change = { text = " ▎" },
+            delete = { text = " 󰐊" },
+            topdelete = { text = " 󰐊" },
+            changedelete = { text = " ▎" },
             untracked = { text = " ▎" },
         },
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
@@ -31,6 +39,7 @@ config.gitsigns_nvim = function()
             delay = 1000,
             ignore_whitespace = false,
             virt_text_priority = 100,
+            use_focus = true,
         },
         current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
         sign_priority = 6,
