@@ -596,14 +596,14 @@ config.lualine = function()
                     "tabs",
                     mode = 0,
                     show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
-                    -- tabs_color = {
-                    --     active = "lualine_a_normal",
-                    --     -- active = {
-                    --     --   fg = "#E1E1E1";
-                    --     --   bg = "#323232";
-                    --     -- },
-                    --     inactive = "lualine_b_normal",
-                    -- },
+                    tabs_color = {
+                        active = "lualine_a_normal",
+                        -- active = {
+                        --   fg = "#E1E1E1";
+                        --   bg = "#323232";
+                        -- },
+                        inactive = "lualine_b_normal",
+                    },
                     -- separator = { left = "", right = "" },
                     separator = { left = "", right = "" },
                     symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
