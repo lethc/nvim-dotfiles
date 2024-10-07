@@ -31,15 +31,15 @@ local modules = {
                 -- Only required if using match_algorithm fzf
                 { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
             },
-            {
-                "tiagovla/scope.nvim",
-                -- event = "VimEnter",
-                config = function()
-                    require("scope").setup({ restore_state = true })
-                end,
-            },
         },
         config = edit_config.telescope_nvim,
+    },
+    {
+        "tiagovla/scope.nvim",
+        -- event = "VimEnter",
+        config = function()
+            require("scope").setup({ restore_state = true })
+        end,
     },
     {
         "ibhagwan/fzf-lua",
