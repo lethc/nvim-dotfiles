@@ -993,6 +993,13 @@ config.obsidian_nvim = function()
             name = "fzf-lua",
         },
     })
+    vim.keymap.set("n", "gf", function()
+        if require("obsidian").util.cursor_on_markdown_link() then
+            return "<cmd>ObsidianFollowLink<CR>"
+        else
+            return "gf"
+        end
+    end, { noremap = false, expr = true })
 end
 config.asciitree_nvim = function()
     local asciitree_status_ok, assiitree_nvim = pcall(require, "asciitree")
