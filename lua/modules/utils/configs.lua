@@ -927,6 +927,7 @@ config.obsidian_nvim = function()
         daily_notes = {
             folder = "Today/",
         },
+        mappings = {},
         disable_frontmatter = false,
         templates = {
             subdir = "Templates",
@@ -941,9 +942,6 @@ config.obsidian_nvim = function()
                 end,
             },
         },
-        -- mappings = {
-        --   -- ["_"] = require("obsidian.mapping").gf_passthrough(),
-        -- },
         ui = {
             enable = false, -- set to false to disable all additional syntax features
             update_debounce = 200, -- update delay after a text change (in milliseconds)
