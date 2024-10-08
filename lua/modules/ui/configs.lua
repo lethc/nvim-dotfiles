@@ -568,6 +568,7 @@ config.lualine = function()
                 -- { "require('lsp-progress').progress()" },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
+                { "macro_recording", "%S" },
             },
             lualine_x = {
                 { "%{PencilMode()}" },

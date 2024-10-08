@@ -288,6 +288,7 @@ local modules = {
                     },
                 },
             },
+            { "yavorski/lualine-macro-recording.nvim" },
         },
         event = "BufRead",
         config = ui_config.lualine,
