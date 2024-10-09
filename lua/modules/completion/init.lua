@@ -1,7 +1,9 @@
 local completion_config = require("modules.completion.configs")
 local modules = {
     {
-        "hrsh7th/nvim-cmp",
+        -- "hrsh7th/nvim-cmp",
+        "iguanacucumber/magazine.nvim", -- nvim-cmp fork with Performance Improvements
+        name = "nvim-cmp", -- Otherwise highlighting gets messed up
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "saadparwaiz1/cmp_luasnip",
