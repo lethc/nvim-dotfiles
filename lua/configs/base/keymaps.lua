@@ -31,8 +31,8 @@ keymaps["normal"] = {
     -- { "<C-c>", "<cmd>normal! ciw<cr>a" }, --ciw
     -- { "t"         ,     "s"                       }, -- Replace s with the t
     { "J", "mzJ`z" }, -- Don't move the cursor when you press J
-    { "n", "nzzzv" }, -- Set the cursor to the middle of the screen
-    { "N", "Nzzzv" },
+    -- { "n", "nzzzv" }, -- Set the cursor to the middle of the screen
+    -- { "N", "Nzzzv" },
     { "<leader>q", "<CMD>q!<CR>" },
     { "<leader>Q", "<CMD>qa!<CR>" },
     { "<leader><leader>w", "<cmd>w!<CR>" },
@@ -55,6 +55,7 @@ keymaps["insert"] = {
     -- { "jk", "<ESC>" }, -- Exit from insert mode easily
     -- { "kj", "<ESC>" },
     { "jj", "<ESC>" },
+    { "JJ", "<ESC>" },
     { "<C-h>", "<Left>" }, -- Better window navigation
     { "<C-j>", "<Down>" },
     { "<C-k>", "<Up>" },
