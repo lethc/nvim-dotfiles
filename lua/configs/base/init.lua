@@ -75,6 +75,7 @@ configs["auto_commands"] = function()
     autocmd!
     autocmd FileType markdown setlocal nowrap
     autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal textwidth=99 "Default autoindent = true
   augroup end
 
   augroup _auto_resize
