@@ -3,7 +3,7 @@ local modules = {
     {
         -- "hrsh7th/nvim-cmp",
         "iguanacucumber/magazine.nvim", -- nvim-cmp fork with Performance Improvements
-        name = "nvim-cmp", -- Otherwise highlighting gets messed up
+        -- name = "nvim-cmp", -- Otherwise highlighting gets messed up (Fo some reason it installs nvim-cmp and disables magazine.)
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "saadparwaiz1/cmp_luasnip",
