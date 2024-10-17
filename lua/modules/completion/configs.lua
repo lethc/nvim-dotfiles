@@ -260,14 +260,14 @@ config.nvim_cmp = function()
         },
     })
     -- This make the cmdline ":example" use cmp as a source of completion
-    -- cmp.setup.cmdline({ ":", "/", "?" }, {
-    --     mapping = cmp.mapping.preset.cmdline(),
-    --     sources = {
-    --         { name = "cmdline" },
-    --         { name = "buffer" },
-    --         { name = "path" },
-    --     },
-    -- })
+    cmp.setup.cmdline({ ":", "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+            { name = "cmdline" },
+            { name = "buffer" },
+            { name = "path" },
+        },
+    })
 end
 config.nvim_autopairs = function()
     local nvim_autopairs_status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
