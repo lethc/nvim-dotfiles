@@ -179,43 +179,153 @@ config.fzf_lua = function()
     if not fzf_lua_status_ok then
         return
     end
+    local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }
+        or vim.fn.executable("chafa") == 1 and { "chafa" }
+        or vim.fn.executable("viu") == 1 and { "viu", "-b" }
+        or nil
+
     fzf_lua.setup({
+        -- fzf_colors = {
+        --     ["fg"] = { "fg", "FzfLuaLine" },
+        --     ["bg"] = { "bg", "FzfLuaNormal" },
+        --     ["hl"] = { "fg", "FzfLuaItemKindVariable" },
+        --     ["fg+"] = { "fg", "FzfLuaLinePlus" },
+        --     ["bg+"] = { "bg", "FzfLuaNormal" },
+        --     ["hl+"] = { "fg", "FzfLuaItemKindVariable" },
+        --     ["info"] = { "fg", "FzfLuaPrompt" },
+        --     ["prompt"] = { "fg", "FzfLuaPrompt" },
+        --     ["pointer"] = { "fg", "DiagnosticError" },
+        --     ["marker"] = { "fg", "DiagnosticError" },
+        --     ["spinner"] = { "fg", "FzfLuaPrompt" },
+        --     ["header"] = { "fg", "FzfLuaPrompt" },
+        --     ["gutter"] = { "bg", "FzfLuaNormal" },
+        -- },
         fzf_colors = {
-            ["fg"] = { "fg", "FzfLuaLine" },
-            ["bg"] = { "bg", "FzfLuaNormal" },
-            ["hl"] = { "fg", "FzfLuaItemKindVariable" },
-            ["fg+"] = { "fg", "FzfLuaLinePlus" },
-            ["bg+"] = { "bg", "FzfLuaNormal" },
-            ["hl+"] = { "fg", "FzfLuaItemKindVariable" },
-            ["info"] = { "fg", "FzfLuaPrompt" },
-            ["prompt"] = { "fg", "FzfLuaPrompt" },
+            ["fg"] = { "fg", "Normal" },
+            ["bg"] = { "bg", "Normal" },
+            ["hl"] = { "fg", "Directory" },
+            ["fg+"] = { "fg", "Normal" },
+            ["bg+"] = { "bg", "CursorLine" },
+            ["hl+"] = { "fg", "CmpItemKindVariable" },
+            ["info"] = { "fg", "WarningMsg" },
+            --     ["prompt"] = { "fg", "FzfLuaPrompt" },
             ["pointer"] = { "fg", "DiagnosticError" },
             ["marker"] = { "fg", "DiagnosticError" },
-            ["spinner"] = { "fg", "FzfLuaPrompt" },
-            ["header"] = { "fg", "FzfLuaPrompt" },
-            ["gutter"] = { "bg", "FzfLuaNormal" },
+            ["spinner"] = { "fg", "Label" },
+            ["header"] = { "fg", "Comment" },
+            ["gutter"] = { "bg", "Normal" },
+            ["scrollbar"] = { "fg", "WarningMsg" },
         },
         winopts_fn = function()
-            local win_height = math.ceil(vim.api.nvim_get_option("lines") * 0.4)
-            local win_width = math.ceil(vim.api.nvim_get_option("columns") * 1)
-            local col = math.ceil((vim.api.nvim_get_option("columns") - win_width) * 1)
-            local row = math.ceil((vim.api.nvim_get_option("lines") - win_height) * 1 - 3)
+            -- local win_height = math.ceil(vim.api.nvim_get_option("lines") * 0.4)
+            -- local win_width = math.ceil(vim.api.nvim_get_option("columns") * 1)
+            -- local col = math.ceil((vim.api.nvim_get_option("columns") - win_width) * 1)
+            -- local row = math.ceil((vim.api.nvim_get_option("lines") - win_height) * 1 - 3)
             return {
                 title = "FZF LUA",
                 title_pos = "center",
-                width = win_width,
-                height = win_height,
-                row = row,
-                col = col,
+                -- width = win_width,
+                -- height = win_height,
+                -- row = row,
+                -- col = col,
                 border = { " ", " ", " ", " ", " ", " ", " ", " " },
-                preview = {
-                    layout = "horizontal",
-                    vertical = "down:45%",
-                    horizontal = "right:50%",
-                    border = "noborder",
-                },
+                -- preview = {
+                --     layout = "horizontal",
+                --     vertical = "down:45%",
+                --     horizontal = "right:50%",
+                --     border = "noborder",
+                -- },
             }
         end,
+        -- default_previewer   = "bat",       -- override the default previewer?
+        keymap = {
+            builtin = {
+                ["<c-d>"] = "preview-page-down",
+                ["<c-u>"] = "preview-page-up",
+            },
+            fzf = {
+                ["ctrl-d"] = "preview-half-page-down",
+                ["ctrl-u"] = "preview-half-page-up",
+            },
+        },
+        previewers = {
+            builtin = {
+                ueberzug_scaler = "cover",
+                extensions = {
+                    ["gif"] = img_prev_bin,
+                    ["png"] = img_prev_bin,
+                    ["jpg"] = img_prev_bin,
+                    ["jpeg"] = img_prev_bin,
+                    ["svg"] = { "chafa" },
+                },
+            },
+        },
+        git = {
+            status = {
+                cmd = "git status -su",
+                winopts = {
+                    preview = { vertical = "down:70%", horizontal = "right:70%" },
+                },
+                preview_pager = vim.fn.executable("delta") == 1 and "delta --width=$COLUMNS",
+            },
+            commits = {
+                winopts = { preview = { vertical = "down:60%" } },
+                preview_pager = vim.fn.executable("delta") == 1 and "delta --width=${COLUMNS:-0}",
+            },
+            bcommits = {
+                winopts = { preview = { vertical = "down:60%" } },
+                preview_pager = vim.fn.executable("delta") == 1 and "delta --width=${COLUMNS:-0}",
+            },
+            branches = {
+                winopts = {
+                    preview = { vertical = "down:75%", horizontal = "right:75%" },
+                },
+            },
+        },
+        lsp = {
+            finder = {
+                providers = {
+                    { "definitions", prefix = fzf_lua.utils.ansi_codes.green("def ") },
+                    { "declarations", prefix = fzf_lua.utils.ansi_codes.magenta("decl") },
+                    { "implementations", prefix = fzf_lua.utils.ansi_codes.green("impl") },
+                    { "typedefs", prefix = fzf_lua.utils.ansi_codes.red("tdef") },
+                    { "references", prefix = fzf_lua.utils.ansi_codes.blue("ref ") },
+                    { "incoming_calls", prefix = fzf_lua.utils.ansi_codes.cyan("in  ") },
+                    { "outgoing_calls", prefix = fzf_lua.utils.ansi_codes.yellow("out ") },
+                },
+            },
+        },
+        symbols = {
+            path_shorten = 1,
+            symbol_icons = {
+                File = "",
+                Module = "",
+                Namespace = "󰅩",
+                Package = "",
+                Class = "󰌗",
+                Method = "󰊕",
+                Property = "",
+                Field = "",
+                Constructor = "",
+                Enum = "",
+                Interface = "󰠱",
+                Function = "󰊕",
+                Variable = "󰀫",
+                Constant = "󰏿",
+                String = "󰊄",
+                Number = "󰎠",
+                Boolean = "󰝖",
+                Array = "",
+                Object = "󰜫",
+                Key = "󰌆",
+                Null = "Ø",
+                EnumMember = "",
+                Struct = "󰙅",
+                Event = "",
+                Operator = "󰆕",
+                TypeParameter = "",
+            },
+        },
     })
 end
 config.which_key = function()
