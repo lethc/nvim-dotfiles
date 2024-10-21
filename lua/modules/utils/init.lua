@@ -671,12 +671,19 @@ local modules = {
                 commands = {
                     view_marks = "Marks", -- you can customize each command name
                     view_jumps = "Jumps",
+                    view_buffers = "Buffers",
+                },
+                marks = {
+                    toggle_mark = true,
+                    use_backtick = true,
                 },
             })
             vim.keymap.set("n", "gl", "<Plug>(VesselViewLocalJumps)")
             vim.keymap.set("n", "gL", "<Plug>(VesselViewExternalJumps)")
             vim.keymap.set("n", "gm", "<plug>(VesselViewBufferMarks)")
             vim.keymap.set("n", "gM", "<plug>(VesselViewExternalMarks)")
+            vim.keymap.set("n", "m,", "<plug>(VesselSetLocalMark)")
+            vim.keymap.set("n", "m.", "<plug>(VesselSetGlobalMark)")
         end,
     },
     -- {
@@ -743,7 +750,7 @@ local modules = {
             end)
 
             -- Align cursor columns.
-            vim.keymap.set("n", "<leader>a", mc.alignCursors)
+            vim.keymap.set("n", "<leader><leader>l", mc.alignCursors)
 
             -- Split visual selections by regex.
             vim.keymap.set("v", "S", mc.splitCursors)
@@ -886,12 +893,12 @@ local modules = {
             })
         end,
     },
-    {
-        "kevinhwang91/nvim-hlslens", -- Show number of similar matches found when searching for a word (noice can do this too)
-        config = function()
-            require("hlslens").setup()
-        end,
-    }, -- lazy.nvim
+    -- {
+    --     "kevinhwang91/nvim-hlslens", -- Show number of similar matches found when searching for a word (noice can do this too)
+    --     config = function()
+    --         require("hlslens").setup()
+    --     end,
+    -- }, -- lazy.nvim
     {
         "csessh/stopinsert.nvim",
         opts = {},
@@ -917,6 +924,34 @@ local modules = {
             local ts = require("telescope").load_extension("emoji")
             vim.keymap.set("n", "<leader>se", ts.emoji, { desc = "[S]earch [E]moji" })
         end,
+    },
+    -- {
+    --     "EL-MASTOR/bufferlist.nvim",
+    --     lazy = true,
+    --     keys = { { "<Leader>b", desc = "Open bufferlist" } }, -- keymap to load the plugin, it should be the same as keymap.open_bufferlist
+    --     dependencies = "nvim-tree/nvim-web-devicons",
+    --     cmd = "BufferList",
+    --     opts = {
+    --         -- your configuration comes here
+    --         -- or leave it empty to use the default settings
+    --         -- refer to the configuration section below
+    --     },
+    -- },
+    -- {
+    --     "mcauley-penney/visual-whitespace.nvim",
+    --     -- config = true
+    -- },
+    {
+        "jackMort/tide.nvim",
+        config = function()
+            require("tide").setup({
+                -- optional configuration
+            })
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 }
 return modules
