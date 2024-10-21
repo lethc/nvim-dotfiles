@@ -1187,6 +1187,7 @@ config.alpha = function()
     }
     dashboard.section.buttons.val = {
         dashboard.button("r", "󱎫  Recently used files", "<cmd>lua require('fzf-lua').oldfiles()<CR>"),
+        dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert <CR>"),
         dashboard.button("h", "  Home", "<cmd>e ~/Home/todo.md<CR>"),
         dashboard.button("o", "󰃶  Todo Today", "<cmd>Trouble todo focus=true filter = {tag = {TEST}}<CR>"),
         dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC <CR>"),
