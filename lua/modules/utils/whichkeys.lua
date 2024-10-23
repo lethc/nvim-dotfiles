@@ -71,6 +71,7 @@ return {
         "<cmd>lua require 'gitsigns'.reset_buffer()<cr>",
         desc = "Reset Buffer",
     },
+    { "<leader>ga", "<cmd>AdvancedGitSearch<cr>", desc = "Advanced Git Search" },
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
     { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },

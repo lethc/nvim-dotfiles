@@ -30,5 +30,18 @@ local modules = {
             { "<leader><leader>gb", ":Telescope git_branches<cr>", desc = "View Branches" },
         },
     },
+    {
+        "aaronhallaert/advanced-git-search.nvim",
+        cmd = { "AdvancedGitSearch" },
+        config = function()
+            require("advanced_git_search.fzf").setup({
+                -- Insert Config here
+            })
+        end,
+        dependencies = {
+            "tpope/vim-fugitive",
+            "tpope/vim-rhubarb",
+        },
+    },
 }
 return modules
