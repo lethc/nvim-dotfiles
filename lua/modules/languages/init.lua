@@ -12,9 +12,7 @@ local modules = {
     {
         "echasnovski/mini.ai",
         version = "*",
-        config = function()
-            require("mini.ai").setup()
-        end,
+        config = languages_config.mini_ai,
     },
     {
         "RRethy/vim-illuminate",
