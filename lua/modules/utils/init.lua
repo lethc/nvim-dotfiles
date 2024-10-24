@@ -901,6 +901,7 @@ local modules = {
     -- }, -- lazy.nvim
     {
         "csessh/stopinsert.nvim",
+        event = { "InsertEnter" },
         opts = {},
     },
     -- {
@@ -921,6 +922,7 @@ local modules = {
     -- },
     {
         "jackMort/tide.nvim",
+        event = { "InsertEnter" },
         config = function()
             require("tide").setup({
                 -- optional configuration
