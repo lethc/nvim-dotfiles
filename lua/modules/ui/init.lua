@@ -265,6 +265,7 @@ local modules = {
         "nvim-lualine/lualine.nvim",
         -- dependencies = { "linrongbin16/lsp-progress.nvim" },
         -- event = { "VeryLazy" },
+        event = { "BufRead" },
         dependencies = {
             {
                 "Bekaboo/dropbar.nvim",
@@ -290,7 +291,6 @@ local modules = {
             },
             { "yavorski/lualine-macro-recording.nvim" },
         },
-        event = "BufRead",
         config = ui_config.lualine,
     },
     {
@@ -453,10 +453,147 @@ local modules = {
         keys = { "<leader>w" },
         config = ui_config.transparent,
     },
+    -- {
+    --     "goolord/alpha-nvim",
+    --     event = "VimEnter",
+    --     config = ui_config.alpha,
+    -- },
     {
-        "goolord/alpha-nvim",
+        "nvimdev/dashboard-nvim",
         event = "VimEnter",
-        config = ui_config.alpha,
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+        opts = {
+            theme = "hyper",
+            config = {
+                header = {
+                    [[]],
+                    [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+                    [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+                    [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+                    [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+                    [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+                    [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+                    [[]],
+                },
+                -- center = {
+                --     {
+                --         icon = "󰉙 ",
+                --         icon_hl = "DiagnosticOk",
+                --         desc = " Load Session",
+                --         key = "s",
+                --         action = 'lua require("persistence").load() ',
+                --     },
+                --     {
+                --         icon = "󱎱 ",
+                --         icon_hl = "Number",
+                --         desc = " Home",
+                --         key = "h",
+                --         action = "e ~/Home/todo.md",
+                --     },
+                --     {
+                --         icon = " ", --
+                --         icon_hl = "Title",
+                --         desc = " Files",
+                --         group = "Label",
+                --         key = "f",
+                --         action = "Telescope find_files",
+                --     },
+                --     {
+                --         icon = " ",
+                --         desc = " Find text",
+                --         icon_hl = "DiagnosticSignError",
+                --         group = "@property",
+                --         key = "g",
+                --         action = "Telescope live_grep ",
+                --     },
+                --     {
+                --         icon = " ",
+                --         desc = " New file",
+                --         icon_hl = "Question",
+                --         group = "Macro",
+                --         key = "n",
+                --         action = "enew | startinsert | Lazy load lualine.nvim noice.nvim",
+                --     },
+                --     {
+                --         icon = " ",
+                --         icon_hl = "@label",
+                --         desc = " Config",
+                --         group = "DiagnosticHint",
+                --         key = "c",
+                --         action = "e $MYVIMRC ",
+                --     },
+                --     {
+                --         icon = " ",
+                --         icon_hl = "@label",
+                --         desc = " Quit",
+                --         group = "Number",
+                --         key = "q",
+                --         action = "qa",
+                --     },
+                -- },
+                shortcut = {
+                    {
+                        icon = "󰉙 ",
+                        group = "DiagnosticOk",
+                        desc = " Load Session",
+                        key = "s",
+                        action = 'lua require("persistence").load() ',
+                    },
+                    {
+                        icon = "󱎱 ",
+                        group = "Number",
+                        desc = " Home",
+                        key = "h",
+                        action = "e ~/Home/todo.md",
+                    },
+                    {
+                        icon = " ", --
+                        desc = " Files",
+                        group = "Label",
+                        key = "f",
+                        action = "Telescope find_files",
+                    },
+                    {
+                        icon = " ",
+                        desc = " Find text",
+                        group = "@property",
+                        key = "g",
+                        action = "Telescope live_grep ",
+                    },
+                    {
+                        icon = " ",
+                        desc = " New file",
+                        group = "Macro",
+                        key = "n",
+                        action = "enew | startinsert | Lazy load lualine.nvim noice.nvim",
+                    },
+                    {
+                        icon = " ",
+                        desc = " Config",
+                        group = "DiagnosticHint",
+                        key = "c",
+                        action = "e $MYVIMRC ",
+                    },
+                    {
+                        icon = " ",
+                        desc = " Quit",
+                        group = "Number",
+                        key = "q",
+                        action = "qa",
+                    },
+                },
+                -- footer = function()
+                --     local stats = require("lazy").stats()
+                --     local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+                --     return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+                -- end,
+            },
+            hide = {
+                statusline = false, -- hide statusline default is true
+                tabline = false, -- hide the tabline
+                winbar = false, -- hide winbar
+            },
+        },
     },
     {
         "wfxr/minimap.vim",
