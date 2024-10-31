@@ -1,6 +1,14 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
-    { "srcery-colors/srcery-vim" },
+    {
+        "https://gitlab.com/bartekjaszczak/finale-nvim",
+
+        priority = 1000,
+        config = function()
+            -- Activate the theme
+            -- vim.cmd.colorscheme("finale")
+        end,
+    },
     { "akinsho/horizon.nvim", version = "*" },
     {
         "lancewilhelm/horizon-extended.nvim",

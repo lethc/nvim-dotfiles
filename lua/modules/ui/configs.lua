@@ -369,6 +369,7 @@ config.themery = function()
             "canon-onedark",
             "carbonfox",
             "mellow",
+            "finale",
             "catppuccin",
             "tokyonight",
             "evergarden",
@@ -377,7 +378,6 @@ config.themery = function()
             "no-clown-fiesta",
             "horizon",
             "horizon-extended",
-            "srcery",
         },
         -- themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
         livePreview = true, -- Apply theme while browsing. Default to true.
