@@ -548,6 +548,13 @@ local modules = {
                         action = 'lua require("persistence").load() ',
                     },
                     {
+                        icon = " ",
+                        group = "@property",
+                        desc = " Todo Today",
+                        key = "o",
+                        action = "Trouble todo focus=true filter = {tag = {TEST}}",
+                    },
+                    {
                         icon = "󱎱 ",
                         group = "Number",
                         desc = " Home",
