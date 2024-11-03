@@ -80,7 +80,7 @@ keymaps["visual_block"] = {
 }
 
 keymaps["terminal"] = {
-    { "<Tab><Tab>", "<C-\\><C-n>" }, -- Return to normal mode
+    { "<C-n><C-n>", "<C-\\><C-n>" }, -- Return to normal mode
 }
 
 return keymaps
