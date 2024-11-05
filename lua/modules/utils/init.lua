@@ -440,7 +440,7 @@ local modules = {
         event = "VeryLazy",
         init = function()
             -- Optional settings go here!
-            -- vim.g.unception_open_buffer_in_new_tab = true
+            vim.g.unception_open_buffer_in_new_tab = true
             vim.g.unception_enable_flavor_text = true
             vim.g.unception_delete_replaced_buffer = false
             vim.g.unception_block_while_host_edits = true
@@ -905,18 +905,6 @@ local modules = {
         opts = {},
     },
     -- {
-    --     "EL-MASTOR/bufferlist.nvim",
-    --     lazy = true,
-    --     keys = { { "<Leader>b", desc = "Open bufferlist" } }, -- keymap to load the plugin, it should be the same as keymap.open_bufferlist
-    --     dependencies = "nvim-tree/nvim-web-devicons",
-    --     cmd = "BufferList",
-    --     opts = {
-    --         -- your configuration comes here
-    --         -- or leave it empty to use the default settings
-    --         -- refer to the configuration section below
-    --     },
-    -- },
-    -- {
     --     "mcauley-penney/visual-whitespace.nvim",
     --     -- config = true
     -- },
@@ -945,6 +933,38 @@ local modules = {
                     insert_leave = true, -- when leaveing insert
                 },
             })
+        end,
+    },
+    {
+        "folke/persistence.nvim",
+        event = "BufReadPre",
+        config = function()
+            require("persistence").setup({
+                dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"), -- directory where session files are saved
+                options = { "buffers", "curdir", "tabpages", "winsize", "globals" },
+                pre_save = function()
+                    vim.api.nvim_exec_autocmds("User", { pattern = "SessionSavePre" })
+                end,
+            })
+            -- load the session for the current directory
+            vim.keymap.set("n", "<leader>wsl", function()
+                require("persistence").load()
+            end, { desc = "Load the session for the current directory" })
+
+            -- select a session to load
+            vim.keymap.set("n", "<leader>wss", function()
+                require("persistence").select()
+            end, { desc = "Select a session to load" })
+
+            -- load the last session
+            vim.keymap.set("n", "<leader>wsL", function()
+                require("persistence").load({ last = true })
+            end, { desc = "Load the last session" })
+
+            -- stop Persistence => session won't be saved on exit
+            vim.keymap.set("n", "<leader>wsn", function()
+                require("persistence").stop()
+            end, { desc = "Stop Persistence => session won't be saved on exit" })
         end,
     },
 }
