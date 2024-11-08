@@ -20,7 +20,7 @@ keymaps["normal"] = {
     { "<Tab>", ":b#<CR>" },
     -- { "<A-BS>", ":wincmd j | :q | :b#<CR>" }, -- Used with alpha.nvim
     { "<A-BS>", ":wincmd j | :q<CR>" },
-    { "<S-q>", "<cmd>Bdelete!<CR>" }, -- Close buffer
+    -- { "<S-q>", "<cmd>Bdelete!<CR>" }, -- Close buffer
     -- { "<C-h>", "<C-w>h" }, -- Better window navigation
     -- { "<C-j>", "<C-w>j" },
     -- { "<C-k>", "<C-w>k" },
