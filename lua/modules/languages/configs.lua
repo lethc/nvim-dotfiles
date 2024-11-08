@@ -67,16 +67,16 @@ config.nvim_treesitter = function()
             -- disable = function(lang, bufnr) -- Disable in files with more than 5K
             --   return vim.api.nvim_buf_line_count(bufnr) > 5000
             -- end,
-            disable = function(lang, bufnr)
-                -- List of file types for which Treesitter should be disabled
-                local disabled_filetypes = { "html", "txt" }
-                -- Check if the current file type is in the disabled list
-                if vim.tbl_contains(disabled_filetypes, lang) then
-                    return true
-                end
-                return vim.fn.strlen(vim.fn.getbufoneline(bufnr, 1)) > 300
-                    or vim.fn.getfsize(vim.fn.expand("%")) > 1024 * 1024
-            end,
+            -- disable = function(lang, bufnr)
+            --     -- List of file types for which Treesitter should be disabled
+            --     local disabled_filetypes = { "html", "txt" }
+            --     -- Check if the current file type is in the disabled list
+            --     if vim.tbl_contains(disabled_filetypes, lang) then
+            --         return true
+            --     end
+            --     return vim.fn.strlen(vim.fn.getbufoneline(bufnr, 1)) > 300
+            --         or vim.fn.getfsize(vim.fn.expand("%")) > 1024 * 1024
+            -- end,
         },
         indent = {
             enable = true,
