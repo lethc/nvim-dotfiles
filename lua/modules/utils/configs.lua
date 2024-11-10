@@ -457,13 +457,17 @@ config.mini_files = function()
     })
     local map_split = function(buf_id, lhs, direction)
         local rhs = function()
-            local new_target_window
-            vim.api.nvim_win_call(mini_files.get_explorer_state().target_window, function()
+            -- Make new window and set it as target
+            local cur_target = mini_files.get_explorer_state().target_window
+            local new_target = vim.api.nvim_win_call(cur_target, function()
                 vim.cmd(direction .. " split")
-                new_target_window = vim.api.nvim_get_current_win()
+                return vim.api.nvim_get_current_win()
             end)
-            mini_files.set_target_window(new_target_window)
+
+            mini_files.set_target_window(new_target)
         end
+
+        -- Adding `desc` will result into `show_help` entries
         local desc = "Split " .. direction
         vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
     end
@@ -472,6 +476,7 @@ config.mini_files = function()
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
             local buf_id = args.data.buf_id
+            -- Tweak keys to your liking
             map_split(buf_id, "gs", "belowright horizontal")
             map_split(buf_id, "gv", "belowright vertical")
         end,
