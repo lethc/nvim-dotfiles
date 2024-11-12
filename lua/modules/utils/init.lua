@@ -16,7 +16,7 @@ local modules = {
             --     "<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
             --     desc = "Telescope find files",
             -- },
-            { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
+            -- { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
             -- { "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
             -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
             -- { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
@@ -784,22 +784,22 @@ local modules = {
     --         require("plantuml").setup()
     --     end,
     -- },
-    {
-        "tamton-aquib/mpv.nvim",
-        keys = { { "<leader><leader>p", ":MpvToggle<CR>", desc = "Play music with mpv nvim" } },
-        config = function()
-            require("mpv").setup({
-                width = 50,
-                height = 5, -- Changing these two might break the UI 😬
-                border = "single",
-                setup_widgets = true, -- to activate the widget components
-                timer = {
-                    after = 1000,
-                    throttle = 250, -- Update time for the widgets. (lesser the faster)
-                },
-            })
-        end,
-    },
+    -- {
+    --     "tamton-aquib/mpv.nvim",
+    --     keys = { { "<leader><leader>p", ":MpvToggle<CR>", desc = "Play music with mpv nvim" } },
+    --     config = function()
+    --         require("mpv").setup({
+    --             width = 50,
+    --             height = 5, -- Changing these two might break the UI 😬
+    --             border = "single",
+    --             setup_widgets = true, -- to activate the widget components
+    --             timer = {
+    --                 after = 1000,
+    --                 throttle = 250, -- Update time for the widgets. (lesser the faster)
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         "epilande/checkbox-cycle.nvim",
         ft = "markdown",
