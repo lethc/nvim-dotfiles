@@ -246,7 +246,7 @@ return {
     { "<leader>sh", group = "Help" },
     { "<leader>shh", "<cmd>lua require('fzf-lua').helptags()<cr>", desc = "Help Tags" },
     { "<leader>shm", "<cmd>lua require('fzf-lua').manpages()<cr>", desc = "Man Pages" },
-    { "<leader>si", "<cmd>Telescope notify<CR>", desc = "Notifications" },
+    -- { "<leader>si", "<cmd>Telescope notify<CR>", desc = "Notifications" },
     {
         "<leader>sl",
         "<cmd>lua require('fzf-lua').registers()<cr>",
