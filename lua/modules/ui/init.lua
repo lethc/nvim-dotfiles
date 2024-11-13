@@ -286,13 +286,13 @@ local modules = {
                     },
                 },
                 opts = {
-                    general = { enable = false },
                     menu = {
                         win_configs = {
                             border = "rounded",
                         },
                     },
                     bar = {
+                        enable = false,
                         padding = { left = 0, right = 0 },
                     },
                 },
@@ -301,11 +301,11 @@ local modules = {
         },
         config = ui_config.lualine,
     },
-    {
-        "rcarriga/nvim-notify",
-        lazy = true,
-        config = ui_config.nvim_notify,
-    },
+    -- {
+    --     "rcarriga/nvim-notify",
+    --     lazy = true,
+    --     config = ui_config.nvim_notify,
+    -- },
     {
         "folke/noice.nvim",
         event = "BufReadPre",
