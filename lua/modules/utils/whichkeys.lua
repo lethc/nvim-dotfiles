@@ -168,7 +168,7 @@ return {
     },
     {
         "<leader>ltj",
-        "<cmd>lua vim.diagnostic.goto_next({buffer=0})<<CR>",
+        "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
         desc = "Next Diagnostic",
     },
     {
@@ -365,6 +365,8 @@ return {
     { "<leader>wc", "<cmd>CccPick<CR>", desc = "ColorPicker" },
     { "<leader>wd", "<cmd>DBUIToggle<CR>", desc = "Database UI" },
     { "<leader>we", "<cmd>Themery<CR>", desc = "Colorscheme picker" },
+    { "<leader>wg", '<cmd>set guicursor "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150"<CR>', desc = "Set guicursor" },
+
     { "<leader>wh", "<cmd>UndotreeToggle<CR>", desc = "Current File History" },
     { "<leader>wi", "<cmd>CodeiumEnable<CR>", desc = "Codeium" },
     { "<leader>wm", "<cmd>MinimapToggle<CR>", desc = "MinMap" },
