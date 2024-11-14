@@ -247,7 +247,7 @@ config.mason_nvim = function()
         "cssmodules_ls",
         "emmet_ls",
         "html",
-        -- "tsserver", --This now is called ts_ls remember that
+        "ts_ls",
         "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
