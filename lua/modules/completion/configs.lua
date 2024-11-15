@@ -63,6 +63,7 @@ config.nvim_cmp = function()
         Operator = "",
         TypeParameter = "",
         Codeium = "",
+        Supermaven = "",
     }
     -- CONFIGURATION: cmp without rounded borders
 
@@ -212,6 +213,7 @@ config.nvim_cmp = function()
             { name = "vim-dadbod-completion" },
             { name = "nerdfont" },
             { name = "codeium" },
+            { name = "supermaven" },
             -- { name = "fonts" }
         },
         sorting = {
@@ -229,7 +231,7 @@ config.nvim_cmp = function()
                     mode = "symbol_text",
                     maxwidth = 50,
                     ellipsis_char = "...",
-                    symbol_map = { Codeium = "" },
+                    symbol_map = { Codeium = "", Supermaven = "" },
                     before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
                 })(entry, item)
 

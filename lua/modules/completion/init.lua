@@ -117,6 +117,18 @@ local modules = {
         end,
     },
     {
+        "supermaven-inc/supermaven-nvim",
+        config = function()
+            require("supermaven-nvim").setup({
+                keymaps = {
+                    accept_suggestion = "<A-g>",
+                    clear_suggestion = "<C-]>",
+                    accept_word = "<C-j>",
+                },
+            })
+        end,
+    },
+    {
         "preservim/vim-pencil",
         init = function()
             vim.g["pencil#wrapModeDefault"] = "hard"
