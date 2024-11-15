@@ -78,16 +78,53 @@ local modules = {
         lazy = false,
         opts = {
             bigfile = { enabled = true },
-            notifier = {
-                enabled = true,
-                timeout = 3000,
-            },
             quickfile = { enabled = true },
             statuscolumn = { enabled = true },
             words = { enabled = true },
+            notifier = {
+                timeout = 3000, -- default timeout in ms
+                width = { min = 40, max = 0.4 },
+                height = { min = 1, max = 0.6 },
+                -- editor margin to keep free. tabline and statusline are taken into account automatically
+                margin = { top = 0, right = 1, bottom = 0 },
+                padding = true, -- add 1 cell of left/right padding to the notification window
+                sort = { "level", "added" }, -- sort by level and time
+                icons = {
+                    error = " ",
+                    warn = " ",
+                    info = " ",
+                    debug = " ",
+                    trace = " ",
+                },
+                style = "compact",
+                top_down = true, -- place notifications from top to bottom
+                date_format = "%R", -- time format for notifications
+            },
             styles = {
                 notification = {
-                    wo = { wrap = true }, -- Wrap notifications
+                    -- wo = { wrap = true }, -- Wrap notifications
+                    border = "rounded",
+                    zindex = 100,
+                    ft = "markdown",
+                    wo = {
+                        winblend = 5,
+                        wrap = false,
+                        conceallevel = 2,
+                    },
+                    bo = { filetype = "snacks_notif" },
+                },
+                ["notification.history"] = {
+                        border = "rounded",
+                        zindex = 100,
+                        width = 0.8,
+                        height = 0.8,
+                        minimal = false,
+                        title = "Notifications History",
+                        title_pos = "center",
+                        ft = "markdown",
+                        bo = { filetype = "snacks_notif_history" },
+                        wo = { winhighlight = "Normal:SnacksNotifierHistory" },
+                        keys = { q = "close" },
                 },
             },
         },
@@ -142,6 +179,13 @@ local modules = {
                     Snacks.notifier.hide()
                 end,
                 desc = "Dismiss All Notifications",
+            },
+            {
+                "<leader>si",
+                function()
+                    Snacks.notifier.show_history()
+                end,
+                desc = "Notifications Show History",
             },
             {
                 "<leader>T",
