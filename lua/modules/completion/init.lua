@@ -5,12 +5,17 @@ local modules = {
         "iguanacucumber/magazine.nvim", -- nvim-cmp fork with Performance Improvements
         -- name = "nvim-cmp", -- Otherwise highlighting gets messed up (Fo some reason it installs nvim-cmp and disables magazine.)
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
+            -- "hrsh7th/cmp-nvim-lsp",
+            "iguanacucumber/mag-nvim-lsp",
+            "iguanacucumber/mag-nvim-lua",
             "saadparwaiz1/cmp_luasnip",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
+            -- "hrsh7th/cmp-buffer",
+            "iguanacucumber/mag-buffer",
+            -- "hrsh7th/cmp-path",
+            "https://codeberg.org/FelipeLema/cmp-async-path",
             "kdheepak/cmp-latex-symbols",
-            "hrsh7th/cmp-cmdline",
+            -- "hrsh7th/cmp-cmdline",
+            "iguanacucumber/mag-cmdline",
             "rafamadriz/friendly-snippets",
             "chrisgrieser/cmp-nerdfont",
             "amarakon/nvim-cmp-fonts",
