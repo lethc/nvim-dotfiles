@@ -130,7 +130,7 @@ M.options = function()
         spell = false,
         spelllang = { "en_gb", "es" },
 
-        colorcolumn = "100",
+        -- colorcolumn = "100",
         errorbells = true,
         visualbell = true,
         fileformats = "unix,mac,dos",
@@ -151,7 +151,7 @@ M.options = function()
         numberwidth = 4, -- set number column width to 2 {default 4}
         showtabline = 0, -- always show tabs or buffers
         writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-        cmdheight = 1, -- more space in the neovim "cmdline" for displaying messages (0 hides it)
+        cmdheight = 0, -- more space in the neovim "cmdline" for displaying messages (0 hides it)
         -- inccommand = "split", --search-replace
         -- fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
         foldtext = "",
