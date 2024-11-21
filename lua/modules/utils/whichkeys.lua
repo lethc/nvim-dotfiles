@@ -365,6 +365,7 @@ return {
     { "<leader>wc", "<cmd>CccPick<CR>", desc = "ColorPicker" },
     { "<leader>wd", "<cmd>DBUIToggle<CR>", desc = "Database UI" },
     { "<leader>we", "<cmd>Themery<CR>", desc = "Colorscheme picker" },
+    { "<leader>wf", "<cmd>FocusToggleBuffer<CR>", desc = "Toggle Focus split Buffers" },
     { "<leader>wg", '<cmd>set guicursor "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150"<CR>', desc = "Set guicursor" },
 
     { "<leader>wh", "<cmd>UndotreeToggle<CR>", desc = "Current File History" },
