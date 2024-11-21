@@ -76,44 +76,127 @@ local modules = {
         "folke/snacks.nvim",
         priority = 1000,
         lazy = false,
-        opts = {
-            bigfile = { enabled = true },
-            quickfile = { enabled = true },
-            statuscolumn = { enabled = true },
-            words = { enabled = true },
-            notifier = {
-                timeout = 3000, -- default timeout in ms
-                width = { min = 40, max = 0.4 },
-                height = { min = 1, max = 0.6 },
-                -- editor margin to keep free. tabline and statusline are taken into account automatically
-                margin = { top = 0, right = 1, bottom = 0 },
-                padding = true, -- add 1 cell of left/right padding to the notification window
-                sort = { "level", "added" }, -- sort by level and time
-                icons = {
-                    error = " ",
-                    warn = " ",
-                    info = " ",
-                    debug = " ",
-                    trace = " ",
+        opts = function()
+            local home = os.getenv("HOME")
+            local logo = [[
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ 
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ 
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ 
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ 
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ 
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ 
+                                                   
+             N  E  O  V  I  M                     
+   ]]
+            local keys = {
+                {
+                    icon = " ",
+                    key = "n",
+                    desc = "New File",
+                    action = ":ene | startinsert | Lazy load lualine.nvim noice.nvim",
                 },
-                style = "compact",
-                top_down = true, -- place notifications from top to bottom
-                date_format = "%R", -- time format for notifications
-            },
-            styles = {
-                notification = {
-                    -- wo = { wrap = true }, -- Wrap notifications
-                    border = "rounded",
-                    zindex = 100,
-                    ft = "markdown",
-                    wo = {
-                        winblend = 5,
-                        wrap = false,
-                        conceallevel = 2,
+                { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                { icon = " ", key = "F", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+                { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                {
+                    icon = "󱎱 ",
+                    key = "h",
+                    desc = "Home",
+                    action = ":lua Snacks.dashboard.pick('files', {cwd = '" .. home .. "/Home'})",
+                },
+                {
+                    icon = " ",
+                    key = "o",
+                    desc = "Todos",
+                    action = ":e ~/Home/todo.md | Trouble todo focus=true filter = {tag = {TEST}}",
+                },
+                {
+                    icon = " ",
+                    key = "c",
+                    desc = "Config",
+                    action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+                },
+                { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                -- { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+                { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+            }
+            return {
+                bigfile = { enabled = true },
+                quickfile = { enabled = true },
+                statuscolumn = { enabled = true },
+                words = { enabled = true },
+                dashboard = {
+                    preset = {
+                        header = logo,
+                        keys = keys,
                     },
-                    bo = { filetype = "snacks_notif" },
+                    sections = {
+                        { section = "header" },
+                        {
+                            pane = 2,
+                            section = "terminal",
+                            cmd = "colorscript -e square", -- Install shell-color-scripts-git
+                            height = 5,
+                            padding = 1,
+                        },
+                        { section = "keys", gap = 1, padding = 1 },
+                        {
+                            pane = 2,
+                            icon = " ",
+                            title = "Recent Files",
+                            section = "recent_files",
+                            indent = 2,
+                            padding = 1,
+                        },
+                        { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+                        {
+                            pane = 2,
+                            icon = " ",
+                            title = "Git Status",
+                            section = "terminal",
+                            enabled = Snacks.git.get_root() ~= nil,
+                            cmd = "hub status --short --branch --renames", -- Install hub
+                            height = 5,
+                            padding = 1,
+                            ttl = 5 * 60,
+                            indent = 3,
+                        },
+                        { section = "startup" },
+                    },
                 },
-                ["notification.history"] = {
+                notifier = {
+                    timeout = 3000, -- default timeout in ms
+                    width = { min = 40, max = 0.4 },
+                    height = { min = 1, max = 0.6 },
+                    -- editor margin to keep free. tabline and statusline are taken into account automatically
+                    margin = { top = 0, right = 1, bottom = 0 },
+                    padding = true, -- add 1 cell of left/right padding to the notification window
+                    sort = { "level", "added" }, -- sort by level and time
+                    icons = {
+                        error = " ",
+                        warn = " ",
+                        info = " ",
+                        debug = " ",
+                        trace = " ",
+                    },
+                    style = "compact",
+                    top_down = true, -- place notifications from top to bottom
+                    date_format = "%R", -- time format for notifications
+                },
+                styles = {
+                    notification = {
+                        -- wo = { wrap = true }, -- Wrap notifications
+                        border = "rounded",
+                        zindex = 100,
+                        ft = "markdown",
+                        wo = {
+                            winblend = 5,
+                            wrap = false,
+                            conceallevel = 2,
+                        },
+                        bo = { filetype = "snacks_notif" },
+                    },
+                    ["notification.history"] = {
                         border = "rounded",
                         zindex = 100,
                         width = 0.8,
@@ -125,9 +208,10 @@ local modules = {
                         bo = { filetype = "snacks_notif_history" },
                         wo = { winhighlight = "Normal:SnacksNotifierHistory" },
                         keys = { q = "close" },
+                    },
                 },
-            },
-        },
+            }
+        end,
         keys = {
             -- Git Related
             {
