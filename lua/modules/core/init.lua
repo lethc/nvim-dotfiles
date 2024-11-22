@@ -1,6 +1,9 @@
 local modules = {
     { "nvim-lua/plenary.nvim", lazy = true },
-    { "farmergreg/vim-lastplace" },
+    {
+        "farmergreg/vim-lastplace",
+        event = "BufReadPre",
+    },
     -- { "lvim-tech/lvim-linguistics" }
     {
         "nvim-tree/nvim-web-devicons",
@@ -47,9 +50,11 @@ local modules = {
     }, --LaTeX
     {
         "vim-scripts/ReplaceWithRegister",
+        event = "cursorMoved",
     },
     {
         "svban/YankAssassin.nvim", -- Will avoid the cursor move when copy
+        event = "CursorMoved",
         config = function()
             require("YankAssassin").setup({
                 auto_normal = true, -- if auto is true, autocmds are used. Whenever y is used anywhere, the cursor doesn't move to start
@@ -62,6 +67,7 @@ local modules = {
     },
     {
         "yogeshdhamija/enter-insert-on-click.vim",
+        event = "insertEnter",
     },
     -- {
     --     "christoomey/vim-tmux-navigator",
@@ -117,7 +123,7 @@ local modules = {
                     action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
                 },
                 { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-                -- { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+                { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
                 { icon = " ", key = "q", desc = "Quit", action = ":qa" },
             }
             return {

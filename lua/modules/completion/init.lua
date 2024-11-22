@@ -123,6 +123,7 @@ local modules = {
     },
     {
         "supermaven-inc/supermaven-nvim",
+        event = "BufReadPost",
         config = function()
             require("supermaven-nvim").setup({
                 keymaps = {

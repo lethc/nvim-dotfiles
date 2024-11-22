@@ -11,6 +11,7 @@ local modules = {
     },
     {
         "echasnovski/mini.ai",
+        event = "CursorMoved",
         version = "*",
         config = languages_config.mini_ai,
     },
@@ -54,6 +55,31 @@ local modules = {
     {
         "folke/trouble.nvim",
         cmd = "Trouble",
+        dependencies = {
+            {
+                "folke/todo-comments.nvim",
+                opts = {
+                    keywords = {
+                        FIX = {
+                            icon = " ", -- icon used for the sign, and in search results
+                            color = "#db4b4b", -- can be a hex color, or a named color (see below)
+                            alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "DELAYED" }, -- a set of other keywords that all map to this FIX keywords
+                            -- signs = false, -- configure signs for some keywords individually
+                        },
+                        TODO = { icon = " ", color = "#0db9d7" },
+                        HACK = { icon = " ", color = "#ff9e64", alt = { "WEEK" } },
+                        WARN = { icon = " ", color = "#e0af68", alt = { "WARNING", "XXX", "MEDIUM" } },
+                        PERF = {
+                            icon = " ",
+                            color = "#9d7cd8",
+                            alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "MONTH" },
+                        },
+                        NOTE = { icon = " ", color = "#1abc9c", alt = { "INFO", "LOW" } },
+                        TEST = { icon = "⏲ ", color = "#3d59a1", alt = { "TESTING", "PASSED", "FAILED", "TODAY" } },
+                    },
+                },
+            },
+        },
         -- keys = {
         --     {
         --         "<leader>xx",

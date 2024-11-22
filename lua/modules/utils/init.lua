@@ -35,16 +35,17 @@ local modules = {
         config = edit_config.telescope_nvim,
     },
     {
-        "tiagovla/scope.nvim",
-        -- event = "VimEnter",
-        config = function()
-            require("scope").setup({ restore_state = true })
-        end,
-    },
-    {
         "ibhagwan/fzf-lua",
         -- optional for icon support
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            {
+                "tiagovla/scope.nvim",
+                config = function()
+                    require("scope").setup({ restore_state = true })
+                end,
+            },
+        },
         keys = {
             {
                 "<Leader>sa",
@@ -195,24 +196,25 @@ local modules = {
         "JoosepAlviste/nvim-ts-context-commentstring",
         config = edit_config.context_commentstring,
     },
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        -- keys = {
-        --   { "<leader>am", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], desc = "Toggle Menu" },
-        --   { "<leader>aa", [[<cmd>lua require("harpoon.mark").add_file()<CR>]],        desc = "Add File" },
-        --   { "<leader>aq", [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]],         desc = "Add File" },
-        --   { "<leader>aw", [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]],         desc = "Add File" },
-        --   { "<leader>ae", [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]],         desc = "Add File" },
-        --   { "<leader>ar", [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]],         desc = "Add File" },
-        --   { "<leader>at", [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]],         desc = "Add File" },
-        --   { "<leader>ay", [[<cmd>lua require("harpoon.ui").nav_file(6)<CR>]],         desc = "Add File" },
-        --   { "<leader>au", [[<cmd>lua require("harpoon.ui").nav_file(7)<CR>]],         desc = "Add File" },
-        --   { "<leader>ai", [[<cmd>lua require("harpoon.ui").nav_file(8)<CR>]],         desc = "Add File" },
-        --   { "<leader>ao", [[<cmd>lua require("harpoon.ui").nav_file(9)<CR>]],         desc = "Add File" },
-        -- },
-        config = edit_config.harpoon,
-    },
+    -- {
+    --     "ThePrimeagen/harpoon",
+    --     branch = "harpoon2",
+    --     event = "VeryLazy",
+    --     -- keys = {
+    --     --   { "<leader>am", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], desc = "Toggle Menu" },
+    --     --   { "<leader>aa", [[<cmd>lua require("harpoon.mark").add_file()<CR>]],        desc = "Add File" },
+    --     --   { "<leader>aq", [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>aw", [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>ae", [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>ar", [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>at", [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>ay", [[<cmd>lua require("harpoon.ui").nav_file(6)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>au", [[<cmd>lua require("harpoon.ui").nav_file(7)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>ai", [[<cmd>lua require("harpoon.ui").nav_file(8)<CR>]],         desc = "Add File" },
+    --     --   { "<leader>ao", [[<cmd>lua require("harpoon.ui").nav_file(9)<CR>]],         desc = "Add File" },
+    --     -- },
+    --     config = edit_config.harpoon,
+    -- },
     {
         "folke/flash.nvim",
         event = { "InsertEnter" },
@@ -354,7 +356,6 @@ local modules = {
     -- },
     {
         "OXY2DEV/markview.nvim",
-        lazy = false,
         ft = "markdown",
         dependencies = {
             "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
@@ -574,11 +575,11 @@ local modules = {
     },
     {
         "backdround/global-note.nvim",
+        event = "insertEnter",
         config = edit_config.global_note,
     },
     {
         "rolv-apneseth/tfm.nvim",
-        lazy = false,
         opts = {
             -- TFM to use
             -- Possible choices: "ranger" | "nnn" | "lf" | "vifm" | "yazi" (default)
@@ -640,31 +641,13 @@ local modules = {
         },
     },
     {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {
-            keywords = {
-                FIX = {
-                    icon = " ", -- icon used for the sign, and in search results
-                    color = "#db4b4b", -- can be a hex color, or a named color (see below)
-                    alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "DELAYED" }, -- a set of other keywords that all map to this FIX keywords
-                    -- signs = false, -- configure signs for some keywords individually
-                },
-                TODO = { icon = " ", color = "#0db9d7" },
-                HACK = { icon = " ", color = "#ff9e64", alt = { "WEEK" } },
-                WARN = { icon = " ", color = "#e0af68", alt = { "WARNING", "XXX", "MEDIUM" } },
-                PERF = { icon = " ", color = "#9d7cd8", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "MONTH" } },
-                NOTE = { icon = " ", color = "#1abc9c", alt = { "INFO", "LOW" } },
-                TEST = { icon = "⏲ ", color = "#3d59a1", alt = { "TESTING", "PASSED", "FAILED", "TODAY" } },
-            },
-        },
-    },
-    {
         "bloznelis/before.nvim",
+        event = "insertEnter",
         config = edit_config.before,
     },
     {
         "gcmt/vessel.nvim",
+        keys = { "gl", "gL", "gm", "gm", "gM", "m,", "m." },
         config = function()
             require("vessel").setup({
                 create_commands = true,
@@ -831,6 +814,7 @@ local modules = {
     },
     {
         "itchyny/calendar.vim",
+        cmd = "Calendar",
         config = function()
             vim.cmd([[
                 source ~/.cache/calendar.vim/credentials.vim
@@ -841,6 +825,7 @@ local modules = {
     },
     {
         "j-hui/fidget.nvim",
+        event = "LspAttach",
         opts = {},
     },
     {
@@ -858,6 +843,7 @@ local modules = {
     },
     {
         "nvim-focus/focus.nvim",
+        event = "BufReadPost",
         version = "*",
         config = function()
             require("focus").setup({
@@ -951,6 +937,7 @@ local modules = {
     },
     {
         "Kicamon/markdown-table-mode.nvim",
+        ft = "markdown",
         config = function()
             require("markdown-table-mode").setup({
                 filetype = {

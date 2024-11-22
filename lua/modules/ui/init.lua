@@ -43,12 +43,12 @@ local modules = {
         end,
     },
     -- { "folke/tokyonight.nvim", enabled = true },
-    {
-        "catppuccin/nvim",
-        priority = 150,
-        name = "catppuccin",
-        config = ui_config.catppuccin,
-    },
+    -- {
+    --     "catppuccin/nvim",
+    --     priority = 150,
+    --     name = "catppuccin",
+    --     config = ui_config.catppuccin,
+    -- },
     { "cryptomilk/nightcity.nvim", version = false, enabled = false },
     { "lvim-tech/lvim-colorscheme", enabled = false },
     { "edmondburnett/leeward.nvim", enabled = false },
@@ -297,9 +297,12 @@ local modules = {
                     },
                 },
             },
-            { "yavorski/lualine-macro-recording.nvim" },
         },
         config = ui_config.lualine,
+    },
+    {
+        "yavorski/lualine-macro-recording.nvim",
+        event = "RecordingEnter",
     },
     -- {
     --     "rcarriga/nvim-notify",
@@ -347,7 +350,7 @@ local modules = {
     },
     {
         "kevinhwang91/nvim-ufo",
-        -- event = "BufReadPre",
+        event = "BufReadPost",
         -- event = { "BufRead", "BufNewFile" },
         dependencies = {
             "kevinhwang91/promise-async",

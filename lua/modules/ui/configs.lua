@@ -371,7 +371,7 @@ config.themery = function()
             "carbonfox",
             "mellow",
             "finale",
-            "catppuccin",
+            -- "catppuccin",
             "tokyonight",
             "evergarden",
             "pencil",
