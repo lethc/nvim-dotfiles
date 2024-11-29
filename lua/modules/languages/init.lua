@@ -148,7 +148,7 @@ local modules = {
             },
             keys = {
                 {
-                    "<leader>du",
+                    "<leader>ddu",
                     function()
                         require("dapui").toggle({})
                     end,

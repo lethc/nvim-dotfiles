@@ -572,6 +572,7 @@ config.lualine = function()
                 { "macro_recording", "%S" },
             },
             lualine_x = {
+                require'doing.api'.status,
                 { "%{PencilMode()}" },
                 "filetype",
                 {
