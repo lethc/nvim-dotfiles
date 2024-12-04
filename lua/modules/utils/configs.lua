@@ -1042,7 +1042,7 @@ config.obsidian_nvim = function()
         daily_notes = {
             folder = "Daily_notes/",
         },
-        mappings = {},
+        -- mappings = {},
         disable_frontmatter = false,
         templates = {
             subdir = "Templates",
