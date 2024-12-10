@@ -130,6 +130,8 @@ local modules = {
                 bigfile = { enabled = true },
                 quickfile = { enabled = true },
                 statuscolumn = { enabled = true },
+                scroll = { enabled = true },
+                indentscope = { enabled = false },
                 words = { enabled = true },
                 dashboard = {
                     preset = {
