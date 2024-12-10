@@ -382,6 +382,7 @@ return {
     { "<leader>wly", "<cmd>Calendar -year<CR>", desc = "Open Calendar year" },
     { "<leader>wt", "<cmd>TransparentEnable<CR>", desc = "Transparency" },
     { "<leader>wv", "<cmd>PencilToggle<CR>", desc = "vim-pencil" },
+    { "<leader>wz", "<cmd>lua Snacks.zen.zoom()<CR>", desc = "Snacks Zoom" },
     { "<leader>z", group = "Lazy", icon = { icon = "󰒲", color = "blue" } },
     { "<leader>za", "<cmd>Lazy show<cr>", desc = "Status" },
     { "<leader>zc", "<cmd>Lazy check<cr>", desc = "Check" },
