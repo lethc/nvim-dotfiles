@@ -122,7 +122,7 @@ M.options = function()
         smartcase = true, -- smart case
         wrapscan = true, -- Searches wrap around the end of the file
         smartindent = true, -- make indenting smarter again
-        scrolloff = 3, --99(cursor in center)                                       -- minimal number of screen lines to keep above and below the cursor
+        scrolloff = 1, --99(cursor in center)                                       -- minimal number of screen lines to keep above and below the cursor
         sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
         sidescroll = 1,
 
@@ -137,11 +137,11 @@ M.options = function()
         -- magic = true,
 
         -- Mouse
-        mouse = "nv", --:h mapmode
-        mousefocus = true,
-        mousemoveevent = true,
+        -- mouse = "nv", --:h mapmode
+        -- mousefocus = true,
+        -- mousemoveevent = true,
         mousescroll = { "ver:1", "hor:6" },
-        mousemodel = "extend",
+        -- mousemodel = "extend",
 
         encoding = "utf-8",
         fileencoding = "utf-8", -- the encoding written to a file
