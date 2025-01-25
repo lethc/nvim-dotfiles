@@ -216,7 +216,7 @@ config.fzf_lua = function()
             ["gutter"] = { "bg", "Normal" },
             ["scrollbar"] = { "fg", "WarningMsg" },
         },
-        winopts_fn = function()
+        winopts = function()
             -- local win_height = math.ceil(vim.api.nvim_get_option("lines") * 0.4)
             -- local win_width = math.ceil(vim.api.nvim_get_option("columns") * 1)
             -- local col = math.ceil((vim.api.nvim_get_option("columns") - win_width) * 1)
