@@ -129,6 +129,13 @@ local modules = {
                 scroll = { enabled = true },
                 indentscope = { enabled = false },
                 words = { enabled = true },
+                terminal = {
+                    win = {
+                        wo = {
+                            winbar = "",
+                        },
+                    },
+                },
                 dashboard = {
                     preset = {
                         header = logo,
