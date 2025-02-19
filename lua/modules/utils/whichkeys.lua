@@ -208,6 +208,7 @@ return {
     { "<leader>me", "<cmd>ObsidianTemplate<CR>", desc = "Template" },
     { "<leader>mf", "<cmd>ObsidianBacklinks<CR>", desc = "find References" },
     { "<leader>mi", "<cmd>ObsidianLinks<CR>", desc = "List Link" },
+    { "<leader>mM", "<cmd>Markview<CR>", desc = "Enable Markview" },
     { "<leader>mm", group = "  More Markdown" },
     { "<leader>mme", "<cmd>EasyTablesImportThisTable<cr>", desc = "Edit current table" },
     { "<leader>mmj", "<cmd>InsertRowBelow<cr>", desc = "Insert Row Below in Table" },
