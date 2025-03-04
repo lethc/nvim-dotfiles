@@ -23,7 +23,7 @@ end
 
 if vim.g.neovide then
     -- vim.o.guifont = "SF Mono:h11" -- Font
-    vim.o.guifont = "Maple Mono NF:h16" -- Font
+    vim.o.guifont = "Maple Mono NF:h13" -- Font
     vim.o.linespace = -1
 
     -- emulate alacritty font rendering
@@ -35,6 +35,8 @@ if vim.g.neovide then
     vim.g.neovide_padding_left = 5
     -- vim.g.neovide_padding_bottom = 0
     -- vim.g.neovide_padding_right = 0
+
+    vim.g.neovide_floating_corner_radius = 1.0
 
     -- disable blur
     -- vim.g.neovide_window_blurred = false
@@ -81,7 +83,8 @@ vim.api.nvim_set_keymap("n", "<Leader>ct", ":CutLineToTodoList<CR>", { noremap =
 
 -- Value required for cmp selection colours
 -- vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#cac9dd ]])
-vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
+-- vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
+vim.cmd([[ hi! CursorLineBG guibg=#B04241 guifg=#1e222a ]])
 -- vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
 vim.g.markdown_recommended_style = 0 -- Stop 4 space indentation in markdown
 
