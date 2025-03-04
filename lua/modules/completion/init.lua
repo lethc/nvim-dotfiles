@@ -60,7 +60,7 @@ local modules = {
     --     ft = "markdown",
     --     config = completion_config.mkdnflow_nvim,
     -- },
-    -- { "bullets-vim/bullets.vim", ft = "markdown" },
+    { "bullets-vim/bullets.vim", ft = "markdown" },
     -- {
     --     "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
     --     keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
