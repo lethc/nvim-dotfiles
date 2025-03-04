@@ -1,6 +1,11 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
     {
+        "ficcdaf/ashen.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
         "https://gitlab.com/bartekjaszczak/finale-nvim",
 
         priority = 1000,
