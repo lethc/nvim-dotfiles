@@ -312,48 +312,73 @@ local modules = {
             })
         end,
     },
-    {
-        "3rd/image.nvim", -- zellij issues https://github.com/3rd/image.nvim/issues/161
-        config = function()
-            -- default config
-            require("image").setup({
-                backend = "ueberzug",
-                integrations = {
-                    markdown = {
-                        enabled = true,
-                        clear_in_insert_mode = false,
-                        download_remote_images = true,
-                        only_render_image_at_cursor = true,
-                        filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
-                    },
-                    neorg = {
-                        enabled = true,
-                        clear_in_insert_mode = false,
-                        download_remote_images = true,
-                        only_render_image_at_cursor = false,
-                        filetypes = { "norg" },
-                    },
-                    html = {
-                        enabled = false,
-                    },
-                    css = {
-                        enabled = false,
-                    },
-                },
-                max_width = nil,
-                max_height = nil,
-                max_width_window_percentage = nil,
-                max_height_window_percentage = 50,
-                window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
-                window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-                editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
-                tmux_show_only_in_active_window = false, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
-                hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }, -- render image files as images when opened
-            })
-            package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
-            package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
-        end,
-    },
+    -- {
+    --     "3rd/image.nvim", -- zellij issues https://github.com/3rd/image.nvim/issues/161
+    --     config = function()
+    --         -- default config
+    --         require("image").setup({
+    --             backend = "ueberzug",
+    --             integrations = {
+    --                 markdown = {
+    --                     enabled = true,
+    --                     clear_in_insert_mode = false,
+    --                     download_remote_images = true,
+    --                     only_render_image_at_cursor = true,
+    --                     filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+    --                 },
+    --                 neorg = {
+    --                     enabled = true,
+    --                     clear_in_insert_mode = false,
+    --                     download_remote_images = true,
+    --                     only_render_image_at_cursor = false,
+    --                     filetypes = { "norg" },
+    --                 },
+    --                 html = {
+    --                     enabled = false,
+    --                 },
+    --                 css = {
+    --                     enabled = false,
+    --                 },
+    --             },
+    --             max_width = nil,
+    --             max_height = nil,
+    --             max_width_window_percentage = nil,
+    --             max_height_window_percentage = 50,
+    --             window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
+    --             window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+    --             editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
+    --             tmux_show_only_in_active_window = false, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+    --             hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }, -- render image files as images when opened
+    --         })
+    --         package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
+    --         package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
+    --     end,
+    -- },
+    -- {
+    --     "skardyy/neo-img",
+    --     config = function()
+    --         require("neo-img").setup({
+    --             supported_extensions = {
+    --                 ["png"] = true,
+    --                 ["jpg"] = true,
+    --                 ["jpeg"] = true,
+    --                 ["gif"] = true,
+    --                 ["webp"] = true,
+    --             },
+    --             auto_open = true, -- Automatically open images when buffer is loaded
+    --             oil_preview = true, -- changes oil preview of images too
+    --             backend = "sixel", -- kitty / iterm / sixel / auto (auto detects what is supported in your terminal)
+    --             size = { --scales the width, will maintain aspect ratio
+    --                 oil = 400,
+    --                 main = 800,
+    --             },
+    --             offset = { -- only x offset
+    --                 oil = 5,
+    --                 main = 10,
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         "OXY2DEV/markview.nvim",
         ft = "markdown",
@@ -362,51 +387,51 @@ local modules = {
         },
 
         config = function()
-            require("markview").setup({
-                modes = { "n", "i", "no", "c" },
-                hybrid_modes = { "i" },
-
-                -- This is nice to have
-                callbacks = {
-                    on_enable = function(_, win)
-                        vim.wo[win].conceallevel = 2
-                        vim.wo[win].concealcursor = "c"
-                    end,
-                },
-                headings = {
-                    enable = true,
-                    shift_width = 0,
-                    shift_char = "",
-                    heading_1 = {
-                        -- sign = "",
-                        -- hl = "@markup.heading.1.markdown",
-                        hl = "markdownH1",
-                    },
-                    heading_2 = {
-                        -- sign = "",
-                        hl = "markdownH2",
-                    },
-                    heading_3 = {
-                        -- sign = "",
-                        hl = "markdownH3",
-                    },
-                    heading_4 = {
-                        -- sign = "",
-                        hl = "markdownH4",
-                    },
-                    heading_5 = {
-                        -- sign = "",
-                        hl = "markdownH5",
-                    },
-                    heading_6 = {
-                        -- sign = "",
-                        hl = "markdownH6",
-                    },
-                },
-                code_blocks = {
-                    sign = "",
-                },
-            })
+            -- require("markview").setup({
+            --     modes = { "n", "i", "no", "c" },
+            --     hybrid_modes = { "i" },
+            --
+            --     -- This is nice to have
+            --     callbacks = {
+            --         on_enable = function(_, win)
+            --             vim.wo[win].conceallevel = 2
+            --             vim.wo[win].concealcursor = "c"
+            --         end,
+            --     },
+            --     headings = {
+            --         enable = true,
+            --         shift_width = 0,
+            --         shift_char = "",
+            --         heading_1 = {
+            --             -- sign = "",
+            --             -- hl = "@markup.heading.1.markdown",
+            --             hl = "markdownH1",
+            --         },
+            --         heading_2 = {
+            --             -- sign = "",
+            --             hl = "markdownH2",
+            --         },
+            --         heading_3 = {
+            --             -- sign = "",
+            --             hl = "markdownH3",
+            --         },
+            --         heading_4 = {
+            --             -- sign = "",
+            --             hl = "markdownH4",
+            --         },
+            --         heading_5 = {
+            --             -- sign = "",
+            --             hl = "markdownH5",
+            --         },
+            --         heading_6 = {
+            --             -- sign = "",
+            --             hl = "markdownH6",
+            --         },
+            --     },
+            --     code_blocks = {
+            --         sign = "",
+            --     },
+            -- })
         end,
     },
     {
@@ -912,11 +937,11 @@ local modules = {
     --         require("hlslens").setup()
     --     end,
     -- }, -- lazy.nvim
-    {
-        "csessh/stopinsert.nvim",
-        event = { "InsertEnter" },
-        opts = {},
-    },
+    -- {
+    --     "csessh/stopinsert.nvim",
+    --     event = { "InsertEnter" },
+    --     opts = {},
+    -- },
     -- {
     --     "mcauley-penney/visual-whitespace.nvim",
     --     -- config = true
@@ -981,43 +1006,53 @@ local modules = {
             end, { desc = "Stop Persistence => session won't be saved on exit" })
         end,
     },
-    {
-        "Hashino/doing.nvim",
-        config = function()
-            require("doing").setup({
-                -- default options
-                message_timeout = 2000,
-                winbar = {
-                    enabled = false,
-                    -- ignores buffers that match filetype
-                    ignored_buffers = { "NvimTree" },
-                },
-
-                doing_prefix = "Current Task: ",
-                store = {
-                    -- automatically create a .tasks when calling :Do
-                    auto_create_file = false,
-                    file_name = ".tasks",
-                },
-            })
-            -- example on how to change the winbar highlight
-            vim.api.nvim_set_hl(0, "WinBar", { link = "Search" })
-
-            local api = require("doing.api")
-
-            vim.keymap.set("n", "<leader>de", api.edit, { desc = "[E]dit what tasks you`re [D]oing" })
-            vim.keymap.set("n", "<leader>dn", api.done, { desc = "[D]o[n]e with current task" })
-            vim.keymap.set("n", "<leader>dt", api.toggle, { desc = "[T]oogle Display" })
-
-            vim.api.nvim_create_autocmd({ "User" }, {
-                group = require("doing.state").auGroupID,
-                pattern = "TaskModified",
-                desc = "This is called when a task is added or deleted",
-                callback = function()
-                    vim.notify("A task has been modified")
-                end,
-            })
-        end,
-    },
+    -- {
+    --     "Hashino/doing.nvim",
+    --     config = function()
+    --         require("doing").setup({
+    --             -- default options
+    --             message_timeout = 2000,
+    --             winbar = {
+    --                 enabled = false,
+    --                 -- ignores buffers that match filetype
+    --                 ignored_buffers = { "NvimTree" },
+    --             },
+    --
+    --             doing_prefix = "Current Task: ",
+    --             store = {
+    --                 -- automatically create a .tasks when calling :Do
+    --                 auto_create_file = false,
+    --                 file_name = ".tasks",
+    --             },
+    --         })
+    --         -- example on how to change the winbar highlight
+    --         vim.api.nvim_set_hl(0, "WinBar", { link = "Search" })
+    --
+    --         local api = require("doing")
+    --
+    --         vim.keymap.set("n", "<leader>de", api.edit, { desc = "[E]dit what tasks you`re [D]oing" })
+    --         vim.keymap.set("n", "<leader>dn", api.done, { desc = "[D]o[n]e with current task" })
+    --         vim.keymap.set("n", "<leader>dt", api.toggle, { desc = "[T]oogle Display" })
+    --
+    --         vim.api.nvim_create_autocmd({ "User" }, {
+    --             pattern = "TaskModified",
+    --             desc = "This is called when a task is added, edited or completed",
+    --             callback = function()
+    --                 vim.notify("A task has been modified")
+    --             end,
+    --         })
+    --     end,
+    -- },
+    -- {
+    --     "Dan7h3x/LazyDo",
+    --     branch = "main",
+    --     events = "VeryLazy",
+    --     opts = {
+    --         -- your config here
+    --     },
+    --     config = function(_, opts)
+    --         require("lazydo").setup(opts)
+    --     end,
+    -- },
 }
 return modules
