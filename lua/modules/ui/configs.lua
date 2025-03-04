@@ -366,8 +366,10 @@ config.themery = function()
         themes = {
             "default",
             "canon",
+            "ashen",
             "canon-onedark",
             "canon-dark_horizon",
+            "canon-black",
             "carbonfox",
             "mellow",
             "finale",
@@ -572,26 +574,34 @@ config.lualine = function()
                 { "macro_recording", "%S" },
             },
             lualine_x = {
-                require'doing.api'.status,
+                -- require("doing").status,
                 { "%{PencilMode()}" },
                 "filetype",
                 {
                     function()
-                        return "󰣞"
+                        return "󰣞 "
                     end,
                 },
-                {
-                    "filename",
-                    -- path = 1,
-                    show_modified_status = false, -- Shows a symbol next to the tab name if the file has been modified.
-                    -- symbols = icons.file_status_symbol,
-                    symbols = {
-                        modified = "[󰗧]", -- Text to show when the buffer is modified
-                        alternate_file = "#", -- Text to show to identify the alternate file
-                        directory = "", -- Text to show when the buffer is a directory
-                    },
-                },
+                -- {
+                --     "filename",
+                --     hide_filename_extension = true,
+                --     show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
+                --     -- symbols = icons.file_status_symbol,
+                --     symbols = {
+                --         modified = "[󰗧]", -- Text to show when the buffer is modified
+                --         alternate_file = "#", -- Text to show to identify the alternate file
+                --         directory = "", -- Text to show when the buffer is a directory
+                --     },
+                -- },
                 { getWords },
+                -- {
+                --     function()
+                --         return require("lazydo").get_lualine_stats()
+                --     end,
+                --     cond = function()
+                --         return require("lazydo")._initialized
+                --     end,
+                -- },
             },
             lualine_y = {},
             lualine_z = {
@@ -646,7 +656,7 @@ config.lualine = function()
             -- lualine_c = {
             --     M.winbar_symbol,
             -- },
-            lualine_b = { "%{%v:lua.dropbar.get_dropbar_str()%}" },
+            lualine_b = { "%{%v:lua.dropbar()%}" },
             lualine_x = {
                 function()
                     return " "
