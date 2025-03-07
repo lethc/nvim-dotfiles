@@ -32,7 +32,7 @@ M.options = function()
 
         -- Fold
         foldlevelstart = 99,
-        foldcolumn = "0", -- '1' is not bad
+        foldcolumn = "1", -- '1' is not bad
         foldenable = true,
         foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
         cursorline = true, -- highlight the current line
