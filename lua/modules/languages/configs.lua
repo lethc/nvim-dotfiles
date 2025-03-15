@@ -162,19 +162,19 @@ config.nvim_treesitter = function()
         },
     })
 
-    parser_config.blade = {
-        install_info = {
-            url = "https://github.com/EmranMR/tree-sitter-blade",
-            files = { "src/parser.c" },
-            branch = "main",
-        },
-        filetype = "blade",
-    }
-
+    -- parser_config.blade = {
+    --     install_info = {
+    --         url = "https://github.com/EmranMR/tree-sitter-blade",
+    --         files = { "src/parser.c" },
+    --         branch = "main",
+    --     },
+    --     filetype = "blade",
+    -- }
+    --
     vim.filetype.add({
         pattern = {
             [".*/hypr/.*%.conf"] = "hyprlang",
-            [".*%.blade%.php"] = "blade",
+            -- [".*%.blade%.php"] = "phtml",
         },
     })
     -- vim.filetype.add {
@@ -263,7 +263,7 @@ config.mason_nvim = function()
         "marksman",
         "tailwindcss",
         "astro",
-        -- "csharp_ls",
+        "csharp_ls",
     }
     local settings = {
         ui = {
