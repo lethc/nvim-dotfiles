@@ -1363,8 +1363,8 @@ config.global_note = function()
         title = "Todo List",
         additional_presets = {
             inbox = {
-                filename = "04-inbox.md",
-                title = "fleeting Notes",
+                filename = "notes.md",
+                title = "Fleeting Notes",
                 command_name = "FleetingNotes",
                 -- All not specified options are used from the root.
             },
