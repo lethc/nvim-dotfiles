@@ -121,10 +121,11 @@ M.options = function()
         ignorecase = true, -- ignore case in search patterns
         smartcase = true, -- smart case
         wrapscan = true, -- Searches wrap around the end of the file
-        smartindent = true, -- make indenting smarter again
+        smartindent = true,
         scrolloff = 1, --99(cursor in center)                                       -- minimal number of screen lines to keep above and below the cursor
-        sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
-        sidescroll = 1,
+        -- sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
+        -- sidescroll = 1,
+        smoothscroll = true,
 
         -- Spelling
         spell = false,
