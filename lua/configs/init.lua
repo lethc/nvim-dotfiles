@@ -13,6 +13,26 @@ lazy.is_lazy()
 lazy.load()
 -- theme.colour()
 
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwSettings = 1
+vim.g.loaded_netrwFileHandlers = 1
+
+-- Open fzf-lua on startup if the first argument is a directory
+local fzf_group = vim.api.nvim_create_augroup("FzfLuaOnEnter", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    callback = function()
+        local first_arg = vim.v.argv[3]
+        if first_arg and vim.fn.isdirectory(first_arg) == 1 then
+            -- Vim creates a buffer for folder. Close it.
+            vim.cmd(":bd 1")
+            require("fzf-lua").files({ cwd = first_arg })
+        end
+    end,
+    group = fzf_group,
+})
+
 vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#E1E1E1 ]])
 
 for _, func in pairs(base) do
