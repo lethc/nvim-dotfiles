@@ -369,7 +369,6 @@ config.themery = function()
             "ashen",
             "canon-onedark",
             "canon-dark_horizon",
-            "canon-black",
             "carbonfox",
             "mellow",
             "finale",
