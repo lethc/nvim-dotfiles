@@ -243,6 +243,7 @@ config.mason_nvim = function()
     end
     local servers = {
         "lua_ls",
+        -- "harper_ls", -- Spell checking
         "cssls",
         "cssmodules_ls",
         "emmet_ls",
