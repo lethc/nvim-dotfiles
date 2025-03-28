@@ -335,22 +335,6 @@ config.mason_nvim = function()
         { name = "DiagnosticSignHint", text = "󰌵" },
         { name = "DiagnosticSignInfo", text = "" },
     }
-    vim.diagnostic.config({
-        signs = {
-            text = {
-                [vim.diagnostic.severity.ERROR] = " ",
-                [vim.diagnostic.severity.WARN] = " ",
-                [vim.diagnostic.severity.HINT] = "󰠠 ",
-                [vim.diagnostic.severity.INFO] = " ",
-            },
-            name = {
-                [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-                [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-                [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-                [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-            },
-        },
-    })
     local lsp_config = {
         virtual_text = false, -- disable virtual text
         signs = { active = signs }, -- show signs
@@ -372,6 +356,22 @@ config.mason_nvim = function()
     })
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = "rounded",
+    })
+    vim.diagnostic.config({
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = " ",
+                [vim.diagnostic.severity.WARN] = " ",
+                [vim.diagnostic.severity.HINT] = "󰠠 ",
+                [vim.diagnostic.severity.INFO] = " ",
+            },
+            texthl = {
+                [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+                [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+                [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+                [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+            },
+        },
     })
 end
 config.lsp_saga = function()
