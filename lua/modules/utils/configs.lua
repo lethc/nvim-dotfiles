@@ -16,7 +16,7 @@ config.telescope_nvim = function()
             initial_mode = "insert",
             selection_strategy = "reset",
             sorting_strategy = "ascending",
-            layout_strategy = "vertical",
+            layout_strategy = "horizontal",
             layout_config = {
                 horizontal = {
                     prompt_position = "top",
@@ -65,19 +65,17 @@ config.telescope_nvim = function()
                     ["<C-c>"] = actions.delete_buffer,
                     ["<C-n>"] = actions.cycle_history_next,
                     ["<C-p>"] = actions.cycle_history_prev,
-                    ["<C-j>"] = actions.move_selection_next,
-                    ["<C-k>"] = actions.move_selection_previous,
+                    ["<A-j>"] = actions.move_selection_next,
+                    ["<A-k>"] = actions.move_selection_previous,
                     ["<ESC>"] = actions.close,
                     ["<Down>"] = actions.move_selection_next,
                     ["<Up>"] = actions.move_selection_previous,
                     ["<CR>"] = actions.select_default,
-                    ["<C-x>"] = actions.select_horizontal,
+                    ["<C-s>"] = actions.select_horizontal,
                     ["<C-v>"] = actions.select_vertical,
                     -- ["<C-t>"] = actions.select_tab,
                     ["<C-u>"] = actions.preview_scrolling_up,
                     ["<C-d>"] = actions.preview_scrolling_down,
-                    ["<A-k>"] = actions.preview_scrolling_up,
-                    ["<A-j>"] = actions.preview_scrolling_down,
                     ["<PageUp>"] = actions.results_scrolling_up,
                     ["<PageDown>"] = actions.results_scrolling_down,
                     ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -93,7 +91,7 @@ config.telescope_nvim = function()
                     ["<C-c>"] = actions.delete_buffer,
                     ["<esc>"] = actions.close,
                     ["<CR>"] = actions.select_default,
-                    ["<C-x>"] = actions.select_horizontal,
+                    ["<C-s>"] = actions.select_horizontal,
                     ["<C-v>"] = actions.select_vertical,
                     ["<C-t>"] = actions.select_tab,
                     ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -238,10 +236,30 @@ config.fzf_lua = function()
             }
         end,
         -- default_previewer   = "bat",       -- override the default previewer?
+        actions = {
+            files = {
+                ["enter"] = require("fzf-lua").actions.file_edit_or_qf,
+                ["ctrl-s"] = require("fzf-lua").actions.file_split,
+                ["ctrl-v"] = require("fzf-lua").actions.file_vsplit,
+                ["ctrl-t"] = require("fzf-lua").actions.file_tabedit,
+                ["alt-q"] = require("fzf-lua").actions.file_sel_to_qf,
+                ["alt-Q"] = require("fzf-lua").actions.file_sel_to_ll,
+                ["alt-i"] = require("fzf-lua").actions.toggle_ignore,
+                ["alt-h"] = require("fzf-lua").actions.toggle_hidden,
+                ["alt-f"] = require("fzf-lua").actions.toggle_follow,
+            },
+        },
         keymap = {
             builtin = {
                 ["<c-d>"] = "preview-page-down",
                 ["<c-u>"] = "preview-page-up",
+                ["<F2>"] = "toggle-fullscreen",
+                -- Only valid with the 'builtin' previewer
+                ["<F3>"] = "toggle-preview-wrap",
+                ["<F4>"] = "toggle-preview",
+                -- Rotate preview clockwise/counter-clockwise
+                ["<F5>"] = "toggle-preview-ccw",
+                ["<F6>"] = "toggle-preview-cw",
             },
             fzf = {
                 ["ctrl-d"] = "preview-half-page-down",
@@ -1105,7 +1123,7 @@ config.obsidian_nvim = function()
             vim.fn.jobstart({ "xdg-open", url }) -- linux
         end,
         picker = {
-            name = "fzf-lua",
+            name = "telescope.nvim",
         },
 
         -- Optional, customize how note IDs are generated given an optional title.
