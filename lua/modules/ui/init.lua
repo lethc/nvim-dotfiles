@@ -282,14 +282,6 @@ local modules = {
         dependencies = {
             {
                 "Bekaboo/dropbar.nvim",
-                keys = {
-                    {
-                        "<space><space>i",
-                        function()
-                            require("dropbar.api").pick()
-                        end,
-                    },
-                },
                 opts = {
                     menu = {
                         win_configs = {
@@ -339,42 +331,59 @@ local modules = {
         -- event = { 'BufRead', 'BufNewFile' },
         config = ui_config.indent_blankline,
     },
-    -- {
-    --     "karb94/neoscroll.nvim",
-    --     config = ui_config.neoscroll_nvim,
-    --     keys = {
-    --         -- { "<S-k>", mode = { "n", "v", "x" } },
-    --         -- { "<S-j>", mode = { "n", "v", "x" } },
-    --         { "<C-d>", mode = { "n", "v", "x" } },
-    --         { "<C-u>", mode = { "n", "v", "x" } },
-    --         { "<C-f>", mode = { "n", "v", "x" } },
-    --         { "<C-b>", mode = { "n", "v", "x" } },
-    --         { "<C-e>", mode = { "n", "v", "x" } },
-    --         { "<C-y>", mode = { "n", "v", "x" } },
-    --     },
-    -- },
     {
         "kevinhwang91/nvim-ufo",
         event = "BufReadPost",
         -- event = { "BufRead", "BufNewFile" },
         dependencies = {
             "kevinhwang91/promise-async",
-            {
-                "luukvbaal/statuscol.nvim",
-                config = function()
-                    local builtin = require("statuscol.builtin")
-                    require("statuscol").setup({
-                        relculright = true,
-                        segments = {
-                            { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-                            { text = { "%s" }, click = "v:lua.ScSa" },
-                            { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-                        },
-                    })
-                end,
-            },
         },
         config = ui_config.nvim_ufo,
+    },
+    {
+        "luukvbaal/statuscol.nvim",
+        -- config = function()
+        --     local builtin = require("statuscol.builtin")
+        --     require("statuscol").setup({
+        --         relculright = true,
+        --         segments = {
+        --             { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+        --             { text = { "%s" }, click = "v:lua.ScSa" },
+        --             { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+        --         },
+        --     })
+        -- end,
+        opts = function()
+            local builtin = require("statuscol.builtin")
+            return {
+                ft_ignore = { "neo-tree", "neo-tree-popup", "alpha", "lazy", "mason", "dashboard" },
+                relculright = true,
+                segments = {
+                    {
+                        sign = {
+                            text = { " " },
+                            maxwidth = 1,
+                            colwidth = 2,
+                            auto = false,
+                        },
+                    },
+                    { text = { builtin.foldfunc, "" }, click = "v:lua.ScFa" },
+                    { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
+                    {
+                        sign = {
+                            text = { " " },
+                            maxwidth = 1,
+                            colwidth = 1,
+                            auto = false,
+                        },
+                    },
+                    { text = { "%s" }, click = "v:lua.ScSa" },
+                },
+            }
+        end,
+        config = function(_, opts)
+            require("statuscol").setup(opts)
+        end,
     },
     -- Not updated since a long while, there's an issue at the moment of toggle off the ataraxis mode
     -- {
@@ -411,13 +420,13 @@ local modules = {
                 -- by default, no options are changed for the Zen window
                 -- uncomment any of the options below, or add other vim.wo options you want to apply
                 options = {
-                    -- signcolumn = "no", -- disable signcolumn
-                    -- number = false, -- disable number column
-                    -- relativenumber = false, -- disable relative numbers
-                    -- cursorline = false, -- disable cursorline
-                    -- cursorcolumn = false, -- disable cursor column
-                    -- foldcolumn = "0", -- disable fold column
-                    -- list = false, -- disable whitespace characters
+                    signcolumn = "no", -- disable signcolumn
+                    number = false, -- disable number column
+                    relativenumber = false, -- disable relative numbers
+                    cursorline = false, -- disable cursorline
+                    cursorcolumn = false, -- disable cursor column
+                    foldcolumn = "0", -- disable fold column
+                    list = false, -- disable whitespace characters
                 },
             },
             plugins = {
