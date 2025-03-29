@@ -19,7 +19,7 @@ M.options = function()
 
         -- Timings
         timeout = true,
-        timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
+        timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
         ttimeoutlen = 10,
         updatetime = 300, -- faster completion (4000ms default)
 
@@ -35,6 +35,7 @@ M.options = function()
         foldcolumn = "1", -- '1' is not bad
         foldenable = true,
         foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
+        foldtext = "",
         cursorline = true, -- highlight the current line
         cursorcolumn = false,
 
@@ -155,7 +156,7 @@ M.options = function()
         cmdheight = 0, -- more space in the neovim "cmdline" for displaying messages (0 hides it)
         -- inccommand = "split", --search-replace
         -- fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-        foldtext = "",
+        undolevels = 10000,
     }
 
     for k, v in pairs(N) do
