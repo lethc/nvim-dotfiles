@@ -368,6 +368,7 @@ config.themery = function()
             "canon",
             "ashen",
             "canon-onedark",
+            "canon-github",
             "canon-dark_horizon",
             "carbonfox",
             "mellow",
@@ -423,38 +424,6 @@ config.lualine = function()
 
         return ts_status
     end
-    -- local status_lsp_ok, lsp_progress = pcall(require, "lsp-progress")
-    -- if not status_lsp_ok then
-    --   return
-    -- end
-    -- lsp_progress.setup({
-    --   format = function(messages)
-    --     local active_clients = vim.lsp.get_active_clients()
-    --     local client_count = #active_clients
-    --     if #messages > 0 then
-    --       return " LSP:" .. client_count .. " " .. table.concat(messages, " ")
-    --     end
-    --     if #active_clients <= 0 then
-    --       return " LSP:" .. client_count
-    --     else
-    --       local client_names = {}
-    --       for i, client in ipairs(active_clients) do
-    --         if client and client.name ~= "" then
-    --           table.insert(client_names, "[" .. client.name .. "]")
-    --           -- print("client[" .. i .. "]:" .. vim.inspect(client.name))
-    --         end
-    --       end
-    --       return " LSP:" .. client_count .. " " .. table.concat(client_names, " ")
-    --     end
-    --   end,
-    --   console_log = false,
-    -- })
-    -- vim.cmd([[
-    -- augroup lualine_augroup
-    --     autocmd!
-    --     autocmd User LspProgressStatusUpdated lua require("lualine").refresh()
-    -- augroup END
-    -- ]])
     local spaces = {
         function()
             return " "
@@ -491,8 +460,9 @@ config.lualine = function()
     }
     local modes = {
         "mode",
-        separator = { left = "", right = "" },
-        padding = 0.8,
+        -- color = { bg = "#171717", fg = "#E1E1E1" },
+        separator = { left = "", right = "" },
+        padding = { left = 0.8, right = 1 },
     }
     local location = {
         "location",
@@ -519,15 +489,64 @@ config.lualine = function()
             return ""
         end
     end
-    local function num()
-        return vim.fn.tabpagenr()
-    end
+
+    local theme = {
+        normal = {
+            a = { bg = "None" },
+            -- a = { bg = "None", gui = "bold" },
+            b = { bg = "None" },
+            c = { bg = "None" },
+            x = { bg = "None" },
+            y = { bg = "None" },
+            z = { bg = "None" },
+        },
+        insert = {
+            a = { bg = "None" },
+            b = { bg = "None" },
+            c = { bg = "None" },
+            x = { bg = "None" },
+            y = { bg = "None" },
+            z = { bg = "None" },
+        },
+        visual = {
+            a = { bg = "None" },
+            b = { bg = "None" },
+            c = { bg = "None" },
+            x = { bg = "None" },
+            y = { bg = "None" },
+            z = { bg = "None" },
+        },
+        replace = {
+            a = { bg = "None" },
+            b = { bg = "None" },
+            c = { bg = "None" },
+            x = { bg = "None" },
+            y = { bg = "None" },
+            z = { bg = "None" },
+        },
+        command = {
+            a = { bg = "None" },
+            b = { bg = "None" },
+            c = { bg = "None" },
+            x = { bg = "None" },
+            y = { bg = "None" },
+            z = { bg = "None" },
+        },
+        inactive = {
+            a = { bg = "None", gui = "bold" },
+            b = { bg = "None", gui = "bold" },
+            c = { bg = "None", gui = "bold" },
+            x = { bg = "None", gui = "bold" },
+            y = { bg = "None", gui = "bold" },
+            z = { bg = "None", gui = "bold" },
+        },
+    }
 
     lualine.setup({
         options = {
             globalstatus = true,
             icons_enabled = true,
-            -- theme = "canon",
+            theme = theme,
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
             disabled_filetypes = {
@@ -570,17 +589,21 @@ config.lualine = function()
                 -- { "require('lsp-progress').progress()" },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
-                { "macro_recording", "%S" },
+                {
+                    "macro_recording",
+                    "%S",
+                },
             },
             lualine_x = {
                 -- require("doing").status,
-                { "%{PencilMode()}" },
-                "filetype",
                 {
-                    function()
-                        return "󰣞 "
-                    end,
+                    "%{PencilMode()}",
                 },
+                -- {
+                --     function()
+                --         return "󰣞 "
+                --     end,
+                -- },
                 -- {
                 --     "filename",
                 --     hide_filename_extension = true,
@@ -609,15 +632,16 @@ config.lualine = function()
                     mode = 0,
                     show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
                     tabs_color = {
-                        active = "lualine_a_normal",
-                        -- active = {
-                        --   fg = "#E1E1E1";
-                        --   bg = "#323232";
-                        -- },
-                        inactive = "lualine_b_normal",
+                        -- active = "lualine_a_normal",
+                        -- inactive = "lualine_b_normal",
+                        active = {
+                            fg = "#FFFFFF",
+                            bg = "",
+                        },
+                        inactive = "",
                     },
                     -- separator = { left = "", right = "" },
-                    separator = { left = "", right = "" },
+                    separator = { left = " ", right = "" },
                     symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
                 },
                 {
@@ -648,8 +672,48 @@ config.lualine = function()
         },
         tabline = {
             lualine_a = {
-                { "filetype", icon_only = true },
-                { "filename", path = 0, symbols = icons.file_status_symbol, separator = { right = " " } },
+                {
+                    function()
+                        -- return "%P%L"
+                        if vim.bo.modified then
+                            return "  "
+                        else
+                            return " 󱗆 "
+                        end
+                    end,
+                    color = function()
+                        if vim.bo.modified then
+                            return { bg = "", fg = "#ffffff" } -- Red background when buffer is modified
+                        else
+                            return { bg = "", fg = nil } -- Default colors
+                        end
+                    end,
+                    -- separator = { left = "", right = "" },
+                    -- color = { bg = "#171717", fg = "#E1E1E1" },
+                    -- padding = 0.3,
+                },
+                {
+                    function()
+                        return ""
+                    end,
+                },
+                -- {
+                --     "filetype",
+                --     icon_only = true,
+                -- },
+                -- {
+                --     "filename",
+                --     path = 0,
+                --     symbols = icons.file_status_symbol,
+                --     separator = { right = " " },
+                --     color = function()
+                --         if vim.bo.modified then
+                --             return { bg = "", fg = "#ffffff" } -- Red background when buffer is modified
+                --         else
+                --             return { bg = "", fg = nil } -- Default colors
+                --         end
+                --     end,
+                -- },
                 -- separator = { left = "", right = " " },
             },
             -- lualine_c = {
