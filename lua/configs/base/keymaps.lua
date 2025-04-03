@@ -66,6 +66,8 @@ keymaps["insert"] = {
 keymaps["visual"] = {
     { "<", "<gv" }, -- Better indent mode
     { ">", ">gv" },
+    { "H", "<gv" },
+    { "L", ">gv" },
     { "J", ":m '>+1<CR>gv=gv" }, -- Move the selected text up and down
     { "K", ":m '<-2<CR>gv=gv" },
     { "p", '"_dP' }, -- Paste the same text multiple times
@@ -75,6 +77,10 @@ keymaps["visual"] = {
 }
 
 keymaps["visual_block"] = {
+    { "<", "<gv" }, -- Better indent mode
+    { ">", ">gv" },
+    { "H", "<gv" },
+    { "L", ">gv" },
     { "J", ":m '>+1<CR>gv-gv" }, -- Move the selected text up and down
     { "K", ":m '<-2<CR>gv-gv" },
     { "V", "j" }, -- Repeated V in Visual Line Mode
