@@ -16,11 +16,11 @@ keymaps["normal"] = {
     { "<A-9>", "1gT" }, -- Move to the last tab
     { "<S-l>", ":bnext<CR>" }, -- Navigate between buffers
     { "<S-h>", ":bprevious<CR>" },
-    { "<BS>", ":b#<CR>" }, -- Like Ctrl + Tab in a browser
-    { "<Tab>", ":b#<CR>" },
+    -- { "<BS>", ":b#<CR>" }, -- Like Ctrl + Tab in a browser
+    -- { "<Tab>", ":b#<CR>" },
     -- { "<A-BS>", ":wincmd j | :q | :b#<CR>" }, -- Used with alpha.nvim
     { "<A-BS>", ":wincmd j | :q<CR>" },
-    -- { "<S-q>", "<cmd>Bdelete!<CR>" }, -- Close buffer
+    { "<S-q>", "<cmd>bwipeout<CR>" }, -- Close buffer
     -- { "<C-h>", "<C-w>h" }, -- Better window navigation
     -- { "<C-j>", "<C-w>j" },
     -- { "<C-k>", "<C-w>k" },
