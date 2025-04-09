@@ -61,7 +61,7 @@ configs["auto_commands"] = function()
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd BufWinEnter * :set fillchars=eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose:
     autocmd FileType qf set nobuflisted
-    autocmd InsertEnter * :set colorcolumn=100
+    autocmd InsertEnter * :set colorcolumn=117
     " autocmd BufEnter * silent! lcd %:p:h "Change directory
     " autocmd VimLeave * set guicursor=a:ver90-blinkwait300-blinkon200-blinkoff150 augroup
   augroup end
@@ -76,7 +76,7 @@ configs["auto_commands"] = function()
     autocmd!
     autocmd FileType markdown setlocal nowrap
     autocmd FileType markdown setlocal spell
-    autocmd FileType markdown setlocal textwidth=99 "Default autoindent = true
+    autocmd FileType markdown setlocal textwidth=116 "Default autoindent = true
     autocmd FileType markdown setlocal shiftwidth=2 "When press tab avoid 4-space indent
   augroup end
 
@@ -104,6 +104,16 @@ configs["auto_commands"] = function()
     autocmd WinLeave * set signcolumn=yes:2
 
   augroup end
+
+ augroup ObsidianAutoTemplate
+   autocmd!
+   "autocmd BufReadPost *.md if line('$') == 1 && getline(1) ==# '' | execute 'ObsidianTemplate template_today' | endif
+   "autocmd BufReadPost *.md if expand('%:p') =~# '^' . expand('~/Home/') && line('$') == 1 && getline(1) ==# '' | execute 'ObsidianTemplate template_idea' | endif
+   autocmd BufReadPost *.md if expand('%:p') =~# '^' . expand('~/Home/') && line('$') == 1 && getline(1) ==# '' |
+        \ execute 'ObsidianTemplate template_idea' |
+        \ autocmd CursorMoved <buffer> ++once normal! G |
+        \ endif
+ augroup END
 
   " autgroup _ufo "Trying to disable sagaoutline uggly ufo lines, need more research
   "   autocmd!
