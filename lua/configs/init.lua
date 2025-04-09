@@ -76,25 +76,39 @@ if vim.g.neovide then
     -- vim.g.neovide_remember_window_size = false
 end
 
+-- Function to switch between last used and previous buffer
+
+function _G.switch_to_alt_or_prev()
+    local alt_buf = vim.fn.bufnr("#")
+    if alt_buf ~= -1 and vim.fn.buflisted(alt_buf) == 1 then
+        vim.cmd("buffer #")
+    else
+        vim.cmd("bprevious")
+    end
+end
+
+vim.api.nvim_set_keymap("n", "<Tab>", ":lua switch_to_alt_or_prev()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<BS>", ":lua switch_to_alt_or_prev()<CR>", { noremap = true, silent = true })
+
 -- Open url links in is-fast browser inside neovim
 
 vim.keymap.set("n", "gX", function()
-  local line = vim.fn.getline(".")  -- Get the current line
-  local col = vim.fn.col(".")       -- Get cursor position in the line
+    local line = vim.fn.getline(".") -- Get the current line
+    local col = vim.fn.col(".") -- Get cursor position in the line
 
-  -- Match a Markdown-style link [text](URL) using Lua pattern matching
-  local before_cursor = line:sub(1, col)  -- Text before the cursor
-  local after_cursor = line:sub(col)      -- Text after the cursor
+    -- Match a Markdown-style link [text](URL) using Lua pattern matching
+    local before_cursor = line:sub(1, col) -- Text before the cursor
+    local after_cursor = line:sub(col) -- Text after the cursor
 
-  -- Find the nearest URL pattern `(URL)`
-  local url = before_cursor:match("%b()") or after_cursor:match("%b()")
+    -- Find the nearest URL pattern `(URL)`
+    local url = before_cursor:match("%b()") or after_cursor:match("%b()")
 
-  if url then
-    url = url:sub(2, -2) -- Remove surrounding parentheses
-    vim.cmd("startinsert | tabnew | set norelativenumber | set nonumber | terminal is-fast -d \"" .. url .. "\"")
-  else
-    print("No valid URL found")
-  end
+    if url then
+        url = url:sub(2, -2) -- Remove surrounding parentheses
+        vim.cmd('startinsert | tabnew | set norelativenumber | set nonumber | terminal is-fast -d "' .. url .. '"')
+    else
+        print("No valid URL found")
+    end
 end, { noremap = true, silent = true })
 
 -- Special Funtion for my Todolist
