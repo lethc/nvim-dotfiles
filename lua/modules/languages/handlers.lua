@@ -15,21 +15,24 @@ M.on_attach = function(client)
     -- if client.name == "jdt.ls" then
     -- 	client.server_capabilities.documentFormattingProvider = false
     -- end
-    if client.name == "jdtls" then
-        if JAVA_DAP_ACTIVE then
-            require("jdtls").setup_dap({ hotcodereplace = "auto" })
-            require("jdtls.dap").setup_dap_main_class_configs()
-            -- vim.lsp.codelens.refresh()
-        end
-        -- client.server.documentFormattingProvider = false
-        client.server_capabilities.documentFormattingProvider = false
-        -- client.server.textDocument.completion.completionItem.snippetSupport = false
-        -- client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
-        -- vim.lsp.codelens.refresh()
-    end
-    if client.name == "lua_lua" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
+
+    -- JAVA DAP
+    -- if client.name == "jdtls" then
+    --     if JAVA_DAP_ACTIVE then
+    --         require("jdtls").setup_dap({ hotcodereplace = "auto" })
+    --         require("jdtls.dap").setup_dap_main_class_configs()
+    --         -- vim.lsp.codelens.refresh()
+    --     end
+    --     -- client.server.documentFormattingProvider = false
+    --     client.server_capabilities.documentFormattingProvider = false
+    --     -- client.server.textDocument.completion.completionItem.snippetSupport = false
+    --     -- client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
+    --     -- vim.lsp.codelens.refresh()
+    -- end
+    -- if client.name == "lua_lua" then
+    --     client.server_capabilities.documentFormattingProvider = false
+    -- end
+
     -- if client.name == "rust_analyzer" then
     --
     -- end

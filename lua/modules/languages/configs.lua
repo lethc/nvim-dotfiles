@@ -253,7 +253,7 @@ config.mason_nvim = function()
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
-        -- "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
+        "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
         -- "intelephense",
         "phpactor",
         "gopls",
@@ -306,11 +306,15 @@ config.mason_nvim = function()
     })
     local opts = {}
     for _, server in pairs(servers) do
+        server = vim.split(server, "@")[1]
+        -- skip jdtls setup via lspconfig
+        if server == "jdtls" then
+            goto continue
+        end
         opts = {
             on_attach = require("modules.languages.handlers").on_attach,
             capabilities = require("modules.languages.handlers").capabilities,
         }
-        server = vim.split(server, "@")[1]
         local require_ok, conf_opts = pcall(require, "modules.languages.settings." .. server)
         if require_ok then
             opts = vim.tbl_deep_extend("force", conf_opts, opts)
@@ -327,7 +331,7 @@ config.mason_nvim = function()
         --   goto continue
         -- end
         lspconfig[server].setup(opts)
-        -- ::continue::
+        ::continue::
     end
     local signs = {
         { name = "DiagnosticSignError", text = " " },
