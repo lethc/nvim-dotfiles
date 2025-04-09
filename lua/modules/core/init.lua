@@ -176,6 +176,7 @@ local modules = {
                     },
                 },
                 notifier = {
+                    enabled = false,
                     timeout = 3000, -- default timeout in ms
                     width = { min = 40, max = 0.4 },
                     height = { min = 1, max = 0.6 },
@@ -261,13 +262,13 @@ local modules = {
                 desc = "Lazygit Log (cwd)",
             },
             -- Other
-            {
-                "<S-q>",
-                function()
-                    Snacks.bufdelete()
-                end,
-                desc = "Delete Buffer",
-            },
+            -- {
+            --     "<S-q>",
+            --     function()
+            --         Snacks.bufdelete()
+            --     end,
+            --     desc = "Delete Buffer",
+            -- },
             {
                 "<leader>Un",
                 function()
@@ -275,13 +276,13 @@ local modules = {
                 end,
                 desc = "Dismiss All Notifications",
             },
-            {
-                "<leader>si",
-                function()
-                    Snacks.notifier.show_history()
-                end,
-                desc = "Notifications Show History",
-            },
+            -- {
+            --     "<leader>si",
+            --     function()
+            --         Snacks.notifier.show_history()
+            --     end,
+            --     desc = "Notifications Show History",
+            -- },
             {
                 "<leader>T",
                 function()

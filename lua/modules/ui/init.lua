@@ -301,11 +301,11 @@ local modules = {
         "yavorski/lualine-macro-recording.nvim",
         event = "RecordingEnter",
     },
-    -- {
-    --     "rcarriga/nvim-notify",
-    --     lazy = true,
-    --     config = ui_config.nvim_notify,
-    -- },
+    {
+        "rcarriga/nvim-notify",
+        lazy = false,
+        config = ui_config.nvim_notify,
+    },
     {
         "folke/noice.nvim",
         event = "BufReadPre",

@@ -757,11 +757,11 @@ config.nvim_notify = function()
     vim.notify = notify
     notify.setup({
         background_colour = "NotifyBackground",
-        render = "default",
-        stages = "slide",
+        render = "wrapped-compact",
+        stages = "fade",
         max_width = "75",
         max_height = "25",
-        minimum_width = "55",
+        minimum_width = "35",
         minimum_height = "10",
         fps = 30,
         icons = {
