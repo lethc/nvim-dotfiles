@@ -1,4 +1,14 @@
 return {
+    { "<leader>1", "1gt", hidden = true },
+    { "<leader>2", "2gt", hidden = true },
+    { "<leader>3", "3gt", hidden = true },
+    { "<leader>4", "4gt", hidden = true },
+    { "<leader>5", "5gt", hidden = true },
+    { "<leader>6", "6gt", hidden = true },
+    { "<leader>7", "7gt", hidden = true },
+    { "<leader>8", "8gt", hidden = true },
+    { "<leader>9", "1gt", hidden = true },
+    { "<leader>0", "1gT", hidden = true }, -- Move to the last tab
     { "<leader>a", group = "Harpoon", icon = { icon = "󰠳", color = "orange" } },
     { "<leader>aa", "<cmd>HarpoonAdd<CR>", desc = "Add to Harpoon" },
     { "<leader>aw", "<cmd>HarpoonQuickMenu<CR>", desc = "Toggle Window Menu" },
