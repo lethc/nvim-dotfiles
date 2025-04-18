@@ -1124,6 +1124,7 @@ config.obsidian_nvim = function()
         end,
         picker = {
             name = "telescope.nvim",
+            -- name = "fzf-lua",
         },
 
         -- Optional, customize how note IDs are generated given an optional title.
