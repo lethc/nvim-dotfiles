@@ -159,10 +159,17 @@ local modules = {
         lazy = true,
         config = languages_config.dap,
     },
+    -- {
+    --     "mfussenegger/nvim-jdtls",
+    --     ft = "java",
+    --     config = languages_config.nvim_jdtls,
+    -- },
     {
-        "mfussenegger/nvim-jdtls",
-        ft = "java",
-        config = languages_config.nvim_jdtls,
+        "nvim-java/nvim-java",
+        config = function()
+            require("java").setup()
+            require("lspconfig").jdtls.setup({})
+        end,
     },
     {
         "eatgrass/maven.nvim",

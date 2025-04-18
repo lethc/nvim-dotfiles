@@ -253,7 +253,7 @@ config.mason_nvim = function()
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
-        "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
+        -- "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
         -- "intelephense",
         "phpactor",
         "gopls",
@@ -299,7 +299,7 @@ config.mason_nvim = function()
             "eslint_d",
             "eslint-lsp",
             "java-test",
-            "java-debug-adapter",
+            -- "java-debug-adapter",
             "bash-debug-adapter",
             "google-java-format",
         },
@@ -1055,7 +1055,7 @@ config.conform_nvim = function()
             -- html = { "prettier" },
             python = { "isort", "black" },
             blade = { "blade-formatter" },
-            php = { "pint" },
+            php = { "pint", "php_cs_fixer" },
             css = { "prettierd" },
             html = { "prettierd" },
         },
