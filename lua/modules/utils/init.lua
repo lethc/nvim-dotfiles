@@ -291,7 +291,8 @@ local modules = {
     --   config = edit_config.nvim_recorder,
     -- },
     {
-        "epwalsh/obsidian.nvim",
+        -- "epwalsh/obsidian.nvim",
+        "obsidian-nvim/obsidian.nvim",
         version = "*", -- recommended, use latest release instead of latest commit
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "/Home/**.md",
