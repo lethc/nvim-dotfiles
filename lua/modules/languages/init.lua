@@ -122,8 +122,21 @@ local modules = {
     -- },
     { --#### RUST LANGUAGE ####
         "mrcjkb/rustaceanvim",
-        version = "^5", -- Recommended
+        -- version = "^6",
         ft = { "rust" },
+        config = function ()
+            vim.g.rustaceanvim = {
+                server = {
+                    default_settings = {
+                        ["rust-analyzer"] = {
+                            cargo = {
+                                allFeatures = true,
+                            }
+                        }
+                    }
+                }
+            }
+        end
     },
     {
         "Saecki/crates.nvim",
