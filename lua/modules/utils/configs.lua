@@ -1435,7 +1435,7 @@ config.before = function()
     vim.keymap.set("n", "g,", before.jump_to_next_edit, {})
 
     -- You can provide telescope opts to the picker as show_edits_in_telescope argument:
-    vim.keymap.set("n", "<leader>cl", function()
+    vim.keymap.set("n", "<leader><leader>l", function()
         before.show_edits_in_telescope(require("telescope.themes").get_dropdown())
     end, {})
 end
