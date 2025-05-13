@@ -233,10 +233,10 @@ config.mason_nvim = function()
     if not mason_lspconfig_status_ok then
         return
     end
-    local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-    if not lspconfig_status_ok then
-        return
-    end
+    -- local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+    -- if not lspconfig_status_ok then
+    --     return
+    -- end
     local mason_tool_installer_status_ok, mason_tool_installer = pcall(require, "mason-tool-installer")
     if not mason_tool_installer_status_ok then
         return
@@ -274,16 +274,20 @@ config.mason_nvim = function()
         log_level = vim.log.levels.INFO,
         max_concurrent_installers = 4,
     }
-    -- local handlers = { --handler for mason_lspconfig
-    --   function(server_name) -- default handler (optional)
-    --     require("lspconfig")[server_name].setup({})
-    --   end,
-    -- }
+
+    local lsp_path = vim.fn.stdpath("config") .. "/after/lsp"
+    local lsp_dir = vim.fn.globpath(lsp_path, "*.lua", false, true)
+    for _, file in ipairs(lsp_dir) do
+        local server = vim.fn.fnamemodify(file, ":t:r")
+        vim.lsp.enable(server)
+    end
+
     mason.setup(settings)
     mason_lspconfig.setup({
         ensure_installed = servers,
-        automatic_installation = true,
-        -- handlers = handlers,
+        automatic_enable = {
+            exclude = { "lua_ls", "bashls" },
+        },
     })
     mason_tool_installer.setup({
         ensure_installed = {
@@ -305,34 +309,24 @@ config.mason_nvim = function()
         },
     })
     local opts = {}
-    for _, server in pairs(servers) do
-        server = vim.split(server, "@")[1]
-        -- skip jdtls setup via lspconfig
-        if server == "jdtls" then
-            goto continue
-        end
-        opts = {
-            on_attach = require("modules.languages.handlers").on_attach,
-            capabilities = require("modules.languages.handlers").capabilities,
-        }
-        local require_ok, conf_opts = pcall(require, "modules.languages.settings." .. server)
-        if require_ok then
-            opts = vim.tbl_deep_extend("force", conf_opts, opts)
-        end
-        -- if server == "rust_analyzer" then
-        --   local rust_opts = require("plugins.lsp.settings.rust")
-        --   -- opts = vim.tbl_deep_extend("force", rust_opts, opts)
-        --   local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
-        --   if not rust_tools_status_ok then
-        --     return
-        --   end
-        --
-        --   rust_tools.setup(rust_opts)
-        --   goto continue
-        -- end
-        lspconfig[server].setup(opts)
-        ::continue::
-    end
+    -- for _, server in pairs(servers) do
+    --     server = vim.split(server, "@")[1]
+    --     -- skip jdtls setup via lspconfig
+    --     -- if server == "jdtls" then
+    --     --     goto continue
+    --     -- end
+    --     opts = {
+    --         on_attach = require("modules.languages.handlers").on_attach,
+    --         capabilities = require("modules.languages.handlers").capabilities,
+    --     }
+    --     local require_ok, conf_opts = pcall(require, "modules.languages.settings." .. server)
+    --     if require_ok then
+    --         opts = vim.tbl_deep_extend("force", conf_opts, opts)
+    --     end
+    --
+    --     lspconfig[server].setup(opts)
+    --     -- ::continue::
+    -- end
     local signs = {
         { name = "DiagnosticSignError", text = " " },
         { name = "DiagnosticSignWarn", text = " " },

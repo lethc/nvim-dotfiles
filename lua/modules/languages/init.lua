@@ -21,14 +21,27 @@ local modules = {
         lazy = true,
     },
     {
+        "nvim-java/nvim-java",
+        config = function()
+            require("java").setup({
+                jdtls = {
+                    version = "v1.46.1",
+                },
+            })
+            -- require("lspconfig").jdtls.setup({})
+        end,
+    },
+    {
         "neovim/nvim-lspconfig",
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
             {
-                "williamboman/mason.nvim",
+                "mason-org/mason.nvim",
                 dependencies = {
-                    "williamboman/mason-lspconfig.nvim",
+                    {
+                        "mason-org/mason-lspconfig.nvim",
+                    },
                     "WhoIsSethDaniel/mason-tool-installer.nvim",
                 },
                 cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -124,19 +137,19 @@ local modules = {
         "mrcjkb/rustaceanvim",
         -- version = "^6",
         ft = { "rust" },
-        config = function ()
+        config = function()
             vim.g.rustaceanvim = {
                 server = {
                     default_settings = {
                         ["rust-analyzer"] = {
                             cargo = {
                                 allFeatures = true,
-                            }
-                        }
-                    }
-                }
+                            },
+                        },
+                    },
+                },
             }
-        end
+        end,
     },
     {
         "Saecki/crates.nvim",
@@ -177,13 +190,6 @@ local modules = {
     --     ft = "java",
     --     config = languages_config.nvim_jdtls,
     -- },
-    {
-        "nvim-java/nvim-java",
-        config = function()
-            require("java").setup()
-            require("lspconfig").jdtls.setup({})
-        end,
-    },
     {
         "eatgrass/maven.nvim",
         cmd = { "Maven", "MavenExec" },
