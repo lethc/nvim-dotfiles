@@ -22,6 +22,7 @@ local modules = {
     },
     {
         "nvim-java/nvim-java",
+        ft = { "java" },
         config = function()
             require("java").setup({
                 jdtls = {
@@ -32,22 +33,26 @@ local modules = {
         end,
     },
     {
+        "mason-org/mason.nvim",
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        cmd = "Mason",
+        config = languages_config.mason_nvim,
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "mason-org/mason.nvim",
+        },
+        config = languages_config.mason_lspconfig,
+    },
+    {
         "neovim/nvim-lspconfig",
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
-            {
-                "mason-org/mason.nvim",
-                dependencies = {
-                    {
-                        "mason-org/mason-lspconfig.nvim",
-                    },
-                    "WhoIsSethDaniel/mason-tool-installer.nvim",
-                },
-                cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-                build = ":MasonUpdate",
-                config = languages_config.mason_nvim,
-            },
             {
                 "glepnir/lspsaga.nvim",
                 -- event = "LspAttach",

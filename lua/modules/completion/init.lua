@@ -121,19 +121,19 @@ local modules = {
             end, { expr = true, silent = true })
         end,
     },
-    {
-        "supermaven-inc/supermaven-nvim",
-        event = "BufReadPost",
-        config = function()
-            require("supermaven-nvim").setup({
-                keymaps = {
-                    accept_suggestion = "<A-g>",
-                    clear_suggestion = "<C-]>",
-                    accept_word = "<C-j>",
-                },
-            })
-        end,
-    },
+    -- {
+    --     "supermaven-inc/supermaven-nvim",
+    --     event = "BufReadPost",
+    --     config = function()
+    --         require("supermaven-nvim").setup({
+    --             keymaps = {
+    --                 accept_suggestion = "<A-g>",
+    --                 clear_suggestion = "<C-]>",
+    --                 accept_word = "<C-j>",
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         "preservim/vim-pencil",
         init = function()
