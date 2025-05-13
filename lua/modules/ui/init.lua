@@ -68,13 +68,24 @@ local modules = {
         "lethc/Canon.nvim",
         priority = 150,
         config = function()
+            vim.g.canon_transparent = true
             vim.g.canon_italic_comments = true
             vim.g.canon_italic_functions = false
             vim.g.canon_bold_functions = false
-            vim.g.canon_transparent = true
-            vim.g.canon_onedark_transparent = false
             vim.g.canon_bold_keywords = false
             vim.g.canon_italic_keywords = false
+
+            -- Onedark
+            vim.g.canon_onedark_transparent = true
+            vim.g.canon_onedark_italic_comments = true
+            vim.g.canon_onedark_italic_functions = true
+            vim.g.canon_onedark_bold_functions = true
+            vim.g.canon_onedark_bold_keywords = false
+            vim.g.canon_onedark_italic_keywords = true
+            vim.g.canon_onedark_bold_booleans = true
+            vim.g.canon_onedark_italic_booleans = false
+            vim.g.canon_onedark_bold_variables = false
+            vim.g.canon_onedark_italic_variables = false
         end,
     },
     {
@@ -501,6 +512,31 @@ local modules = {
             vim.g.minimap_width = 20
             vim.g.minimap_auto_start = 1
             vim.g.minimap_auto_start_win_enter = 1
+        end,
+    },
+    {
+        "jake-stewart/normal-cmdline.nvim",
+        event = "CmdlineEnter",
+        config = function()
+            -- make the cmdline insert mode a beam
+            vim.opt.guicursor:append("ci:ver1,c:ver1")
+
+            local cmd = require("normal-cmdline")
+            cmd.setup({
+                -- key to hit within cmdline to enter normal mode:
+                key = "<esc>",
+                -- the cmdline text highlight when in normal mode:
+                hl = "Normal",
+                -- these mappings only apply to normal mode in cmdline:
+                mappings = {
+                    ["k"] = cmd.history.prev,
+                    ["j"] = cmd.history.next,
+                    ["<cr>"] = cmd.accept,
+                    ["<esc>"] = cmd.cancel,
+                    ["<c-c>"] = cmd.cancel,
+                    [":"] = cmd.reset,
+                },
+            })
         end,
     },
 }
