@@ -16,7 +16,7 @@ local modules = {
             --     "<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
             --     desc = "Telescope find files",
             -- },
-            -- { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
+            { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
             -- { "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
             -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
             -- { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
@@ -82,51 +82,13 @@ local modules = {
                 end,
                 desc = "FzfLua buffers",
             },
-            -- {
-            --     "<leader>b",
-            --     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
-            --     desc = "Buffers",
-            -- },
-            -- { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
-            -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
-            -- { "<leader>sb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers" },
-            -- { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
         },
         config = edit_config.fzf_lua,
     },
-    -- {
-    --   'LukasPietzschmann/telescope-tabs',
-    --   dependencies = {
-    --     'nvim-telescope/telescope.nvim',
-    --   },
-    --   config = function()
-    --     require'telescope-tabs'.setup{
-    --       -- Your custom config :^)
-    --     }
-    --  end
-    -- },
-    -- {
-    --     "folke/which-key.nvim",
-    --     -- event = "VeryLazy",
-    -- },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
         cmd = "WhichKey",
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
-        -- keys = {
-        --     {
-        --         "<leader>",
-        --         function()
-        --             require("which-key").show({ global = true })
-        --         end,
-        --         desc = "Buffer Local Keymaps (which-key)",
-        --     },
-        -- },
         keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "g" },
         config = edit_config.which_key,
     },
@@ -152,11 +114,6 @@ local modules = {
         },
         config = edit_config.mini_files,
     },
-    -- {
-    --   'echasnovski/mini.clue',
-    --   version = '*',
-    --   config = edit_config.mini_clue,
-    -- },
     { "HampusHauffman/block.nvim", cmd = { "Block", "BlockOn" }, config = edit_config.block },
     {
         "roobert/search-replace.nvim",
@@ -196,25 +153,6 @@ local modules = {
         "JoosepAlviste/nvim-ts-context-commentstring",
         config = edit_config.context_commentstring,
     },
-    -- {
-    --     "ThePrimeagen/harpoon",
-    --     branch = "harpoon2",
-    --     event = "VeryLazy",
-    --     -- keys = {
-    --     --   { "<leader>am", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], desc = "Toggle Menu" },
-    --     --   { "<leader>aa", [[<cmd>lua require("harpoon.mark").add_file()<CR>]],        desc = "Add File" },
-    --     --   { "<leader>aq", [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>aw", [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>ae", [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>ar", [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>at", [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>ay", [[<cmd>lua require("harpoon.ui").nav_file(6)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>au", [[<cmd>lua require("harpoon.ui").nav_file(7)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>ai", [[<cmd>lua require("harpoon.ui").nav_file(8)<CR>]],         desc = "Add File" },
-    --     --   { "<leader>ao", [[<cmd>lua require("harpoon.ui").nav_file(9)<CR>]],         desc = "Add File" },
-    --     -- },
-    --     config = edit_config.harpoon,
-    -- },
     {
         "folke/flash.nvim",
         event = { "InsertEnter" },
@@ -271,28 +209,9 @@ local modules = {
         },
         config = edit_config.flash_nvim,
     },
-    -- {
-    --   "ecthelionvi/NeoComposer.nvim",
-    --   event = { "BufReadPre" },
-    --   branch = "main",
-    --   -- commit = "d1d17ebef4d5824517076c4c94fe479ba28b2d56",
-    --   -- keys = {
-    --   --   { "m", mode = { "n" } }
-    --   -- },
-    --   config = edit_config.NeoComposer_nvim,
-    -- },
-    -- {
-    --  "chrisgrieser/nvim-recorder",
-    --   keys = {
-    --     -- these must match the keys in the mapping config below
-    --     { "q", desc = " Start Recording" },
-    --     { "Q", desc = " Play Recording" },
-    --   },
-    --   config = edit_config.nvim_recorder,
-    -- },
     {
-        -- "epwalsh/obsidian.nvim",
-        "obsidian-nvim/obsidian.nvim",
+        "epwalsh/obsidian.nvim",
+        -- "obsidian-nvim/obsidian.nvim", -- "~" characters appear in the column bar when there're no more lines on the screen
         version = "*", -- recommended, use latest release instead of latest commit
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "/Home/**.md",
@@ -313,73 +232,6 @@ local modules = {
             })
         end,
     },
-    -- {
-    --     "3rd/image.nvim", -- zellij issues https://github.com/3rd/image.nvim/issues/161
-    --     config = function()
-    --         -- default config
-    --         require("image").setup({
-    --             backend = "ueberzug",
-    --             integrations = {
-    --                 markdown = {
-    --                     enabled = true,
-    --                     clear_in_insert_mode = false,
-    --                     download_remote_images = true,
-    --                     only_render_image_at_cursor = true,
-    --                     filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
-    --                 },
-    --                 neorg = {
-    --                     enabled = true,
-    --                     clear_in_insert_mode = false,
-    --                     download_remote_images = true,
-    --                     only_render_image_at_cursor = false,
-    --                     filetypes = { "norg" },
-    --                 },
-    --                 html = {
-    --                     enabled = false,
-    --                 },
-    --                 css = {
-    --                     enabled = false,
-    --                 },
-    --             },
-    --             max_width = nil,
-    --             max_height = nil,
-    --             max_width_window_percentage = nil,
-    --             max_height_window_percentage = 50,
-    --             window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
-    --             window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-    --             editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
-    --             tmux_show_only_in_active_window = false, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
-    --             hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }, -- render image files as images when opened
-    --         })
-    --         package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
-    --         package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
-    --     end,
-    -- },
-    -- {
-    --     "skardyy/neo-img",
-    --     config = function()
-    --         require("neo-img").setup({
-    --             supported_extensions = {
-    --                 ["png"] = true,
-    --                 ["jpg"] = true,
-    --                 ["jpeg"] = true,
-    --                 ["gif"] = true,
-    --                 ["webp"] = true,
-    --             },
-    --             auto_open = true, -- Automatically open images when buffer is loaded
-    --             oil_preview = true, -- changes oil preview of images too
-    --             backend = "sixel", -- kitty / iterm / sixel / auto (auto detects what is supported in your terminal)
-    --             size = { --scales the width, will maintain aspect ratio
-    --                 oil = 400,
-    --                 main = 800,
-    --             },
-    --             offset = { -- only x offset
-    --                 oil = 5,
-    --                 main = 10,
-    --             },
-    --         })
-    --     end,
-    -- },
     {
         "OXY2DEV/markview.nvim",
         ft = "markdown",
@@ -448,7 +300,7 @@ local modules = {
     },
     {
         "xorid/asciitree.nvim",
-        keys = { "<leader>ca", "<cmd>lua require('asciitree').setup()<CR>" },
+        keys = { "<leader><leader>ca", "<cmd>lua require('asciitree').setup()<CR>" },
         config = edit_config.asciitree_nvim,
     },
     {
@@ -462,37 +314,37 @@ local modules = {
       ]])
         end,
     },
-    {
-        "samjwill/nvim-unception", --Open files from Neovim's terminal
-        event = "VeryLazy",
-        init = function()
-            -- Optional settings go here!
-            vim.g.unception_open_buffer_in_new_tab = true
-            vim.g.unception_enable_flavor_text = true
-            vim.g.unception_delete_replaced_buffer = false
-            vim.g.unception_block_while_host_edits = true
-            -- vim.api.nvim_create_autocmd("User", {
-            --     pattern = "UnceptionEditRequestReceived",
-            --     callback = function()
-            --         -- Toggle the terminal off.
-            --         require("FTerm").toggle()
-            --         -- require("FTerm").close()
-            --     end,
-            -- })
-        end,
-    },
-    {
-        "numToStr/FTerm.nvim",
-        keys = {
-            { "<A-g>", "<cmd><cr>", desc = "Gitui" },
-            { "<A-c>", "<cmd><cr>", desc = "ncdu" },
-            { "<A-y>", "<cmd><cr>", desc = "Yazi" },
-            -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
-            -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
-            { "<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute in Terminal" },
-        },
-        config = edit_config.fterm,
-    },
+    -- {
+    --     "samjwill/nvim-unception", --Open files from Neovim's terminal
+    --     event = "VeryLazy",
+    --     init = function()
+    --         -- Optional settings go here!
+    --         vim.g.unception_open_buffer_in_new_tab = true
+    --         vim.g.unception_enable_flavor_text = true
+    --         vim.g.unception_delete_replaced_buffer = false
+    --         vim.g.unception_block_while_host_edits = true
+    --         -- vim.api.nvim_create_autocmd("User", {
+    --         --     pattern = "UnceptionEditRequestReceived",
+    --         --     callback = function()
+    --         --         -- Toggle the terminal off.
+    --         --         require("FTerm").toggle()
+    --         --         -- require("FTerm").close()
+    --         --     end,
+    --         -- })
+    --     end,
+    -- },
+    -- {
+    --     "numToStr/FTerm.nvim",
+    --     keys = {
+    --         { "<A-g>", "<cmd><cr>", desc = "Gitui" },
+    --         { "<A-c>", "<cmd><cr>", desc = "ncdu" },
+    --         { "<A-y>", "<cmd><cr>", desc = "Yazi" },
+    --         -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
+    --         -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
+    --         { "<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute in Terminal" },
+    --     },
+    --     config = edit_config.fterm,
+    -- },
     {
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
@@ -503,14 +355,14 @@ local modules = {
         -- build = "cd app && npm install && git reset --hard",
         config = edit_config.markdown_preview,
     },
-    { -- Compiler
-        "Zeioth/compiler.nvim",
-        cmd = { "CompilerOpen", "CompilerToggleResults" },
-        dependencies = { "stevearc/overseer.nvim" },
-        config = function(_, opts)
-            require("compiler").setup(opts)
-        end,
-    },
+    -- { -- Compiler
+    --     "Zeioth/compiler.nvim",
+    --     cmd = { "CompilerOpen", "CompilerToggleResults" },
+    --     dependencies = { "stevearc/overseer.nvim" },
+    --     config = function(_, opts)
+    --         require("compiler").setup(opts)
+    --     end,
+    -- },
     { -- The framework that compiler use to run tasks
         "stevearc/overseer.nvim",
         commit = "19aac0426710c8fc0510e54b7a6466a03a1a7377",
@@ -547,11 +399,12 @@ local modules = {
                 javascript = "cd $dir && node $fileName",
             },
             project = {
-                ["~/Workspace/JavaDev/mavenproject/my-app"] = {
+                ["~/Workspace/JavaDev/my-app"] = {
                     name = "my-app",
                     description = "test",
-                    file_name = "src/main/java/com/mycompany/app/app.java",
+                    file_name = "src/main/java/com/mycompany/app/App.java",
                     command = "mvn clean package && java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App",
+                    -- command = "java -cp target/LearningJava-1.0-SNAPSHOT.jar com.mycompany.app.App",
                 },
             },
             startinsert = true,
@@ -694,13 +547,6 @@ local modules = {
             vim.keymap.set("n", "m.", "<plug>(VesselSetGlobalMark)")
         end,
     },
-    -- {
-    --     -- https://www.vim.org/scripts/script.php?script_id=2227
-    --     "mjbrownie/browser.vim",
-    -- },
-    -- {
-    --     "yuratomo/w3m.vim",
-    -- },
     {
         "jake-stewart/multicursor.nvim",
         branch = "1.0",
@@ -793,61 +639,16 @@ local modules = {
     --     end,
     -- },
     -- {
-    --     "tamton-aquib/mpv.nvim",
-    --     keys = { { "<leader><leader>p", ":MpvToggle<CR>", desc = "Play music with mpv nvim" } },
+    --     "itchyny/calendar.vim",
+    --     cmd = "Calendar",
     --     config = function()
-    --         require("mpv").setup({
-    --             width = 50,
-    --             height = 5, -- Changing these two might break the UI 😬
-    --             border = "single",
-    --             setup_widgets = true, -- to activate the widget components
-    --             timer = {
-    --                 after = 1000,
-    --                 throttle = 250, -- Update time for the widgets. (lesser the faster)
-    --             },
-    --         })
+    --         vim.cmd([[
+    --             source ~/.cache/calendar.vim/credentials.vim
+    --             let g:calendar_google_calendar = 1
+    --             let g:calendar_google_task = 1
+    --         ]])
     --     end,
     -- },
-    -- {
-    --     "epilande/checkbox-cycle.nvim",
-    --     ft = "markdown",
-    --     opts = {
-    --         -- states = { "[ ]", "[/]", "[x]", "[~]" },
-    --         states = {
-    --             { "[ ]", "[x]" },
-    --             { "[ ]", "[/]", "[x]" },
-    --             { "[>]", "[<]" },
-    --             { "[!]", "[~]", "[-]" },
-    --         },
-    --     },
-    --     keys = {
-    --         {
-    --             "<CR>",
-    --             "<Cmd>CheckboxCycleNext<CR>",
-    --             desc = "Checkbox Next",
-    --             ft = { "markdown" },
-    --             mode = { "n", "v" },
-    --         },
-    --         {
-    --             "<S-CR>",
-    --             "<Cmd>CheckboxCyclePrev<CR>",
-    --             desc = "Checkbox Previous",
-    --             ft = { "markdown" },
-    --             mode = { "n", "v" },
-    --         },
-    --     },
-    -- },
-    {
-        "itchyny/calendar.vim",
-        cmd = "Calendar",
-        config = function()
-            vim.cmd([[
-                source ~/.cache/calendar.vim/credentials.vim
-                let g:calendar_google_calendar = 1
-                let g:calendar_google_task = 1
-            ]])
-        end,
-    },
     {
         "j-hui/fidget.nvim",
         event = "LspAttach",
@@ -866,87 +667,6 @@ local modules = {
             ]])
         end,
     },
-    -- {
-    --     "nvim-focus/focus.nvim",
-    --     event = "BufReadPost",
-    --     version = "*",
-    --     config = function()
-    --         require("focus").setup({
-    --             enable = true, -- Enable module
-    --             commands = true, -- Create Focus commands
-    --             autoresize = {
-    --                 enable = true, -- Enable or disable auto-resizing of splits
-    --                 width = 0, -- Force width for the focused window
-    --                 height = 0, -- Force height for the focused window
-    --                 minwidth = 0, -- Force minimum width for the unfocused window
-    --                 minheight = 0, -- Force minimum height for the unfocused window
-    --                 height_quickfix = 10, -- Set the height of quickfix panel
-    --             },
-    --             split = {
-    --                 bufnew = false, -- Create blank buffer for new split windows
-    --                 tmux = false, -- Create tmux splits instead of neovim splits
-    --             },
-    --             ui = {
-    --                 number = false, -- Display line numbers in the focussed window only
-    --                 relativenumber = false, -- Display relative line numbers in the focussed window only
-    --                 hybridnumber = false, -- Display hybrid line numbers in the focussed window only
-    --                 absolutenumber_unfocussed = false, -- Preserve absolute numbers in the unfocussed windows
-    --
-    --                 cursorline = true, -- Display a cursorline in the focussed window only
-    --                 cursorcolumn = false, -- Display cursorcolumn in the focussed window only
-    --                 colorcolumn = {
-    --                     enable = false, -- Display colorcolumn in the foccused window only
-    --                     list = "+1", -- Set the comma-saperated list for the colorcolumn
-    --                 },
-    --                 signcolumn = true, -- Display signcolumn in the focussed window only
-    --                 winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
-    --             },
-    --         })
-    --         local ignore_filetypes = { "neo-tree" }
-    --         local ignore_buftypes = { "nofile", "prompt", "popup" }
-    --
-    --         local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
-    --
-    --         vim.api.nvim_create_autocmd("WinEnter", {
-    --             group = augroup,
-    --             callback = function(_)
-    --                 if vim.tbl_contains(ignore_buftypes, vim.bo.buftype) then
-    --                     vim.w.focus_disable = true
-    --                 else
-    --                     vim.w.focus_disable = false
-    --                 end
-    --             end,
-    --             desc = "Disable focus autoresize for BufType",
-    --         })
-    --
-    --         vim.api.nvim_create_autocmd("FileType", {
-    --             group = augroup,
-    --             callback = function(_)
-    --                 if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
-    --                     vim.b.focus_disable = true
-    --                 else
-    --                     vim.b.focus_disable = false
-    --                 end
-    --             end,
-    --             desc = "Disable focus autoresize for FileType",
-    --         })
-    --     end,
-    -- },
-    -- {
-    --     "kevinhwang91/nvim-hlslens", -- Show number of similar matches found when searching for a word (noice can do this too)
-    --     config = function()
-    --         require("hlslens").setup()
-    --     end,
-    -- }, -- lazy.nvim
-    -- {
-    --     "csessh/stopinsert.nvim",
-    --     event = { "InsertEnter" },
-    --     opts = {},
-    -- },
-    -- {
-    --     "mcauley-penney/visual-whitespace.nvim",
-    --     -- config = true
-    -- },
     {
         "jackMort/tide.nvim",
         event = { "InsertEnter" },
@@ -962,6 +682,7 @@ local modules = {
     },
     {
         "Kicamon/markdown-table-mode.nvim",
+        ft = "markdown",
         config = function()
             require("markdown-table-mode").setup({
                 filetype = {
@@ -976,85 +697,68 @@ local modules = {
             })
         end,
     },
+    -- {
+    --     "folke/persistence.nvim",
+    --     event = "BufReadPre",
+    --     config = function()
+    --         require("persistence").setup({
+    --             dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"), -- directory where session files are saved
+    --             options = { "buffers", "curdir", "tabpages", "winsize", "globals" },
+    --             pre_save = function()
+    --                 vim.api.nvim_exec_autocmds("User", { pattern = "SessionSavePre" })
+    --             end,
+    --         })
+    --         -- load the session for the current directory
+    --         vim.keymap.set("n", "<leader>wsl", function()
+    --             require("persistence").load()
+    --         end, { desc = "Load the session for the current directory" })
+    --
+    --         -- select a session to load
+    --         vim.keymap.set("n", "<leader>wss", function()
+    --             require("persistence").select()
+    --         end, { desc = "Select a session to load" })
+    --
+    --         -- load the last session
+    --         vim.keymap.set("n", "<leader>wsL", function()
+    --             require("persistence").load({ last = true })
+    --         end, { desc = "Load the last session" })
+    --
+    --         -- stop Persistence => session won't be saved on exit
+    --         vim.keymap.set("n", "<leader>wsn", function()
+    --             require("persistence").stop()
+    --         end, { desc = "Stop Persistence => session won't be saved on exit" })
+    --     end,
+    -- },
     {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
+        "hamidi-dev/kaleidosearch.nvim",
+        event = { "InsertEnter" },
+        keys = {
+            { "/", mode = { "n" } },
+        },
+        dependencies = {
+            "tpope/vim-repeat", -- optional for dot-repeatability
+            "stevearc/dressing.nvim", -- optional for nice input
+        },
+
         config = function()
-            require("persistence").setup({
-                dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"), -- directory where session files are saved
-                options = { "buffers", "curdir", "tabpages", "winsize", "globals" },
-                pre_save = function()
-                    vim.api.nvim_exec_autocmds("User", { pattern = "SessionSavePre" })
-                end,
-            })
-            -- load the session for the current directory
-            vim.keymap.set("n", "<leader>wsl", function()
-                require("persistence").load()
-            end, { desc = "Load the session for the current directory" })
-
-            -- select a session to load
-            vim.keymap.set("n", "<leader>wss", function()
-                require("persistence").select()
-            end, { desc = "Select a session to load" })
-
-            -- load the last session
-            vim.keymap.set("n", "<leader>wsL", function()
-                require("persistence").load({ last = true })
-            end, { desc = "Load the last session" })
-
-            -- stop Persistence => session won't be saved on exit
-            vim.keymap.set("n", "<leader>wsn", function()
-                require("persistence").stop()
-            end, { desc = "Stop Persistence => session won't be saved on exit" })
+            require("kaleidosearch").setup({})
         end,
     },
     -- {
-    --     "Hashino/doing.nvim",
+    --     "uga-rosa/translate.nvim",
     --     config = function()
-    --         require("doing").setup({
-    --             -- default options
-    --             message_timeout = 2000,
-    --             winbar = {
-    --                 enabled = false,
-    --                 -- ignores buffers that match filetype
-    --                 ignored_buffers = { "NvimTree" },
-    --             },
-    --
-    --             doing_prefix = "Current Task: ",
-    --             store = {
-    --                 -- automatically create a .tasks when calling :Do
-    --                 auto_create_file = false,
-    --                 file_name = ".tasks",
-    --             },
-    --         })
-    --         -- example on how to change the winbar highlight
-    --         vim.api.nvim_set_hl(0, "WinBar", { link = "Search" })
-    --
-    --         local api = require("doing")
-    --
-    --         vim.keymap.set("n", "<leader>de", api.edit, { desc = "[E]dit what tasks you`re [D]oing" })
-    --         vim.keymap.set("n", "<leader>dn", api.done, { desc = "[D]o[n]e with current task" })
-    --         vim.keymap.set("n", "<leader>dt", api.toggle, { desc = "[T]oogle Display" })
-    --
-    --         vim.api.nvim_create_autocmd({ "User" }, {
-    --             pattern = "TaskModified",
-    --             desc = "This is called when a task is added, edited or completed",
-    --             callback = function()
-    --                 vim.notify("A task has been modified")
-    --             end,
-    --         })
+    --         require("translate").setup({})
     --     end,
     -- },
-    -- {
-    --     "Dan7h3x/LazyDo",
-    --     branch = "main",
-    --     events = "VeryLazy",
-    --     opts = {
-    --         -- your config here
-    --     },
-    --     config = function(_, opts)
-    --         require("lazydo").setup(opts)
-    --     end,
-    -- },
+    {
+        "askfiy/smart-translate.nvim",
+        cmd = { "Translate" },
+        dependencies = {
+            "askfiy/http.nvim", -- a wrapper implementation of the Python aiohttp library that uses CURL to send requests.
+        },
+        config = function()
+            require("smart-translate").setup({})
+        end,
+    },
 }
 return modules
