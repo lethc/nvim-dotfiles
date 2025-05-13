@@ -756,7 +756,7 @@ config.nvim_notify = function()
     end
     vim.notify = notify
     notify.setup({
-        background_colour = "NotifyBackground",
+        background_colour = "#151B23",
         render = "wrapped-compact",
         stages = "fade",
         max_width = "75",
