@@ -333,18 +333,18 @@ local modules = {
     --         -- })
     --     end,
     -- },
-    -- {
-    --     "numToStr/FTerm.nvim",
-    --     keys = {
-    --         { "<A-g>", "<cmd><cr>", desc = "Gitui" },
-    --         { "<A-c>", "<cmd><cr>", desc = "ncdu" },
-    --         { "<A-y>", "<cmd><cr>", desc = "Yazi" },
-    --         -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
-    --         -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
-    --         { "<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute in Terminal" },
-    --     },
-    --     config = edit_config.fterm,
-    -- },
+    {
+        "numToStr/FTerm.nvim",
+        keys = {
+            { "<A-g>", "<cmd><cr>", desc = "Gitui" },
+            { "<A-c>", "<cmd><cr>", desc = "ncdu" },
+            { "<A-y>", "<cmd><cr>", desc = "Yazi" },
+            -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
+            -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
+            { "<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute in Terminal" },
+        },
+        config = edit_config.fterm,
+    },
     {
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
