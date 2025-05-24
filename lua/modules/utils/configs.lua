@@ -177,10 +177,10 @@ config.fzf_lua = function()
     if not fzf_lua_status_ok then
         return
     end
-    local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }
-        or vim.fn.executable("chafa") == 1 and { "chafa" }
-        or vim.fn.executable("viu") == 1 and { "viu", "-b" }
-        or nil
+    -- local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }
+    --     or vim.fn.executable("chafa") == 1 and { "chafa" }
+    --     or vim.fn.executable("viu") == 1 and { "viu", "-b" }
+    --     or nil
 
     fzf_lua.setup({
         -- fzf_colors = {
@@ -266,18 +266,18 @@ config.fzf_lua = function()
                 ["ctrl-u"] = "preview-half-page-up",
             },
         },
-        previewers = {
-            builtin = {
-                ueberzug_scaler = "cover",
-                extensions = {
-                    ["gif"] = img_prev_bin,
-                    ["png"] = img_prev_bin,
-                    ["jpg"] = img_prev_bin,
-                    ["jpeg"] = img_prev_bin,
-                    ["svg"] = { "chafa" },
-                },
-            },
-        },
+        -- previewers = {
+        --     builtin = {
+        --         ueberzug_scaler = "cover",
+        --         extensions = {
+        --             ["gif"] = img_prev_bin,
+        --             ["png"] = img_prev_bin,
+        --             ["jpg"] = img_prev_bin,
+        --             ["jpeg"] = img_prev_bin,
+        --             ["svg"] = { "chafa" },
+        --         },
+        --     },
+        -- },
         git = {
             status = {
                 cmd = "git status -su",
