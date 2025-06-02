@@ -65,6 +65,8 @@ keymaps["visual"] = {
     { "<C-r>", "<CMD>lua require('search-replace')<CR><CMD>SearchReplaceSingleBufferVisualSelection<CR>" }, -- search-replace.nvim plugin
     { "<C-s>", "<CMD>lua require('search-replace')<CR><CMD>SearchReplaceWithinVisualSelection<CR>" },
     { "<C-c>", "<CMD>lua require('search-replace')<CR><CMD> SearchReplaceWithinVisualSelectionCWord<CR>" },
+    { "/", "<C-\\><C-n>`</\\%V" }, -- search for text inside a visual selection
+    { "?", "<C-\\><C-n>`>?\\%V" },
 }
 
 keymaps["visual_block"] = {
@@ -75,6 +77,8 @@ keymaps["visual_block"] = {
     { "J", ":m '>+1<CR>gv-gv" }, -- Move the selected text up and down
     { "K", ":m '<-2<CR>gv-gv" },
     { "V", "j" }, -- Repeated V in Visual Line Mode
+    { "/", "<C-\\><C-n>`</\\%V" },
+    { "?", "<C-\\><C-n>`>?\\%V" },
 }
 
 keymaps["terminal"] = {
