@@ -1370,55 +1370,55 @@ config.vim_dadbod_ui = function()
         connection_error = "✕",
     }
 end
-config.global_note = function()
-    local global_note_status_ok, global_note = pcall(require, "global-note")
-    if not global_note_status_ok then
-        return
-    end
-    global_note.setup({
-        filename = "todo.md",
-        -- directory = vim.fn.stdpath("data") .. "/global-note/",
-        directory = os.getenv("HOME") .. "/Home/",
-        title = "Todo List",
-        additional_presets = {
-            inbox = {
-                filename = "notes.md",
-                title = "Fleeting Notes",
-                command_name = "FleetingNotes",
-                -- All not specified options are used from the root.
-            },
-            flashcards = {
-                filename = "Templates/flashcards.md",
-                title = "flashcards",
-                command_name = "FlashCards",
-            },
-            flashcardsCloze = {
-                filename = "Templates/flashcards_cloze.md",
-                title = "flashcards Cloze",
-                command_name = "FlashCardsCloze",
-            },
-        },
-    })
-
-    vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
-        desc = "Open todo list file",
-    })
-    vim.keymap.set("n", "<leader><leader>k", function()
-        global_note.toggle_note("inbox")
-    end, {
-        desc = "Open fleeting file",
-    })
-    vim.keymap.set("n", "<leader><leader>f", function()
-        global_note.toggle_note("flashcards")
-    end, {
-        desc = "Open flashcards file",
-    })
-    vim.keymap.set("n", "<leader><leader>fc", function()
-        global_note.toggle_note("flashcardsCloze")
-    end, {
-        desc = "Open flashcards Cloze file",
-    })
-end
+-- config.global_note = function()
+--     local global_note_status_ok, global_note = pcall(require, "global-note")
+--     if not global_note_status_ok then
+--         return
+--     end
+--     global_note.setup({
+--         filename = "todo.md",
+--         -- directory = vim.fn.stdpath("data") .. "/global-note/",
+--         directory = os.getenv("HOME") .. "/Home/",
+--         title = "Todo List",
+--         additional_presets = {
+--             inbox = {
+--                 filename = "notes.md",
+--                 title = "Fleeting Notes",
+--                 command_name = "FleetingNotes",
+--                 -- All not specified options are used from the root.
+--             },
+--             flashcards = {
+--                 filename = "Templates/flashcards.md",
+--                 title = "flashcards",
+--                 command_name = "FlashCards",
+--             },
+--             flashcardsCloze = {
+--                 filename = "Templates/flashcards_cloze.md",
+--                 title = "flashcards Cloze",
+--                 command_name = "FlashCardsCloze",
+--             },
+--         },
+--     })
+--
+--     vim.keymap.set("n", "<leader>k", global_note.toggle_note, {
+--         desc = "Open todo list file",
+--     })
+--     vim.keymap.set("n", "<leader><leader>k", function()
+--         global_note.toggle_note("inbox")
+--     end, {
+--         desc = "Open fleeting file",
+--     })
+--     vim.keymap.set("n", "<leader><leader>f", function()
+--         global_note.toggle_note("flashcards")
+--     end, {
+--         desc = "Open flashcards file",
+--     })
+--     vim.keymap.set("n", "<leader><leader>fc", function()
+--         global_note.toggle_note("flashcardsCloze")
+--     end, {
+--         desc = "Open flashcards Cloze file",
+--     })
+-- end
 config.before = function()
     local before_status_ok, before = pcall(require, "before")
     if not before_status_ok then
