@@ -310,10 +310,13 @@ config.mason_lspconfig = function()
 end
 config.lsp_saga = function()
 
-    -- local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-    -- if not lspconfig_status_ok then
-    --     return
-    -- end
+    local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+    if not lspconfig_status_ok then
+        return
+    end
+    lspconfig.qmlls.setup({
+        cmd = { "qmlls6" },
+    })
 
     local signs = {
         { name = "DiagnosticSignError", text = " " },
