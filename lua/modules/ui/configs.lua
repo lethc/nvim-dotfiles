@@ -365,6 +365,7 @@ config.themery = function()
     themery.setup({
         themes = {
             "default",
+            "kanagawabones",
             "canon",
             "ashen",
             "canon-onedark",
@@ -775,7 +776,7 @@ config.nvim_notify = function()
         timeout = 1000,
         top_down = true,
     })
-    vim.cmd("command! Message :lua require('notify').print_history()<CR>")
+    -- vim.cmd("command! Message :lua require('notify').print_history()<CR>")
 end
 config.nvim_noice = function()
     local noice_status_ok, noice = pcall(require, "noice")

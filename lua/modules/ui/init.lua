@@ -1,6 +1,20 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
     {
+        "zenbones-theme/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        dependencies = "rktjmp/lush.nvim",
+        lazy = false,
+        priority = 1000,
+        -- you can set set configuration options here
+        -- config = function()
+        --     vim.g.zenbones_darken_comments = 45
+        --     vim.cmd.colorscheme('zenbones')
+        -- end
+    },
+    {
         "ficcdaf/ashen.nvim",
         lazy = false,
         priority = 1000,
@@ -76,7 +90,7 @@ local modules = {
             vim.g.canon_italic_keywords = false
 
             -- Onedark
-            vim.g.canon_onedark_transparent = true
+            vim.g.canon_onedark_transparent = false
             vim.g.canon_onedark_italic_comments = true
             vim.g.canon_onedark_italic_functions = true
             vim.g.canon_onedark_bold_functions = true
@@ -313,12 +327,13 @@ local modules = {
         event = "RecordingEnter",
     },
     {
-        "rcarriga/nvim-notify",
-        lazy = false,
-        config = ui_config.nvim_notify,
-    },
-    {
         "folke/noice.nvim",
+        dependencies = {
+            {
+                "rcarriga/nvim-notify",
+                config = ui_config.nvim_notify,
+            },
+        },
         event = "BufReadPre",
         -- event = "VeryLazy",
         -- lazy = true,
@@ -424,7 +439,7 @@ local modules = {
             "folke/twilight.nvim",
         },
         keys = {
-            { "<leader>j", "<cmd>ZenMode<cr>", desc = "Zen" },
+            { "<leader><leader>jk", "<cmd>ZenMode<cr>", desc = "Zen" },
         },
         opts = {
             -- your configuration comes here
