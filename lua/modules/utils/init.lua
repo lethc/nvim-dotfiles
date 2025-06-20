@@ -553,15 +553,15 @@ local modules = {
         opts = {}, -- This causes the plugin setup function to be called
         keys = {
             {
-                "<C-Up>",
+                "<space>k",
                 "<Cmd>MultipleCursorsAddUp<CR>",
-                mode = { "n", "i", "x" },
+                mode = { "n", "x" },
                 desc = "Add cursor and move up",
             },
             {
-                "<C-Down>",
+                "<space>j",
                 "<Cmd>MultipleCursorsAddDown<CR>",
-                mode = { "n", "i", "x" },
+                mode = { "n", "x" },
                 desc = "Add cursor and move down",
             },
 
