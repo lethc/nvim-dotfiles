@@ -1,6 +1,15 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
     {
+        "nyoom-engineering/oxocarbon.nvim",
+        priority = 1000,
+        -- config = function()
+        --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        --     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        -- end,
+    },
+    {
         "zenbones-theme/zenbones.nvim",
         -- Optionally install Lush. Allows for more configuration or extending the colorscheme
         -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
@@ -80,7 +89,7 @@ local modules = {
     { "gantoreno/nvim-gabriel", enabled = false },
     {
         "lethc/Canon.nvim",
-        priority = 150,
+        priority = 1000,
         config = function()
             vim.g.canon_transparent = true
             vim.g.canon_italic_comments = true

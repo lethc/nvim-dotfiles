@@ -365,6 +365,7 @@ config.themery = function()
     themery.setup({
         themes = {
             "default",
+            "oxocarbon",
             "kanagawabones",
             "canon",
             "ashen",
