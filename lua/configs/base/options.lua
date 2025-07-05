@@ -32,7 +32,7 @@ M.options = function()
 
         -- Fold
         foldlevelstart = 99,
-        foldcolumn = "1", -- '1' is not bad
+        foldcolumn = "0", -- '1' is not bad
         foldenable = true,
         foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
         foldtext = "",
@@ -148,8 +148,8 @@ M.options = function()
         encoding = "utf-8",
         fileencoding = "utf-8", -- the encoding written to a file
         autochdir = false, -- Change dictory automatically
-        number = true, -- set numbered lines
-        relativenumber = true, -- set relative numbered lines
+        number = false, -- set numbered lines
+        relativenumber = false, -- set relative numbered lines
         numberwidth = 4, -- set number column width to 2 {default 4}
         showtabline = 0, -- always show tabs or buffers
         writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
