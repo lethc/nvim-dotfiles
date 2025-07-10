@@ -39,6 +39,7 @@ local modules = {
     },
     {
         "mason-org/mason.nvim",
+        version = "1.11.0",
         dependencies = {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
@@ -47,6 +48,7 @@ local modules = {
     },
     {
         "mason-org/mason-lspconfig.nvim",
+        version = "1.32.0",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mason-org/mason.nvim",
