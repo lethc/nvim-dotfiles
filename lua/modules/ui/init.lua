@@ -99,7 +99,7 @@ local modules = {
             vim.g.canon_italic_keywords = false
 
             -- Onedark
-            vim.g.canon_onedark_transparent = false
+            vim.g.canon_onedark_transparent = true
             vim.g.canon_onedark_italic_comments = true
             vim.g.canon_onedark_italic_functions = true
             vim.g.canon_onedark_bold_functions = true
