@@ -21,7 +21,8 @@ local modules = {
         lazy = true,
     },
     {
-        "nvim-java/nvim-java",
+        -- "nvim-java/nvim-java",
+        "eyesee101/nvim-java",
         -- dependencies = {
         --     "nvim-java/nvim-java-core",
         --     url = "https://github.com/Kabil777/nvim-java-core.git",
@@ -30,16 +31,16 @@ local modules = {
         ft = { "java" },
         config = function()
             require("java").setup({
-                -- jdtls = {
-                --     version = "v1.46.1",
-                -- },
+                jdtls = {
+                    version = "v1.46.1",
+                },
             })
             -- require("lspconfig").jdtls.setup({})
         end,
     },
     {
         "mason-org/mason.nvim",
-        version = "1.11.0",
+        -- version = "1.11.0",
         dependencies = {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
@@ -48,7 +49,7 @@ local modules = {
     },
     {
         "mason-org/mason-lspconfig.nvim",
-        version = "1.32.0",
+        -- version = "1.0.0",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mason-org/mason.nvim",
