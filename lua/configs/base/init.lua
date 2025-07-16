@@ -74,10 +74,10 @@ configs["auto_commands"] = function()
 
   augroup _markdown
     autocmd!
-    autocmd FileType markdown setlocal nowrap
+    "autocmd FileType markdown setlocal nowrap
     autocmd FileType markdown setlocal spell
-    "autocmd FileType markdown setlocal textwidth=116 "Default autoindent = true
-    autocmd FileType markdown setlocal textwidth=90 "Default autoindent = true
+    autocmd FileType markdown setlocal textwidth=116 "Default autoindent = true
+    "autocmd FileType markdown setlocal textwidth=90 "Default autoindent = true
     autocmd FileType markdown setlocal shiftwidth=2 "When press tab avoid 4-space indent
   augroup end
 
