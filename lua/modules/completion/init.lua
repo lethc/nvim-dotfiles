@@ -138,8 +138,8 @@ local modules = {
         "preservim/vim-pencil",
         init = function()
             vim.g["pencil#wrapModeDefault"] = "hard"
-            -- vim.g["pencil#textwidth"] = 116
-            vim.g["pencil#textwidth"] = 90
+            vim.g["pencil#textwidth"] = 116
+            -- vim.g["pencil#textwidth"] = 90
             vim.g["pencil#autoformat"] = 1 -- Enable autoformat by default (1) or disable (0)
         end,
     },
