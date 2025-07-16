@@ -1,6 +1,5 @@
 return {
-    filetypes = {
-        "php",
-        "blade",
-    },
+    cmd = { "phpactor", "language-server" },
+    filetypes = { "php", "blade" },
+    root_markers = { "composer.json", ".git" },
 }

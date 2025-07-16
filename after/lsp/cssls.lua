@@ -1,13 +1,7 @@
 return {
     settings = {
-        css = {
-            validate = true,
-        },
-        less = {
-            validate = true,
-        },
-        scss = {
-            validate = true,
-        },
+        css = { validate = false },
+        less = { validate = true },
+        scss = { validate = true },
     },
 }
