@@ -370,6 +370,7 @@ config.themery = function()
             "canon",
             "ashen",
             "canon-onedark",
+            "canon-onelight",
             "canon-github",
             "canon-dark_horizon",
             "carbonfox",
@@ -637,7 +638,7 @@ config.lualine = function()
                         -- active = "lualine_a_normal",
                         -- inactive = "lualine_b_normal",
                         active = {
-                            fg = "#FFFFFF",
+                            fg = "#61afef",
                             bg = "",
                         },
                         inactive = "",
@@ -685,7 +686,7 @@ config.lualine = function()
                     end,
                     color = function()
                         if vim.bo.modified then
-                            return { bg = "", fg = "#ffffff" } -- Red background when buffer is modified
+                            return { bg = "", fg = "#e06c75" } -- Red background when buffer is modified
                         else
                             return { bg = "", fg = nil } -- Default colors
                         end

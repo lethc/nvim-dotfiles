@@ -210,8 +210,8 @@ local modules = {
         config = edit_config.flash_nvim,
     },
     {
-        "epwalsh/obsidian.nvim",
-        -- "obsidian-nvim/obsidian.nvim", -- "~" characters appear in the column bar when there're no more lines on the screen
+        -- "epwalsh/obsidian.nvim",
+        "obsidian-nvim/obsidian.nvim", -- "~" characters appear in the column bar when there're no more lines on the screen
         version = "*", -- recommended, use latest release instead of latest commit
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "/Home/**.md",
@@ -232,61 +232,61 @@ local modules = {
             })
         end,
     },
-    {
-        "OXY2DEV/markview.nvim",
-        ft = "markdown",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
-        },
-
-        config = function()
-            -- require("markview").setup({
-            --     modes = { "n", "i", "no", "c" },
-            --     hybrid_modes = { "i" },
-            --
-            --     -- This is nice to have
-            --     callbacks = {
-            --         on_enable = function(_, win)
-            --             vim.wo[win].conceallevel = 2
-            --             vim.wo[win].concealcursor = "c"
-            --         end,
-            --     },
-            --     headings = {
-            --         enable = true,
-            --         shift_width = 0,
-            --         shift_char = "",
-            --         heading_1 = {
-            --             -- sign = "",
-            --             -- hl = "@markup.heading.1.markdown",
-            --             hl = "markdownH1",
-            --         },
-            --         heading_2 = {
-            --             -- sign = "",
-            --             hl = "markdownH2",
-            --         },
-            --         heading_3 = {
-            --             -- sign = "",
-            --             hl = "markdownH3",
-            --         },
-            --         heading_4 = {
-            --             -- sign = "",
-            --             hl = "markdownH4",
-            --         },
-            --         heading_5 = {
-            --             -- sign = "",
-            --             hl = "markdownH5",
-            --         },
-            --         heading_6 = {
-            --             -- sign = "",
-            --             hl = "markdownH6",
-            --         },
-            --     },
-            --     code_blocks = {
-            --         sign = "",
-            --     },
-            -- })
-        end,
-    },
+    -- {
+    --     "OXY2DEV/markview.nvim",
+    --     ft = "markdown",
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
+    --     },
+    --
+    --     config = function()
+    --         -- require("markview").setup({
+    --         --     modes = { "n", "i", "no", "c" },
+    --         --     hybrid_modes = { "i" },
+    --         --
+    --         --     -- This is nice to have
+    --         --     callbacks = {
+    --         --         on_enable = function(_, win)
+    --         --             vim.wo[win].conceallevel = 2
+    --         --             vim.wo[win].concealcursor = "c"
+    --         --         end,
+    --         --     },
+    --         --     headings = {
+    --         --         enable = true,
+    --         --         shift_width = 0,
+    --         --         shift_char = "",
+    --         --         heading_1 = {
+    --         --             -- sign = "",
+    --         --             -- hl = "@markup.heading.1.markdown",
+    --         --             hl = "markdownH1",
+    --         --         },
+    --         --         heading_2 = {
+    --         --             -- sign = "",
+    --         --             hl = "markdownH2",
+    --         --         },
+    --         --         heading_3 = {
+    --         --             -- sign = "",
+    --         --             hl = "markdownH3",
+    --         --         },
+    --         --         heading_4 = {
+    --         --             -- sign = "",
+    --         --             hl = "markdownH4",
+    --         --         },
+    --         --         heading_5 = {
+    --         --             -- sign = "",
+    --         --             hl = "markdownH5",
+    --         --         },
+    --         --         heading_6 = {
+    --         --             -- sign = "",
+    --         --             hl = "markdownH6",
+    --         --         },
+    --         --     },
+    --         --     code_blocks = {
+    --         --         sign = "",
+    --         --     },
+    --         -- })
+    --     end,
+    -- },
     {
         "Bekaboo/deadcolumn.nvim",
         event = { "BufReadPost", "BufNewFile" },
