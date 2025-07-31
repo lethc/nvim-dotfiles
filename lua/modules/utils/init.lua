@@ -212,7 +212,6 @@ local modules = {
     {
         -- "epwalsh/obsidian.nvim",
         "obsidian-nvim/obsidian.nvim", -- "~" characters appear in the column bar when there're no more lines on the screen
-        version = "*", -- recommended, use latest release instead of latest commit
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "/Home/**.md",
             "BufNewFile " .. vim.fn.expand("~") .. "/Home/**.md",

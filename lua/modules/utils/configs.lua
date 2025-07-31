@@ -1126,6 +1126,7 @@ config.obsidian_nvim = function()
             name = "telescope.nvim",
             -- name = "fzf-lua",
         },
+        legacy_commands = false,
 
         -- Optional, customize how note IDs are generated given an optional title.
         note_id_func = function(title)
@@ -1145,13 +1146,13 @@ config.obsidian_nvim = function()
             return tostring(os.time()) .. "-" .. suffix
         end,
     })
-    vim.keymap.set("n", "gf", function()
-        if require("obsidian").util.cursor_on_markdown_link() then
-            return "<cmd>ObsidianFollowLink<CR>"
-        else
-            return "gf"
-        end
-    end, { noremap = false, expr = true })
+    -- vim.keymap.set("n", "gf", function()
+    --     if require("obsidian").util.cursor_on_markdown_link() then
+    --         return "<cmd>Obsidian follow_link<CR>"
+    --     else
+    --         return "gf"
+    --     end
+    -- end, { noremap = false, expr = true })
 end
 config.asciitree_nvim = function()
     local asciitree_status_ok, assiitree_nvim = pcall(require, "asciitree")

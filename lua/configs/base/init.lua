@@ -111,7 +111,7 @@ configs["auto_commands"] = function()
    "autocmd BufReadPost *.md if line('$') == 1 && getline(1) ==# '' | execute 'ObsidianTemplate template_today' | endif
    "autocmd BufReadPost *.md if expand('%:p') =~# '^' . expand('~/Home/') && line('$') == 1 && getline(1) ==# '' | execute 'ObsidianTemplate template_idea' | endif
    autocmd BufReadPost *.md if expand('%:p') =~# '^' . expand('~/Home/') && line('$') == 1 && getline(1) ==# '' |
-        \ execute 'ObsidianTemplate template_idea' |
+        \ execute 'Obsidian template template_idea' |
         \ autocmd CursorMoved <buffer> ++once normal! G |
         \ endif
  augroup END
