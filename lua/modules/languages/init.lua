@@ -21,8 +21,8 @@ local modules = {
         lazy = true,
     },
     {
-        -- "nvim-java/nvim-java",
-        "eyesee101/nvim-java",
+        "nvim-java/nvim-java",
+        -- "eyesee101/nvim-java",
         -- dependencies = {
         --     "nvim-java/nvim-java-core",
         --     url = "https://github.com/Kabil777/nvim-java-core.git",
