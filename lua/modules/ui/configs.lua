@@ -370,6 +370,7 @@ config.themery = function()
             "canon",
             "ashen",
             "canon-onedark",
+            "canon-onelight",
             "canon-github",
             "canon-dark_horizon",
             "carbonfox",
@@ -637,7 +638,7 @@ config.lualine = function()
                         -- active = "lualine_a_normal",
                         -- inactive = "lualine_b_normal",
                         active = {
-                            fg = "#FFFFFF",
+                            fg = "#61afef",
                             bg = "",
                         },
                         inactive = "",
@@ -685,7 +686,7 @@ config.lualine = function()
                     end,
                     color = function()
                         if vim.bo.modified then
-                            return { bg = "", fg = "#ffffff" } -- Red background when buffer is modified
+                            return { bg = "", fg = "#e06c75" } -- Red background when buffer is modified
                         else
                             return { bg = "", fg = nil } -- Default colors
                         end
@@ -933,19 +934,30 @@ config.nvim_noice = function()
         },
         throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
         views = {}, ---@see section on views
+        -- routes = { -- Old route/deprecated because it is not allowing the display of notifications like !echo "hi"
+        --     {
+        --         filter = {
+        --             event = "msg_show",
+        --             any = {
+        --                 { find = "%d+L, %d+B" },
+        --                 { find = "; after #%d+" },
+        --                 { find = "; before #%d+" },
+        --             },
+        --         },
+        --         view = "mini",
+        --     },
+        -- }, --- @see section on routes
         routes = {
             {
-                filter = {
-                    event = "msg_show",
-                    any = {
-                        { find = "%d+L, %d+B" },
-                        { find = "; after #%d+" },
-                        { find = "; before #%d+" },
-                    },
+                filter = { event = "msg_show", kind = { "shell_out", "shell_err" } },
+                view = "notify",
+                opts = {
+                    level = "info",
+                    skip = false,
+                    replace = false,
                 },
-                view = "mini",
             },
-        }, --- @see section on routes
+        },
         status = {}, --- @see section on statusline components
         format = {}, --- @see section on formatting
     })

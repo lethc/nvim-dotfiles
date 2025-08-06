@@ -21,21 +21,10 @@ local modules = {
         lazy = true,
     },
     {
-        -- "nvim-java/nvim-java",
-        "eyesee101/nvim-java",
-        -- dependencies = {
-        --     "nvim-java/nvim-java-core",
-        --     url = "https://github.com/Kabil777/nvim-java-core.git",
-        --     branch = "fix/mason-api-update",
-        -- },
+        "nvim-java/nvim-java",
         ft = { "java" },
         config = function()
-            require("java").setup({
-                jdtls = {
-                    version = "v1.46.1",
-                },
-            })
-            -- require("lspconfig").jdtls.setup({})
+            -- require("java").setup()
         end,
     },
     {

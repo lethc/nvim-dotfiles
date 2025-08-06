@@ -1076,20 +1076,20 @@ config.obsidian_nvim = function()
             },
         },
         ui = {
-            enable = false, -- set to false to disable all additional syntax features
+            enable = true, -- set to false to disable all additional syntax features
             update_debounce = 200, -- update delay after a text change (in milliseconds)
             -- Define how various check-boxes are displayed
-            checkboxes = {
-                [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-                ["x"] = { char = "", hl_group = "ObsidianDone" },
-                [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-                ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-                -- Replace the above with this if you don't have a patched font:
-                -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
-                -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
-
-                -- You can also add more custom ones...
-            },
+            -- checkboxes = {
+            --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+            --     ["x"] = { char = "", hl_group = "ObsidianDone" },
+            --     [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+            --     ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+            --     -- Replace the above with this if you don't have a patched font:
+            --     -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
+            --     -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
+            --
+            --     -- You can also add more custom ones...
+            -- },
             external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
             -- Replace the above with this if you don't have a patched font:
             -- external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
@@ -1107,6 +1107,9 @@ config.obsidian_nvim = function()
                 ObsidianTag = { italic = true, fg = "#89ddff" },
                 ObsidianHighlightText = { bg = "#75662e" },
             },
+        },
+        checkbox = {
+            order = { " ", "x", ">", "~" },
         },
         attachments = {
             -- The default folder to place images in via `:ObsidianPasteImg`.
@@ -1126,6 +1129,7 @@ config.obsidian_nvim = function()
             name = "telescope.nvim",
             -- name = "fzf-lua",
         },
+        legacy_commands = false,
 
         -- Optional, customize how note IDs are generated given an optional title.
         note_id_func = function(title)
@@ -1145,13 +1149,13 @@ config.obsidian_nvim = function()
             return tostring(os.time()) .. "-" .. suffix
         end,
     })
-    vim.keymap.set("n", "gf", function()
-        if require("obsidian").util.cursor_on_markdown_link() then
-            return "<cmd>ObsidianFollowLink<CR>"
-        else
-            return "gf"
-        end
-    end, { noremap = false, expr = true })
+    -- vim.keymap.set("n", "gf", function()
+    --     if require("obsidian").util.cursor_on_markdown_link() then
+    --         return "<cmd>Obsidian follow_link<CR>"
+    --     else
+    --         return "gf"
+    --     end
+    -- end, { noremap = false, expr = true })
 end
 config.asciitree_nvim = function()
     local asciitree_status_ok, assiitree_nvim = pcall(require, "asciitree")
