@@ -23,9 +23,28 @@ local modules = {
     {
         "nvim-java/nvim-java",
         ft = { "java" },
-        config = function()
-            -- require("java").setup()
-        end,
+        lazy = true,
+        -- opts = {
+        --     notifications = {
+        --         dap = false,
+        --     },
+        --     -- NOTE: One of these files must be in your project root directory.
+        --     --       Otherwise the debugger will end in the wrong directory and fail.
+        --     root_markers = {
+        --         "settings.gradle",
+        --         "settings.gradle.kts",
+        --         "pom.xml",
+        --         "build.gradle",
+        --         "mvnw",
+        --         "gradlew",
+        --         "build.gradle",
+        --         "build.gradle.kts",
+        --         ".git",
+        --     },
+        -- },
+        -- config = function(_, opts)
+        --     require("java").setup(opts)
+        -- end,
     },
     {
         "mason-org/mason.nvim",

@@ -261,6 +261,10 @@ config.mason_nvim = function()
         },
         log_level = vim.log.levels.INFO,
         max_concurrent_installers = 4,
+        -- registries = {
+        --     "github:nvim-java/mason-registry",
+        --     "github:mason-org/mason-registry",
+        -- },
     }
     mason.setup(settings)
 end
@@ -288,7 +292,7 @@ config.mason_lspconfig = function()
         -- "rust_analyzer",
         "clangd", --"to Debug, Install in your system codelldb"
         "texlab",
-        "ltex",
+        -- "ltex",
         "marksman",
         "tailwindcss",
         "astro",
@@ -310,7 +314,6 @@ config.mason_lspconfig = function()
     })
 end
 config.lsp_saga = function()
-
     local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
     if not lspconfig_status_ok then
         return
