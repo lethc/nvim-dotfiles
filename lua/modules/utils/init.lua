@@ -398,7 +398,7 @@ local modules = {
                 javascript = "cd $dir && node $fileName",
             },
             project = {
-                ["~/Workspace/JavaDev/my-app"] = {
+                ["~/Workspace/JAVA/my-app/"] = {
                     name = "my-app",
                     description = "test",
                     file_name = "src/main/java/com/mycompany/app/App.java",
