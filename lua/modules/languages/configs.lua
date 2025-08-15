@@ -247,7 +247,7 @@ config.mason_nvim = function()
             "pylint",
             "eslint_d",
             "eslint-lsp",
-            "java-test",
+            -- "java-test",
             -- "java-debug-adapter",
             "bash-debug-adapter",
             "google-java-format",
@@ -285,7 +285,6 @@ config.mason_lspconfig = function()
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
-        -- "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
         -- "intelephense",
         "phpactor",
         "gopls",
@@ -297,6 +296,25 @@ config.mason_lspconfig = function()
         "tailwindcss",
         "astro",
         "csharp_ls",
+        -- jdtls = { --"to Debug, activate: java-test, java-debug-adapter"
+        --     settings = {
+        --         java = {
+        --             configuration = {
+        --                 runtimes = {
+        --                     {
+        --                         name = "JavaSE-17",
+        --                         path = "/opt/homebrew/opt/openjdk@17/bin/java",
+        --                         default = true,
+        --                     },
+        --                     {
+        --                         name = "JavaSE-11",
+        --                         path = "/opt/homebrew/opt/openjdk@11/bin/java",
+        --                     },
+        --                 },
+        --             },
+        --         },
+        --     },
+        -- },
     }
 
     local lsp_path = vim.fn.stdpath("config") .. "/after/lsp"
@@ -311,6 +329,26 @@ config.mason_lspconfig = function()
         automatic_enable = {
             exclude = { "lua_ls", "bashls" },
         },
+        jdtls = function()
+            require("java").setup({
+                notifications = {
+                    dap = false,
+                },
+                -- NOTE: One of these files must be in your project root directory.
+                --       Otherwise the debugger will end in the wrong directory and fail.
+                root_markers = {
+                    "settings.gradle",
+                    "settings.gradle.kts",
+                    "pom.xml",
+                    "build.gradle",
+                    "mvnw",
+                    "gradlew",
+                    "build.gradle",
+                    "build.gradle.kts",
+                    ".git",
+                },
+            })
+        end,
     })
 end
 config.lsp_saga = function()
