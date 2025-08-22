@@ -4,17 +4,17 @@ local modules = {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            -- "nvim-treesitter/nvim-treesitter-context",
+            "nvim-treesitter/nvim-treesitter-context",
         },
         event = { "BufReadPost", "BufNewFile" },
         config = languages_config.nvim_treesitter,
     },
-    {
-        "echasnovski/mini.ai",
-        event = "CursorMoved",
-        version = "*",
-        config = languages_config.mini_ai,
-    },
+    -- {
+    --     "echasnovski/mini.ai",
+    --     event = "CursorMoved",
+    --     version = "*",
+    --     config = languages_config.mini_ai,
+    -- },
     {
         "RRethy/vim-illuminate",
         -- event = "VeryLazy",
