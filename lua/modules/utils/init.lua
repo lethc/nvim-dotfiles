@@ -92,28 +92,28 @@ local modules = {
         keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "g" },
         config = edit_config.which_key,
     },
-    {
-        "echasnovski/mini.files",
-        keys = {
-            {
-                "<Leader><leader>e",
-                function()
-                    -- require("mini.files").open()
-                    require("mini.files").open(vim.api.nvim_buf_get_name(0))
-                end,
-                desc = "Mini files Current Directory",
-            },
-            {
-                "<Leader><leader>E",
-                function()
-                    -- require("mini.files").open()
-                    require("mini.files").open()
-                end,
-                desc = "Mini files Project Directory",
-            },
-        },
-        config = edit_config.mini_files,
-    },
+    -- {
+    --     "echasnovski/mini.files",
+    --     keys = {
+    --         {
+    --             "<Leader><leader>e",
+    --             function()
+    --                 -- require("mini.files").open()
+    --                 require("mini.files").open(vim.api.nvim_buf_get_name(0))
+    --             end,
+    --             desc = "Mini files Current Directory",
+    --         },
+    --         {
+    --             "<Leader><leader>E",
+    --             function()
+    --                 -- require("mini.files").open()
+    --                 require("mini.files").open()
+    --             end,
+    --             desc = "Mini files Project Directory",
+    --         },
+    --     },
+    --     config = edit_config.mini_files,
+    -- },
     { "HampusHauffman/block.nvim", cmd = { "Block", "BlockOn" }, config = edit_config.block },
     {
         "roobert/search-replace.nvim",
@@ -486,6 +486,13 @@ local modules = {
         keys = {
             {
                 "<leader>y",
+                function()
+                    require("tfm").open()
+                end,
+                desc = "TFM",
+            },
+            {
+                "<leader><leader>e",
                 function()
                     require("tfm").open()
                 end,
