@@ -348,11 +348,16 @@ local modules = {
         -- lazy = true,
         config = ui_config.nvim_noice,
     },
+    -- {
+    --     "echasnovski/mini.indentscope",
+    --     event = "BufReadPre",
+    --     version = "*",
+    --     config = ui_config.indetscope,
+    -- },
     {
-        "echasnovski/mini.indentscope",
-        event = "BufReadPre",
-        version = "*",
-        config = ui_config.indetscope,
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = ui_config.hlchunk,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
