@@ -17,8 +17,16 @@ local modules = {
             },
             { "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
             { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
-            { "<leader>sb", "<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>", desc = "Telescope buffers" },
-            { "<leader>b" , "<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>", desc = "Telescope buffers"},
+            {
+                "<leader>sb",
+                "<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
+                desc = "Telescope buffers",
+            },
+            {
+                "<leader>b",
+                "<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
+                desc = "Telescope buffers",
+            },
             { "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
             -- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
         },
@@ -151,6 +159,7 @@ local modules = {
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
+        ft = { "typescript", "typescriptreact" },
         config = edit_config.context_commentstring,
     },
     {
@@ -337,7 +346,7 @@ local modules = {
         keys = {
             { "<A-g>", "<cmd><cr>", desc = "Gitui" },
             { "<A-c>", "<cmd><cr>", desc = "ncdu" },
-            { "<A-y>", "<cmd><cr>", desc = "Yazi" },
+            -- { "<A-y>", "<cmd><cr>", desc = "Yazi" },
             -- { "<A-d>",           "<cmd>FTermToggle<cr>", desc = "FTerm" },
             -- { "<leader>tf",      "<cmd>FTermToggle<cr>", desc = "Toggle Terminal" },
             { "<leader><Enter>", "<cmd>FTermEnter<cr>", desc = "Execute in Terminal" },
@@ -456,73 +465,47 @@ local modules = {
     --     config = edit_config.global_note,
     -- },
     {
-        "rolv-apneseth/tfm.nvim",
-        opts = {
-            -- TFM to use
-            -- Possible choices: "ranger" | "nnn" | "lf" | "vifm" | "yazi" (default)
-            file_manager = "yazi",
-            -- Replace netrw entirely
-            -- Default: false
-            replace_netrw = false,
-            -- Enable creation of commands
-            -- Default: false
-            -- Commands:
-            --   Tfm: selected file(s) will be opened in the current window
-            --   TfmSplit: selected file(s) will be opened in a horizontal split
-            --   TfmVsplit: selected file(s) will be opened in a vertical split
-            --   TfmTabedit: selected file(s) will be opened in a new tab page
-            enable_cmds = true,
-            -- Custom keybindings only applied within the TFM buffer
-            -- Default: {}
-            -- Customise UI. The below options are the default
-            ui = {
-                border = "rounded",
-                height = 1,
-                width = 1,
-                x = 0.5,
-                y = 0.5,
-            },
+        "mikavilpas/yazi.nvim",
+        version = "*", -- use the latest stable version
+        event = "VeryLazy",
+        dependencies = {
+            { "nvim-lua/plenary.nvim", lazy = true },
         },
         keys = {
-            {
-                "<leader>y",
-                function()
-                    require("tfm").open()
-                end,
-                desc = "TFM",
-            },
+            -- 👇 in this section, choose your own keymappings!
             {
                 "<leader><leader>e",
-                function()
-                    require("tfm").open()
-                end,
-                desc = "TFM",
+                mode = { "n", "v" },
+                "<cmd>Yazi<cr>",
+                desc = "Open yazi at the current file",
             },
             {
-                "<leader>ys",
-                function()
-                    local tfm = require("tfm")
-                    tfm.open(nil, tfm.OPEN_MODE.split)
-                end,
-                desc = "TFM - horizonal split",
+                -- Open in the current working directory
+                "<leader><leader>E",
+                "<cmd>Yazi cwd<cr>",
+                desc = "Open the file manager in nvim's working directory",
             },
             {
-                "<leader>yv",
-                function()
-                    local tfm = require("tfm")
-                    tfm.open(nil, tfm.OPEN_MODE.vsplit)
-                end,
-                desc = "TFM - vertical split",
-            },
-            {
-                "<leader>yt",
-                function()
-                    local tfm = require("tfm")
-                    tfm.open(nil, tfm.OPEN_MODE.tabedit)
-                end,
-                desc = "TFM - new tab",
+                "<leader>-",
+                "<cmd>Yazi toggle<cr>",
+                desc = "Resume the last yazi session",
             },
         },
+        ---@type YaziConfig | {}
+        opts = {
+            -- if you want to open yazi instead of netrw, see below for more info
+            open_for_directories = false,
+            keymaps = {
+                show_help = "<f1>",
+            },
+        },
+        -- 👇 if you use `open_for_directories=true`, this is recommended
+        init = function()
+            -- mark netrw as loaded so it's not loaded at all.
+            --
+            -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+            vim.g.loaded_netrwPlugin = 1
+        end,
     },
     {
         "bloznelis/before.nvim",
