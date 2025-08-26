@@ -1,13 +1,37 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
     {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+        config = function()
+            require("onedarkpro").setup({
+                styles = {
+                    types = "NONE",
+                    methods = "NONE",
+                    numbers = "NONE",
+                    strings = "NONE",
+                    comments = "italic",
+                    keywords = "bold,italic",
+                    constants = "NONE",
+                    functions = "italic",
+                    operators = "NONE",
+                    variables = "NONE",
+                    parameters = "NONE",
+                    conditionals = "italic",
+                    virtual_text = "NONE",
+                },
+            })
+        end,
+    },
+    {
         "nyoom-engineering/oxocarbon.nvim",
         priority = 1000,
-        -- config = function()
-        --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-        --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        --     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-        -- end,
+        config = function()
+            vim.opt.background = "dark" -- set this to dark or light
+            -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        end,
     },
     {
         "zenbones-theme/zenbones.nvim",
@@ -348,11 +372,16 @@ local modules = {
         -- lazy = true,
         config = ui_config.nvim_noice,
     },
+    -- {
+    --     "echasnovski/mini.indentscope",
+    --     event = "BufReadPre",
+    --     version = "*",
+    --     config = ui_config.indetscope,
+    -- },
     {
-        "echasnovski/mini.indentscope",
-        event = "BufReadPre",
-        version = "*",
-        config = ui_config.indetscope,
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = ui_config.hlchunk,
     },
     {
         "lukas-reineke/indent-blankline.nvim",

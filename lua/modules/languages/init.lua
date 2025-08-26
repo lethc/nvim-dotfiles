@@ -9,42 +9,21 @@ local modules = {
         event = { "BufReadPost", "BufNewFile" },
         config = languages_config.nvim_treesitter,
     },
-    {
-        "echasnovski/mini.ai",
-        event = "CursorMoved",
-        version = "*",
-        config = languages_config.mini_ai,
-    },
+    -- {
+    --     "echasnovski/mini.ai",
+    --     event = "CursorMoved",
+    --     version = "*",
+    --     config = languages_config.mini_ai,
+    -- },
     {
         "RRethy/vim-illuminate",
         -- event = "VeryLazy",
         lazy = true,
     },
     {
-        "nvim-java/nvim-java",
+        "nvim-java/nvim-java", -- config inside mason_lspconfig
         ft = { "java" },
         lazy = true,
-        -- opts = {
-        --     notifications = {
-        --         dap = false,
-        --     },
-        --     -- NOTE: One of these files must be in your project root directory.
-        --     --       Otherwise the debugger will end in the wrong directory and fail.
-        --     root_markers = {
-        --         "settings.gradle",
-        --         "settings.gradle.kts",
-        --         "pom.xml",
-        --         "build.gradle",
-        --         "mvnw",
-        --         "gradlew",
-        --         "build.gradle",
-        --         "build.gradle.kts",
-        --         ".git",
-        --     },
-        -- },
-        -- config = function(_, opts)
-        --     require("java").setup(opts)
-        -- end,
     },
     {
         "mason-org/mason.nvim",

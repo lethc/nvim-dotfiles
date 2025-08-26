@@ -103,24 +103,33 @@ config.nvim_treesitter = function()
             select = {
                 enable = true,
                 lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-                -- keymaps = {
-                --     -- You can use the capture groups defined in textobjects.scm
-                --     ["aa"] = "@parameter.outer",
-                --     ["ia"] = "@parameter.inner",
-                --     ["ab"] = "@block.outer",
-                --     ["ib"] = "@block.inner",
-                --     ["af"] = "@function.outer",
-                --     ["if"] = "@function.inner",
-                --     ["ac"] = "@class.outer",
-                --     ["ic"] = "@class.inner",
-                --     ["ii"] = "@conditional.inner",
-                --     ["ai"] = "@conditional.outer",
-                --     ["il"] = "@loop.inner",
-                --     ["al"] = "@loop.outer",
-                --     ["at"] = "@comment.outer",
-                --     -- You can also use captures from other query groups like `locals.scm`
-                --     ["as"] = "@scope",
-                -- },
+                keymaps = {
+                    -- You can use the capture groups defined in textobjects.scm
+                    ["af"] = "@function.outer",
+                    ["if"] = "@function.inner",
+                    ["ac"] = "@class.outer",
+                    ["ic"] = "@class.inner",
+                    ["aC"] = "@call.outer",
+                    ["iC"] = "@call.inner",
+                    ["aa"] = "@parameter.outer",
+                    ["ia"] = "@parameter.inner",
+                    ["al"] = "@loop.outer",
+                    ["il"] = "@loop.inner",
+                    ["ai"] = "@conditional.outer",
+                    ["ii"] = "@conditional.inner",
+                    ["at"] = "@comment.outer",
+                    ["it"] = "@comment.inner",
+                    ["ab"] = "@block.outer",
+                    ["ib"] = "@block.inner",
+                    ["as"] = "@statement.outer",
+                    ["is"] = "@scopename.inner",
+                    ["aA"] = "@attribute.outer",
+                    ["iA"] = "@attribute.inner",
+                    ["aF"] = "@frame.outer",
+                    ["iF"] = "@frame.inner",
+                    -- You can also use captures from other query groups like `locals.scm`
+                    -- ["as"] = "@scope",
+                },
             },
             swap = {
                 enable = true,
@@ -247,7 +256,7 @@ config.mason_nvim = function()
             "pylint",
             "eslint_d",
             "eslint-lsp",
-            "java-test",
+            -- "java-test",
             -- "java-debug-adapter",
             "bash-debug-adapter",
             "google-java-format",
@@ -285,7 +294,6 @@ config.mason_lspconfig = function()
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
-        -- "jdtls", --"to Debug, activate: java-test, java-debug-adapter"
         -- "intelephense",
         "phpactor",
         "gopls",
@@ -297,6 +305,25 @@ config.mason_lspconfig = function()
         "tailwindcss",
         "astro",
         "csharp_ls",
+        -- jdtls = { --"to Debug, activate: java-test, java-debug-adapter"
+        --     settings = {
+        --         java = {
+        --             configuration = {
+        --                 runtimes = {
+        --                     {
+        --                         name = "JavaSE-17",
+        --                         path = "/opt/homebrew/opt/openjdk@17/bin/java",
+        --                         default = true,
+        --                     },
+        --                     {
+        --                         name = "JavaSE-11",
+        --                         path = "/opt/homebrew/opt/openjdk@11/bin/java",
+        --                     },
+        --                 },
+        --             },
+        --         },
+        --     },
+        -- },
     }
 
     local lsp_path = vim.fn.stdpath("config") .. "/after/lsp"
@@ -311,6 +338,26 @@ config.mason_lspconfig = function()
         automatic_enable = {
             exclude = { "lua_ls", "bashls" },
         },
+        jdtls = function()
+            require("java").setup({
+                notifications = {
+                    dap = false,
+                },
+                -- NOTE: One of these files must be in your project root directory.
+                --       Otherwise the debugger will end in the wrong directory and fail.
+                root_markers = {
+                    "settings.gradle",
+                    "settings.gradle.kts",
+                    "pom.xml",
+                    "build.gradle",
+                    "mvnw",
+                    "gradlew",
+                    "build.gradle",
+                    "build.gradle.kts",
+                    ".git",
+                },
+            })
+        end,
     })
 end
 config.lsp_saga = function()
