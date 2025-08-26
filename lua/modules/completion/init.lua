@@ -13,7 +13,6 @@ local modules = {
             "iguanacucumber/mag-buffer",
             -- "hrsh7th/cmp-path",
             "https://codeberg.org/FelipeLema/cmp-async-path",
-            "kdheepak/cmp-latex-symbols",
             -- "hrsh7th/cmp-cmdline",
             "iguanacucumber/mag-cmdline",
             "rafamadriz/friendly-snippets",
@@ -27,6 +26,10 @@ local modules = {
             { "/", mode = { "n" } },
         },
         config = completion_config.nvim_cmp,
+    },
+    {
+        "kdheepak/cmp-latex-symbols",
+        ft = "tex",
     },
     {
         "L3MON4D3/LuaSnip",
