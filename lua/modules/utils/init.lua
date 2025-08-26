@@ -467,7 +467,7 @@ local modules = {
     {
         "mikavilpas/yazi.nvim",
         version = "*", -- use the latest stable version
-        event = "VeryLazy",
+        -- event = "VeryLazy",
         dependencies = {
             { "nvim-lua/plenary.nvim", lazy = true },
         },
@@ -724,10 +724,20 @@ local modules = {
     },
     {
         "jackMort/tide.nvim",
-        event = { "InsertEnter" },
+        -- event = { "InsertEnter" },
+        keys = {
+            { ";;", mode = { "n" } },
+        },
         config = function()
             require("tide").setup({
                 -- optional configuration
+                -- Leader key (;): This is the prefix for all Tide.nvim commands. When you press the leader key, it triggers Tide and allows you to run the subsequent commands.
+                --     ; ; → Opens the Tide panel.
+                --     ; a → Adds a new item to the list.
+                --     ; d → Deletes an item from the list.
+                --     ; x → Clears all items.
+                --     ; - → Opens a file in a horizontal split.
+                --     ; | → Opens a file in a vertical split.
             })
         end,
         requires = {
