@@ -4,7 +4,7 @@ local modules = {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "nvim-treesitter/nvim-treesitter-context",
+            -- "nvim-treesitter/nvim-treesitter-context",
         },
         event = { "BufReadPost", "BufNewFile" },
         config = languages_config.nvim_treesitter,
