@@ -1,116 +1,53 @@
 local ui_config = require("modules.ui.configs")
 local modules = {
-    {
-        "olimorris/onedarkpro.nvim",
-        priority = 1000, -- Ensure it loads first
-        config = function()
-            require("onedarkpro").setup({
-                styles = {
-                    types = "NONE",
-                    methods = "NONE",
-                    numbers = "NONE",
-                    strings = "NONE",
-                    comments = "italic",
-                    keywords = "bold,italic",
-                    constants = "NONE",
-                    functions = "italic",
-                    operators = "NONE",
-                    variables = "NONE",
-                    parameters = "NONE",
-                    conditionals = "italic",
-                    virtual_text = "NONE",
-                },
-            })
-        end,
-    },
-    {
-        "nyoom-engineering/oxocarbon.nvim",
-        priority = 1000,
-        config = function()
-            vim.opt.background = "dark" -- set this to dark or light
-            -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-            -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-        end,
-    },
-    {
-        "zenbones-theme/zenbones.nvim",
-        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-        -- In Vim, compat mode is turned on as Lush only works in Neovim.
-        dependencies = "rktjmp/lush.nvim",
-        lazy = false,
-        priority = 1000,
-        -- you can set set configuration options here
-        -- config = function()
-        --     vim.g.zenbones_darken_comments = 45
-        --     vim.cmd.colorscheme('zenbones')
-        -- end
-    },
-    {
-        "ficcdaf/ashen.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "https://gitlab.com/bartekjaszczak/finale-nvim",
-
-        priority = 1000,
-        config = function()
-            -- Activate the theme
-            -- vim.cmd.colorscheme("finale")
-        end,
-    },
-    { "akinsho/horizon.nvim", version = "*" },
-    {
-        "lancewilhelm/horizon-extended.nvim",
-        config = function()
-            require("horizon-extended").setup({
-                style = "neo",
-            })
-        end,
-    },
-    {
-        "comfysage/evergarden",
-        opts = {
-            transparent_background = false,
-            contrast_dark = "medium", -- 'hard'|'medium'|'soft'
-            overrides = {}, -- add custom overrides
-        },
-    },
-    {
-        "preservim/vim-colors-pencil",
-        -- config = function()
-        --   vim.g.tex_conceal = ""
-        --   vim.g['pencil#conceallevel'] = 0
-        --   vim.g['pencil#wrapModeDefault'] = 'soft'
-        -- end,
-    },
-    {
-        "lethc/colorscheme-nvim",
-        config = function()
-            require("tokyonight").setup({
-                transparent = false, -- Enable this to disable setting the background color
-            })
-        end,
-    },
-    -- { "folke/tokyonight.nvim", enabled = true },
     -- {
-    --     "catppuccin/nvim",
-    --     priority = 150,
-    --     name = "catppuccin",
-    --     config = ui_config.catppuccin,
+    --     "zenbones-theme/zenbones.nvim",
+    --     dependencies = "rktjmp/lush.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     -- you can set set configuration options here
+    --     -- config = function()
+    --     --     vim.g.zenbones_darken_comments = 45
+    --     -- end
     -- },
-    { "cryptomilk/nightcity.nvim", version = false, enabled = false },
-    { "lvim-tech/lvim-colorscheme", enabled = false },
-    { "edmondburnett/leeward.nvim", enabled = false },
-    {
-        "rockyzhang24/arctic.nvim",
-        enabled = false,
-        dependencies = { "rktjmp/lush.nvim" },
-    },
-    { "RaphaeleL/my_vivid", enabled = false },
-    { "gantoreno/nvim-gabriel", enabled = false },
+    -- { "akinsho/horizon.nvim", version = "*" },
+    -- {
+    --     "lancewilhelm/horizon-extended.nvim",
+    --     config = function()
+    --         require("horizon-extended").setup({
+    --             style = "neo",
+    --         })
+    --     end,
+    -- },
+    -- {
+    --     "mellow-theme/mellow.nvim",
+    --     config = function()
+    --         vim.g.mellow_italic_comments = true
+    --         vim.g.mellow_italic_functions = false
+    --         vim.g.mellow_bold_functions = false
+    --         vim.g.mellow_transparent = false
+    --         vim.g.mellow_bold_keywords = false
+    --         vim.g.mellow_italic_keywords = false
+    --     end,
+    -- },
+    -- { -- carbonfox
+    --     "EdenEast/nightfox.nvim",
+    --     -- enable = false,
+    -- },
+    -- {
+    --     "presindent/ethereal.nvim",
+    --     -- config = function(_, opts)
+    --     -- end,
+    -- },
+    -- {
+    --     "ficcdaf/ashen.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
+    -- Lua
+    -- { -- Black transparent colorscheme https://github.com/gabsdotco/init.lua.git
+    --     "tjdevries/colorbuddy.nvim",
+    -- },
     {
         "lethc/Canon.nvim",
         priority = 1000,
@@ -136,16 +73,149 @@ local modules = {
         end,
     },
     {
-        "mellow-theme/mellow.nvim",
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
         config = function()
-            vim.g.mellow_italic_comments = true
-            vim.g.mellow_italic_functions = false
-            vim.g.mellow_bold_functions = false
-            vim.g.mellow_transparent = false
-            vim.g.mellow_bold_keywords = false
-            vim.g.mellow_italic_keywords = false
+            require("onedarkpro").setup({
+                styles = {
+                    types = "NONE",
+                    methods = "NONE",
+                    numbers = "NONE",
+                    strings = "NONE",
+                    comments = "italic",
+                    keywords = "bold,italic",
+                    constants = "NONE",
+                    functions = "italic",
+                    operators = "NONE",
+                    variables = "NONE",
+                    parameters = "NONE",
+                    conditionals = "italic",
+                    virtual_text = "NONE",
+                },
+            })
         end,
     },
+    {
+        "rijulpaul/nightblossom.nvim",
+        name = "nightblossom",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "kamil-koziol/imperial.nvim",
+        -- config = function()
+        --     vim.cmd.colorscheme("imperial")
+        -- end,
+    },
+    {
+        "bjarneo/nes.nvim",
+        -- config = function()
+        --     vim.cmd([[colorscheme ash]])
+        -- end,
+    },
+    {
+        "nekomangini/bloodmoon.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "antonyz89/electron-vue.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+    },
+    { "AmberLehmann/candyland.nvim", priority = 1000 },
+    {
+        "forest-nvim/sequoia.nvim",
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     vim.cmd("colorscheme sequoia") -- or 'sequoia-night' / 'sequoia-rise'
+        -- end,
+    },
+    {
+        "2giosangmitom/nightfall.nvim",
+        lazy = false,
+        priority = 1000,
+        -- opts = {}, -- Add custom configuration here
+        -- config = function(_, opts)
+        --     require("nightfall").setup(opts)
+        --     vim.cmd("colorscheme nightfall") -- Choose from: nightfall, deeper-night, maron, nord
+        -- end,
+    },
+    {
+        -- "shoenot/witchesbrew.nvim",
+        "lethc/witchesbrew.nvim",
+        priority = 1000,
+    },
+    {
+        "oneslash/helix-nvim",
+        version = "*",
+    },
+    {
+        "OneiroiTheme/oneiroi.nvim",
+    },
+    {
+        -- "cranberry-clockworks/coal.nvim",
+        "lethc/coal.nvim",
+        priority = 1000,
+        config = function()
+            require("coal").setup({
+                -- colors = {
+                --     dark_charcoal = "#FFFFFF",
+                --     smoky_black = "#0C0C0C",
+                --     eerie_black = "#1A1A1A",
+                --     raisin_black = "#262626",
+                --     gray = "#7E7E7E",
+                --     quick_silver = "#A5A5A5",
+                --     chinese_silver = "#CCCCCC",
+                --     anti_flash_white = "#F2F2F2",
+                --     white = "#FFFFFF",
+                -- },
+            })
+        end,
+    },
+    {
+        "bettervim/yugen.nvim",
+        -- config = function()
+        --     vim.cmd.colorscheme("yugen")
+        -- end,
+    },
+    {
+        "olivercederborg/poimandres.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("poimandres").setup({
+                -- leave this setup function empty for default config
+                -- or refer to the configuration section
+                -- for configuration options
+            })
+        end,
+
+        -- optionally set the colorscheme within lazy config
+        init = function()
+            -- vim.cmd("colorscheme poimandres")
+        end,
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        priority = 1000,
+        config = function()
+            vim.opt.background = "dark" -- set this to dark or light
+            -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        end,
+    },
+    { "cryptomilk/nightcity.nvim", version = false, enabled = false },
+    { "lvim-tech/lvim-colorscheme", enabled = false },
+    { "edmondburnett/leeward.nvim", enabled = false },
+    {
+        "rockyzhang24/arctic.nvim",
+        enabled = false,
+        dependencies = { "rktjmp/lush.nvim" },
+    },
+    { "RaphaeleL/my_vivid", enabled = false },
+    { "gantoreno/nvim-gabriel", enabled = false },
     {
         "jadnw/aesthetic.nvim",
         enabled = false,
@@ -287,10 +357,6 @@ local modules = {
                 },
             })
         end,
-    },
-    {
-        "EdenEast/nightfox.nvim",
-        -- enable = false,
     },
     {
         "aktersnurra/no-clown-fiesta.nvim",
