@@ -444,7 +444,7 @@ config.lualine = function()
     end
     local spaces = {
         function()
-            return " "
+            return ""
         end,
         padding = -1,
     }
@@ -452,15 +452,14 @@ config.lualine = function()
     local branch = {
         "branch",
         icon = "",
-        padding = { left = 0.1, right = 1 },
-        separator = { left = "", right = "" },
+        padding = { left = 1, right = 0.1 },
+        -- separator = { left = """, right = "" },
     }
     local diff = {
         "diff",
         colored = true,
         symbols = icons.git_status,
         -- separator = { left = "", right = "" },
-        separator = { left = "", right = "" },
     }
     local diagnostics = {
         "diagnostics",
@@ -469,6 +468,13 @@ config.lualine = function()
         symbols = icons.diagnostics,
         colored = true,
         always_visible = false,
+    }
+    local separator2 = {
+        function()
+            return ""
+        end,
+        padding = { left = 0, right = 0 },
+        separator = { left = "", right = "" },
     }
     local custom_icons = {
         function()
@@ -598,15 +604,35 @@ config.lualine = function()
             lualine_b = {},
             lualine_c = {
                 spaces,
-                branch,
                 -- { "filetype", icon_only = true, separator = "",                                               padding = {
                 --   left = 1, right = 0 } },
                 -- { "filename", path = 1,         symbols = { modified = "  ", readonly = "", unnamed = "" } },
-                diff,
-                diagnostics,
                 -- { "require('lsp-progress').progress()" },
                 -- num,
                 -- { require("NeoComposer.ui").status_recording },
+                separator2,
+                {
+                    function()
+                        return "Tabs:"
+                    end,
+                },
+                {
+                    "tabs",
+                    mode = 0,
+                    show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
+                    tabs_color = {
+                        -- active = "lualine_a_normal",
+                        -- inactive = "lualine_b_normal",
+                        active = {
+                            fg = "#BF616A",
+                            bg = "#11080D",
+                        },
+                        inactive = "",
+                    },
+                    -- separator = { left = "", right = "" },
+                    separator = { left = "", right = "" },
+                    symbols = { modified = "+", removed = "-" }, -- Changes the symbols used by the diff.
+                },
                 {
                     "macro_recording",
                     "%S",
@@ -645,28 +671,10 @@ config.lualine = function()
             },
             lualine_y = {},
             lualine_z = {
-                {
-                    "tabs",
-                    mode = 0,
-                    show_modified_status = true, -- Shows a symbol next to the tab name if the file has been modified.
-                    tabs_color = {
-                        -- active = "lualine_a_normal",
-                        -- inactive = "lualine_b_normal",
-                        active = {
-                            fg = "#61afef",
-                            bg = "",
-                        },
-                        inactive = "",
-                    },
-                    -- separator = { left = "", right = "" },
-                    separator = { left = " ", right = "" },
-                    symbols = { modified = " +", removed = " -" }, -- Changes the symbols used by the diff.
-                },
-                {
-                    function()
-                        return "󰓩"
-                    end,
-                },
+                diff,
+                diagnostics,
+                separator2,
+                branch,
                 location,
                 {
                     function()
