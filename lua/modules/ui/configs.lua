@@ -625,11 +625,13 @@ config.lualine = function()
                         -- inactive = "lualine_b_normal",
                         active = {
                             fg = "#BF616A",
-                            bg = "#11080D",
+                            -- bg = "#11080D",
                         },
                         inactive = "",
                     },
                     -- separator = { left = "", right = "" },
+                    padding = -1,
+                    padding = { left = -1, right = 1 },
                     separator = { left = "", right = "" },
                     symbols = { modified = "+", removed = "-" }, -- Changes the symbols used by the diff.
                 },
