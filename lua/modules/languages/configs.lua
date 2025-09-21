@@ -338,26 +338,26 @@ config.mason_lspconfig = function()
         automatic_enable = {
             exclude = { "lua_ls", "bashls" },
         },
-        jdtls = function()
-            require("java").setup({
-                notifications = {
-                    dap = false,
-                },
-                -- NOTE: One of these files must be in your project root directory.
-                --       Otherwise the debugger will end in the wrong directory and fail.
-                root_markers = {
-                    "settings.gradle",
-                    "settings.gradle.kts",
-                    "pom.xml",
-                    "build.gradle",
-                    "mvnw",
-                    "gradlew",
-                    "build.gradle",
-                    "build.gradle.kts",
-                    ".git",
-                },
-            })
-        end,
+        -- jdtls = function()
+        --     require("java").setup({
+        --         notifications = {
+        --             dap = false,
+        --         },
+        --         -- NOTE: One of these files must be in your project root directory.
+        --         --       Otherwise the debugger will end in the wrong directory and fail.
+        --         root_markers = {
+        --             "settings.gradle",
+        --             "settings.gradle.kts",
+        --             "pom.xml",
+        --             "build.gradle",
+        --             "mvnw",
+        --             "gradlew",
+        --             "build.gradle",
+        --             "build.gradle.kts",
+        --             ".git",
+        --         },
+        --     })
+        -- end,
     })
 end
 config.lsp_saga = function()
@@ -367,6 +367,24 @@ config.lsp_saga = function()
     end
     lspconfig.qmlls.setup({
         cmd = { "qmlls6" },
+    })
+    lspconfig.jdtls.setup({
+        -- notifications = {
+        --     dap = true,
+        -- },
+        -- NOTE: One of these files must be in your project root directory.
+        --       Otherwise the debugger will end in the wrong directory and fail.
+        root_markers = {
+            "settings.gradle",
+            "settings.gradle.kts",
+            "pom.xml",
+            "build.gradle",
+            "mvnw",
+            "gradlew",
+            "build.gradle",
+            "build.gradle.kts",
+            ".git",
+        },
     })
 
     local signs = {

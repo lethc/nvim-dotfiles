@@ -21,11 +21,6 @@ local modules = {
         lazy = true,
     },
     {
-        "nvim-java/nvim-java", -- config inside mason_lspconfig
-        ft = { "java" },
-        lazy = true,
-    },
-    {
         "mason-org/mason.nvim",
         -- version = "1.11.0",
         dependencies = {
@@ -48,6 +43,18 @@ local modules = {
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
+            {
+                "nvim-java/nvim-java", -- config inside mason_lspconfig
+                ft = { "java" },
+                -- lazy = true,
+                config = function()
+                    require("java").setup({
+                        -- jdtls = { -- Uncomment this if JDTL doesn't install by itself
+                        --     version = "1.44.0",
+                        -- },
+                    })
+                end,
+            },
             {
                 "glepnir/lspsaga.nvim",
                 -- event = "LspAttach",
@@ -268,9 +275,6 @@ local modules = {
     {
         "adibhanna/laravel.nvim",
         ft = { "php", "blade" },
-        dependencies = {
-            "folke/snacks.nvim", -- Optional: for enhanced UI
-        },
         config = function()
             require("laravel").setup({
                 notifications = false,
