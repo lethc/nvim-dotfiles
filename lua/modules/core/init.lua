@@ -32,7 +32,6 @@ local modules = {
     { "peterhoeg/vim-qml", ft = "qml" },
     { "fei6409/log-highlight.nvim", ft = "log" },
     { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
-    { "neovim/nvim-lspconfig", lazy = true },
     -- { "hrsh7th/cmp-nvim-lsp",                       lazy = true, enabled = false },
     -- { "saadparwaiz1/cmp_luasnip",                   lazy = true, enabled = false },
     -- { "hrsh7th/cmp-path",                           lazy = true, enabled = false },
