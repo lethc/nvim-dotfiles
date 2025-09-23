@@ -89,7 +89,7 @@ local modules = {
     },
     {
         "supermaven-inc/supermaven-nvim",
-        event = "BufReadPost",
+        cmd = { "SupermavenStart", "SupermavenToggle" },
         config = function()
             require("supermaven-nvim").setup({
                 keymaps = {
