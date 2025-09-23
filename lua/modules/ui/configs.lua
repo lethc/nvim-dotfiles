@@ -450,9 +450,10 @@ config.lualine = function()
     }
     --LSP
     local branch = {
-        "branch",
         icon = "",
-        padding = { left = 1, right = 0.1 },
+        "branch",
+
+        padding = { left = 0.1, right = 1 },
         -- separator = { left = """, right = "" },
     }
     local diff = {
@@ -492,13 +493,15 @@ config.lualine = function()
         "location",
         separator = { left = "", right = "" },
         -- color = { bg = "#171717", fg = "#E1E1E1" },
-        padding = 0.8,
+        -- padding = 0.8,
+        padding = { left = 1, right = 0.5 },
     }
     local progress = {
         "progress",
         -- separator = { left = "", right = "" },
         -- color = { bg = "#171717", fg = "#E1E1E1" },
-        padding = 0.8,
+        -- padding = 0.8,
+        padding = { left = 1, right = 0.5 },
     }
     local function getWords()
         if vim.bo.filetype == "tex" or vim.bo.filetype == "txt" or vim.bo.filetype == "markdown" then
@@ -677,16 +680,16 @@ config.lualine = function()
                 diagnostics,
                 separator2,
                 branch,
-                location,
                 {
                     function()
-                        return "  "
+                        return ""
                     end,
                     -- separator = { left = "", right = "" },
                     -- color = { bg = "#171717", fg = "#E1E1E1" },
                     padding = 0.1,
                 },
                 progress,
+                location,
                 {
                     function()
                         -- return "%P%L"
