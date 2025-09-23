@@ -318,7 +318,7 @@ local modules = {
         build = "npm install --prefix server",
         config = function()
             vim.cmd([[
-        let g:bracey_browser_command='zen-browser --new-window'
+        let g:bracey_browser_command='firefox --new-window'
       ]])
         end,
     },

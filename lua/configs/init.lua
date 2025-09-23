@@ -161,7 +161,7 @@ vim.api.nvim_set_keymap("n", "<Leader>ct", ":CutLineToTodoList<CR>", { noremap =
 -- Value required for cmp selection colours
 -- vim.cmd([[ hi! CursorLineBG guibg=#373737 guifg=#cac9dd ]])
 vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
--- vim.cmd([[ hi! CursorLineBG guibg=#B04241 guifg=#1e222a ]])
+vim.cmd([[ hi! CursorLineBG guibg=#AD677C guifg=#1e222a ]])
 -- vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
 vim.g.markdown_recommended_style = 0 -- Stop 4 space indentation in markdown
 
