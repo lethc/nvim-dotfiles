@@ -613,7 +613,7 @@ config.lualine = function()
                 separator2,
                 {
                     function()
-                        return "Tabs:"
+                        return "ℕ →"
                     end,
                 },
                 {
@@ -630,7 +630,7 @@ config.lualine = function()
                         inactive = "",
                     },
                     -- separator = { left = "", right = "" },
-                    padding = -1,
+                    -- padding = -1,
                     padding = { left = -1, right = 1 },
                     separator = { left = "", right = "" },
                     symbols = { modified = "+", removed = "-" }, -- Changes the symbols used by the diff.
