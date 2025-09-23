@@ -62,7 +62,6 @@ config.nvim_cmp = function()
         Event = "",
         Operator = "",
         TypeParameter = "",
-        Codeium = "",
         Supermaven = "",
     }
     -- CONFIGURATION: cmp without rounded borders
@@ -120,7 +119,6 @@ config.nvim_cmp = function()
     --                 crates = "[Version]",
     --                 latex_symbols = "[LaTex]",
     --                 nerdfont = "[NerdFont]",
-    --                 codeium = "[AI]",
     --                 fonts = "[Local Fonts]",
     --                 ["vim-dadbod-completion"] = "[DB]",
     --             })[entry.source.name]
@@ -136,7 +134,6 @@ config.nvim_cmp = function()
     --         { name = "latex_symbols" },
     --         { name = "vim-dadbod-completion" },
     --         { name = "nerdfont" },
-    --         { name = "codeium" },
     --         -- { name = "fonts" }
     --     },
     -- })
@@ -214,7 +211,6 @@ config.nvim_cmp = function()
             { name = "latex_symbols" },
             { name = "vim-dadbod-completion" },
             { name = "nerdfont" },
-            { name = "codeium" },
             { name = "supermaven" },
             -- { name = "fonts" }
         },

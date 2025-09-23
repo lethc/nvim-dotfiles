@@ -370,7 +370,8 @@ return {
     { "<leader>wCg", "<cmd>Colortils greyscale<CR>", desc = "Colour to greyscale" },
     { "<leader>wCi", "<cmd>Colortils lighten<CR>", desc = "Lighten Colour" },
     { "<leader>wCl", "<cmd>Colortils css list<CR>", desc = "List css colors" },
-    -- { "<leader>wI", "<cmd>CodeiumDisable<CR>", desc = "No Codeium" },
+    { "<leader>wI", "<cmd>SupermavenStop<CR>", desc = "No Codeium" },
+    { "<leader>wi", "<cmd>SupermavenStart<CR>", desc = "supermaven" },
     { "<leader>wT", "<cmd>TransparentDisable<CR>", desc = "No Transparency" },
     { "<leader>wa", "<cmd>lua require('asciitree').setup()<CR>", desc = "AsciiTree" },
     { "<leader>wb", "<cmd>Block<CR>", desc = "Toggle Block" },
@@ -381,7 +382,6 @@ return {
     { "<leader>wg", '<cmd>set guicursor "n-v-c-sm:block,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait300-blinkon200-blinkoff150"<CR>', desc = "Set guicursor" },
 
     { "<leader>wh", "<cmd>UndotreeToggle<CR>", desc = "Current File History" },
-    -- { "<leader>wi", "<cmd>CodeiumEnable<CR>", desc = "Codeium" },
     { "<leader>wm", "<cmd>MinimapToggle<CR>", desc = "MinMap" },
     { "<leader>wl", group = "Calendar" },
     { "<leader>wlc", "<cmd>Calendar<CR>", desc = "Open Calendar" },

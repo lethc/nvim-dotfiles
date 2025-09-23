@@ -1,20 +1,15 @@
 local completion_config = require("modules.completion.configs")
 local modules = {
     {
-        -- "hrsh7th/nvim-cmp",
-        "iguanacucumber/magazine.nvim", -- nvim-cmp fork with Performance Improvements
-        -- name = "nvim-cmp", -- Otherwise highlighting gets messed up (Fo some reason it installs nvim-cmp and disables magazine.)
+        "hrsh7th/nvim-cmp",
         dependencies = {
-            -- "hrsh7th/cmp-nvim-lsp",
-            "iguanacucumber/mag-nvim-lsp",
-            "iguanacucumber/mag-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
             "saadparwaiz1/cmp_luasnip",
-            -- "hrsh7th/cmp-buffer",
-            "iguanacucumber/mag-buffer",
+            "hrsh7th/cmp-buffer",
             -- "hrsh7th/cmp-path",
             "https://codeberg.org/FelipeLema/cmp-async-path",
-            -- "hrsh7th/cmp-cmdline",
-            "iguanacucumber/mag-cmdline",
+            "hrsh7th/cmp-cmdline",
             "rafamadriz/friendly-snippets",
             "chrisgrieser/cmp-nerdfont",
             "amarakon/nvim-cmp-fonts",
@@ -63,7 +58,7 @@ local modules = {
     --     ft = "markdown",
     --     config = completion_config.mkdnflow_nvim,
     -- },
-    { "bullets-vim/bullets.vim", ft = "markdown" },
+    -- { "bullets-vim/bullets.vim", ft = "markdown" },
     -- {
     --     "lethc/clipboard-image.nvim", --forked from  "ekickx/clipboard-image.nvim",
     --     keys = { "<leader>wp", "<cmd>lua require('clipboard-image').setup()<CR>" },
@@ -92,41 +87,9 @@ local modules = {
         cmd = "UndotreeToggle",
         config = function() end,
     },
-    -- {
-    --     "Exafunction/codeium.nvim",
-    --     -- event = { "InsertEnter" },
-    --     keys = {
-    --         {
-    --             "<Leader>cc",
-    --             function()
-    --                 require("codeium").setup({})
-    --             end,
-    --             desc = "Codeium nvim",
-    --         },
-    --     },
-    -- },
-    -- {
-    --     "Exafunction/codeium.vim",
-    --     -- event = 'BufEnter',
-    --     cmd = "CodeiumEnable",
-    --     config = function()
-    --         vim.keymap.set("i", "<A-g>", function()
-    --             return vim.fn["codeium#Accept"]()
-    --         end, { expr = true, silent = true })
-    --         vim.keymap.set("i", "<c-,>", function()
-    --             return vim.fn["codeium#CycleCompletions"](1)
-    --         end, { expr = true, silent = true })
-    --         vim.keymap.set("i", "<c-.>", function()
-    --             return vim.fn["codeium#CycleCompletions"](-1)
-    --         end, { expr = true, silent = true })
-    --         vim.keymap.set("i", "<c-x>", function()
-    --             return vim.fn["codeium#Clear"]()
-    --         end, { expr = true, silent = true })
-    --     end,
-    -- },
     {
         "supermaven-inc/supermaven-nvim",
-        event = "BufReadPost",
+        cmd = { "SupermavenStart", "SupermavenToggle" },
         config = function()
             require("supermaven-nvim").setup({
                 keymaps = {
