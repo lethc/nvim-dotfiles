@@ -157,21 +157,21 @@ local modules = {
         -- "cranberry-clockworks/coal.nvim",
         "lethc/coal.nvim",
         priority = 1000,
-        config = function()
-            require("coal").setup({
-                -- colors = {
-                --     dark_charcoal = "#FFFFFF",
-                --     smoky_black = "#0C0C0C",
-                --     eerie_black = "#1A1A1A",
-                --     raisin_black = "#262626",
-                --     gray = "#7E7E7E",
-                --     quick_silver = "#A5A5A5",
-                --     chinese_silver = "#CCCCCC",
-                --     anti_flash_white = "#F2F2F2",
-                --     white = "#FFFFFF",
-                -- },
-            })
-        end,
+        -- config = function()
+        --     require("coal").setup({
+        --         -- colors = {
+        --         --     dark_charcoal = "#FFFFFF",
+        --         --     smoky_black = "#0C0C0C",
+        --         --     eerie_black = "#1A1A1A",
+        --         --     raisin_black = "#262626",
+        --         --     gray = "#7E7E7E",
+        --         --     quick_silver = "#A5A5A5",
+        --         --     chinese_silver = "#CCCCCC",
+        --         --     anti_flash_white = "#F2F2F2",
+        --         --     white = "#FFFFFF",
+        --         -- },
+        --     })
+        -- end,
     },
     {
         "bettervim/yugen.nvim",
