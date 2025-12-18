@@ -43,18 +43,18 @@ local modules = {
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
-            -- {
-            --     "nvim-java/nvim-java", -- config inside mason_lspconfig
-            --     ft = { "java" },
-            --     -- lazy = true,
-            --     config = function()
-            --         require("java").setup({
-            --             -- jdtls = { -- Uncomment this if JDTL doesn't install by itself
-            --             --     version = "1.44.0",
-            --             -- },
-            --         })
-            --     end,
-            -- },
+            {
+                "nvim-java/nvim-java", -- config inside mason_lspconfig
+                ft = { "java" },
+                -- lazy = true,
+                config = function()
+                    require("java").setup({
+                        -- jdtls = { -- Uncomment this if JDTL doesn't install by itself
+                        --     version = "1.44.0",
+                        -- },
+                    })
+                end,
+            },
             {
                 "glepnir/lspsaga.nvim",
                 -- event = "LspAttach",
