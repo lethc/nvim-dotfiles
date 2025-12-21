@@ -2,11 +2,14 @@ local languages_config = require("modules.languages.configs")
 local modules = {
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            -- "nvim-treesitter/nvim-treesitter-context",
+            branch = "main",
+            config = languages_config.nvim_treesitter_textobjects,
         },
-        event = { "BufReadPost", "BufNewFile" },
+        -- event = { "BufReadPost", "BufNewFile" },
         config = languages_config.nvim_treesitter,
     },
     -- {
