@@ -2,11 +2,14 @@ local languages_config = require("modules.languages.configs")
 local modules = {
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            -- "nvim-treesitter/nvim-treesitter-context",
+            branch = "main",
+            config = languages_config.nvim_treesitter_textobjects,
         },
-        event = { "BufReadPost", "BufNewFile" },
+        -- event = { "BufReadPost", "BufNewFile" },
         config = languages_config.nvim_treesitter,
     },
     -- {
@@ -43,18 +46,18 @@ local modules = {
         -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
         event = { "BufRead" },
         dependencies = {
-            -- {
-            --     "nvim-java/nvim-java", -- config inside mason_lspconfig
-            --     ft = { "java" },
-            --     -- lazy = true,
-            --     config = function()
-            --         require("java").setup({
-            --             -- jdtls = { -- Uncomment this if JDTL doesn't install by itself
-            --             --     version = "1.44.0",
-            --             -- },
-            --         })
-            --     end,
-            -- },
+            {
+                "nvim-java/nvim-java", -- config inside mason_lspconfig
+                ft = { "java" },
+                -- lazy = true,
+                config = function()
+                    require("java").setup({
+                        -- jdtls = { -- Uncomment this if JDTL doesn't install by itself
+                        --     version = "1.44.0",
+                        -- },
+                    })
+                end,
+            },
             {
                 "glepnir/lspsaga.nvim",
                 -- event = "LspAttach",

@@ -30,6 +30,7 @@ local modules = {
     -- { "theRealCarneiro/hyprland-vim-syntax",        ft = "hypr" },
     { "elkowar/yuck.vim", ft = "yuck" },
     { "peterhoeg/vim-qml", ft = "qml" },
+    { "artoj/qmake-syntax-vim", ft = { "qmake" } },
     { "fei6409/log-highlight.nvim", ft = "log" },
     { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
     -- { "hrsh7th/cmp-nvim-lsp",                       lazy = true, enabled = false },
@@ -142,13 +143,13 @@ local modules = {
                     },
                     sections = {
                         { section = "header" },
-                        {
-                            pane = 2,
-                            section = "terminal",
-                            cmd = "colorscript -e square", -- Install shell-color-scripts-git
-                            height = 5,
-                            padding = 1,
-                        },
+                        -- {
+                        --     pane = 2,
+                        --     section = "terminal",
+                        --     cmd = "colorscript -e square", -- Install shell-color-scripts-git
+                        --     height = 5,
+                        --     padding = 1,
+                        -- },
                         { section = "keys", gap = 1, padding = 1 },
                         {
                             pane = 2,
@@ -159,18 +160,18 @@ local modules = {
                             padding = 1,
                         },
                         { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-                        {
-                            pane = 2,
-                            icon = " ",
-                            title = "Git Status",
-                            section = "terminal",
-                            enabled = Snacks.git.get_root() ~= nil,
-                            cmd = "hub status --short --branch --renames", -- Install hub
-                            height = 5,
-                            padding = 1,
-                            ttl = 5 * 60,
-                            indent = 3,
-                        },
+                        -- {
+                        --     pane = 2,
+                        --     icon = " ",
+                        --     title = "Git Status",
+                        --     section = "terminal",
+                        --     enabled = Snacks.git.get_root() ~= nil,
+                        --     cmd = "hub status --short --branch --renames", -- Install hub
+                        --     height = 5,
+                        --     padding = 1,
+                        --     ttl = 5 * 60,
+                        --     indent = 3,
+                        -- },
                         { section = "startup" },
                     },
                 },

@@ -2,12 +2,10 @@ local icons = require("configs.ui.icons")
 local config = {}
 
 config.nvim_treesitter = function()
-    local nvim_treesitter_configs_status_ok, nvim_treesitter_configs = pcall(require, "nvim-treesitter.configs")
+    local nvim_treesitter_configs_status_ok, nvim_treesitter_configs = pcall(require, "nvim-treesitter")
     if not nvim_treesitter_configs_status_ok then
         return
     end
-
-    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
     -- syntax for mdx files (astro)
     -- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
@@ -99,6 +97,26 @@ config.nvim_treesitter = function()
                 node_decremental = "grm",
             },
         },
+    })
+
+    vim.filetype.add({
+        pattern = {
+            [".*/hypr/.*%.conf"] = "hyprlang",
+            -- [".*%.blade%.php"] = "phtml",
+        },
+    })
+    -- vim.filetype.add {
+    --   pattern = { [".*.conf"] = "hyprlang" },
+    -- }
+end
+
+config.nvim_treesitter_textobjects = function()
+    local nvim_treesitter_textobjects_configs_status_ok, nvim_treesitter_textobjects =
+        pcall(require, "nvim-treesitter-textobjects")
+    if not nvim_treesitter_textobjects_configs_status_ok then
+        return
+    end
+    nvim_treesitter_textobjects.setup({
         textobjects = {
             select = {
                 enable = true,
@@ -170,26 +188,8 @@ config.nvim_treesitter = function()
             },
         },
     })
-
-    -- parser_config.blade = {
-    --     install_info = {
-    --         url = "https://github.com/EmranMR/tree-sitter-blade",
-    --         files = { "src/parser.c" },
-    --         branch = "main",
-    --     },
-    --     filetype = "blade",
-    -- }
-    --
-    vim.filetype.add({
-        pattern = {
-            [".*/hypr/.*%.conf"] = "hyprlang",
-            -- [".*%.blade%.php"] = "phtml",
-        },
-    })
-    -- vim.filetype.add {
-    --   pattern = { [".*.conf"] = "hyprlang" },
-    -- }
 end
+
 config.mini_ai = function()
     local mini_ai_ok, mini_ai = pcall(require, "mini.ai")
     if not mini_ai_ok then
