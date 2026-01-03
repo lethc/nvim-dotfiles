@@ -403,6 +403,14 @@ config.themery = function()
         -- themeConfigFile = "~/.config/nvim/lua/configs/ui/colorscheme.lua", -- Described below
         livePreview = true, -- Apply theme while browsing. Default to true.
     })
+    vim.keymap.set("n", "<leader>th", function()
+        local currentTheme = themery.getCurrentTheme()
+        if currentTheme and currentTheme.name == "canon-onedark" then
+            themery.setThemeByName("canon-onelight", true)
+        else
+            themery.setThemeByName("canon-onedark", true)
+        end
+    end, { noremap = true })
 end
 config.lualine = function()
     local M = {}
