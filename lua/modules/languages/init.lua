@@ -286,15 +286,15 @@ local modules = {
             })
         end,
     },
-    {
-        "adibhanna/phprefactoring.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        ft = "php",
-        config = function()
-            require("phprefactoring").setup()
-        end,
-    },
+    -- { -- Show some errors (¿?)
+    --     "adibhanna/phprefactoring.nvim",
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim",
+    --     },
+    --     ft = "php",
+    --     config = function()
+    --         require("phprefactoring").setup()
+    --     end,
+    -- },
 }
 return modules
