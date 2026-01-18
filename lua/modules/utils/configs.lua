@@ -1061,7 +1061,9 @@ config.obsidian_nvim = function()
             folder = "Daily_notes/",
         },
         -- mappings = {},
-        disable_frontmatter = false,
+        frontmatter = {
+            enabled = true,
+        },
         templates = {
             subdir = "Templates",
             date_format = "%Y-%m-%d-%a",
@@ -1115,16 +1117,16 @@ config.obsidian_nvim = function()
             -- The default folder to place images in via `:ObsidianPasteImg`.
             -- If this is a relative path it will be interpreted as relative to the vault root.
             -- You can always override this per image by passing a full path to the command instead of just a filename.
-            img_folder = "assets/img", -- This is the default
+            folder = "assets/img", -- This is the default
             img_text_func = function(client, path)
                 path = client:vault_relative_path(path) or path
                 return string.format("![%s](%s)", path.name, path)
             end,
         },
-        follow_url_func = function(url)
-            -- Open the URL in the default web browser.
-            vim.fn.jobstart({ "xdg-open", url }) -- linux
-        end,
+        -- follow_url_func = function(url)
+        --     -- Open the URL in the default web browser.
+        --     vim.fn.jobstart({ "xdg-open", url }) -- linux
+        -- end,
         picker = {
             name = "telescope.nvim",
             -- name = "fzf-lua",
