@@ -13,51 +13,8 @@ config.nvim_treesitter = function()
 
     nvim_treesitter_configs.setup({
         -- ensure_installed = "all", -- one of "all" or a list of languages --vim, vim-doc
-        ensure_installed = {
-            "c",
-            "lua",
-            "query",
-            "regex",
-            "bash",
-            "markdown",
-            "markdown_inline",
-            "sql",
-            "css",
-            "typescript",
-            "tsx",
-            "hyprlang",
-            "rust",
-            "python",
-            "html",
-            "php_only",
-            "blade",
-            "php",
-            "json",
-            -- "latex",
-            "cpp",
-            "javascript",
-            "java",
-            "xml",
-            "yaml",
-            "yuck",
-            "http",
-            "csv",
-            "c",
-            "c_sharp",
-            "go",
-            "git_config",
-            "gitcommit",
-            "gitignore",
-            "git_rebase",
-            "diff",
-            "cmake",
-            "toml",
-            "vim",
-            "vimdoc",
-            "scss",
-        },
         ignore_install = { "latex" }, -- List of parsers to ignore installing
-        auto_install = true,
+        -- auto_install = true,
         highlight = {
             enable = true, -- false will disable the whole extension
             additional_vim_regex_highlighting = { "markdown" },
@@ -99,12 +56,12 @@ config.nvim_treesitter = function()
         },
     })
 
-    vim.filetype.add({
-        pattern = {
-            [".*/hypr/.*%.conf"] = "hyprlang",
-            -- [".*%.blade%.php"] = "phtml",
-        },
-    })
+    -- vim.filetype.add({
+    --     pattern = {
+    --         [".*/hypr/.*%.conf"] = "hyprlang",
+    --         -- [".*%.blade%.php"] = "phtml",
+    --     },
+    -- })
     -- vim.filetype.add {
     --   pattern = { [".*.conf"] = "hyprlang" },
     -- }
@@ -361,19 +318,10 @@ config.mason_lspconfig = function()
     })
 end
 config.lsp_saga = function()
-    local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-    if not lspconfig_status_ok then
-        return
-    end
-    lspconfig.qmlls.setup({
+    vim.lsp.config("qmlls6", {
         cmd = { "qmlls6" },
     })
-    lspconfig.jdtls.setup({
-        -- notifications = {
-        --     dap = true,
-        -- },
-        -- NOTE: One of these files must be in your project root directory.
-        --       Otherwise the debugger will end in the wrong directory and fail.
+    vim.lsp.config("jdtls", {
         root_markers = {
             "settings.gradle",
             "settings.gradle.kts",
@@ -386,7 +334,6 @@ config.lsp_saga = function()
             ".git",
         },
     })
-
     local signs = {
         { name = "DiagnosticSignError", text = " " },
         { name = "DiagnosticSignWarn", text = " " },
