@@ -1,6 +1,6 @@
 if vim.g.neovide then
     -- vim.o.guifont = "SF Mono:h11" -- Font
-    vim.o.guifont = "Maple Mono NF:h13" -- Font
+    vim.o.guifont = "Illinois Mono:h13" -- Font
     vim.o.linespace = -1
 
     -- emulate alacritty font rendering
