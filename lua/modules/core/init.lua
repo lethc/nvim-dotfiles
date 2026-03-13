@@ -366,5 +366,23 @@ local modules = {
             vim.api.nvim_set_keymap("n", "<A-l>", ":Treewalker Right<CR>", { noremap = true })
         end,
     },
+    -- Lua
+    { -- It overrides the following keys to always use the black hole register: c, C, s, S, d, D, x, X.
+        "gbprod/cutlass.nvim",
+        config = function()
+            require("cutlass").setup({
+                {
+                    cut_key = nil,
+                    override_del = nil,
+                    exclude = {},
+                    registers = {
+                        select = "_",
+                        delete = "_",
+                        change = "_",
+                    },
+                },
+            })
+        end,
+    },
 }
 return modules
