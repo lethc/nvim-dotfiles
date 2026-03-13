@@ -96,8 +96,8 @@ local modules = {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        cmd = "WhichKey",
-        keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "g" },
+        -- cmd = "WhichKey", -- commented because would interrupt the behaviour of changing c by "_c, etc
+        -- keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "g" },
         config = edit_config.which_key,
     },
     -- {
