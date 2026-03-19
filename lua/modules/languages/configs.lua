@@ -247,7 +247,8 @@ config.mason_lspconfig = function()
         "emmet_ls",
         "html",
         "ts_ls",
-        "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
+        -- "pyright", --"To Debug, https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python"
+        "ty",
         "bashls", --"To Debug, activate: bash-debug-adapter"
         "jsonls",
         -- "yamlls",
