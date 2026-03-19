@@ -205,8 +205,8 @@ config.nvim_cmp = function()
             { name = "nvim_lsp" },
             { name = "buffer" },
             -- { name = "path" },
-            { name = 'nvim_lua' },
-            { name = 'async_path' },
+            { name = "nvim_lua" },
+            { name = "async_path" },
             { name = "crates" },
             { name = "latex_symbols" },
             { name = "vim-dadbod-completion" },
@@ -235,13 +235,14 @@ config.nvim_cmp = function()
 
                 -- customize lspkind format
                 local strings = vim.split(fmt.kind, "%s", { trimempty = true })
+                local kind = strings[2] or strings[1] or ""
 
                 -- strings[1] -> default icon
                 -- strings[2] -> kind
 
                 -- set different icon styles
                 if settings.cmp_icons_style == "vscode" then
-                    fmt.kind = " " .. (cmp_kinds[strings[2]] or "") -- concatenate icon based on kind
+                    fmt.kind = " " .. (cmp_kinds[kind] or "") -- concatenate icon based on kind
                 else
                     fmt.kind = " " .. (strings[1] or "") -- just use the default icon
                 end
@@ -249,10 +250,10 @@ config.nvim_cmp = function()
                 -- append customized kind text
                 if settings.cmp_style == "nvchad" then
                     fmt.kind = fmt.kind .. " " -- just an extra space at the end
-                    fmt.menu = strings[2] ~= nil and ("  " .. (strings[2] or "")) or ""
+                    fmt.menu = kind ~= "" and ("  " .. kind) or ""
                 else
                     -- default and others
-                    fmt.menu = strings[2] ~= nil and (strings[2] or "") or ""
+                    fmt.menu = kind
                 end
 
                 return fmt
