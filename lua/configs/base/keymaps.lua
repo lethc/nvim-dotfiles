@@ -1,6 +1,12 @@
 local keymaps = {}
 
 keymaps["normal"] = {
+    { "x", '"_x' },
+    { "X", '"_X' },
+    { "c", '"_c' },
+    { "C", '"_C' },
+    { "s", '"_s' },
+    { "S", '"_S' },
     -- { "<C-n>", ":enew<CR>" }, -- New empty buffer
     { "<C-t>", ":tabnew<CR>" }, -- New empty tab
     { "<C-tab>", ":tabnext<CR>" }, -- Move next tab
