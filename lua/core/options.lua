@@ -34,7 +34,7 @@ opt.switchbuf = "useopen,uselast"
 
 -- Fold
 opt.foldlevelstart = 99
-opt.foldcolumn = "1" -- '1' is not bad
+opt.foldcolumn = "0" -- '1' is not bad
 opt.foldenable = true
 opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 opt.foldtext = ""
@@ -151,8 +151,8 @@ opt.mousescroll = { "ver:1", "hor:6" }
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8" -- the encoding written to a file
 opt.autochdir = false -- Change dictory automatically
-opt.number = true -- set numbered lines
-opt.relativenumber = true -- set relative numbered lines
+opt.number = false -- set numbered lines
+opt.relativenumber = false -- set relative numbered lines
 opt.numberwidth = 4 -- set number column width to 2 {default 4}
 opt.showtabline = 0 -- always show tabs or buffers
 opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
