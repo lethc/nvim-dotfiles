@@ -1,0 +1,84 @@
+return {
+	{ "nvim-lua/plenary.nvim", lazy = true },
+	{
+		"farmergreg/vim-lastplace",
+		event = "BufReadPre",
+	},
+	-- { "lvim-tech/lvim-linguistics" }
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = true,
+		config = function()
+			require("nvim-web-devicons").setup({
+				override = {
+					zsh = {
+						icon = "",
+						color = "#428850",
+						cterm_color = "65",
+						name = "Zsh",
+					},
+					json = {
+						icon = "",
+						color = "#F1F134",
+						-- cterm_color = "65",
+						name = "json",
+					},
+				},
+			})
+		end,
+	},
+	-- { "theRealCarneiro/hyprland-vim-syntax",        ft = "hypr" },
+	{ "elkowar/yuck.vim", ft = "yuck" },
+	{ "peterhoeg/vim-qml", ft = "qml" },
+	{ "artoj/qmake-syntax-vim", ft = { "qmake" } },
+	{ "fei6409/log-highlight.nvim", ft = "log" },
+	-- { "hrsh7th/cmp-nvim-lsp",                       lazy = true, enabled = false },
+	-- { "saadparwaiz1/cmp_luasnip",                   lazy = true, enabled = false },
+	-- { "hrsh7th/cmp-path",                           lazy = true, enabled = false },
+	-- { "kdheepak/cmp-latex-symbols",                 ft = "latex", lazy = true, enabled = false },
+	-- { "rafamadriz/friendly-snippets",               lazy = true, enabled = false },
+	{ "MunifTanjim/nui.nvim", lazy = true },
+	-- { "jwalton512/vim-blade", ft = "php" },
+	{ "kkharji/sqlite.lua", lazy = true },
+	{
+		"lervag/vimtex",
+		ft = { "tex" },
+		config = function()
+			vim.g.vimtex_mappings_enabled = false
+		end,
+	}, --LaTeX
+	{
+		"svban/YankAssassin.nvim", -- Will avoid the cursor move when copy
+		event = "CursorMoved",
+		config = function()
+			require("YankAssassin").setup({
+				auto_normal = true, -- if auto is true, autocmds are used. Whenever y is used anywhere, the cursor doesn't move to start
+				auto_visual = true,
+			})
+			-- Optional Mappings
+			vim.keymap.set({ "x", "n" }, "gy", "<Plug>(YADefault)", { silent = true })
+			-- vim.keymap.set({ "x", "n" }, "<leader>y", "<Plug>(YANoMove)", { silent = true })
+		end,
+	},
+	-- {
+	--     "christoomey/vim-tmux-navigator",
+	--     init = function()
+	--         vim.keymap.set("n", "C-h", ":TmuxNavigateLeft")
+	--         vim.keymap.set("n", "C-l", ":TmuxNavigateRight")
+	--         vim.keymap.set("n", "C-k", ":TmuxNavigateUp")
+	--         vim.keymap.set("n", "C-j", ":TmuxNavigateDown")
+	--     end,
+	-- },
+	-- {
+	-- 	"aaronik/treewalker.nvim",
+	-- 	config = function()
+	-- 		require("treewalker").setup({
+	-- 			highlight = true,
+	-- 		})
+	-- 		vim.api.nvim_set_keymap("n", "<A-j>", ":Treewalker Down<CR>", { noremap = true })
+	-- 		vim.api.nvim_set_keymap("n", "<A-k>", ":Treewalker Up<CR>", { noremap = true })
+	-- 		vim.api.nvim_set_keymap("n", "<A-h>", ":Treewalker Left<CR>", { noremap = true })
+	-- 		vim.api.nvim_set_keymap("n", "<A-l>", ":Treewalker Right<CR>", { noremap = true })
+	-- 	end,
+	-- },
+}
