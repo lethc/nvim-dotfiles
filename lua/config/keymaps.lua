@@ -13,6 +13,8 @@ map("n", "<C-tab>", ":tabnext<CR>", { desc = "Next tab" })
 map("n", "<C-S-tab>", ":tabprevious<CR>", { desc = "Previous tab" })
 map("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<BS>", ":b#<CR>" ) -- Like Ctrl + Tab in a browser
+map("n", "<Tab>", ":b#<CR>" ) -- Like Ctrl + Tab in a browser
 map("n", "<A-BS>", ":wincmd j | :q<CR>", { desc = "Close lower window" })
 map("n", "<S-q>", "<cmd>bwipeout<CR>", { desc = "Close buffer" })
 map("n", "<C-Up>", ":resize -2<CR>", { desc = "Resize up" })
