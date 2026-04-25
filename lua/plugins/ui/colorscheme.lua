@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		config = function()
 			require("oasis").setup({
-				style = "lagoon",
+				style = "rose",
 				themed_syntax = true,
 				styles = {
 					bold = true,
