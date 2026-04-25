@@ -59,10 +59,10 @@ return {
 					blade = { "blade-formatter" },
 					php = { "pint", "php_cs_fixer" },
 				},
-				format_on_save = {
-					timeout_ms = 3000,
-					lsp_format = "fallback",
-				},
+				-- format_on_save = {
+				-- 	timeout_ms = 3000,
+				-- 	lsp_format = "fallback",
+				-- },
 				notify_on_error = true,
 				formatters = {
 					-- java_google_format = java_google_format,
