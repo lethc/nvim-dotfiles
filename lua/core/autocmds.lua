@@ -150,3 +150,19 @@ autocmd("BufReadPost", {
     end
   end,
 })
+
+
+-- Start in INSERT mode empty, unnamed, new buffers (BUGGED)
+-- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+--   callback = function()
+--     vim.cmd("startinsert")
+--   end,
+-- })
+-- THIS
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--     callback = function()
+--         if vim.fn.bufname("%") == "" and vim.bo.filetype == "" and vim.api.nvim_buf_line_count(0) == 1 and vim.api.nvim_buf_get_lines(0, 0, -1, false)[1] == "" then
+--             vim.cmd("startinsert")
+--         end
+--     end,
+-- })
