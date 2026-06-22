@@ -61,6 +61,7 @@ return {
 				},
 			},
 			dashboard = {
+                enabled = false,
 				preset = {
 					header = logo,
 					keys = keys,
