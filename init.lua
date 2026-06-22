@@ -79,7 +79,8 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
+-- vim.cmd([[ hi! CursorLineBG guibg=#61afef guifg=#1e222a ]])
+vim.cmd([[ hi! CursorLineBG guibg=#d4b87a guifg=#1e222a ]])
 
 -- Load keymaps after plugins are set up
 local ok_keymaps, err_keymaps = pcall(require, "config.keymaps")
