@@ -1,6 +1,7 @@
 local icons = require("config.icons")
 return {
 	"hrsh7th/nvim-cmp",
+    -- enabled = false,
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
