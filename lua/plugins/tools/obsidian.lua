@@ -24,9 +24,6 @@ return {
 						path = path,
 					},
 				},
-				completion = {
-					nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
-				},
 				daily_notes = {
 					folder = "Daily_notes/",
 				},
