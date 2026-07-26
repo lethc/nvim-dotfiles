@@ -4,33 +4,33 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		-- tag = '0.1.4',
-		cmd = "Telescope",
-		keys = {
-			-- {
-			--     "<leader>b",
-			--     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
-			--     desc = "Buffers",
-			-- },
-			{
-				"<leader>sf",
-				"<Cmd>lua require('telescope.builtin').find_files({previewer = true})<CR>",
-				desc = "Telescope find files",
-			},
-			{ "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
-			{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
-			{
-				"<leader>sb",
-				"<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
-				desc = "Telescope buffers",
-			},
-			{
-				"<leader>b",
-				"<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
-				desc = "Telescope buffers",
-			},
-			{ "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
-			-- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
-		},
+		-- cmd = "Telescope",
+		-- keys = {
+		-- 	-- {
+		-- 	--     "<leader>b",
+		-- 	--     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({previewer = false}))<CR>",
+		-- 	--     desc = "Buffers",
+		-- 	-- },
+		-- 	{
+		-- 		"<leader>sf",
+		-- 		"<Cmd>lua require('telescope.builtin').find_files({previewer = true})<CR>",
+		-- 		desc = "Telescope find files",
+		-- 	},
+		-- 	{ "<leader>sF", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live grep" },
+		-- 	{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Telescope old files" },
+		-- 	{
+		-- 		"<leader>sb",
+		-- 		"<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
+		-- 		desc = "Telescope buffers",
+		-- 	},
+		-- 	{
+		-- 		"<leader>b",
+		-- 		"<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>",
+		-- 		desc = "Telescope buffers",
+		-- 	},
+		-- 	{ "<leader>si", "<Cmd>Telescope notify<CR>", desc = "Telescope Notify" },
+		-- 	-- { "<leader>n", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file browser" },
+		-- },
 		dependencies = {
 			-- "nvim-telescope/telescope-file-browser.nvim",
 			-- {

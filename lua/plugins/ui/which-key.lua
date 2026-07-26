@@ -174,6 +174,8 @@ return {
 			},
 			{ "<leader>ga", "<cmd>AdvancedGitSearch<cr>", desc = "Advanced Git Search" },
 			{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+			{ "<leader>b", "<Cmd>lua require('telescope.builtin').buffers({sort_lastused = true, previewer = true})<CR>", desc = "Telescope buffers",
+			},
 			{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
 			{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 			{ "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "Next Hunk" },
