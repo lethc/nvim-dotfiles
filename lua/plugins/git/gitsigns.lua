@@ -1,8 +1,27 @@
 return {
     {
+        "nvim-mini/mini.diff",
+        event = "VeryLazy",
+        opts = {
+            view = {
+                style = "sign",
+                signs = { add = "▎", change = "▎", delete = "" },
+            },
+            -- mappings = {
+            --     apply = "",
+            --     reset = "<leader>gr",
+            --     textobject = "",
+            --     goto_first = "",
+            --     goto_prev = "<leader>gk",
+            --     goto_next = "<leader>gj",
+            --     goto_last = "<leader>gK",
+            -- },
+        },
+    },
+    {
         "lewis6991/gitsigns.nvim",
         -- event = { 'BufRead', 'BufNewFile' },
-        enabled = false,
+        enabled = true,
         event = "BufReadPre",
         config = function()
             local status_ok, gitsigns = pcall(require, "gitsigns")
@@ -26,7 +45,7 @@ return {
                     changedelete = { text = " ▎" },
                     untracked = { text = " ▎" },
                 },
-                signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+                signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
                 numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
                 linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
                 word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -59,24 +78,5 @@ return {
                 },
             })
         end,
-    },
-    {
-        "nvim-mini/mini.diff",
-        event = "VeryLazy",
-        opts = {
-            view = {
-                style = "sign",
-                signs = { add = "▎", change = "▎", delete = "" },
-            },
-            mappings = {
-                apply = "",
-                reset = "",
-                textobject = "",
-                goto_first = "",
-                goto_prev = "",
-                goto_next = "",
-                goto_last = "",
-            },
-        },
     },
 }
