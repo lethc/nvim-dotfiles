@@ -1,6 +1,7 @@
 return {
 	"folke/flash.nvim",
-	event = { "InsertEnter" },
+	-- event = { "InsertEnter" },
+    event = "BufReadPre",
 	keys = {
 		{
 			"s",

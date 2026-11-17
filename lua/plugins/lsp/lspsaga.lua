@@ -1,5 +1,6 @@
 return {
-	"glepnir/lspsaga.nvim",
+	"nvimdev/lspsaga.nvim",
+    enabled = false,
 	-- event = "LspAttach",
 	config = function()
 		vim.lsp.config("qmlls6", {

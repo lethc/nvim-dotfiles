@@ -19,6 +19,8 @@ return {
 				"default",
 				"vague",
 				"oasis",
+                "matrix",
+                "catppuccin",
 
 				"canon",
 				"canon-onedark",

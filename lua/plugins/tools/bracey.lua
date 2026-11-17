@@ -6,7 +6,8 @@ return {
 		build = "npm install --prefix server",
 		config = function()
 			vim.cmd([[
-        let g:bracey_browser_command='firefox --new-window'
+        "let g:bracey_browser_command='firefox --new-window'
+        let g:bracey_browser_command='brave-origin'
       ]])
 		end,
 	},

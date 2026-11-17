@@ -74,7 +74,7 @@ vim.opt.listchars = {
 
 -- Indentation
 opt.wrap = true -- display lines as one long line
-opt.wrapmargin = 2
+-- opt.wrapmargin = 2 -- wrap lines 2 columns before window edge
 opt.shiftround = true
 opt.expandtab = true -- convert tabs to spaces
 opt.tabstop = 4 -- insert 2 spaces for a tab

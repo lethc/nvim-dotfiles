@@ -1,6 +1,7 @@
 local icons = require("config.icons")
 return {
 	"hrsh7th/nvim-cmp",
+    enabled = true,
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
@@ -191,8 +192,8 @@ return {
 				end,
 			},
 			mapping = {
-				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<Down>"] = cmp.mapping.select_next_item(),
+				["<Up>"] = cmp.mapping.select_prev_item(),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-Space>"] = cmp.mapping.complete(),
